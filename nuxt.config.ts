@@ -36,7 +36,7 @@ export default defineNuxtConfig({
       // Public keys that are exposed to the client
       public: {
         apiBase: process.env.API_BASE_URL || '/localhost',
-        apiBaseImage: process.env.API_BASE_IMAGE || '/api'
+        apiBaseImage: process.env.API_BASE_IMAGE || '/localhost'
       }
     }
     

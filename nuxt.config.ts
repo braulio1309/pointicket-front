@@ -1,9 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  server: {
-    port: 8080, // default: 3000
-    host: "pointickets.com", // default: localhost
-  },
   css: [
     "bootstrap/scss/bootstrap.scss",
     "swiper/css/bundle",

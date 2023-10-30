@@ -72,7 +72,6 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-4 col-xl-3" data-aos-delay="100" data-aos="fade-up" data-aos-duration="800"
                         v-for="course in courseItems.slice(0, 8)" :key="course.id">
-                        <CourseTypeOne :course="course" />
                     </div>
                 </div>
             </div>
@@ -88,7 +87,6 @@ import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import SectionTitle from '~~/components/common/SectionTitle.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
 import FooterOne from '~~/components/footer/FooterOne.vue';
-import CourseTypeOne from '~~/components/course/CourseTypeOne.vue';
 import instructorProfilesMixin from '../../mixins/instructorProfilesMixin';
 import courseItemsMixin from '../../mixins/courseItemsMixin';
 import ScrollToTop from '~~/components/footer/ScrollToTop.vue';
@@ -101,7 +99,6 @@ export default {
     BreadCrumbTwo,
     SectionTitle,
     FooterOne,
-    CourseTypeOne,
     ScrollToTop
 },
     head() {

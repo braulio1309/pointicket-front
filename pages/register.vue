@@ -64,8 +64,10 @@ export default {
     },
     methods: {
         async register() {
+            const config = useRuntimeConfig();
+
             try {
-                const res = await axios.post(`http://localhost:1337/api/auth/local/register`, {
+                const res = await axios.post(`${config.public.apiBase}auth/local/register`, {
                     email: this.email,
                     username: this.name,
                     password: this.password

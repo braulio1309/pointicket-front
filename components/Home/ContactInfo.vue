@@ -82,6 +82,11 @@ export default {
     components: {
         MouseMove
     },
+    data(){
+        return {
+            showResult: false
+        }
+    }
     
 };
 </script>

@@ -5,8 +5,12 @@
             <div class="col-sm-8">
                 <div class="login-form-box">
                     <h3 class="title">Iniciar sesión</h3>
-                    <p>¿No tienes cuenta? <a href="#">Registrate</a></p>
-                    <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
+                    <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
+                    <div v-if="error" class="col-12">
+                        <div class="alert alert-danger" role="alert">
+                            Datos incorrectos, intente de nuevo
+                        </div>
+                    </div>
                     <form>
                         <div class="form-group">
                             <label for="current-log-email">Email*</label>

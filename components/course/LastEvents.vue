@@ -2,7 +2,7 @@
     <div class="edu-course course-style-1 hover-button-bg-white" :class="extraClass">
         <div class="inner">
             <div class="thumbnail">
-                <NuxtLink to="/course/course-details">
+                <NuxtLink :to="'/tickets/'+type+'/'+ event.id">
                     <img :src="this.url+event.attributes.image.data[0].attributes.url" :alt="event.attributes.title">
                 </NuxtLink>
                 <div class="time-top">
@@ -36,6 +36,7 @@
         },
         data(){
             
+            const config = useRuntimeConfig();
 
             return {
                 url: config.public.apiBaseImage

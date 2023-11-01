@@ -2,7 +2,7 @@
     <div class="edu-event event-style-1">
         <div class="inner">
             <div class="thumbnail">
-                <NuxtLink to="/event/event-details">
+                <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">
                     <img :src="this.url + eventInfo.attributes.image.data[0].attributes.url" />
                 </NuxtLink>
                 <div class="event-time">
@@ -15,7 +15,7 @@
                     <span class="month">{{ getMonth(eventInfo.attributes.endDate) }}</span>
                 </div>
                 <h5 class="title">
-                    <NuxtLink to="/event/event-details">{{ eventInfo.attributes.title }}</NuxtLink>
+                    <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">{{ eventInfo.attributes.title }}</NuxtLink>
                 </h5>
                 <p>{{ eventInfo.attributes.description }}</p>
                 <ul class="event-meta">

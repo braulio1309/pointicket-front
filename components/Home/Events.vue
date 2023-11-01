@@ -38,8 +38,13 @@ export default {
         
         getEvents() {
             const config = useRuntimeConfig();
+            
 
-            axios.get(`${config.public.apiBase}events?populate=image`)
+            axios.get(`${config.public.apiBase}events?populate=*`, {
+                headers: {
+                    Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                },
+            })
             .then(response => {
                 this.events = response.data.data;
             })

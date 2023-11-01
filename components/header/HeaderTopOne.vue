@@ -3,9 +3,9 @@
         <div class="container-fluid">
             <div class="header-top">
                 <div class="header-top-left">
-                    <div class="header-notify">
+                    <!--<div class="header-notify">
                         First 20 students get 50% discount. <NuxtLink to="/">Hurry up!</NuxtLink>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="header-top-right">
 
@@ -21,9 +21,9 @@
                         <li v-if="logged">
                             <NuxtLink to="/profile">Bienvenido {{ this.user.username }}</NuxtLink>
                         </li>
-                        <li><a href="tel:+011235641231"><i class="icon-phone"></i>Call: 123 4561 5523</a></li>
-                        <li><a href="mailto:info@edublink.com" target="_blank"><i class="icon-envelope"></i>Email:
-                                info@edublink.com</a></li>
+                        <li><a href="tel:+011235641231"><i class="icon-phone"></i>Llamar: 123 4561 5523</a></li>
+                        <li><a href="mailto:hello@pointickets.com" target="_blank"><i class="icon-envelope"></i>Email:
+                                hello@pointickets.com</a></li>
                         <li class="social-icon">
                             <a href="https://facebook.com/"><i class="icon-facebook"></i></a>
                             <a href="https://instagram.com/"><i class="icon-instagram"></i></a>

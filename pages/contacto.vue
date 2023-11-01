@@ -3,25 +3,21 @@
 
         <HeaderOne />
 
-        <BreadCrumbTwo title='Contact Us' />
+        <BreadCrumbTwo title='Contacto' />
 
         <section class="contact-us-area">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-xl-4 col-lg-6">
                         <div class="contact-us-info">
-                            <h3 class="heading-title">We're Always Eager to Hear From You!</h3>
+                            <h3 class="heading-title">Estamos para ti!</h3>
                             <ul class="address-list">
                                 <li>
-                                    <h5 class="title">Address</h5>
-                                    <p>Studio 76d, Riley Ford, North Michael chester, CF99 6QQ</p>
-                                </li>
-                                <li>
                                     <h5 class="title">Email</h5>
-                                    <p><a href="mailto:edublink@example.com" target="_blank">edublink@example.com</a></p>
+                                    <p><a href="mailto:hello@pointickets.com" target="_blank">hello@pointickets.com</a></p>
                                 </li>
                                 <li>
-                                    <h5 class="title">Phone</h5>
+                                    <h5 class="title">Telefono</h5>
                                     <p><a href="tel:+0914135548598">(+091) 413 554 8598</a></p>
                                 </li>
                             </ul>
@@ -36,30 +32,39 @@
                     <div class="offset-xl-2 col-lg-6">
                         <div class="contact-form form-style-2">
                             <div class="section-title">
-                                <h4 class="title">Get In Touch</h4>
-                                <p>Fill out this form for booking a consultant advising session.</p>
+                                <h4 class="title">Escribenos</h4>
                             </div>
-
-                            <form class="rnt-contact-form rwt-dynamic-form" ref="form" @submit.prevent="sendEmail">
+                            <div v-if="showResult" class="col-12">
+                                            <div class="alert alert-success" role="alert">
+                                                Gracias por contactarnos!
+                                            </div>
+                                        </div>
+                            <form class="rnt-contact-form rwt-dynamic-form">
                                 <div class="row row--10">
                                     <div class="form-group col-12">
-                                        <input type="text" name="fullname" placeholder="Your name">
+                                        <input type="text" v-model="name" placeholder="Nombre">
                                     </div>
                                     <div class="form-group col-12">
-                                        <input type="email" name="email" placeholder="Enter your email">
+                                        <input type="email" v-model="email" placeholder="Email">
                                     </div>
                                     <div class="form-group col-12">
-                                        <input type="tel" name="phone" placeholder="Phone number">
+                                        <input type="tel" v-model="phone" placeholder="Telefono">
                                     </div>
                                     <div class="form-group col-12">
-                                        <textarea name="message" cols="30" rows="4" placeholder="Your message"></textarea>
+                                        <textarea v-model="message" cols="30" rows="4"
+                                            placeholder="Escribe tu mensaje"></textarea>
                                     </div>
                                     <div class="form-group col-12">
-                                        <button class="rn-btn edu-btn btn-medium submit-btn" name="submit"
-                                            type="submit">Submit Message <i class="icon-4"></i></button>
-                                        <div v-if="showResult" class="col-12 success-msg">
-                                            <p>{{ resultText }}</p>
-                                        </div>
+                                        <button class="rn-btn edu-btn btn-medium submit-btn" name="submit" type="submit"
+                                            :disabled="isLoading" @click="handleSubmit">
+                                            <span v-if="isLoading">
+                                                Cargando... <i class="fas fa-spinner fa-spin"></i>
+                                            </span>
+                                            <span v-else>
+                                                Enviar<i class="icon-4"></i>
+                                            </span>
+                                        </button>
+                                        
                                     </div>
                                 </div>
                             </form>
@@ -77,9 +82,7 @@
         <div class="google-map-area">
             <div class="mapouter">
                 <div class="gmap_canvas">
-                    <iframe id="gmap_canvas"
-                        src="https://maps.google.com/maps?q=melbourne,%20Australia&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
                 </div>
             </div>
         </div>
@@ -96,22 +99,53 @@ import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
 import FooterOne from '~~/components/footer/FooterOne.vue';
 import ScrollToTop from '~~/components/footer/ScrollToTop.vue';
+import axios from 'axios';
 
 export default {
     components: {
-    HeaderOne,
-    BreadCrumbTwo,
-    MouseMove,
-    FooterOne,
-    ScrollToTop
-},
+        HeaderOne,
+        BreadCrumbTwo,
+        MouseMove,
+        FooterOne,
+        ScrollToTop
+    },
     data() {
         return {
             resultText: '',
-            showResult: false
+            showResult: false,
+            isLoading: false,
+            message: '',
+            name: '',
+            phone: '',
+            email: ''
         }
     },
     methods: {
+        handleSubmit() {
+            this.isLoading = true;
+            this.showResult = false;
+
+            const config = useRuntimeConfig();
+
+            let data = {
+                message: this.message,
+                name: this.name,
+                phone: this.phone,
+                email: this.email,
+            };
+            axios
+                .post(`${config.public.apiBase}contacts`, { data })
+                .then((response) => {
+                    console.log(response.data)
+                    this.showResult = true;
+                    this.isLoading = false;
+
+                })
+                .catch((error) => {
+                    // Maneja los errores, por ejemplo, muestra un mensaje de error
+                    console.error('Error al actualizar el usuario', error);
+                });
+        },
         sendEmail(e) {
             emailjs.sendForm(
                 'service_bxh6md3',
@@ -138,7 +172,7 @@ export default {
     },
     head() {
         return {
-            title: 'Contact Us'
+            title: 'contacto'
         }
     }
 }

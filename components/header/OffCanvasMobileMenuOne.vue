@@ -5,8 +5,8 @@
             <div class="header-top">
                 <div class="logo">
                     <NuxtLink to="/">
-                        <img class="logo-light" src="/images/logo/logo-dark.png" alt="Dark Logo">
-                        <img class="logo-dark" src="/images/logo/logo-white.png" alt="Light Logo">
+                        <img class="logo-light" src="/images/logo/logo_poin.png" alt="Dark Logo">
+                        <img class="logo-dark" src="/images/logo/logo_poin.png" alt="Light Logo">
                     </NuxtLink>
                 </div>
                 <div class="close-menu">

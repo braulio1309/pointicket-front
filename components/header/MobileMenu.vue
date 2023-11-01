@@ -29,7 +29,7 @@
             return {
                 menus: [
                     {
-                        url: '',
+                        url: '/',
                         title: 'Inicio',
                         
                     },

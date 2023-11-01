@@ -1,5 +1,5 @@
 <template>
-    <div class="edu-event event-style-1">
+    <div class="edu-event">
         <div class="inner">
             <div class="thumbnail">
                 <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">

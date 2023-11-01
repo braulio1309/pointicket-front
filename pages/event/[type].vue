@@ -20,6 +20,14 @@
             </div>
             <div class="container-fluid">
                 <div class="row g-5">
+                    <div class="col-lg-9 order-lg-1 col-pr--35" v-if="this.events">
+                        <div class="row g-5">
+                            <div class="col-md-4 col-sm-4" data-aos-delay="150" data-aos="fade-up" data-aos-duration="400"
+                                v-for="event in getItems" :key="event.id">
+                                <EventOne :eventInfo="event" :type="this.$route.params.type" />
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-3 order-lg-2">
                         <div class="course-sidebar-2">
                             <div class="edu-course-widget widget-category">
@@ -91,14 +99,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-9 order-lg-1 col-pr--35" v-if="this.events">
-                        <div class="row g-5">
-                            <div class="col-4" data-aos-delay="150" data-aos="fade-up" data-aos-duration="400"
-                                v-for="event in getItems" :key="event.id">
-                                <EventOne :eventInfo="event" :type="this.$route.params.type" />
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
 
                 <div v-if="getPaginateCount > 1">

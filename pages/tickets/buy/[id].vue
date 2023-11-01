@@ -5,25 +5,27 @@
         <section class="">
             <div class="container">
                 <div class="edu-course-area course-area-3">
-                    <div class="container">
+                    <div class="container" v-if="this.event">
                         <div class="isotope-wrapper" style="margin-top: 100px;">
-                            <div class="isotop-button isotop-filter nav">
-                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#undergraduate"
-                                    role="tab">Tipo de entrada</button>
-                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab">Precio
-                                    de venta</button>
-                                <button v-if="this.type == 'Electrónica'" class="nav-link" data-bs-toggle="pill"
-                                    data-bs-target="#file" role="tab">Carga la
-                                    entrada</button>
-                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#bank" role="tab">Datos
-                                    bancarios</button>
-
-                            </div>
-                            <div class="tab-content" v-if="this.event">
+                            <div class="tab-content">
                                 <div class="tab-pane fade show active" id="undergraduate" role="tabpanel">
                                     <div class="row">
                                         <div class="col-md-12 col-lg-12">
+                                            <div class="edu-gallery-area edu-section-gap">
+                                                <div class="container">
+                                                    <h4 class="text-center"> ¿Que entradas estas buscando?</h4>
 
+                                                    <div class="isotope-wrapper">
+                                                        <div class="isotop-button button-transparent isotop-filter">
+                                                            <button v-for="(cat, index) in filterCategory" :key="index"
+                                                                @click="filterHandler(cat)" class="filter-selector-item"
+                                                                :class="{ 'is-checked': cat === selectedCategory }">
+                                                                <span>{{ cat }}</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="row row--30">
                                                 <div class="col-lg-8 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
@@ -35,162 +37,72 @@
                                                         <div class="text-block">
                                                             <h4 class="title">{{ this.event.data.attributes.title }}</h4>
                                                             <p>{{ this.event.data.attributes.description }}</p>
-
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="edu-blog-sidebar">
-                                                        <div class="col-lg-12 order-lg-1 login-form-box">
-
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Sector</label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="sector" v-model="sector">
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Categoria</label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Categoria" v-model="category">
-                                                                    </div>
-
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Fila</label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Fila" v-model="row">
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="edu-blog-widget widget-tags">
+                                                        <!--<div class="edu-blog-widget widget-tags">
                                                             <div class="inner">
                                                                 <h4 class="widget-title">Tipo de entrada</h4>
                                                                 <div class="content">
                                                                     <div class="tag-list">
-                                                                        <a href="#" @click="handleLinkClick('En papel')">En
-                                                                            papel</a>
-                                                                        <a href="#"
-                                                                            @click="handleLinkClick('Electrónica')">Electrónica</a>
-                                                                        <a href="#"
-                                                                            @click="handleLinkClick('Móvil')">Móvil</a>
+                                                                        <a href="#">En papel</a>
+                                                                        <a href="#">Electrónica</a>
+                                                                        <a href="#">Móvil</a>
 
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div>-->
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="graduate" role="tabpanel">
-                                    <div class="row ">
-                                        <div class="col-md-12 col-lg-12" style="padding: 100px;">
-                                            <div class="col-lg-12 order-lg-1 col-pr--35 login-form-box">
+                                                        <div class="col-lg- order-lg-1 col-pr--35">
+                                                            <div class="row g-5">
 
-                                                <div class="row">
-                                                    <div class="col-12 mb--50">
-                                                        <div class="form-group">
-                                                            <label>¿Qué precio tiene la entrada originalmente?</label>
-                                                            <input type="number" class="form-control"
-                                                                placeholder="Precio de adquisición" v-model="startPrice">
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="form-group">
-                                                            <label>¿Cuanto quieres cobrar por la entrada?</label>
-                                                            <input type="number" class="form-control"
-                                                                placeholder="Precio de venta" v-model="newPrice">
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="col-12 text-center" style="margin-top:20px;">
-                                                        <div class="form-group">
-                                                            <h5>El precio de cada entrada será de {{ lastPrice() }}</h5>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="file" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-12">
-                                            <div class="row ">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <div class="col-lg-12 order-lg-1 col-pr--35 login-form-box">
-
-                                                        <div class="row">
-                                                            <div class="col-12 mb--50" style="padding: 100px;">
-                                                                <div class="form-group">
-                                                                    <label>Carga tu entrada</label>
-                                                                    <input type="file" class="form-control"
-                                                                        @change="handleFileUpload">
+                                                                <div class="col-12" v-for="event in getItems"
+                                                                    :key="event.id">
+                                                                    <div class="edu-event-list event-list-2">
+                                                                        <div class="">
+                                                                            <div class="content">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-6">
+                                                                                        <ul class="event-meta">
+                                                                                            <li>{{
+                                                                                                formatDate(event.attributes.createdAt)
+                                                                                            }}
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                        <h6 class="title">
+                                                                                            <NuxtLink :to="'/shop/checkout/'+ event.id">{{
+                                                                                                event.attributes.seat }}
+                                                                                                Entradas - {{
+                                                                                                    event.attributes.Category }}
+                                                                                            </NuxtLink>
+                                                                                        </h6>
+                                                                                        <h7 class="title">
+                                                                                            <NuxtLink to="/shop/checkout">€{{
+                                                                                                event.attributes.endPrice }}
+                                                                                            </NuxtLink>
+                                                                                        </h7>
+                                                                                    </div>
+                                                                                    <div class="col-sm-6">
+                                                                                        <div class="read-more-btn">
+                                                                                            <NuxtLink
+                                                                                                class="edu-btn btn-medium btn-border"
+                                                                                                :to="'/shop/checkout/'+ event.id">
+                                                                                                Comprar <i
+                                                                                                    class="icon-4"></i>
+                                                                                            </NuxtLink>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="bank" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-12">
-                                            <div class="row ">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <div class="login-form-box registration-form">
-                                                        <h3 class="title">Ingrese sus datos bancarios</h3>
-                                                        <form>
-                                                            <div class="form-group">
-                                                                <label for="reg-name">Títular*</label>
-                                                                <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.holder"
-                                                                    readonly>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="log-email">IBAN*</label>
-                                                                <input type="text" name="log-email" id="log-email"
-                                                                    placeholder="Iban" v-model="this.user.iban" readonly>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="reg-name">Tipo de cuenta*</label>
-                                                                <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.type_account"
-                                                                    readonly>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <button type="button" @click="saveTicket()"
-                                                                    class="edu-btn btn-medium">Guardar <i
-                                                                        class="icon-4"></i></button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -208,6 +120,7 @@
                         </li>
                     </ul>
                 </div>
+
 
             </div>
         </section>
@@ -239,112 +152,143 @@ export default {
     },
     data() {
         return {
-            type: '', // Variable para almacenar el valor seleccionado
-            title: 'Comprar entrada',
+            title: 'Vender Entradas',
             filterData: [],
             selectedCategory: 'all',
-            row: '',
-            sector: '',
-            category: '',
-            startPrice: 0,
-            newPrice: 0,
-            user: '',
-            eventId: '',
             event: null,
-            message: '',
-            selectedFile: ''
+            eventId: null,
+            fullTickets: [],
+            items: [
+                {
+                    thumb: '/images/gallery/gallery-01.jpg',
+                    src: '/images/gallery/gallery-01.jpg',
+                    category: ['1 entrada']
+                },
+                {
+                    thumb: '/images/gallery/gallery-02.jpg',
+                    src: '/images/gallery/gallery-02.jpg',
+                    category: ['2 entradas']
+                },
+                {
+                    thumb: '/images/gallery/gallery-03.jpg',
+                    src: '/images/gallery/gallery-03.jpg',
+                    category: ['3 entradas']
+                },
+                {
+                    thumb: '/images/gallery/gallery-04.jpg',
+                    src: '/images/gallery/gallery-04.jpg',
+                    category: ['4 entradas']
+                },
+
+            ],
+            eventItems: [
+                {
+                    id: 1,
+                    imgSrc: "event-01.jpg",
+                    title: "4 Entradas  €70.00",
+                    date: "30",
+                    fullDate: "Braulio Zapata",
+                    month: "SEP",
+                    time: "08:00AM-10:00AM",
+                    location: "VIP",
+                    excerpt: "Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna."
+                },
+                {
+                    id: 2,
+                    imgSrc: "event-02.jpg",
+                    title: "2 Entradas - €75.00",
+                    date: "25",
+                    fullDate: "Pato Test",
+                    month: "DEC",
+                    time: "04:00PM-07:00PM",
+                    location: "General",
+                    excerpt: "Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna."
+                },
+                {
+                    id: 3,
+                    imgSrc: "event-03.jpg",
+                    title: "1 Entrada  €105.00",
+                    date: "15",
+                    fullDate: "Alejandro Utrera",
+                    month: "NOV",
+                    time: "10:00AM-11:00AM",
+                    location: "VIP",
+                    excerpt: "Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna."
+                },
+
+            ],
+            currentPage: 1,
+            perPage: 9,
+            paginationOptions: {
+                texts: {
+                    nextPage: '',
+                    prevPage: '',
+                }
+            }
         }
     },
     computed: {
         filterCategory() {
-            return ['all', ...new Set(this.items.map((elem) => elem.category).flat())]
+            return ['all', ...new Set(this.items.map((elem) => elem.category[0]).flat())]
+        },
+        getItems() {
+            let start = (this.currentPage - 1) * this.perPage;
+            let end = this.currentPage * this.perPage;
+            return this.eventItems.slice(start, end);
+        },
+        getPaginateCount() {
+            return Math.ceil(this.eventItems.length / this.perPage);
         }
     },
     methods: {
         filterHandler(cat) {
-            console.log(cat)
             this.selectedCategory = cat;
             if (this.selectedCategory === 'all') {
-                this.filterData = this.items
+                this.eventItems = this.fullTickets;
             } else {
-                this.filterData = this.items.filter((item) => item.category.includes(cat));
+                this.eventItems = this.fullTickets.filter((item) => item.attributes.seat == cat[0]);
             }
+        },
+        formatDate(fechaISO) {
+            const fecha = new Date(fechaISO);
+            const dia = fecha.getDate().toString().padStart(2, "0"); // Día con dos dígitos
+            const mes = (fecha.getMonth() + 1).toString().padStart(2, "0"); // Mes con dos dígitos (se suma 1 porque los meses se indexan desde 0)
+            const anio = fecha.getFullYear();
+            return `${dia}/${mes}/${anio}`;
         },
         handleImagePopup(indexNum) {
             this.$refs.image_popup.showImg(indexNum);
-        },
-        handleLinkClick(value) {
-            this.type = value; // Guarda el valor seleccionado en la variable
-        },
-        handleFileUpload(event) {
-            this.selectedFile = event.target.files[0];
-            console.log(this.selectedFile)
-        },
-        lastPrice() {
-            if (this.newPrice === '')
-                return 0;
-            return (this.newPrice + this.newPrice * 0.1).toFixed(2);
-        },
-        userData() {
-            const userData = window.localStorage.getItem('userData');
-            this.user = JSON.parse(userData);
         },
         getEvent() {
             const config = useRuntimeConfig();
 
             axios
-                .get(`${config.public.apiBase}events/` + this.eventId, {
+                .get(`${config.public.apiBase}events/` + this.eventId + '?populate=tickets', {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
                 })
                 .then((response) => {
-                    console.log(response.data)
                     this.event = response.data;
+                    this.eventItems = this.event.data.attributes.tickets;
+                    this.eventItems = this.eventItems.data;
+                    this.fullTickets = this.eventItems;
+                    console.log(this.eventItems[0])
                 })
                 .catch((error) => {
-                    // Maneja los errores, por ejemplo, muestra un mensaje de error
-                    console.error(error);
+                    console.error('Error al buscar al evento', error);
                 });
         },
-        async saveTicket() {
-            const config = useRuntimeConfig();
-
-            var formData = new FormData();
-            formData.append('user', this.user);
-            formData.append('Category', this.category);
-            formData.append('Sector', this.sector);
-            formData.append('Fila', this.row);
-            formData.append('startPrice', this.startPrice);
-            formData.append('newPrice', this.newPrice);
-            formData.append('endPrice', this.lastPrice(this.newPrice));
-            formData.append('evento', this.eventId);
-            formData.append('type', this.type);
-            //formData.append('ticket', this.selectedFile);
-            console.log(formData)
-            axios
-                .post(`${config.public.apiBase}tickets`, formData, {
-                    headers: {
-                        Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
-                        'Content-Type': 'multipart/form-data',
-                    },
-                })
-                .then((response) => {
-                    console.log(response.data)
-                    this.message = response.data;
-                })
-                .catch((error) => {
-                    // Maneja los errores, por ejemplo, muestra un mensaje de error
-                    console.error('Error al actualizar el usuario', error);
-                });
-        }
     },
     mounted() {
-        this.filterData = this.items
-        console.log(this.$route.params.id)
-        this.userData();
+        this.filterData = this.items;
         this.eventId = this.$route.params.id;
         this.getEvent();
+    },
+    head() {
+        return {
+            title: 'Vender entradas'
+        }
     },
 
 }

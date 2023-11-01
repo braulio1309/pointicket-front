@@ -7,44 +7,32 @@
                         <div class="edu-footer-widget">
                             <div class="logo">
                                 <NuxtLink to="/">
-                                    <img class="logo-light" src="/images/logo/logo-dark.png" alt="Dark Logo">
-                                    <img class="logo-dark" src="/images/logo/logo-white.png" alt="Light Logo">
+                                    <img class="logo-light" src="/images/logo/logo_poin.png" style="width:100px;"
+                                        alt="Light Logo">
                                 </NuxtLink>
                             </div>
                             <p class="description">Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor
                                 incidid unt labore dolore.</p>
                             <div class="widget-information">
                                 <ul class="information-list">
-                                    <li><span>Add:</span>70-80 Upper St Norwich NR2</li>
-                                    <li><span>Call:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
-                                    <li><span>Email:</span><a href="mailto:info@edublink.com"
-                                            target="_blank">info@edublink.com</a></li>
+                                    <li><span>Ubicación:</span>España</li>
+                                    <li><span>Llama:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
+                                    <li><span>Email:</span><a href="mailto:hola@pointicket.com"
+                                            target="_blank">hola@pointicket.com</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="edu-footer-widget explore-widget">
-                            <h4 class="widget-title">Online Platform</h4>
+                            <h4 class="widget-title">Entradas</h4>
                             <div class="inner">
                                 <ul class="footer-link link-hover">
                                     <li>
-                                        <NuxtLink to="/about-us-one">About</NuxtLink>
+                                        <NuxtLink to="/event/buy">Eventos</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/course/course-one">Courses</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink to="/pricing-table">Pricing Plan</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink to="/instructor/instructor-one">Instructor</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink to="/event/event-grid">Events</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink to="/instructor/instructor-profile">Instructor Profile</NuxtLink>
+                                        <NuxtLink to="/event/sell">Vender entradas</NuxtLink>
                                     </li>
                                 </ul>
                             </div>
@@ -56,22 +44,19 @@
                             <div class="inner">
                                 <ul class="footer-link link-hover">
                                     <li>
-                                        <NuxtLink to="/faq">FAQ's</NuxtLink>
+                                        <NuxtLink to="/preguntas-frecuentes">Preguntas frecuentes</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/gallery-grid">Gallery</NuxtLink>
+                                        <NuxtLink to="/privacy-policy">Politicas de privacidad</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/blog/blog-standard">News & Articles</NuxtLink>
+                                        <NuxtLink to="/terms-condition">Terminos y condiciones</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
+                                        <NuxtLink to="/profile">Mi perfil</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/my-account">Sign In</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink to="/contact-us">Contact Us</NuxtLink>
+                                        <NuxtLink to="/contacto">Contacto</NuxtLink>
                                     </li>
                                 </ul>
                             </div>
@@ -79,45 +64,43 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="edu-footer-widget">
-                            <h4 class="widget-title">Contacts</h4>
+                            <h4 class="widget-title">Contacto</h4>
                             <div class="inner">
-                                <p class="description">Enter your email address to register to our newsletter subscription
-                                </p>
+                                <p class="description">Ingresa tu email para obtener un descuento</p>
                                 <div class="input-group footer-subscription-form">
-                                    <input type="email" class="form-control" placeholder="Your email">
-                                    <button class="edu-btn btn-medium" type="button">Subscribe <i
+                                    <input type="email" class="form-control" placeholder="Correo">
+                                    <button class="edu-btn btn-medium" type="button">Suscribete <i
                                             class="icon-4"></i></button>
                                 </div>
-                            <ul class="social-share icon-transparent">
-                                <li><a href="https://facebook.com/" target="_blank" class="color-fb"><i
-                                            class="icon-facebook"></i></a></li>
-                                <li><a href="https://linkedin.com/" target="_blank" class="color-linkd"><i
-                                            class="icon-linkedin2"></i></a></li>
-                                <li><a href="https://instagram.com/" target="_blank" class="color-ig"><i
-                                            class="icon-instagram"></i></a></li>
-                                <li><a href="https://twitter.com/" target="_blank" class="color-twitter"><i
-                                            class="icon-twitter"></i></a></li>
-                                <li><a href="https://youtube.com/" target="_blank" class="color-yt"><i
-                                            class="icon-youtube"></i></a></li>
-                            </ul>
+                                <ul class="social-share icon-transparent">
+                                    <li><a href="https://facebook.com/" target="_blank" class="color-fb"><i
+                                                class="icon-facebook"></i></a></li>
+                                    <li><a href="https://linkedin.com/" target="_blank" class="color-linkd"><i
+                                                class="icon-linkedin2"></i></a></li>
+                                    <li><a href="https://instagram.com/" target="_blank" class="color-ig"><i
+                                                class="icon-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank" class="color-twitter"><i
+                                                class="icon-twitter"></i></a></li>
+                                    <li><a href="https://youtube.com/" target="_blank" class="color-yt"><i
+                                                class="icon-youtube"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="inner text-center">
-                        <p>Copyright {{ new Date().getFullYear() }} <a href="#">EduBlink</a> Designed By <a
-                                href="https://1.envato.market/YgGJbj" target="_blank">DevsBlink</a>. All Rights Reserved
-                        </p>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner text-center">
+                            <p>Copyright {{ new Date().getFullYear() }} <a href="#">Pointickets</a>. Derechos reservados</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer></template>
+    </footer>
+</template>

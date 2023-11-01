@@ -7,15 +7,15 @@
                         <div class="edu-footer-widget">
                             <div class="logo">
                                 <NuxtLink to="/">
-                                    <img class="logo-dark" src="/images/logo/logo-white.png" alt="Light Logo">
+                                    <img class="logo-dark" src="/images/logo/logo_poin_white.png" style="width:100px;" alt="Light Logo">
                                 </NuxtLink>
                             </div>
                             <p class="description">Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor incidid unt labore dolore.</p>
                             <div class="widget-information">
                                 <ul class="information-list">
-                                    <li><span>Add:</span>70-80 Upper St Norwich NR2</li>
-                                    <li><span>Call:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
-                                    <li><span>Email:</span><a href="mailto:info@edublink.com" target="_blank">info@edublink.com</a></li>
+                                    <li><span>Ubicación:</span>España</li>
+                                    <li><span>Llama:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
+                                    <li><span>Email:</span><a href="mailto:hola@pointicket.com" target="_blank">hola@pointicket.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -36,23 +36,23 @@
                             <h4 class="widget-title">Links</h4>
                             <div class="inner">
                                 <ul class="footer-link link-hover">
-                                    <li><NuxtLink to="/faq">Preguntas frecuentes</NuxtLink></li>
+                                    <li><NuxtLink to="/preguntas-frecuentes">Preguntas frecuentes</NuxtLink></li>
                                     <li><NuxtLink to="/privacy-policy">Politicas de privacidad</NuxtLink></li>
-                                    <li><NuxtLink to="/terms-conditions">Terminos y condiciones</NuxtLink></li>
+                                    <li><NuxtLink to="/terms-condition">Terminos y condiciones</NuxtLink></li>
                                     <li><NuxtLink to="/profile">Mi perfil</NuxtLink></li>
-                                    <li><NuxtLink to="/contact-us">Contact Us</NuxtLink></li>
+                                    <li><NuxtLink to="/contacto">Contacto</NuxtLink></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="edu-footer-widget">
-                            <h4 class="widget-title">Contacts</h4>
+                            <h4 class="widget-title">Contacto</h4>
                             <div class="inner">
-                                <p class="description">Enter your email address to register to our newsletter subscription</p>
+                                <p class="description">Ingresa tu email para obtener un descuento</p>
                                 <div class="input-group footer-subscription-form">
-                                    <input type="email" class="form-control" placeholder="Your email">
-                                    <button class="edu-btn btn-medium" type="button">Subscribe <i class="icon-4"></i></button>
+                                    <input type="email" class="form-control" placeholder="Correo">
+                                    <button class="edu-btn btn-medium" type="button">Suscribete <i class="icon-4"></i></button>
                                 </div>
                                 <ul class="social-share icon-transparent">
                                     <li><a href="https://facebook.com/" target="_blank" class="color-fb"><i class="icon-facebook"></i></a></li>
@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner text-center">
-                            <p>Copyright {{ new Date().getFullYear() }} <a href="#">EduBlink</a> Designed By <a href="https://1.envato.market/YgGJbj" target="_blank">DevsBlink</a>. All Rights Reserved</p>
+                            <p>Copyright {{ new Date().getFullYear() }} <a href="#">Pointickets</a>. Derechos reservados</p>
                         </div>
                     </div>
                 </div>

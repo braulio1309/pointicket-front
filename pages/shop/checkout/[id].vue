@@ -70,7 +70,7 @@
                             </div>
                             <div class="order-payment">
                                 <div class="row justify-content-center">
-                                    <a @click="savePurchase()" class="edu-btn order-place">Pagar <i class="icon-4"></i></a>
+                                    <button @click="savePurchase" class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
                                 </div>
                                 <br><br>
                                 <div class="row justify-content-center">

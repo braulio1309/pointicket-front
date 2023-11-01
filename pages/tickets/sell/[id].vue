@@ -287,7 +287,7 @@ export default {
     },
     head() {
         return {
-            title: 'Gallery Grid'
+            title: 'Vender entradas'
         }
     },
 

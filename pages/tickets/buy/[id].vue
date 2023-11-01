@@ -12,7 +12,8 @@
                                     role="tab">Tipo de entrada</button>
                                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab">Precio
                                     de venta</button>
-                                <button v-if="this.type == 'Electrónica'" class="nav-link" data-bs-toggle="pill" data-bs-target="#file" role="tab">Carga la
+                                <button v-if="this.type == 'Electrónica'" class="nav-link" data-bs-toggle="pill"
+                                    data-bs-target="#file" role="tab">Carga la
                                     entrada</button>
                                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#bank" role="tab">Datos
                                     bancarios</button>
@@ -27,13 +28,14 @@
                                                 <div class="col-lg-8 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">
-                                                            <img src="../../../assets/images/compra-entradas/distribucion.png">
+                                                            <img
+                                                                src="../../../assets/images/compra-entradas/distribucion.png">
                                                         </div>
 
                                                         <div class="text-block">
                                                             <h4 class="title">{{ this.event.data.attributes.title }}</h4>
                                                             <p>{{ this.event.data.attributes.description }}</p>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -72,15 +74,18 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        
+
                                                         <div class="edu-blog-widget widget-tags">
                                                             <div class="inner">
                                                                 <h4 class="widget-title">Tipo de entrada</h4>
                                                                 <div class="content">
                                                                     <div class="tag-list">
-                                                                        <a href="#" @click="handleLinkClick('En papel')">En papel</a>
-                                                                        <a href="#" @click="handleLinkClick('Electrónica')">Electrónica</a>
-                                                                        <a  href="#" @click="handleLinkClick('Móvil')">Móvil</a>
+                                                                        <a href="#" @click="handleLinkClick('En papel')">En
+                                                                            papel</a>
+                                                                        <a href="#"
+                                                                            @click="handleLinkClick('Electrónica')">Electrónica</a>
+                                                                        <a href="#"
+                                                                            @click="handleLinkClick('Móvil')">Móvil</a>
 
                                                                     </div>
                                                                 </div>
@@ -118,7 +123,7 @@
 
                                                     <div class="col-12 text-center" style="margin-top:20px;">
                                                         <div class="form-group">
-                                                            <h5>El precio de cada entrada será de {{lastPrice()}}</h5>
+                                                            <h5>El precio de cada entrada será de {{ lastPrice() }}</h5>
                                                         </div>
 
                                                     </div>
@@ -140,7 +145,7 @@
                                                                 <div class="form-group">
                                                                     <label>Carga tu entrada</label>
                                                                     <input type="file" class="form-control"
-                                                                        placeholder="Precio de adquisición">
+                                                                        @change="handleFileUpload">
                                                                 </div>
 
                                                             </div>
@@ -163,7 +168,8 @@
                                                             <div class="form-group">
                                                                 <label for="reg-name">Títular*</label>
                                                                 <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.holder" readonly>
+                                                                    placeholder="Nombre" v-model="this.user.holder"
+                                                                    readonly>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="log-email">IBAN*</label>
@@ -173,11 +179,13 @@
                                                             <div class="form-group">
                                                                 <label for="reg-name">Tipo de cuenta*</label>
                                                                 <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.type_account" readonly>
+                                                                    placeholder="Nombre" v-model="this.user.type_account"
+                                                                    readonly>
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <button type="button" @click="saveTicket()" class="edu-btn btn-medium">Guardar <i
+                                                                <button type="button" @click="saveTicket()"
+                                                                    class="edu-btn btn-medium">Guardar <i
                                                                         class="icon-4"></i></button>
                                                             </div>
                                                         </form>
@@ -200,7 +208,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
             </div>
         </section>
         <Events />
@@ -243,7 +251,8 @@ export default {
             user: '',
             eventId: '',
             event: null,
-            message: ''
+            message: '',
+            selectedFile: ''
         }
     },
     computed: {
@@ -267,56 +276,62 @@ export default {
         handleLinkClick(value) {
             this.type = value; // Guarda el valor seleccionado en la variable
         },
+        handleFileUpload(event) {
+            this.selectedFile = event.target.files[0];
+            console.log(this.selectedFile)
+        },
         lastPrice() {
-            return (this.newPrice + this.newPrice*0.1).toFixed(2);
+            if (this.newPrice === '')
+                return 0;
+            return (this.newPrice + this.newPrice * 0.1).toFixed(2);
         },
         userData() {
             const userData = window.localStorage.getItem('userData');
             this.user = JSON.parse(userData);
-            console.log(this.user);
         },
         getEvent() {
             const config = useRuntimeConfig();
 
             axios
-                .get(`${config.public.apiBase}events/`+ this.eventId, {
+                .get(`${config.public.apiBase}events/` + this.eventId, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
                 })
                 .then((response) => {
-                   console.log(response.data)
-                    this.event = response.data; 
+                    console.log(response.data)
+                    this.event = response.data;
                 })
                 .catch((error) => {
                     // Maneja los errores, por ejemplo, muestra un mensaje de error
-                    console.error('Error al actualizar el usuario', error);
+                    console.error(error);
                 });
         },
-        saveTicket() {
+        async saveTicket() {
             const config = useRuntimeConfig();
 
-            let data = {
-                user: this.user,
-                Category: this.category,
-                Sector: this.sector,
-                Fila: this.row,
-                startPrice: this.startPrice,
-                newPrice: this.newPrice,
-                endPrice: this.lastPrice(this.newPrice),
-                evento: this.eventId,
-                type: this.type,
-                
-            };
+            var formData = new FormData();
+            formData.append('user', this.user);
+            formData.append('Category', this.category);
+            formData.append('Sector', this.sector);
+            formData.append('Fila', this.row);
+            formData.append('startPrice', this.startPrice);
+            formData.append('newPrice', this.newPrice);
+            formData.append('endPrice', this.lastPrice(this.newPrice));
+            formData.append('evento', this.eventId);
+            formData.append('type', this.type);
+            //formData.append('ticket', this.selectedFile);
+            console.log(formData)
             axios
-                .post(`${config.public.apiBase}tickets`, { data }, {
+                .post(`${config.public.apiBase}tickets`, formData, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                        'Content-Type': 'multipart/form-data',
                     },
                 })
                 .then((response) => {
-                   console.log(response.data)
-                   this.message = response.data; 
+                    console.log(response.data)
+                    this.message = response.data;
                 })
                 .catch((error) => {
                     // Maneja los errores, por ejemplo, muestra un mensaje de error

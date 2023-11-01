@@ -66,15 +66,18 @@
                                                             {{ ticket.attributes.evento.data.attributes.title }}
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Category }}
+                                                            <NuxtLink to="/course/course-details">{{
+                                                                ticket.attributes.Category }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Sector }}
+                                                            <NuxtLink to="/course/course-details">{{
+                                                                ticket.attributes.Sector }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila }}
+                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila
+                                                            }}
                                                             </NuxtLink>
                                                         </h6>
                                                     </div>
@@ -104,15 +107,18 @@
                                                             {{ ticket.attributes.evento.data.attributes.title }}
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Category }}
+                                                            <NuxtLink to="/course/course-details">{{
+                                                                ticket.attributes.Category }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Sector }}
+                                                            <NuxtLink to="/course/course-details">{{
+                                                                ticket.attributes.Sector }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila }}
+                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila
+                                                            }}
                                                             </NuxtLink>
                                                         </h6>
                                                     </div>
@@ -141,15 +147,18 @@
                                                             {{ ticket.attributes.evento.data.attributes.title }}
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Category }}
+                                                            <NuxtLink to="/course/course-details">{{
+                                                                ticket.attributes.Category }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Sector }}
+                                                            <NuxtLink to="/course/course-details">{{
+                                                                ticket.attributes.Sector }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila }}
+                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila
+                                                            }}
                                                             </NuxtLink>
                                                         </h6>
                                                     </div>
@@ -256,7 +265,7 @@
                                                         <input type="text" v-model="user.username" placeholder="CIF">
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
 
                                             <div class="row">
@@ -294,9 +303,7 @@
                                         <div class="form-group mt-4">
                                             <button type="button" class="edu-btn btn-medium" @click="updateUser()">Guardar
                                                 <i class="icon-4"></i></button>
-                                            <div v-if="showResult" class="col-12 success-msg">
-                                                <p>{{ resultText }}</p>
-                                            </div>
+
                                         </div>
                                     </form>
                                 </div>
@@ -304,6 +311,11 @@
                             <div class="tab-pane fade" id="terms-condition" role="tabpanel">
                                 <div class="login-form-box registration-form">
                                     <h3 class="title">Ingrese su dirección</h3>
+                                    <div v-if="showResult" class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                            Se han guardado exitosamente
+                                        </div>
+                                    </div>
                                     <form>
                                         <div class="form-group">
                                             <label for="reg-name">Dirección*</label>
@@ -321,6 +333,11 @@
                             <div class="tab-pane fade" id="bank" role="tabpanel">
                                 <div class="login-form-box registration-form">
                                     <h3 class="title">Ingrese sus datos bancarios</h3>
+                                    <div v-if="showResult" class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                            Se han guardado exitosamente
+                                        </div>
+                                    </div>
                                     <form>
                                         <div class="form-group">
                                             <label for="reg-name">Títular*</label>
@@ -345,6 +362,11 @@
                             <div class="tab-pane fade" id="facturation" role="tabpanel">
                                 <div class="login-form-box registration-form">
                                     <h3 class="title">Ingrese sus datos de facturación</h3>
+                                    <div v-if="showResult" class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                            Se han guardado exitosamente
+                                        </div>
+                                    </div>
                                     <form>
                                         <div class="container">
                                             <div class="row">
@@ -405,9 +427,7 @@
                                         <div class="form-group">
                                             <button type="button" class="edu-btn btn-medium" @click="updateUser()">Guardar
                                                 <i class="icon-4"></i></button>
-                                            <div v-if="showResult" class="col-12 success-msg">
-                                                <p>{{ resultText }}</p>
-                                            </div>
+
                                         </div>
                                     </form>
                                 </div>
@@ -491,6 +511,9 @@ export default {
                     // También puedes actualizar los datos del usuario en tu componente Vue
                     this.user = response.data; // Actualiza "user" con los nuevos datos
                     this.showResult = true;
+                    setTimeout(() => {
+                        this.showResult = false;
+                    }, 2000);
                     window.localStorage.setItem('userData', JSON.stringify(response.data))
                 })
                 .catch((error) => {
@@ -578,7 +601,7 @@ export default {
                     console.error('Error al actualizar el usuario', error);
                 });
         },
-        getAllTickets(){
+        getAllTickets() {
             const config = useRuntimeConfig();
 
             const query = qs.stringify({

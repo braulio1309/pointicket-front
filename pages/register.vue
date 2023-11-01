@@ -25,10 +25,10 @@
                             <input type="text" placeholder="123465" v-model="phone">
                             <span class="password-show"><i class="icon-76"></i></span>
                         </div>
-                        <div class="form-group chekbox-area">
-                            <div class="edu-form-check">
-                                <input type="checkbox" id="terms-condition">
-                                <label for="terms-condition">Estoy de acuerdo con los
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="terms-condition" v-model="checkbox">
+                                <label class="form-check-label" for="terms-condition">Estoy de acuerdo con los
                                     <NuxtLink to="/terms-condition">Terminos y condiciones</NuxtLink>
                                 </label>
                             </div>
@@ -59,7 +59,8 @@ export default {
             name: '',
             phone: '',
             error: false,
-            errorMsg: `An error occurred, please try again`
+            errorMsg: `An error occurred, please try again`,
+            checkbox: true
         }
     },
     methods: {
@@ -75,7 +76,7 @@ export default {
                 const { jwt, user } = res.data
                 window.localStorage.setItem('jwt', jwt)
                 window.localStorage.setItem('userData', JSON.stringify(user))
-                this.$router.push('/')
+                this.$router.push('/login')
             } catch (error) {
                 console.log(error)
                 this.error = true

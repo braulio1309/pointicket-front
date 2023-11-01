@@ -7,8 +7,16 @@
 
         <section class="checkout-page-area section-gap-equal" v-if="this.ticket">
             <div class="container">
+                <div v-if="result" class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">¡Compra exitosa!</h4>
+                        <p>Te llegará un correo con los detalles de tu compra. Serás dirigido automaticamente al inicio.</p>
+                        <hr>
+                        <p class="mb-0">Cualquier duda puedes contactarnos por los medios indicados.
+                        </p>
+                    </div>
+                </div>
                 <form>
-
                     <div class="row row--25">
                         <div class="col-lg-6">
                             <div class="checkout-billing">
@@ -50,19 +58,23 @@
                                     <table class="table summery-table">
                                         <tbody>
                                             <tr>
-                                                <td> {{ this.ticket.attributes.Category }}, {{ this.ticket.attributes.evento.data.attributes.title }}, Fila {{ this.ticket.attributes.Fila }}</td>
+                                                <td> {{ this.ticket.attributes.Category }}, {{
+                                                    this.ticket.attributes.evento.data.attributes.title }}, Fila {{
+        this.ticket.attributes.Fila }}</td>
                                                 <td><span class="quantity">x {{ this.ticket.attributes.seat }}</span></td>
                                                 <td> €{{ this.ticket.attributes.endPrice }}</td>
                                             </tr>
 
                                             <tr class="order-total">
                                                 <td>Iva</td>
-                                                <td>€{{this.ticket.attributes.endPrice * 0.1}}</td>
+                                                <td>€{{ this.ticket.attributes.endPrice * 0.1 }}</td>
                                             </tr>
 
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td>€{{this.ticket.attributes.endPrice * this.ticket.attributes.seat + (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1)}}</td>
+                                                <td>€{{ this.ticket.attributes.endPrice * this.ticket.attributes.seat +
+                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1) }}
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -70,7 +82,8 @@
                             </div>
                             <div class="order-payment">
                                 <div class="row justify-content-center">
-                                    <button type="button" @click="savePurchase" class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
+                                    <button type="button" @click="savePurchase" :disabled="isLoading" class="edu-btn btn-medium">Pagar <i
+                                            class="icon-4"></i></button>
                                 </div>
                                 <br><br>
                                 <div class="row justify-content-center">
@@ -125,8 +138,10 @@ export default {
             title: 'Pagar',
             ticketId: null,
             ticket: null,
-            user: ''
-            
+            user: '',
+            result: false, 
+            isLoading: false
+
         }
     },
     head() {
@@ -135,7 +150,7 @@ export default {
         }
     },
     methods: {
-        
+
         getEvent() {
             const config = useRuntimeConfig();
             axios
@@ -152,6 +167,7 @@ export default {
                 });
         },
         savePurchase() {
+            this.isLoading = true;
             const config = useRuntimeConfig();
             let data = {
                 user: this.user,
@@ -161,7 +177,6 @@ export default {
                 taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1,
             };
 
-            console.log(data)
             axios
                 .post(`${config.public.apiBase}purchases`, { data }, {
                     headers: {
@@ -169,7 +184,12 @@ export default {
                     },
                 })
                 .then((response) => {
-                   this.message = response.data; 
+                    this.message = response.data;
+                    this.result =  true;
+                    setTimeout(() => {
+                        this.$router.push('/')
+                    }, 4000)
+
                 })
                 .catch((error) => {
                     // Maneja los errores, por ejemplo, muestra un mensaje de error

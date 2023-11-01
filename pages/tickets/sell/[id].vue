@@ -4,8 +4,19 @@
         <HeaderOne />
         <section class="">
             <div class="container">
+
                 <div class="edu-course-area course-area-3">
-                    <div class="container">
+                    <div v-if="finish" class="col-12 mt--50 mb--50">
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">¡Entrada registrada exitosamente!</h4>
+                            <p>Tu entrada está en una etapa de aprobación, te llegará un correo en el momento de la
+                                aprobación.</p>
+                            <hr>
+                            <p class="mb-0">Cualquier duda puedes contactarnos por los medios indicados.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container" v-if="!finish">
                         <div class="isotope-wrapper" style="margin-top: 100px;">
                             <div class="isotop-button isotop-filter nav">
                                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#undergraduate"
@@ -185,8 +196,8 @@
 
                                                             <div class="form-group">
                                                                 <button type="button" @click="saveTicket"
-                                                                    class="edu-btn btn-medium">Guardar <i
-                                                                        class="icon-4"></i></button>
+                                                                    class="edu-btn btn-medium" :disabled="isLoading">Guardar
+                                                                    <i class="icon-4"></i></button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -252,7 +263,9 @@ export default {
             eventId: '',
             event: null,
             message: '',
-            selectedFile: ''
+            selectedFile: '',
+            finish: false,
+            isLoading: false
         }
     },
     computed: {
@@ -309,16 +322,20 @@ export default {
         },
         async saveTicket() {
             const config = useRuntimeConfig();
-            
-            const form = new FormData();
+            this.isLoading = true;
+            let file = null;
+            if (this.selectedFile) {
+                const form = new FormData();
 
-            form.append('files', this.selectedFile);
+                form.append('files', this.selectedFile);
 
-            const response = await fetch(`${config.public.apiBase}upload`, {
-                method: 'post',
-                body: form,
-            });
-            const file = await response.json();
+                const response = await fetch(`${config.public.apiBase}upload`, {
+                    method: 'post',
+                    body: form,
+                });
+                file = await response.json();
+            }
+
             let data = {
                 user: this.user,
                 Category: this.category,
@@ -329,7 +346,7 @@ export default {
                 endPrice: this.lastPrice(this.newPrice),
                 evento: this.eventId,
                 type: this.type,
-                ticket: file[0]
+                ticket: (this.selectedFile)?file[0]: null
             }
             axios
                 .post(`${config.public.apiBase}tickets`, { data }, {
@@ -340,6 +357,10 @@ export default {
                 .then((response) => {
                     console.log(response.data)
                     this.message = response.data;
+                    this.finish = true;
+                    setTimeout(() => {
+                        this.$router.push('/')
+                    }, 4000);
                 })
                 .catch((error) => {
                     // Maneja los errores, por ejemplo, muestra un mensaje de error

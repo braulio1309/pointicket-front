@@ -44,6 +44,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row g-lg-6">
+                                    <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label>Cupón de descuento</label>
+                                            <input type="text" id="email" v-model="coupon">
+                                            <p v-if="resultCouponAmount">Cupon disponible - €{{ this.amountDiscount }}</p>
+                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ this.percentageDiscount }}%</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group" style="margin-top: 35px;">
+
+                                            <button type="button" @click="verifyCoupon" class="edu-btn btn-small">Verificar
+                                                <i class="icon-4"></i></button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
                                 <div class="form-group mt--50 mb-0">
                                     <label>Observaciones</label>
                                     <textarea id="notes" rows="4"
@@ -70,10 +90,28 @@
                                                 <td>€{{ this.ticket.attributes.endPrice * 0.1 }}</td>
                                             </tr>
 
+                                            <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
+                                                <td>Descuento</td>
+                                                <td v-if="resultCouponAmount">€{{ this.amountDiscount }}</td>
+                                                <td v-if="resultCouponPercentage">{{ this.percentage }} %</td>
+
+                                            </tr>
+
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td>€{{ this.ticket.attributes.endPrice * this.ticket.attributes.seat +
+                                                <td >€{{ this.ticket.attributes.endPrice * this.ticket.attributes.seat +
                                                     (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1) }}
+                                                </td>
+                                            </tr>
+                                            <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
+                                                <td>Total con descuento aplicado</td>
+                                                
+                                                <td v-if="resultCouponAmount">€{{ (this.ticket.attributes.endPrice * this.ticket.attributes.seat +
+                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1)) - this.amountDiscount }}
+                                                </td>
+                                                <td v-if="resultCouponPercentage">€{{ (this.ticket.attributes.endPrice * this.ticket.attributes.seat +
+                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1)) - ((this.percentageDiscount/100) * (this.ticket.attributes.endPrice * this.ticket.attributes.seat +
+                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1))) }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -82,8 +120,8 @@
                             </div>
                             <div class="order-payment">
                                 <div class="row justify-content-center">
-                                    <button type="button" @click="savePurchase" :disabled="isLoading" class="edu-btn btn-medium">Pagar <i
-                                            class="icon-4"></i></button>
+                                    <button type="button" @click="savePurchase" :disabled="isLoading"
+                                        class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
                                 </div>
                                 <br><br>
                                 <div class="row justify-content-center">
@@ -124,6 +162,7 @@ import HeaderOne from '~~/components/header/HeaderOne.vue';
 import FooterOne from '~~/components/footer/FooterOne.vue';
 import ScrollToTop from '~~/components/footer/ScrollToTop.vue';
 import axios from 'axios';
+import qs from 'qs';
 
 export default {
     components: {
@@ -139,14 +178,21 @@ export default {
             ticketId: null,
             ticket: null,
             user: '',
-            result: false, 
-            isLoading: false
+            result: false,
+            isLoading: false,
+            coupon: '',
+            couponVerify: false,
+            resultCouponAmount: false,
+            resultCouponPercentage: false,
+            percentgeDiscount: 0,
+            amountDiscount: 0
+
 
         }
     },
     head() {
         return {
-            title: 'Checkout Page'
+            title: 'Finalizar pago'
         }
     },
     methods: {
@@ -161,6 +207,58 @@ export default {
                 })
                 .then((response) => {
                     this.ticket = response.data.data;
+                })
+                .catch((error) => {
+                    console.error('Error al buscar al evento', error);
+                });
+        },
+        async verifyCoupon() {
+            const config = useRuntimeConfig();
+
+            const currentDate = new Date().toISOString(); // Obtén la fecha y hora actual en formato ISO8601
+
+            const query = qs.stringify({
+                filters: {
+                    $and: [
+                        {
+                            title: {
+                                $eq: this.coupon,
+                            },
+                        },
+                        {
+                            startDate: {
+                                $lte: currentDate, // Comprueba si startDate es menor o igual a la fecha actual
+                            },
+                        },
+                        {
+                            expirationDate: {
+                                $gte: currentDate, // Comprueba si expirationDate es mayor o igual a la fecha actual
+                            },
+                        },
+                    ],
+                },
+            }, {
+                encodeValuesOnly: true, // prettify URL
+            });
+
+            axios
+                .get(`${config.public.apiBase}coupons?${query}`, {
+                    headers: {
+                        Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                    },
+                })
+                .then((response) => {
+                    let amount =  response.data.data[0].attributes.amount;
+                    let percentage =  response.data.data[0].attributes.percentage;
+                    if(amount){
+                        this.amountDiscount = amount;
+                        this.resultCouponAmount = true;
+
+                    }
+                    if(percentage){
+                        this.percentageDiscount = percentage;
+                        this.resultCouponPercentage = true;
+                    }
                 })
                 .catch((error) => {
                     console.error('Error al buscar al evento', error);
@@ -185,7 +283,7 @@ export default {
                 })
                 .then((response) => {
                     this.message = response.data;
-                    this.result =  true;
+                    this.result = true;
                     setTimeout(() => {
                         this.$router.push('/')
                     }, 4000)

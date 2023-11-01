@@ -301,7 +301,7 @@
 
 
                                         <div class="form-group mt-4">
-                                            <button type="button" class="edu-btn btn-medium" @click="updateUser()">Guardar
+                                            <button type="button" class="edu-btn btn-medium" @click="updateUser">Guardar
                                                 <i class="icon-4"></i></button>
 
                                         </div>
@@ -324,7 +324,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <button @click="updateUser()" type="button" class="edu-btn btn-medium">Guardar
+                                            <button @click="updateUser" type="button" class="edu-btn btn-medium">Guardar
                                                 <i class="icon-4"></i></button>
                                         </div>
                                     </form>

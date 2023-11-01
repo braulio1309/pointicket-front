@@ -70,7 +70,7 @@
                             </div>
                             <div class="order-payment">
                                 <div class="row justify-content-center">
-                                    <button @click="savePurchase" class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
+                                    <button type="button" @click="savePurchase" class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
                                 </div>
                                 <br><br>
                                 <div class="row justify-content-center">
@@ -146,7 +146,6 @@ export default {
                 })
                 .then((response) => {
                     this.ticket = response.data.data;
-                    console.log(this.ticket)
                 })
                 .catch((error) => {
                     console.error('Error al buscar al evento', error);
@@ -154,7 +153,6 @@ export default {
         },
         savePurchase() {
             const config = useRuntimeConfig();
-
             let data = {
                 user: this.user,
                 ticket: this.ticket,
@@ -162,6 +160,8 @@ export default {
                 total: this.ticket.attributes.endPrice * this.ticket.attributes.seat + (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1),
                 taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1,
             };
+
+            console.log(data)
             axios
                 .post(`${config.public.apiBase}purchases`, { data }, {
                     headers: {

@@ -184,7 +184,7 @@
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <button type="button" @click="saveTicket()"
+                                                                <button type="button" @click="saveTicket"
                                                                     class="edu-btn btn-medium">Guardar <i
                                                                         class="icon-4"></i></button>
                                                             </div>
@@ -309,24 +309,32 @@ export default {
         },
         async saveTicket() {
             const config = useRuntimeConfig();
+            
+            const form = new FormData();
 
-            var formData = new FormData();
-            formData.append('user', this.user);
-            formData.append('Category', this.category);
-            formData.append('Sector', this.sector);
-            formData.append('Fila', this.row);
-            formData.append('startPrice', this.startPrice);
-            formData.append('newPrice', this.newPrice);
-            formData.append('endPrice', this.lastPrice(this.newPrice));
-            formData.append('evento', this.eventId);
-            formData.append('type', this.type);
-            //formData.append('ticket', this.selectedFile);
-            console.log(formData)
+            form.append('files', this.selectedFile);
+
+            const response = await fetch(`${config.public.apiBase}upload`, {
+                method: 'post',
+                body: form,
+            });
+            const file = await response.json();
+            let data = {
+                user: this.user,
+                Category: this.category,
+                Sector: this.sector,
+                Fila: this.row,
+                startPrice: this.startPrice,
+                newPrice: this.newPrice,
+                endPrice: this.lastPrice(this.newPrice),
+                evento: this.eventId,
+                type: this.type,
+                ticket: file[0]
+            }
             axios
-                .post(`${config.public.apiBase}tickets`, formData, {
+                .post(`${config.public.apiBase}tickets`, { data }, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
-                        'Content-Type': 'multipart/form-data',
                     },
                 })
                 .then((response) => {

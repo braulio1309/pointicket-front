@@ -66,17 +66,17 @@
                                                             {{ ticket.attributes.evento.data.attributes.title }}
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{
+                                                            <NuxtLink to="//">{{
                                                                 ticket.attributes.Category }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{
+                                                            <NuxtLink to="//">{{
                                                                 ticket.attributes.Sector }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila
+                                                            <NuxtLink to="//">{{ ticket.attributes.Fila
                                                             }}
                                                             </NuxtLink>
                                                         </h6>
@@ -107,17 +107,17 @@
                                                             {{ ticket.attributes.evento.data.attributes.title }}
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{
+                                                            <NuxtLink to="//">{{
                                                                 ticket.attributes.Category }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{
+                                                            <NuxtLink to="//">{{
                                                                 ticket.attributes.Sector }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila
+                                                            <NuxtLink to="//">{{ ticket.attributes.Fila
                                                             }}
                                                             </NuxtLink>
                                                         </h6>
@@ -147,17 +147,17 @@
                                                             {{ ticket.attributes.evento.data.attributes.title }}
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{
+                                                            <NuxtLink to="//">{{
                                                                 ticket.attributes.Category }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{
+                                                            <NuxtLink to="//">{{
                                                                 ticket.attributes.Sector }}
                                                             </NuxtLink>
                                                         </h6>
                                                         <h6 class="title">
-                                                            <NuxtLink to="/course/course-details">{{ ticket.attributes.Fila
+                                                            <NuxtLink to="//">{{ ticket.attributes.Fila
                                                             }}
                                                             </NuxtLink>
                                                         </h6>

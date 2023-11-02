@@ -3,7 +3,7 @@
         <div class="inner">
             <div class="thumbnail">
                 <NuxtLink :to="'/tickets/'+type+'/'+ event.id">
-                    <img :src="this.url+event.attributes.image.data[0].attributes.url" :alt="event.attributes.title">
+                    <img :src="this.url.substring(0, this.url.length - 1)+event.attributes.image.data[0].attributes.url" :alt="event.attributes.title">
                 </NuxtLink>
                 <div class="time-top">
                     <span class="duration"><i class="icon-61"></i>{{ event.attributes.title }}</span>
@@ -14,7 +14,7 @@
                 <h6 class="title">
                     <NuxtLink :to="'/tickets/'+type+'/'+ event.id">{{ event.attributes.title }}</NuxtLink>
                 </h6>
-                <a href="#" class="edu-btn btn-large">{{ (type === 'buy')? 'Comprar': 'Vender' }}</a>
+                <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'buy')? 'Comprar': 'Vender' }}</a>
 
                 
             </div>

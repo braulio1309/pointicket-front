@@ -7,7 +7,7 @@
                         <div class="inner">
                             <div class="content text-md-end">
                                 <span class="subtitle">Escribenos:</span>
-                                <h3 class="title"><a href="mailto:info@edublink" target="_blank">info@edublink</a></h3>
+                                <h3 class="title"><a href="mailto:info@pointickets.com" target="_blank">info@pointickets.com</a></h3>
                             </div>
                             <div class="sparator">
                                 <span>o</span>

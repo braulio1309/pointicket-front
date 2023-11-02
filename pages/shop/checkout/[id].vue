@@ -284,9 +284,6 @@ export default {
                 .then((response) => {
                     this.message = response.data;
                     this.result = true;
-                    setTimeout(() => {
-                        this.$router.push('/')
-                    }, 4000)
 
                 })
                 .catch((error) => {

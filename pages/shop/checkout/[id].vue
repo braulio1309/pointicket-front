@@ -10,7 +10,7 @@
                 <div v-if="result" class="col-12">
                     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading">¡Compra exitosa!</h4>
-                        <p>Te llegará un correo con los detalles de tu compra. Serás dirigido automaticamente al inicio.</p>
+                        <p>Te llegará un correo con los detalles de tu compra. </p>
                         <hr>
                         <p class="mb-0">Cualquier duda puedes contactarnos por los medios indicados.
                         </p>

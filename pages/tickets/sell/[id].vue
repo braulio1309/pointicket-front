@@ -63,6 +63,14 @@
                                                                     </div>
 
                                                                 </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Cantidad de asientos</label>
+                                                                        <input type="number" class="form-control"
+                                                                            placeholder="Asientos" v-model="seat" max="4" min="1">
+                                                                    </div>
+
+                                                                </div>
                                                             </div>
 
                                                             <div class="row">
@@ -265,7 +273,8 @@ export default {
             message: '',
             selectedFile: '',
             finish: false,
-            isLoading: false
+            isLoading: false,
+            seat: 1
         }
     },
     computed: {
@@ -275,7 +284,6 @@ export default {
     },
     methods: {
         filterHandler(cat) {
-            console.log(cat)
             this.selectedCategory = cat;
             if (this.selectedCategory === 'all') {
                 this.filterData = this.items
@@ -346,7 +354,8 @@ export default {
                 endPrice: this.lastPrice(this.newPrice),
                 evento: this.eventId,
                 type: this.type,
-                ticket: (this.selectedFile)?file[0]: null
+                ticket: (this.selectedFile)?file[0]: null,
+                seat: this.seat
             }
             axios
                 .post(`${config.public.apiBase}tickets`, { data }, {

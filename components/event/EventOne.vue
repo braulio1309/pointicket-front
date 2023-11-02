@@ -3,7 +3,7 @@
         <div class="inner">
             <div class="thumbnail">
                 <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">
-                    <img :src="this.url + eventInfo.attributes.image.data[0].attributes.url" />
+                    <img :src="this.url.substring(0, this.url.length - 1) + eventInfo.attributes.image.data[0].attributes.url" />
                 </NuxtLink>
                 <div class="event-time">
                     <span><i class="icon-33"></i>{{ eventInfo.time }}</span>

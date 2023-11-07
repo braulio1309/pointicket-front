@@ -11,6 +11,11 @@
                             Datos incorrectos, intente de nuevo
                         </div>
                     </div>
+                    <div v-if="this.auth" class="col-12">
+                        <div class="alert alert-info" role="alert">
+                            {{ this.auth }}
+                        </div>
+                    </div>
                     <form>
                         <div class="form-group">
                             <label for="current-log-email">Email*</label>
@@ -53,8 +58,13 @@ export default {
             email: '',
             password: '',
             error: false,
-            errorMsg: `An error occurred, please try again`
+            errorMsg: `An error occurred, please try again`,
+            auth: null
         }
+    },
+    mounted() {
+        this.auth = window.localStorage.getItem('notLogged');
+        window.localStorage.removeItem('notLogged');
     },
     methods: {
         async login() {

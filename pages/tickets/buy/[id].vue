@@ -27,7 +27,7 @@
                                                 </div>
                                             </div>
                                             <div class="row row--30">
-                                                <div class="col-lg-8 edu-blog-sidebar">
+                                                <div class="col-lg-6 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">
                                                             <img
@@ -40,25 +40,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-6">
                                                     <div class="edu-blog-sidebar">
-                                                        <!--<div class="edu-blog-widget widget-tags">
-                                                            <div class="inner">
-                                                                <h4 class="widget-title">Tipo de entrada</h4>
-                                                                <div class="content">
-                                                                    <div class="tag-list">
-                                                                        <a href="#">En papel</a>
-                                                                        <a href="#">Electrónica</a>
-                                                                        <a href="#">Móvil</a>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>-->
-
-                                                        <div class="col-lg- order-lg-1 col-pr--35">
+                                                        <div class="col-lg-12 order-lg-1 col-pr--35">
                                                             <div class="row g-5">
-
                                                                 <div class="col-12" v-for="event in getItems"
                                                                     :key="event.id">
                                                                     <div class="edu-event-list event-list-2">
@@ -73,23 +58,28 @@
                                                                                             </li>
                                                                                         </ul>
                                                                                         <h6 class="title">
-                                                                                            <NuxtLink :to="'/shop/checkout/'+ event.id">{{
-                                                                                                event.attributes.seat }}
+                                                                                            <NuxtLink
+                                                                                                :to="'/shop/checkout/' + event.id">
+                                                                                                {{
+                                                                                                    event.attributes.seat }}
                                                                                                 Entradas - {{
                                                                                                     event.attributes.Category }}
                                                                                             </NuxtLink>
                                                                                         </h6>
                                                                                         <h7 class="title">
-                                                                                            <NuxtLink to="/shop/checkout">€{{
-                                                                                                event.attributes.endPrice }}
+                                                                                            <NuxtLink
+                                                                                                :to="'/shop/checkout/' + event.id">
+                                                                                                €{{
+                                                                                                    event.attributes.endPrice }}
                                                                                             </NuxtLink>
                                                                                         </h7>
                                                                                     </div>
                                                                                     <div class="col-sm-6">
                                                                                         <div class="read-more-btn">
-                                                                                            <NuxtLink
-                                                                                                class="edu-btn btn-medium btn-border"
-                                                                                                :to="'/shop/checkout/'+ event.id">
+                                                                                            <NuxtLink style="color: white;"
+                                                                                                id="btn"
+                                                                                                class="edu-btn btn-medium"
+                                                                                                :to="'/shop/checkout/' + event.id">
                                                                                                 Comprar <i
                                                                                                     class="icon-4"></i>
                                                                                             </NuxtLink>
@@ -130,6 +120,31 @@
     </div>
 </template>
 
+<style lang="scss">
+.course-area-3 {
+    .isotop-button {
+        button {
+
+            &:hover,
+            &.is-checked {
+                background-color: var(--color-secondary);
+                color: var(--color-white);
+            }
+
+            &.active:after {
+                bottom: -10px;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    #edu-btn:hover {
+        color: black !important;
+    }
+}
+
+</style>
+
 <script>
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
@@ -154,7 +169,7 @@ export default {
         return {
             title: 'Vender Entradas',
             filterData: [],
-            selectedCategory: 'all',
+            selectedCategory: 'Todas',
             event: null,
             eventId: null,
             fullTickets: [],
@@ -229,7 +244,7 @@ export default {
     },
     computed: {
         filterCategory() {
-            return ['all', ...new Set(this.items.map((elem) => elem.category[0]).flat())]
+            return ['Todas', ...new Set(this.items.map((elem) => elem.category[0]).flat())]
         },
         getItems() {
             let start = (this.currentPage - 1) * this.perPage;
@@ -243,7 +258,7 @@ export default {
     methods: {
         filterHandler(cat) {
             this.selectedCategory = cat;
-            if (this.selectedCategory === 'all') {
+            if (this.selectedCategory === 'Todas') {
                 this.eventItems = this.fullTickets;
             } else {
                 this.eventItems = this.fullTickets.filter((item) => item.attributes.seat == cat[0]);
@@ -281,9 +296,15 @@ export default {
         },
     },
     mounted() {
-        this.filterData = this.items;
-        this.eventId = this.$route.params.id;
-        this.getEvent();
+        if (window.localStorage.getItem('jwt') == null) {
+            window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar una entrada');
+            this.$router.push('/login');
+        } else {
+            this.filterData = this.items;
+            this.eventId = this.$route.params.id;
+            this.getEvent();
+        }
+
     },
     head() {
         return {

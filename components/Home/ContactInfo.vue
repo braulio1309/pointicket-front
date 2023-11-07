@@ -7,7 +7,8 @@
                         <div class="inner">
                             <div class="content text-md-end">
                                 <span class="subtitle">Escribenos:</span>
-                                <h3 class="title"><a href="mailto:info@pointickets.com" target="_blank">info@pointickets.com</a></h3>
+                                <h3 class="title"><a href="mailto:info@pointickets.com"
+                                        target="_blank">info@pointickets.com</a></h3>
                             </div>
                             <div class="sparator">
                                 <span>o</span>
@@ -32,30 +33,40 @@
                     <div class="col-lg-8">
                         <div class="contact-form">
                             <div class="section-title section-center">
-                                <h3 class="title">¿Tu Evento no está disponible? Contáctanos por Whatsapp o llena este formulario</h3>
+                                <h3 class="title">¿Tu Evento no está disponible? Contáctanos por Whatsapp o llena este
+                                    formulario</h3>
+                            </div>
+                            <div v-if="showResult" class="col-12">
+                                <div class="alert alert-success" role="alert">
+                                    Gracias por contactarnos!
+                                </div>
                             </div>
 
                             <form class="rnt-contact-form rwt-dynamic-form" ref="form" @submit.prevent="sendEmail">
                                 <div class="row row--10">
                                     <div class="form-group col-lg-6">
-                                        <input type="text" name="fullname" placeholder="Your Name">
+                                        <input type="text" name="fullname" v-model="name" placeholder="Nombre">
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input type="email" name="email" placeholder="Your Email">
+                                        <input type="email" name="email" v-model="email" placeholder="Email">
                                     </div>
                                     <div class="form-group col-12">
-                                        <input type="tel" name="phone" placeholder="Phone number">
+                                        <input type="tel" name="phone" v-model="phone" placeholder="Telefono">
                                     </div>
                                     <div class="form-group col-12">
-                                        <textarea name="message" cols="30" rows="6"
-                                            placeholder="Type your message"></textarea>
+                                        <textarea name="message" cols="30" rows="6" v-model="message"
+                                            placeholder="Mensaje"></textarea>
                                     </div>
                                     <div class="form-group col-12 text-center">
-                                        <button class="rn-btn edu-btn submit-btn" name="submit" type="submit">Submit Now <i
-                                                class="icon-4"></i></button>
-                                        <div v-if="showResult" class="col-12 success-msg">
-                                            <p>{{ resultText }}</p>
-                                        </div>
+                                        <button class="rn-btn edu-btn btn-medium submit-btn" name="submit" type="submit"
+                                            :disabled="isLoading" @click="handleSubmit">
+                                            <span v-if="isLoading">
+                                                Cargando... <i class="fas fa-spinner fa-spin"></i>
+                                            </span>
+                                            <span v-else>
+                                                Enviar<i class="icon-4"></i>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -75,18 +86,52 @@
 
 <script>
 import MouseMove from '../animation/MouseMove.vue';
-
+import axios from 'axios';
 
 export default {
     name: "app",
     components: {
         MouseMove
     },
-    data(){
+    data() {
         return {
-            showResult: false
+            resultText: '',
+            showResult: false,
+            isLoading: false,
+            message: '',
+            name: '',
+            phone: '',
+            email: ''
         }
-    }
-    
+    },
+    methods: {
+        handleSubmit() {
+            this.isLoading = true;
+            this.showResult = false;
+
+            const config = useRuntimeConfig();
+
+            let data = {
+                message: this.message,
+                name: this.name,
+                phone: this.phone,
+                email: this.email,
+            };
+            axios
+                .post(`${config.public.apiBase}contacts`, { data })
+                .then((response) => {
+                    console.log(response.data)
+                    this.showResult = true;
+                    this.isLoading = false;
+
+                })
+                .catch((error) => {
+                    // Maneja los errores, por ejemplo, muestra un mensaje de error
+                    console.error('Error al actualizar el usuario', error);
+                });
+        },
+
+    },
+
 };
 </script>

@@ -17,7 +17,7 @@
                 <h5 class="title">
                     <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">{{ eventInfo.attributes.title }}</NuxtLink>
                 </h5>
-                <p>{{ eventInfo.attributes.description }}</p>
+                <p v-html="eventInfo.attributes.description"></p>
                 <ul class="event-meta">
                     <li><i class="icon-40"></i>{{ eventInfo.location }}</li>
                 </ul>

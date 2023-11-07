@@ -3,7 +3,7 @@
         <div class="container">
             <SectionTitle preTitle='Ultimos eventos' title='ULTIMOS EVENTOS' alignment='section-center' />
             <div class="row g-5">
-                <div class="col-md-6 col-xl-3" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800"
+                <div class="col-md-6 col-xl-3" data-aos-delay="10" data-aos="fade-up" data-aos-duration="100"
                     v-for="event in events.slice(0, 8)" :key="event.id">
                     <LastEvents :event="event" :type="'buy'" />
                 </div>
@@ -38,13 +38,8 @@ export default {
         
         getEvents() {
             const config = useRuntimeConfig();
-            
 
-            axios.get(`${config.public.apiBase}events?populate=*`, {
-                headers: {
-                    Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
-                },
-            })
+            axios.get(`${config.public.apiBase}events?populate=*`)
             .then(response => {
                 this.events = response.data.data;
             })

@@ -43,6 +43,9 @@
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#facturation"
                                         type="button" role="tab" aria-selected="false">Facturación</button>
                                 </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" type="button" @click="logout" >Cerrar sesión</button>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -170,7 +173,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="com-policy" role="tabpanel">
-                                
+
                             </div>
                             <div class="tab-pane fade" id="pay-option" role="tabpanel">
                                 <div class="login-form-box registration-form">
@@ -372,6 +375,7 @@
 </template>
 
 <script>
+
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
 import FooterOne from '~~/components/footer/FooterOne.vue';
@@ -464,6 +468,11 @@ export default {
                 .catch((error) => {
                     console.error('Error al actualizar el usuario', error);
                 });
+        },
+        logout(){
+            window.localStorage.removeItem('jwt');
+            window.localStorage.removeItem('user');
+            this.$router.push('/');
         },
         getTicketsSells() {
             const config = useRuntimeConfig();

@@ -9,9 +9,7 @@
                             <span class="pre-title">Testimonios</span>
                             <h2 class="title">Que opinan de nuestro sistema de entradas</h2>
                             <span class="shape-line"><i class="icon-19"></i></span>
-                            <p>Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor incididunt labore
-                                dolore magna aliquaenim ad minim.</p>
-                            <NuxtLink to="#" class="edu-btn btn-large">View All<i class="icon-4"></i></NuxtLink>
+                            
                         </div>
                     </div>
                 </div>

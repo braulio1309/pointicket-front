@@ -4,7 +4,10 @@
       <div class="breadcrumb-inner">
         <div class="row">
           <div class="col-sm-10">
-            <input class="form-control" v-model="data" placeholder="Buscar eventos">
+            <div>
+              <input v-model="data" placeholder="Buscar eventos" style="border-radius: 10px;">
+
+            </div>
           </div>
           <div class="col-sm-2">
             <a @click="saveSearch" class="edu-btn btn-large">Buscar</a>

@@ -14,10 +14,10 @@
                             <ul class="address-list">
                                 <li>
                                     <h5 class="title">Email</h5>
-                                    <p><a href="mailto:hello@pointickets.com" target="_blank">hello@pointickets.com</a></p>
+                                    <p><a href="mailto:info@pointickets.com" target="_blank">info@pointickets.com</a></p>
                                 </li>
                                 <li>
-                                    <h5 class="title">Telefono</h5>
+                                    <h5 class="title">Teléfono</h5>
                                     <p><a href="tel:+0914135548598">(+091) 413 554 8598</a></p>
                                 </li>
                             </ul>

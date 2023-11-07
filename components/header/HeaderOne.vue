@@ -1,6 +1,6 @@
 <template>
     <header class="edu-header header-style-1 header-fullwidth no-topbar">
-        <HeaderTopOne v-if="showHeaderTop" />
+        <HeaderTopOne v-if="true" />
         <div class="header-mainmenu" :class="{ 'edu-sticky': isSticky }">
             <div class="container-fluid">
                 <div class="header-navbar">
@@ -20,12 +20,7 @@
                     </div>
                     <div class="header-right">
                         <ul class="header-action">
-                            <li class="search-bar">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <button class="search-btn" type="button"><i class="icon-2"></i></button>
-                                </div>
-                            </li>
+                            
                             <li class="header-btn">
                                 <NuxtLink to="/event/sell" class="edu-btn btn-medium">VENDER ENTRADAS <i class="icon-4"></i>
                                 </NuxtLink>

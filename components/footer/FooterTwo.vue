@@ -17,8 +17,8 @@
                                 <ul class="information-list">
                                     <li><span>Ubicación:</span>España</li>
                                     <li><span>Llama:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
-                                    <li><span>Email:</span><a href="mailto:hola@pointicket.com"
-                                            target="_blank">hola@pointicket.com</a></li>
+                                    <li><span>Email:</span><a href="mailto:info@pointicket.com"
+                                            target="_blank">info@pointicket.com</a></li>
                                 </ul>
                             </div>
                         </div>

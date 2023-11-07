@@ -17,7 +17,7 @@
                                     <HeroIconOne />
                                 </div>
                                 <div class="content">
-                                    <h5 class="title">3,020 <br>Online Courses</h5>
+                                    <h5 class="title">Todos los pedidos están garantizados al 100%. Contarás con un Servicio de Atención al Cliente personalizado. Garantizamos todos los pedidos para que puedas comprar y vender entradas con total confianza. Fans de todo el mundo confían en Pointickets, que te permite comprar y vender entradas de forma fácil, segura y a un precio justo</h5>
                                 </div>
                             </div>
                             <div class="features-box color-secondary-style edublink-svg-animate">

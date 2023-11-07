@@ -21,12 +21,15 @@
                             <div class="isotop-button isotop-filter nav">
                                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#undergraduate"
                                     role="tab">Tipo de entrada</button>
-                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab">Precio
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab"
+                                    :disabled="!type || !sector || !category || !row">Precio
                                     de venta</button>
                                 <button v-if="this.type == 'Electrónica'" class="nav-link" data-bs-toggle="pill"
-                                    data-bs-target="#file" role="tab">Carga la
+                                    data-bs-target="#file" role="tab" :disabled="!startPrice || !newPrice">Carga la
                                     entrada</button>
-                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#bank" role="tab">Datos
+                                <button v-if="!this.userCopy.iban || !this.userCopy.holder || !this.userCopy.type_account"
+                                    class="nav-link" data-bs-toggle="pill" :disabled="!startPrice || !newPrice"
+                                    data-bs-target="#bank" role="tab">Datos
                                     bancarios</button>
 
                             </div>
@@ -36,7 +39,7 @@
                                         <div class="col-md-12 col-lg-12">
 
                                             <div class="row row--30">
-                                                <div class="col-lg-8 edu-blog-sidebar">
+                                                <div class="col-lg-6 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">
                                                             <img
@@ -50,39 +53,63 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-6">
                                                     <div class="edu-blog-sidebar">
                                                         <div class="col-lg-12 order-lg-1 login-form-box">
 
                                                             <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Sector</label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="sector" v-model="sector">
+                                                                        <label>Tipo de entrada</label>
+                                                                        <select class="edu-select" v-model="type">
+                                                                            <option value="En papel">En papel</option>
+                                                                            <option value="Electrónica">Electrónica</option>
+                                                                            <option value="Móvil">Móvil</option>
+                                                                        </select>
                                                                     </div>
-
                                                                 </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Cantidad de asientos</label>
-                                                                        <input type="number" class="form-control"
-                                                                            placeholder="Asientos" v-model="seat" max="4" min="1">
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>Categoria</label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Categoria" v-model="category">
+                                                                        <select class="edu-select" v-model="category">
+                                                                            <option value="VIP PREMIUM">VIP PREMIUM</option>
+                                                                            <option value="VIP">VIP</option>
+                                                                            <option value="Segundo Anfiteatro Lateral">
+                                                                                Segundo Anfiteatro Lateral</option>
+                                                                            <option value="Tercer Anfiteatro Lateral">Tercer
+                                                                                Anfiteatro Lateral</option>
+                                                                            <option value="Cuarto Anfiteatro Lateral">Cuarto
+                                                                                Anfiteatro Lateral</option>
+                                                                            <option value="Grada De Fondo">Grada De Fondo
+                                                                            </option>
+                                                                            <option value="Tribuna de Fondo">Tribuna de
+                                                                                Fondo</option>
+                                                                            <option value="Primer Anfiteatro de Fondo">
+                                                                                Primer Anfiteatro de Fondo</option>
+                                                                            <option value="Segundo Anfiteatro de Fondo">
+                                                                                Segundo Anfiteatro de Fondo</option>
+                                                                            <option value="Tercer Anfiteatro de Fondo">
+                                                                                Tercer Anfiteatro de Fondo</option>
+                                                                            <option value="Cuarto Anfiteatro de Fondo">
+                                                                                Cuarto Anfiteatro de Fondo</option>
+                                                                        </select>
+
                                                                     </div>
 
                                                                 </div>
-
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Sector</label>
+                                                                        <select class="edu-select" v-model="sector">
+                                                                            <option value="Lateral Oeste">Lateral Oeste
+                                                                            </option>
+                                                                            <option value="Lateral Este">Lateral Este
+                                                                            </option>
+                                                                            <option value="Fondo Norte">Fondo Norte</option>
+                                                                            <option value="Fondo Sur">Fondo Sur</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>Fila</label>
@@ -91,25 +118,22 @@
                                                                     </div>
 
                                                                 </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="edu-blog-widget widget-tags">
-                                                            <div class="inner">
-                                                                <h4 class="widget-title">Tipo de entrada</h4>
-                                                                <div class="content">
-                                                                    <div class="tag-list">
-                                                                        <a href="#" @click="handleLinkClick('En papel')">En
-                                                                            papel</a>
-                                                                        <a href="#"
-                                                                            @click="handleLinkClick('Electrónica')">Electrónica</a>
-                                                                        <a href="#"
-                                                                            @click="handleLinkClick('Móvil')">Móvil</a>
-
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Cantidad de asientos</label>
+                                                                        <input type="number" class="form-control"
+                                                                            placeholder="Asientos" v-model="seat" max="4"
+                                                                            min="1">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <button v-if="type && sector && category && row" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+
 
                                                     </div>
                                                 </div>
@@ -146,6 +170,11 @@
                                                         </div>
 
                                                     </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <button v-if="startPrice && newPrice" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -169,6 +198,16 @@
 
                                                             </div>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <button v-if="this.user.holder && this.user.iban && this.user.type_account && this.selectedFile" type="button" @click="saveTicket"
+                                                                class="edu-btn btn-medium" :disabled="isLoading">Guardar
+                                                                <i class="icon-4"></i></button>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <button v-if="(!this.user.holder || !this.user.iban || !this.user.type_account) && this.selectedFile" type="button" @click="nextTab"
+                                                                class="edu-btn btn-medium" :disabled="isLoading">Siguiente
+                                                                <i class="icon-4"></i></button>
+                                                        </div>
                                                     </div>
 
                                                 </div>
@@ -187,23 +226,21 @@
                                                             <div class="form-group">
                                                                 <label for="reg-name">Títular*</label>
                                                                 <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.holder"
-                                                                    readonly>
+                                                                    placeholder="Nombre" v-model="this.user.holder">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="log-email">IBAN*</label>
                                                                 <input type="text" name="log-email" id="log-email"
-                                                                    placeholder="Iban" v-model="this.user.iban" readonly>
+                                                                    placeholder="Iban" v-model="this.user.iban">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="reg-name">Tipo de cuenta*</label>
                                                                 <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.type_account"
-                                                                    readonly>
+                                                                    placeholder="Nombre" v-model="this.user.type_account">
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <button type="button" @click="saveTicket"
+                                                                <button v-if="this.user.holder && this.user.iban && this.user.type_account" type="button" @click="saveTicket"
                                                                     class="edu-btn btn-medium" :disabled="isLoading">Guardar
                                                                     <i class="icon-4"></i></button>
                                                             </div>
@@ -235,6 +272,42 @@
         <ScrollToTop />
     </div>
 </template>
+
+<style lang="scss">
+.course-area-3 {
+    .isotop-button {
+        button {
+
+            &:hover,
+            &.active {
+                background-color: var(--color-secondary);
+                color: var(--color-white);
+            }
+
+            &.active:after {
+                bottom: -10px;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .course-area-3 {
+        .isotop-button {
+            button {
+
+                &:hover,
+                &.active {
+                    background-color: var(--color-secondary);
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+}
+</style>
 
 <script>
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
@@ -274,7 +347,8 @@ export default {
             selectedFile: '',
             finish: false,
             isLoading: false,
-            seat: 1
+            seat: 1,
+            userCopy: ''
         }
     },
     computed: {
@@ -309,6 +383,32 @@ export default {
         userData() {
             const userData = window.localStorage.getItem('userData');
             this.user = JSON.parse(userData);
+            this.userCopy = this.user;
+        },
+        updateUser() {
+            const config = useRuntimeConfig();
+            axios
+                .put(`${config.public.apiBase}users/` + this.user.id, this.user, {
+                    headers: {
+                        Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                    },
+                })
+                .then((response) => {
+                    // Maneja la respuesta exitosa, por ejemplo, muestra un mensaje de éxito
+                    console.log('Usuario actualizado con éxito', response.data);
+
+                    // También puedes actualizar los datos del usuario en tu componente Vue
+                    this.user = response.data; // Actualiza "user" con los nuevos datos
+                    this.showResult = true;
+                    setTimeout(() => {
+                        this.showResult = false;
+                    }, 2000);
+                    window.localStorage.setItem('userData', JSON.stringify(response.data))
+                })
+                .catch((error) => {
+                    // Maneja los errores, por ejemplo, muestra un mensaje de error
+                    console.error('Error al actualizar el usuario', error);
+                });
         },
         getEvent() {
             const config = useRuntimeConfig();
@@ -328,9 +428,29 @@ export default {
                     console.error(error);
                 });
         },
+        nextTab() {
+            // Encuentra la pestaña actualmente activa
+            const activeTab = document.querySelector(".nav-link.active");
+            if (activeTab) {
+                // Encuentra el índice de la pestaña activa
+                const activeTabIndex = Array.from(document.querySelectorAll(".nav-link")).indexOf(activeTab);
+                console.log(activeTabIndex)
+
+                // Calcula el índice de la siguiente pestaña
+                const nextTabIndex = (activeTabIndex + 1) % document.querySelectorAll(".nav-link").length;
+
+                // Activa la siguiente pestaña y desactiva la actual
+                activeTab.classList.remove("active");
+                Array.from(document.querySelectorAll(".nav-link"))[nextTabIndex].classList.add("active");
+                // Activa el contenido de la siguiente pestaña y desactiva el contenido de la actual
+                document.querySelector(activeTab.getAttribute("data-bs-target")).classList.remove("show", "active");
+                document.querySelector(document.querySelectorAll(".nav-link")[nextTabIndex].getAttribute("data-bs-target")).classList.add("show", "active");
+            }
+        },
         async saveTicket() {
             const config = useRuntimeConfig();
             this.isLoading = true;
+            this.updateUser();
             let file = null;
             if (this.selectedFile) {
                 const form = new FormData();
@@ -354,7 +474,7 @@ export default {
                 endPrice: this.lastPrice(this.newPrice),
                 evento: this.eventId,
                 type: this.type,
-                ticket: (this.selectedFile)?file[0]: null,
+                ticket: (this.selectedFile) ? file[0] : null,
                 seat: this.seat
             }
             axios
@@ -367,9 +487,6 @@ export default {
                     console.log(response.data)
                     this.message = response.data;
                     this.finish = true;
-                    setTimeout(() => {
-                        this.$router.push('/')
-                    }, 4000);
                 })
                 .catch((error) => {
                     // Maneja los errores, por ejemplo, muestra un mensaje de error
@@ -378,11 +495,16 @@ export default {
         }
     },
     mounted() {
-        this.filterData = this.items
-        console.log(this.$route.params.id)
-        this.userData();
-        this.eventId = this.$route.params.id;
-        this.getEvent();
+        if(window.localStorage.getItem('jwt') == null) {
+            window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder vender una entrada');
+            this.$router.push('/login');
+        }else {
+            this.filterData = this.items
+            this.userData();
+            this.eventId = this.$route.params.id;
+            this.getEvent();
+        }
+        
     },
 
 }

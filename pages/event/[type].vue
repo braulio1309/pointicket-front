@@ -10,7 +10,7 @@
                 <div class="breadcrumb-inner">
                     <div class="row">
                         <div class="col-sm-10">
-                            <input class="form-control" v-model="data" placeholder="Buscar eventos">
+                            <input v-model="data" placeholder="Buscar eventos" style="border-radius: 10px;">
                         </div>
                         <div class="col-sm-2">
                             <a href="#" @click="getEvents" class="edu-btn btn-large">Buscar</a>
@@ -20,15 +20,70 @@
             </div>
             <div class="container-fluid">
                 <div class="row g-5">
-                    <div class="col-lg-9 order-lg-1 col-pr--35" v-if="this.events">
+                    <div class="col-lg-12 order-lg-1 col-pr--35" v-if="this.events.length > 0">
                         <div class="row g-5">
-                            <div class="col-md-4 col-sm-4" data-aos-delay="150" data-aos="fade-up" data-aos-duration="400"
+                            <div class="col-md-3 col-sm-4" data-aos-delay="150" data-aos="fade-up" data-aos-duration="400"
                                 v-for="event in getItems" :key="event.id">
                                 <EventOne :eventInfo="event" :type="this.$route.params.type" />
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 order-lg-2">
+                    <div class="col-lg-12 order-lg-1 col-pr--35" v-if="this.events.length == 0">
+                        <div class="col-12 mt--50">
+                            <div class="alert alert-info" role="alert">
+                                No se ha encontrado su evento buscado, puede escribirnos para sugerir agregarlo en los proximos días
+                            </div>
+                            <div class="offset-xl-2 col-lg-6">
+                                <div class="contact-form form-style-2">
+                                    <div class="section-title">
+                                        <h4 class="title">Escríbenos</h4>
+                                    </div>
+                                    <div v-if="showResult" class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                            ¡Gracias por contactarnos! Estaremos agregando proximamente este evento
+                                        </div>
+                                    </div>
+                                    <form class="rnt-contact-form rwt-dynamic-form">
+                                        <div class="row row--10">
+                                            <div class="form-group col-12">
+                                                <input type="text" v-model="name" placeholder="Nombre">
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <input type="email" v-model="email" placeholder="Email">
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <input type="tel" v-model="phone" placeholder="Telefono">
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <textarea v-model="message" cols="30" rows="4"
+                                                    placeholder="Escribe tu mensaje"></textarea>
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <button class="rn-btn edu-btn btn-medium submit-btn" name="submit"
+                                                    type="submit" :disabled="isLoading" @click="handleSubmit">
+                                                    <span v-if="isLoading">
+                                                        Cargando... <i class="fas fa-spinner fa-spin"></i>
+                                                    </span>
+                                                    <span v-else>
+                                                        Enviar<i class="icon-4"></i>
+                                                    </span>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <ul class="shape-group">
+                                        <MouseMove addClassName="shape-1" dataDepth="1"
+                                            imgSrc="/images/about/shape-13.png" />
+                                        <MouseMove addClassName="shape-2" dataDepth="-1"
+                                            imgSrc="/images/counterup/shape-02.png" />
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---<div class="col-lg-3 order-lg-2">
                         <div class="course-sidebar-2">
                             <div class="edu-course-widget widget-category">
                                 <div class="inner">
@@ -97,9 +152,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
-                   
+
                 </div>
 
                 <div v-if="getPaginateCount > 1">
@@ -150,10 +205,17 @@ export default {
                     prevPage: ''
                 }
             },
-            events: null,
+            events: [],
             data: '',
             categories: '',
-            isChecked: false
+            isChecked: false,
+            resultText: '',
+            showResult: false,
+            isLoading: false,
+            message: '',
+            name: '',
+            phone: '',
+            email: ''
         }
     },
     computed: {
@@ -176,27 +238,37 @@ export default {
         paginateClickCallback(page) {
             this.currentPage = Number(page);
         },
+        handleSubmit() {
+            this.isLoading = true;
+            this.showResult = false;
+
+            const config = useRuntimeConfig();
+
+            let data = {
+                message: this.message,
+                name: this.name,
+                phone: this.phone,
+                email: this.email,
+            };
+            axios
+                .post(`${config.public.apiBase}contacts`, { data })
+                .then((response) => {
+                    console.log(response.data)
+                    this.showResult = true;
+                    this.isLoading = false;
+
+                })
+                .catch((error) => {
+                    // Maneja los errores, por ejemplo, muestra un mensaje de error
+                    console.error('Error al actualizar el usuario', error);
+                });
+        },
         getEvents() {
             const config = useRuntimeConfig();
 
             let query = `${config.public.apiBase}events/?populate=*`;
 
-            if (this.data || this.data == '') {
-                let search = qs.stringify({
-                    filters: {
-                        title: {
-                            $contains: this.data,
-
-                        },
-                    },
-
-                }, {
-                    encodeValuesOnly: true, // prettify URL
-                });
-                window.localStorage.setItem('search', null);
-                query += `&${search}`;
-            }
-            if (window.localStorage.getItem('search')) {
+            if (window.localStorage.getItem('search') != '') {
                 let search = qs.stringify({
                     filters: {
                         title: {
@@ -208,15 +280,26 @@ export default {
                 }, {
                     encodeValuesOnly: true, // prettify URL
                 });
-                window.localStorage.setItem('search', null);
+                window.localStorage.setItem('search', '');
+                query += `&${search}`;
+            }
+            if (this.data != '') {
+                let search = qs.stringify({
+                    filters: {
+                        title: {
+                            $contains: this.data,
+
+                        },
+                    },
+
+                }, {
+                    encodeValuesOnly: true, // prettify URL
+                });
+                window.localStorage.setItem('search', '');
                 query += `&${search}`;
             }
             axios
-                .get(`${query}`, {
-                    headers: {
-                        Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
-                    },
-                })
+                .get(`${query}`)
                 .then((response) => {
                     this.events = response.data.data;
                 })
@@ -264,7 +347,7 @@ export default {
                 .then((response) => {
                     this.categories = response.data.data;
                     this.categories.forEach(category => {
-                        category.isChecked = false; 
+                        category.isChecked = false;
                     });
                     console.log(this.categories);
                 })
@@ -275,11 +358,10 @@ export default {
     },
     mounted() {
         this.getEvents();
-        this.getCategories();
     },
     head() {
         return {
-            title: 'Event Grid'
+            title: 'Eventos'
         }
     },
 

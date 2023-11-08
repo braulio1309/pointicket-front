@@ -6,10 +6,20 @@
                 <div class="login-form-box registration-form">
                     <h3 class="title">Registrarse</h3>
                     <p>Tienes una cuenta? <a href="#">Inicia sesión</a></p>
+                    <div v-if="success" class="col-12">
+                        <div class="alert alert-success" role="alert">
+                            Te hemos enviado un correo para confirmar tu cuenta 
+                        </div>
+                    </div>
+                    <div v-if="error" class="col-12">
+                        <div class="alert alert-danger" role="alert">
+                            Complete correctamente el formulario 
+                        </div>
+                    </div>
                     <form>
                         <div class="form-group">
-                            <label for="reg-name">Nombre*</label>
-                            <input type="text" v-model="name" placeholder="Nombre">
+                            <label for="reg-name">Nombre y apellido*</label>
+                            <input type="text" v-model="fullname" placeholder="Nombre y apellido">
                         </div>
                         <div class="form-group">
                             <label for="log-email">Email*</label>
@@ -57,10 +67,12 @@ export default {
             email: '',
             password: '',
             name: '',
+            fullname: '',
             phone: '',
             error: false,
             errorMsg: `An error occurred, please try again`,
-            checkbox: true
+            checkbox: true,
+            success: false
         }
     },
     methods: {
@@ -70,13 +82,12 @@ export default {
             try {
                 const res = await axios.post(`${config.public.apiBase}auth/local/register`, {
                     email: this.email,
-                    username: this.name,
-                    password: this.password
+                    username: this.fullname.replace(/\s/g, ''),
+                    password: this.password,
+                    fullname: this.fullname
                 });
-                const { jwt, user } = res.data
-                window.localStorage.setItem('jwt', jwt)
-                window.localStorage.setItem('userData', JSON.stringify(user))
-                this.$router.push('/login')
+                this.error = false;
+                this.success = true;                
             } catch (error) {
                 console.log(error)
                 this.error = true

@@ -28,12 +28,12 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h5 class="title"><span>3020</span> Online Courses</h5>
+                        <h6 class="title">Todos los pedidos están garantizados al 100%.</h6>
                     </div>
                 </div>
                 <div class="features-box features-style-2 edublink-svg-animate">
                     <div class="icon">
-                        <svg class="svgInject" width="26" height="40" viewBox="0 0 31 40" fill="none"
+                        <svg class="svgInject" width="38" height="40" viewBox="0 0 31 40" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M28.8827 31.2393L26.7251 38.0491H4.27539L2.11774 31.2393H28.8827V31.2393ZM29.3042 29.2881H1.69624C0.55218 29.2881 -0.260704 30.3613 0.0805067 31.4247L2.42884 38.8393C2.63959 39.532 3.30194 40.0003 4.04457 40.0003H26.9659C27.7085 40.0003 28.3709 39.532 28.5816 38.8393L30.93 31.4247C31.2611 30.3613 30.4483 29.2881 29.3042 29.2881Z"
@@ -52,7 +52,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h5 class="title"><span>Top</span>Instructors</h5>
+                        <h6 class="title">Compra y vende entradas en pocos clics</h6>
                     </div>
                 </div>
                 <div class="features-box features-style-2 edublink-svg-animate">
@@ -75,7 +75,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h5 class="title"><span>Online</span>Certifications</h5>
+                        <h6 class="title">Satisfacción garantizada para nuestros clientes</h6>
                     </div>
                 </div>
                 

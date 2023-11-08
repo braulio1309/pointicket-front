@@ -62,7 +62,7 @@
                                                                     <div class="form-group">
                                                                         <label>Tipo de entrada</label>
                                                                         <select class="edu-select" v-model="type">
-                                                                            <option value="En papel">En papel</option>
+                                                                            <option value="Papel">Papel</option>
                                                                             <option value="Electrónica">Electrónica</option>
                                                                             <option value="Móvil">Móvil</option>
                                                                         </select>
@@ -172,7 +172,9 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <button v-if="startPrice && newPrice" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
+                                                            <button v-if="startPrice && newPrice && type == 'Electrónica'" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
+                                                            <button v-if="startPrice && newPrice && type != 'Electrónica'" @click="saveTicket" class="edu-btn btn-medium mt--50">Guardar</button>
+
                                                         </div>
                                                     </div>
                                                 </div>

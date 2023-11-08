@@ -19,7 +19,7 @@
                         </li>
 
                         <li v-if="logged">
-                            <NuxtLink to="/profile">Bienvenido {{ this.user.username }}</NuxtLink>
+                            <NuxtLink to="/profile">Bienvenido {{ this.user.fullname }}</NuxtLink>
                         </li>
                         <li><a href="tel:+011235641231"><i class="icon-phone"></i>Llamar: 123 4561 5523</a></li>
                         <li><a href="mailto:info@pointickets.com" target="_blank"><i class="icon-envelope"></i>Email:

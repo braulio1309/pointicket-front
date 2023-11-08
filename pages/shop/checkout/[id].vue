@@ -5,7 +5,7 @@
 
         <BreadCrumbTwo pageTitle='Finalizar pago' title='Finalizar' />
 
-        <section class="checkout-page-area section-gap-equal" v-if="this.ticket">
+        <section class="checkout-page-area section-gap-equal" v-if="ticket">
             <div class="container">
                 <div v-if="result" class="col-12">
                     <div class="alert alert-success" role="alert">
@@ -49,8 +49,9 @@
                                         <div class="form-group">
                                             <label>Cupón de descuento</label>
                                             <input type="text" id="email" v-model="coupon">
-                                            <p v-if="resultCouponAmount">Cupon disponible - €{{ this.amountDiscount }}</p>
-                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ this.percentageDiscount }}%</p>
+                                            <p v-if="resultCouponAmount">Cupon disponible - €{{ amountDiscount }}</p>
+                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ percentageDiscount }}%</p>
+                                            <p v-if="errorCoupon">Cupón no válido</p>
 
                                         </div>
                                     </div>
@@ -78,40 +79,40 @@
                                     <table class="table summery-table">
                                         <tbody>
                                             <tr>
-                                                <td> {{ this.ticket.attributes.Category }}, {{
-                                                    this.ticket.attributes.evento.data.attributes.title }}, Fila {{
+                                                <td> {{ ticket.attributes.Category }}, {{
+                                                    ticket.attributes.evento.data.attributes.title }}, Fila {{
         this.ticket.attributes.Fila }}</td>
-                                                <td><span class="quantity">x {{ this.ticket.attributes.seat }}</span></td>
-                                                <td> €{{ this.ticket.attributes.endPrice }}</td>
+                                                <td><span class="quantity">x {{ ticket.attributes.seat }}</span></td>
+                                                <td> €{{ ticket.attributes.endPrice }}</td>
                                             </tr>
 
                                             <tr class="order-total">
                                                 <td>Iva</td>
-                                                <td>€{{ this.ticket.attributes.endPrice * 0.1 }}</td>
+                                                <td>€{{ ticket.attributes.endPrice * 0.1 }}</td>
                                             </tr>
 
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Descuento</td>
-                                                <td v-if="resultCouponAmount">€{{ this.amountDiscount }}</td>
-                                                <td v-if="resultCouponPercentage">{{ this.percentage }} %</td>
+                                                <td v-if="resultCouponAmount">€{{ amountDiscount }}</td>
+                                                <td v-if="resultCouponPercentage">{{ percentage }} %</td>
 
                                             </tr>
 
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td >€{{ this.ticket.attributes.endPrice * this.ticket.attributes.seat +
-                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1) }}
+                                                <td >€{{ ticket.attributes.endPrice * ticket.attributes.seat +
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1) }}
                                                 </td>
                                             </tr>
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
                                                 
-                                                <td v-if="resultCouponAmount">€{{ (this.ticket.attributes.endPrice * this.ticket.attributes.seat +
-                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1)) - this.amountDiscount }}
+                                                <td v-if="resultCouponAmount">€{{ (ticket.attributes.endPrice * ticket.attributes.seat +
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) - amountDiscount }}
                                                 </td>
-                                                <td v-if="resultCouponPercentage">€{{ (this.ticket.attributes.endPrice * this.ticket.attributes.seat +
-                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1)) - ((this.percentageDiscount/100) * (this.ticket.attributes.endPrice * this.ticket.attributes.seat +
-                                                    (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1))) }}
+                                                <td v-if="resultCouponPercentage">€{{ (ticket.attributes.endPrice * ticket.attributes.seat +
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) - ((percentageDiscount/100) * (ticket.attributes.endPrice * ticket.attributes.seat +
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1))) }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -185,7 +186,8 @@ export default {
             resultCouponAmount: false,
             resultCouponPercentage: false,
             percentgeDiscount: 0,
-            amountDiscount: 0
+            amountDiscount: 0,
+            errorCoupon: false
 
 
         }
@@ -250,6 +252,8 @@ export default {
                 .then((response) => {
                     let amount =  response.data.data[0].attributes.amount;
                     let percentage =  response.data.data[0].attributes.percentage;
+                    this.errorCoupon = false;
+
                     if(amount){
                         this.amountDiscount = amount;
                         this.resultCouponAmount = true;
@@ -261,6 +265,7 @@ export default {
                     }
                 })
                 .catch((error) => {
+                    this.errorCoupon = true;
                     console.error('Error al buscar al evento', error);
                 });
         },

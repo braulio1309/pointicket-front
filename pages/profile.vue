@@ -9,7 +9,7 @@
                     <div class="col-lg-4">
                         <div class="faq-page-nav">
                             <h3 class="title">Bienvenido</h3>
-                            <p>{{ this.user.username }}</p>
+                            <p>{{ user.fullname }}</p>
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#gn-ques"
@@ -53,7 +53,7 @@
                         <div class="tab-content faq-page-tab-content" id="faq-accordion">
                             <div class="tab-pane fade show active" id="gn-ques" role="tabpanel">
                                 <div class="row">
-                                    <div class="col-sm-5" v-for="ticket in this.tickets">
+                                    <div class="col-sm-5" v-for="ticket in tickets">
                                         <div class="card">
                                             <div class="edu-course course-style-1 hover-button-bg-white">
                                                 <div class="inner">
@@ -94,7 +94,7 @@
                             </div>
                             <div class="tab-pane fade" id="rg-ques" role="tabpanel">
                                 <div class="row">
-                                    <div class="col-sm-5" v-for="ticket in this.ticketsSells">
+                                    <div class="col-sm-5" v-for="ticket in ticketsSells">
                                         <div class="card">
                                             <div class="edu-course course-style-1 hover-button-bg-white">
                                                 <div class="inner">
@@ -134,7 +134,7 @@
                             </div>
                             <div class="tab-pane fade" id="ad-ques" role="tabpanel">
                                 <div class="row">
-                                    <div class="col-sm-5" v-for="ticket in this.purchases">
+                                    <div class="col-sm-5" v-for="ticket in purchases">
                                         <div class="card">
                                             <div class="edu-course course-style-1 hover-button-bg-white">
                                                 <div class="inner">
@@ -177,23 +177,24 @@
                             </div>
                             <div class="tab-pane fade" id="pay-option" role="tabpanel">
                                 <div class="login-form-box registration-form">
+                                    
                                     <h3 class="title">Ingrese sus datos personales</h3>
+                                    <div v-if="showResult" class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                            Se han guardado exitosamente
+                                        </div>
+                                    </div>
                                     <form>
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-12">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Nombre</label>
-                                                        <input type="text" v-model="user.username"
-                                                            placeholder="Razon social">
+                                                        <label for="reg-name">Nombre y apellido</label>
+                                                        <input type="text" v-model="user.fullname"
+                                                            placeholder="Nombre">
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="reg-name">Apellido</label>
-                                                        <input type="text" v-model="user.username" placeholder="CIF">
-                                                    </div>
-                                                </div>
+                                               
 
                                             </div>
 
@@ -206,23 +207,18 @@
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="reg-name">email</label>
-                                                        <input type="text" v-model="user.email" placeholder="VAT">
+                                                        <label for="reg-name">Telefono</label>
+                                                        <input type="text" v-model="user.phone" placeholder="Telefono">
                                                     </div>
                                                 </div>
+                                                
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-12">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Contraseña</label>
-                                                        <input type="password" placeholder="Provincia">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="reg-name">Telefono</label>
-                                                        <input type="text" v-model="user.phone" placeholder="Poblacion">
+                                                        <label for="reg-name">email</label>
+                                                        <input type="text" v-model="user.email" placeholder="Email">
                                                     </div>
                                                 </div>
                                             </div>
@@ -270,15 +266,15 @@
                                     <form>
                                         <div class="form-group">
                                             <label for="reg-name">Títular*</label>
-                                            <input type="text" v-model="user.holder" placeholder="Nombre">
+                                            <input type="text" v-model="user.holder" placeholder="Titular">
                                         </div>
                                         <div class="form-group">
                                             <label for="log-email">IBAN*</label>
-                                            <input type="email" v-model="user.iban" placeholder="Email">
+                                            <input type="email" v-model="user.iban" placeholder="IBAN">
                                         </div>
                                         <div class="form-group">
                                             <label for="reg-name">Tipo de cuenta*</label>
-                                            <input type="text" v-model="user.type_account" placeholder="Nombre">
+                                            <input type="text" v-model="user.type_account" placeholder="Tipo de cuenta">
                                         </div>
 
                                         <div class="form-group">
@@ -419,7 +415,6 @@ export default {
 
             const jwt = window.localStorage.getItem('jwt');
             const userData = window.localStorage.getItem('userData');
-            console.log(jwt)
 
             // Si tanto el token como los datos del usuario existen, se considera que el usuario está logueado
             this.user = JSON.parse(userData);
@@ -429,7 +424,7 @@ export default {
         updateUser() {
             const config = useRuntimeConfig();
             axios
-                .put(`${config.public.apiBase}users/` + this.user.id, this.user, {
+                .put(`${config.public.apiBase}users/${this.user.id}`, this.user, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
@@ -439,12 +434,12 @@ export default {
                     console.log('Usuario actualizado con éxito', response.data);
 
                     // También puedes actualizar los datos del usuario en tu componente Vue
-                    this.user = response.data; // Actualiza "user" con los nuevos datos
                     this.showResult = true;
                     setTimeout(() => {
                         this.showResult = false;
                     }, 2000);
-                    window.localStorage.setItem('userData', JSON.stringify(response.data))
+                    window.localStorage.setItem('userData', JSON.stringify(response.data));
+                    this.isLogged();
                 })
                 .catch((error) => {
                     // Maneja los errores, por ejemplo, muestra un mensaje de error
@@ -515,7 +510,7 @@ export default {
                 filters: {
                     compra: {
                         id: {
-                            $not: this.user.id,
+                            $eq: this.user.id,
                         }
 
                     },

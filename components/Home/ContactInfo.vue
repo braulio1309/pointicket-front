@@ -57,6 +57,12 @@
                                         <textarea name="message" cols="30" rows="6" v-model="message"
                                             placeholder="Mensaje"></textarea>
                                     </div>
+                                    <div class="form-group chekbox-area">
+                                        <div class="edu-form-check">
+                                            <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
+                                            <label for="remember-me">Estoy de acuerdo con los terminos y condiciones</label>
+                                        </div>
+                                    </div>
                                     <div class="form-group col-12 text-center">
                                         <button class="rn-btn edu-btn btn-medium submit-btn" name="submit" type="submit"
                                             :disabled="isLoading" @click="handleSubmit">
@@ -83,6 +89,13 @@
         </section>
     </div>
 </template>
+<style>
+.chec[type="checkbox"]:checked::before {
+    font-size: 16px;
+    line-height: 18px;
+    color: #007bff  !important;
+}
+</style>
 
 <script>
 import MouseMove from '../animation/MouseMove.vue';
@@ -101,7 +114,8 @@ export default {
             message: '',
             name: '',
             phone: '',
-            email: ''
+            email: '',
+            checkbox: false
         }
     },
     methods: {
@@ -120,7 +134,6 @@ export default {
             axios
                 .post(`${config.public.apiBase}contacts`, { data })
                 .then((response) => {
-                    console.log(response.data)
                     this.showResult = true;
                     this.isLoading = false;
 

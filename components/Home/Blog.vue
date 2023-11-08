@@ -11,16 +11,12 @@
                                 <div class="edu-blog blog-style-1">
                                     <div class="inner">
                                         <div class="content position-top">
-                                            <div class="read-more-btn">
-                                                <NuxtLink to="/blog/blog-details" class="btn-icon-round">
-                                                    <i class="icon-4"></i>
-                                                </NuxtLink>
-                                            </div>
+                                            
                                             <div class="category-wrap">
-                                                <NuxtLink to="/blog/blog-masonry" class="blog-category">El titulo</NuxtLink>
+                                                <NuxtLink to="/" class="blog-category">El titulo</NuxtLink>
                                             </div>
                                             <h5 class="title">
-                                                <NuxtLink to="/blog/blog-details">El titulo</NuxtLink>
+                                                <NuxtLink to="/">El titulo</NuxtLink>
                                             </h5>
                                             <ul class="blog-meta">
                                                 <li><i class="icon-27"></i>13/09/2000</li>

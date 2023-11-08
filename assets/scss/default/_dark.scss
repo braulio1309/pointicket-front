@@ -2859,16 +2859,16 @@ body.dark-mode {
     input[type="checkbox"] ~ label::before, 
     input[type="radio"] ~ label::before {
         border: 1px solid var(--dark-color-border);
-        color: var(--color-white);  
+        color: var(--color-extra01);  
     }
     input[type="checkbox"] ~ label::after, 
     input[type="radio"] ~ label::after {
-        color: var(--color-white);
+        color: var(--color-extra01);
     }
     input[type="checkbox"]:checked ~ label::before, 
     input[type="radio"]:checked ~ label::before {
-        background-color: var(--color-primary);
-        border-color: var(--color-primary);
+        background-color: var(--color-extra01);
+        border-color: var(--color-extra01);
     }
     .login-form-box {
         .chekbox-area {

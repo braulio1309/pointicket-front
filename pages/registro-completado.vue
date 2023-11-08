@@ -4,16 +4,15 @@
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <div class="login-form-box">
-                    <h3 class="title">Iniciar sesión</h3>
-                    <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
+                    <h3 class="title">Registro confirmado</h3>
                     <div v-if="error" class="col-12">
                         <div class="alert alert-danger" role="alert">
                             Datos incorrectos, intente de nuevo
                         </div>
                     </div>
-                    <div v-if="this.auth" class="col-12">
-                        <div class="alert alert-info" role="alert">
-                            {{ this.auth }}
+                    <div v-if="!error" class="col-12">
+                        <div class="alert alert-success" role="alert">
+                            Tu cuenta ha sido confirmada exitosamente, puedes iniciar sesión
                         </div>
                     </div>
                     <form>
@@ -29,8 +28,8 @@
                         </div>
                         <div class="form-group chekbox-area">
                             <div class="edu-form-check">
-                                <input type="checkbox" id="remember-me" v-model="checkbox">
-                                <label for="remember-me" >Recuerdame</label>
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Recuerdame</label>
                             </div>
                             <a href="/recuperar" class="password-reset">Perdiste tu contraseña?</a>
                         </div>
@@ -49,7 +48,7 @@ import HeaderOne from "~~/components/header/HeaderOne.vue";
 import axios from 'axios';
 
 export default {
-    name: "login",
+    name: "Registro completado",
     components: {
         HeaderOne
     },
@@ -59,13 +58,8 @@ export default {
             password: '',
             error: false,
             errorMsg: `An error occurred, please try again`,
-            auth: '',
-            checkbox: false
+            auth: ''
         }
-    },
-    mounted() {
-        this.auth = window.localStorage.getItem('notLogged');
-        window.localStorage.removeItem('notLogged');
     },
     methods: {
         async login() {

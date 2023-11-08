@@ -5,7 +5,7 @@
         <section class="">
             <div class="container">
                 <div class="edu-course-area course-area-3">
-                    <div class="container" v-if="this.event">
+                    <div class="container" v-if="event">
                         <div class="isotope-wrapper" style="margin-top: 100px;">
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="undergraduate" role="tabpanel">
@@ -35,18 +35,18 @@
                                                         </div>
 
                                                         <div class="text-block">
-                                                            <h4 class="title">{{ this.event.data.attributes.title }}</h4>
-                                                            <p>{{ this.event.data.attributes.description }}</p>
+                                                            <h4 class="title">{{ event.data.attributes.title }}</h4>
+                                                            <p>{{ event.data.attributes.description }}</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="edu-blog-sidebar">
                                                         <div class="col-lg-12 order-lg-1 col-pr--35">
-                                                            <div class="row g-5">
-                                                                <div class="col-12" v-for="event in getItems"
+                                                            <div v-if="getItems.length > 0" class="row" v-for="event in getItems"
                                                                     :key="event.id">
-                                                                    <div class="edu-event-list event-list-2">
+                                                                <div class="col-12" v-if="!event.attributes.compra.data" >
+                                                                    <div  class="edu-event-list event-list-2">
                                                                         <div class="">
                                                                             <div class="content">
                                                                                 <div class="row">
@@ -90,6 +90,9 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                            <div  v-if="getItems.length === 0" class="alert alert-info">
+                                                                No hay entradas disponibles
                                                             </div>
                                                         </div>
                                                     </div>
@@ -138,11 +141,11 @@
             }
         }
     }
+
     #edu-btn:hover {
         color: black !important;
     }
 }
-
 </style>
 
 <script>
@@ -154,6 +157,7 @@ import ScrollToTop from '~~/components/footer/ScrollToTop.vue';
 import Events from "~~/components/Home/Events.vue";
 import Auth from '~~/components/modals/Auth.vue';
 import axios from 'axios';
+import qs from 'qs';
 
 export default {
     components: {
@@ -196,42 +200,7 @@ export default {
                 },
 
             ],
-            eventItems: [
-                {
-                    id: 1,
-                    imgSrc: "event-01.jpg",
-                    title: "4 Entradas  €70.00",
-                    date: "30",
-                    fullDate: "Braulio Zapata",
-                    month: "SEP",
-                    time: "08:00AM-10:00AM",
-                    location: "VIP",
-                    excerpt: "Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna."
-                },
-                {
-                    id: 2,
-                    imgSrc: "event-02.jpg",
-                    title: "2 Entradas - €75.00",
-                    date: "25",
-                    fullDate: "Pato Test",
-                    month: "DEC",
-                    time: "04:00PM-07:00PM",
-                    location: "General",
-                    excerpt: "Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna."
-                },
-                {
-                    id: 3,
-                    imgSrc: "event-03.jpg",
-                    title: "1 Entrada  €105.00",
-                    date: "15",
-                    fullDate: "Alejandro Utrera",
-                    month: "NOV",
-                    time: "10:00AM-11:00AM",
-                    location: "VIP",
-                    excerpt: "Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna."
-                },
-
-            ],
+            eventItems: [],
             currentPage: 1,
             perPage: 9,
             paginationOptions: {
@@ -249,7 +218,7 @@ export default {
         getItems() {
             let start = (this.currentPage - 1) * this.perPage;
             let end = this.currentPage * this.perPage;
-            return this.eventItems.slice(start, end);
+            return this.eventItems.filter(item => item.attributes.compra.data === null).slice(start, end);
         },
         getPaginateCount() {
             return Math.ceil(this.eventItems.length / this.perPage);
@@ -276,9 +245,19 @@ export default {
         },
         getEvent() {
             const config = useRuntimeConfig();
-
+            const query = qs.stringify({
+                filters: {
+                    tickets: {
+                        compra: {
+                            $null: true,
+                        },
+                    }
+                },
+            }, {
+                encodeValuesOnly: true, // prettify URL
+            });
             axios
-                .get(`${config.public.apiBase}events/` + this.eventId + '?populate=tickets', {
+                .get(`${config.public.apiBase}events/${this.eventId}?populate[0]=tickets&populate[1]=tickets.compra&${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },

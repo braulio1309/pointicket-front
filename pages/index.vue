@@ -5,13 +5,11 @@
 </template>
 <script>
 import HomeMainVue from "~~/components/Home/HomeMain.vue";
-import Sell from "./sell.vue";
 
 export default {
   name: "home",
   components: {
     HomeMainVue,
-    Sell
   }
 };
 </script>

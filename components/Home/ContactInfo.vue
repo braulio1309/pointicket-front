@@ -70,7 +70,7 @@
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me">Estoy de acuerdo con los <a href="/term-condition"> terminos y condiciones</a></label>
+                                            <label for="remember-me">Estoy de acuerdo con los <a href="/terms-condition"> terminos y condiciones</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12 text-center">

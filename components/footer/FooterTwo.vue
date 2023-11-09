@@ -64,9 +64,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="edu-footer-widget">
-                            <h4 class="widget-title">Contacto</h4>
+                            <h4 class="widget-title">Newsletter</h4>
                             <div class="inner">
-                                <p class="description">Ingresa tu email para obtener un descuento</p>
+                                <p class="description">Ingresa tu email para mantenerte informado</p>
                                 <div class="input-group footer-subscription-form">
                                     <input type="email" class="form-control" placeholder="Correo">
                                     <button class="edu-btn btn-medium" type="button">Suscribete <i

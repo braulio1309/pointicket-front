@@ -41,8 +41,18 @@
                                     Gracias por contactarnos!
                                 </div>
                             </div>
+                            <div v-if="emailValidation" class="col-12">
+                                <div class="alert alert-danger" role="alert">
+                                    Ingresa un email válido, terminado en @dominio.com
+                                </div>
+                            </div>
+                            <div v-if="checkValidation" class="col-12">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe aceptar los terminos y condiciones
+                                </div>
+                            </div>
 
-                            <form class="rnt-contact-form rwt-dynamic-form" ref="form" @submit.prevent="sendEmail">
+                            <form class="rnt-contact-form rwt-dynamic-form" ref="form" @submit.prevent="handleSubmit">
                                 <div class="row row--10">
                                     <div class="form-group col-lg-6">
                                         <input type="text" name="fullname" v-model="name" placeholder="Nombre">
@@ -60,7 +70,7 @@
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me">Estoy de acuerdo con los terminos y condiciones</label>
+                                            <label for="remember-me">Estoy de acuerdo con los <a href="/term-condition"> terminos y condiciones</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12 text-center">
@@ -93,7 +103,7 @@
 .chec[type="checkbox"]:checked::before {
     font-size: 16px;
     line-height: 18px;
-    color: #007bff  !important;
+    color: #007bff !important;
 }
 </style>
 
@@ -115,11 +125,21 @@ export default {
             name: '',
             phone: '',
             email: '',
-            checkbox: false
+            checkbox: false,
+            emailValidation: false,
+            checkValidation: false
         }
     },
     methods: {
+        validateEmail() {
+            
+        },
         handleSubmit() {
+            if(!this.checkbox){
+                this.checkValidation = true;
+                return;
+            }
+            this.checkValidation = false;
             this.isLoading = true;
             this.showResult = false;
 
@@ -134,13 +154,15 @@ export default {
             axios
                 .post(`${config.public.apiBase}contacts`, { data })
                 .then((response) => {
+                    this.emailValidation = false;
                     this.showResult = true;
                     this.isLoading = false;
 
                 })
                 .catch((error) => {
-                    // Maneja los errores, por ejemplo, muestra un mensaje de error
-                    console.error('Error al actualizar el usuario', error);
+                    this.emailValidation = true;
+                    this.isLoading = false;
+                    console.error('Error al enviar formulario', error.response.data.error);
                 });
         },
 

@@ -7,7 +7,7 @@
                     <div class="header-brand">
                         <div class="logo">
                             <NuxtLink to="/">
-                                <img class="logo-light" style="width: 170px;"  src="/images/logo/logo_poin.png" alt="pointickets Logo">
+                                <img class="logo-light" style="width: 120px;"  src="/images/logo/logo_poin.png" alt="pointickets Logo">
                                 <img class="logo-dark" src="/images/logo/logo_poin.png" alt="Light Logo">
                             </NuxtLink>
                         </div>

@@ -29,8 +29,8 @@
                         </div>
                         <div class="form-group chekbox-area">
                             <div class="edu-form-check">
-                                <input type="checkbox" id="remember-me" v-model="checkbox">
-                                <label for="remember-me" >Recuerdame</label>
+                                <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
+                                <label for="remember-me">Recuerdame</label>
                             </div>
                             <a href="/recuperar" class="password-reset">Perdiste tu contraseña?</a>
                         </div>

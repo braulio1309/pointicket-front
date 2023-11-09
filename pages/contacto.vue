@@ -35,10 +35,21 @@
                                 <h4 class="title">Escribenos</h4>
                             </div>
                             <div v-if="showResult" class="col-12">
-                                            <div class="alert alert-success" role="alert">
-                                                Gracias por contactarnos!
-                                            </div>
-                                        </div>
+                                <div class="alert alert-success" role="alert">
+                                    Gracias por contactarnos!
+                                </div>
+                            </div>
+                            <div v-if="emailValidation" class="col-12">
+                                <div class="alert alert-danger" role="alert">
+                                    Ingresa un email válido, terminado en @dominio.com
+                                </div>
+                            </div>
+                            <div v-if="checkValidation" class="col-12">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe aceptar los terminos y condiciones
+                                </div>
+                            </div>
+
                             <form class="rnt-contact-form rwt-dynamic-form">
                                 <div class="row row--10">
                                     <div class="form-group col-12">
@@ -54,6 +65,12 @@
                                         <textarea v-model="message" cols="30" rows="4"
                                             placeholder="Escribe tu mensaje"></textarea>
                                     </div>
+                                    <div class="form-group chekbox-area">
+                                        <div class="edu-form-check">
+                                            <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
+                                            <label for="remember-me">Estoy de acuerdo con los <a href="/term-condition"> terminos y condiciones</a></label>
+                                        </div>
+                                    </div>
                                     <div class="form-group col-12">
                                         <button class="rn-btn edu-btn btn-medium submit-btn" name="submit" type="submit"
                                             :disabled="isLoading" @click="handleSubmit">
@@ -64,7 +81,7 @@
                                                 Enviar<i class="icon-4"></i>
                                             </span>
                                         </button>
-                                        
+
                                     </div>
                                 </div>
                             </form>
@@ -117,11 +134,19 @@ export default {
             message: '',
             name: '',
             phone: '',
-            email: ''
+            email: '',
+            emailValidation: false,
+            checkbox: false,
+            checkValidation: false
         }
     },
     methods: {
         handleSubmit() {
+            if(!this.checkbox){
+                this.checkValidation = true;
+                return;
+            }
+            this.checkValidation = false;
             this.isLoading = true;
             this.showResult = false;
 
@@ -136,14 +161,15 @@ export default {
             axios
                 .post(`${config.public.apiBase}contacts`, { data })
                 .then((response) => {
-                    console.log(response.data)
+                    this.emailValidation = false;
                     this.showResult = true;
                     this.isLoading = false;
 
                 })
                 .catch((error) => {
-                    // Maneja los errores, por ejemplo, muestra un mensaje de error
-                    console.error('Error al actualizar el usuario', error);
+                    this.emailValidation = true;
+                    this.isLoading = false;
+                    console.error('Error al enviar formulario', error.response.data.error);
                 });
         },
         sendEmail(e) {

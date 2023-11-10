@@ -37,7 +37,7 @@
                                     formulario</h3>
                             </div>
                             <div v-if="showResult" class="col-12">
-                                <div class="alert alert-success" role="alert">
+                                <div id="contact-form" class="alert alert-success" role="alert">
                                     Gracias por contactarnos!
                                 </div>
                             </div>

@@ -5,7 +5,7 @@
             <div class="col-sm-8">
                 <div class="login-form-box">
                     <h3 class="title">Iniciar sesión</h3>
-                    <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
+                    <p>¿No tienes cuenta? <a href="/register" style="text-decoration: underline;">Registrate</a></p>
                     <div v-if="error" class="col-12">
                         <div class="alert alert-danger" role="alert">
                             Datos incorrectos, intente de nuevo

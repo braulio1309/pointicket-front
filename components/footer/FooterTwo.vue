@@ -3,7 +3,7 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="edu-footer-widget">
                             <div class="logo">
                                 <NuxtLink to="/">
@@ -21,9 +21,16 @@
                                             target="_blank">info@pointicket.com</a></li>
                                 </ul>
                             </div>
+                            <ul class="social-share icon-transparent">
+                                <li><a href="https://www.facebook.com/profile.php?id=61552598728672" target="_blank" class="color-fb"><i
+                                            class="icon-facebook"></i></a></li>
+                                
+                                <li><a href="https://www.instagram.com/pointickets/" target="_blank" class="color-ig"><i
+                                            class="icon-instagram"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6">
+                    <div class="col-lg-4 col-sm-6">
                         <div class="edu-footer-widget explore-widget">
                             <h4 class="widget-title">Entradas</h4>
                             <div class="inner">
@@ -38,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-sm-6">
+                    <div class="col-lg-4 col-sm-6">
                         <div class="edu-footer-widget quick-link-widget">
                             <h4 class="widget-title">Links</h4>
                             <div class="inner">
@@ -68,27 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="edu-footer-widget">
-                            <h4 class="widget-title">Newsletter</h4>
-                            <div class="inner">
-                                <p class="description">Ingresa tu email para mantenerte informado</p>
-                                <div class="input-group footer-subscription-form">
-                                    <input type="email" class="form-control" placeholder="Correo">
-                                    <button class="edu-btn btn-medium" type="button">Suscribete <i
-                                            class="icon-4"></i></button>
-                                </div>
-                                <ul class="social-share icon-transparent">
-                                    <li><a href="https://www.facebook.com/profile.php?id=61552598728672" target="_blank" class="color-fb"><i
-                                                class="icon-facebook"></i></a></li>
-                                   
-                                    <li><a href="https://www.instagram.com/pointickets/" target="_blank" class="color-ig"><i
-                                                class="icon-instagram"></i></a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
             <div class="col-sm-8">
                 <div class="login-form-box registration-form">
                     <h3 class="title">Registrarse</h3>
-                    <p>Tienes una cuenta? <a href="#">Inicia sesión</a></p>
+                    <p>Tienes una cuenta? <a href="/login" style="text-decoration: underline;">Inicia sesión</a></p>
                     <div v-if="success" class="col-12">
                         <div class="alert alert-success" role="alert">
                             Te hemos enviado un correo para confirmar tu cuenta 

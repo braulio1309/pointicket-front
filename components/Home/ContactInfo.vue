@@ -41,7 +41,7 @@
                             </div>
                             <div v-if="checkValidation" class="col-12">
                                 <div class="alert alert-danger" role="alert">
-                                    Debe aceptar los terminos y condiciones
+                                    Debe aceptar los <a href="/terms-condition" style="text-decoration: underline;">terminos y condiciones</a>
                                 </div>
                             </div>
 
@@ -63,7 +63,7 @@
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me">Estoy de acuerdo con los <a href="/terms-condition"> terminos y condiciones</a></label>
+                                            <label for="remember-me">Estoy de acuerdo con los <a href="/terms-condition" style="text-decoration: underline;"> terminos y condiciones</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12 text-center">

@@ -184,7 +184,6 @@ import Pagination from 'v-pagination-3';
 import axios from 'axios';
 import qs from 'qs';
 
-
 export default {
     mixins: [eventMixin],
     components: {
@@ -363,7 +362,7 @@ export default {
     head() {
         return {
             title: 'Eventos',
-            meta: (this.type === 'buy') ? [
+            meta: (this.$route.params.type === 'buy') ? [
                 {
                     hid: 'Compra entradas para tus eventos favoritos | Pointickets',
                     name: 'Compra entradas para tus eventos favoritos | Pointickets',

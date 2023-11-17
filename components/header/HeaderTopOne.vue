@@ -15,20 +15,17 @@
                         </li>
 
                         <li v-if="!logged">
-                            <NuxtLink to="/register">Registrese</NuxtLink>
+                            <NuxtLink to="/register">Registrate</NuxtLink>
                         </li>
 
                         <li v-if="logged">
                             <NuxtLink to="/profile">Bienvenido {{ this.user.fullname }}</NuxtLink>
                         </li>
-                        <li><a href="tel:+011235641231"><i class="icon-phone"></i>Llamar: 123 4561 5523</a></li>
-                        <li><a href="mailto:info@pointickets.com" target="_blank"><i class="icon-envelope"></i>Email:
+                        <li><a href="mailto:info@pointickets.com" target="_blank"><i class="icon-envelope"></i>
                                 info@pointickets.com</a></li>
                         <li class="social-icon">
-                            <a href="https://facebook.com/"><i class="icon-facebook"></i></a>
-                            <a href="https://instagram.com/"><i class="icon-instagram"></i></a>
-                            <a href="https://twitter.com/"><i class="icon-twitter"></i></a>
-                            <a href="https://linkedin.com/"><i class="icon-linkedin2"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61552598728672" target="_blank"><i class="icon-facebook"></i></a>
+                            <a href="https://www.instagram.com/pointickets" target="_blank"><i class="icon-instagram"></i></a>
                         </li>
                     </ul>
                 </div>

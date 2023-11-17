@@ -7,7 +7,7 @@
                         <div class="section-title section-left" data-aos-delay="50" data-aos="fade-up"
                             data-aos-duration="800">
                             <span class="pre-title">Testimonios</span>
-                            <h2 class="title">Que opinan de nuestro sistema de entradas</h2>
+                            <h2 class="title">Opiniones de clientes</h2>
                             <span class="shape-line"><i class="icon-19"></i></span>
                             
                         </div>
@@ -27,13 +27,8 @@
 }">
                         <swiper-slide>
                             <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-01.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
                                 <div class="content">
-                                    <p>“Estoy encantada, he vendido y he comprado entradas y todo perfecto!”</p>
+                                    <p>“Encontré entradas en el Bernabéu para el partido del Real Madrid contra el Barcelona en la fila 1, en la zona VIP, por solo 50 euros. El proceso de compra fue muy sencillo y rápido.”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -41,19 +36,15 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Ray Sanchez</h5>
+                                    <h5 class="title">Juan Pérez</h5>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-02.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
+                                
                                 <div class="content">
-                                    <p>“Excelente web, he comprado entradas en varias ocasiones y nunca he tenido problemas”
+                                    <p>“Vendí mis entradas para el partido del Real Madrid contra el Atlético de Madrid en menos de una hora. El equipo de Pointickets me ayudó a encontrar un comprador rápidamente y me pagaron el precio que pedía.”
                                     </p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
@@ -62,19 +53,14 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Thomas Lopez</h5>
+                                    <h5 class="title">María Garcia</h5>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-03.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
                                 <div class="content">
-                                    <p>“Todo muy bien”</p>
+                                    <p>“Siempre encuentro las entradas que busco en Pointickets. El catálogo es muy amplio y los precios son muy competitivos.”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -82,21 +68,14 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Amber Page</h5>
+                                    <h5 class="title">Pedro Gómez</h5>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
                                 <div class="content">
-                                    <p>“sencilla, práctica y fiable plataforma tanto para vender como para comprar de forma
-                                        segura
-                                        ante planes imprevistos”</p>
+                                    <p>“Pointickets es una empresa muy profesional. El servicio de atención al cliente es excelente y siempre responden a mis preguntas de forma rápida y clara.”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -104,23 +83,15 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Robert Tapp</h5>
+                                    <h5 class="title">Ana Rodríguez</h5>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
+                                
                                 <div class="content">
-                                    <p>“Tuve una incidencia para el evento al que adquirí las entradas, contacté con su
-                                        servicio de
-                                        atención al cliente y me ofrecieron una solución en 24 horas. Agradecer la
-                                        iniciativa y
-                                        proactividad del agente con el que contacté”.</p>
+                                    <p>“Recomiendo Pointickets a todos los que quieran comprar o vender entradas para eventos deportivos. Es una empresa segura y fiable, con un excelente servicio al cliente.”.</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -128,19 +99,14 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Robert Tapp</h5>
+                                    <h5 class="title">Luis Sánchez</h5>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
                                 <div class="content">
-                                    <p>“Compra rápida, cómoda y segura”</p>
+                                    <p>“Estaba desesperada porque no encontraba a nadie a quien vender mis entradas para el derbi madrileño. En Pointickets me ayudaron a encontrar un comprador en menos de una hora y me pagaron el precio que pedía. ¡Estoy muy contenta!”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -148,194 +114,7 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“En 10 minutos había vendido las entradas para el partido al que no podía acudir.
-                                        Excelente”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“He vendido y comprado entradas y siempre ha ido perfecto”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“Pude acceder al evento sin ningún tipo de incidencia. Volveré a repetir”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“ He comprado en varias ocasiones y hasta la fecha no he tenido ningún tipo de
-                                        problemas”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“Comodidad en la compra y recepción de entradas. Todo fue perfectamente”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“Reclamé por unas entradas incorrectas y me ofrecieron alternativa en 24 horas.
-                                        Finalmente
-                                        me ofrecieron unas entradas de superior categoría por el mismo precio. Buen servicio
-                                        de
-                                        atención al cliente, se mostraron atentos y empáticos”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“No conocía el sitio, a partir de ahora será una de mis webs de referencia para la compra-venta
-de entradas. Confiable, seguro y fácil. Enhorabuena.”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“Buena web, me ayudó mucho. Genial la atención al cliente y la opción de notificaciones.”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="thumbnail">
-                                    <img src="/images/testimonial/testimonial-04.png" alt="Testimonial">
-                                    <span class="qoute-icon"><i class="icon-26"></i></span>
-
-                                </div>
-                                <div class="content">
-                                    <p>“ Web segura donde comprar entradas”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Robert Tapp</h5>
+                                    <h5 class="title">Laura Mendez</h5>
                                 </div>
                             </div>
                         </swiper-slide>

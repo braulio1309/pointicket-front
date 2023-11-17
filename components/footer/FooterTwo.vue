@@ -52,8 +52,14 @@
                                     <li>
                                         <NuxtLink to="/terms-condition">Terminos y condiciones</NuxtLink>
                                     </li>
-                                    <li>
+                                    <li v-if="logged">
                                         <NuxtLink to="/profile">Mi perfil</NuxtLink>
+                                    </li>
+                                    <li v-if="!logged">
+                                        <NuxtLink to="/login">Iniciar sesión</NuxtLink>
+                                    </li>
+                                    <li v-if="!logged">
+                                        <NuxtLink to="/register">Registrarse</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink to="/contacto">Contacto</NuxtLink>
@@ -73,16 +79,12 @@
                                             class="icon-4"></i></button>
                                 </div>
                                 <ul class="social-share icon-transparent">
-                                    <li><a href="https://facebook.com/" target="_blank" class="color-fb"><i
+                                    <li><a href="https://www.facebook.com/profile.php?id=61552598728672" target="_blank" class="color-fb"><i
                                                 class="icon-facebook"></i></a></li>
-                                    <li><a href="https://linkedin.com/" target="_blank" class="color-linkd"><i
-                                                class="icon-linkedin2"></i></a></li>
-                                    <li><a href="https://instagram.com/" target="_blank" class="color-ig"><i
+                                   
+                                    <li><a href="https://www.instagram.com/pointickets/" target="_blank" class="color-ig"><i
                                                 class="icon-instagram"></i></a></li>
-                                    <li><a href="https://twitter.com/" target="_blank" class="color-twitter"><i
-                                                class="icon-twitter"></i></a></li>
-                                    <li><a href="https://youtube.com/" target="_blank" class="color-yt"><i
-                                                class="icon-youtube"></i></a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -104,3 +106,34 @@
         </div>
     </footer>
 </template>
+
+<script>
+
+export default {
+    data() {
+        return {
+            showModal: false,
+            logged: false,
+            user: ''
+
+        };
+    },
+    mounted() {
+        this.isLogged();
+    },
+    methods: {
+        isLogged() {
+
+            const jwt = window.localStorage.getItem('jwt');
+            const userData = window.localStorage.getItem('userData');
+
+            // Si tanto el token como los datos del usuario existen, se considera que el usuario está logueado
+            this.user = JSON.parse(userData);
+            this.logged = !!jwt && !!userData;
+
+
+        },
+    },
+
+};
+</script>

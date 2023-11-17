@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-sm-10">
             <div>
-              <input v-model="data" placeholder="Buscar eventos" style="border-radius: 10px;">
+              <input v-model="data" placeholder="Buscar eventos" style="border-radius: 10px; padding: 0 25px;">
 
             </div>
           </div>

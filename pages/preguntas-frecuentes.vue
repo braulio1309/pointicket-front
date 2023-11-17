@@ -11,14 +11,14 @@
                     <div class="col-lg-12">
                         <div class="privacy-policy terms-condition">
                             <div class="text-block">
-                                <h3 class="title">Comprar entradas:</h3>
+                                <h2 class="title">Dudas sobre la compra de entradas:</h2>
                                 <ul>
 
-                                    <li><b>¿Mis asientos estaran juntos?</b> <br>Sí, las entradas adquiridas del mismo
+                                    <li><h3 class="title"><b>¿Mis asientos estaran juntos?</b></h3> <br>Sí, las entradas adquiridas del mismo
                                         anuncio estarán juntas, a menos que se especifique algo distinto durante el proceso
                                         de confirmación de compra.</li>
 
-                                    <li><b>¿En qué lugar estarán mis asientos?</b> Todos los detalles disponibles sobre la
+                                    <li><h3 class="title">¿En qué lugar estarán mis asientos?</h3><b></b> Todos los detalles disponibles sobre la
                                         localización de tu asiento se muestran en tu email de confirmación.
 
                                     </li>
@@ -27,10 +27,10 @@
 
                             </div>
                             <div class="text-block">
-                                <h3 class="title">Recibir entradas:</h3>
+                                <h2 class="title">Dudas de como recibir mis entradas:</h2>
                                 <ul>
 
-                                    <li><b>¿Cuándo recibiré mis entradas?</b> <br>
+                                    <li><h3 class="title"><b>¿Cuándo recibiré mis entradas?</b></h3><b></b> <br>
                                         Deberías recibir tus entradas, entradas electrónicas incluidas, en la semana
                                         anterior al evento, ya que los organizadores suelen emitir las entradas en fechas
                                         muy próximas al evento, a menudo en la misma semana.
@@ -55,7 +55,7 @@
 
                                     </li>
 
-                                    <li><b>¿Por qué el precio que aparece en la entrada es diferente del que pago yo?</b>
+                                    <li><h3 class="title"><b>¿Por qué el precio que aparece en la entrada es diferente del que pago yo?</b></h3>
                                         <br><br>
                                         Las entradas de Pointickets se venden a precios que pueden estar por encima, por
                                         debajo o igual que el valor nominal que aparece en la entrada.<br><br>
@@ -63,7 +63,7 @@
                                         valor nominal debido a la alta demanda. En Pointickets muchas entradas se venden más
                                         baratas que el precio nominal.
                                     </li>
-                                    <li><b>¿Por qué en mis entradas aparece el nombre de otra persona?</b> <br><br>
+                                    <li><h3 class="title"><b>¿Por qué en mis entradas aparece el nombre de otra persona?</b></h3> <br><br>
                                         Pointickets permite que terceras partes, particulares incluidos, vendan entradas en
                                         su plataforma. En algunos casos, puede aparecer el nombre del comprador original en
                                         la entrada. La entrada sigue siendo válida. Tu nombre no tiene que ser el mismo que
@@ -75,7 +75,7 @@
                                 </ul>
                             </div>
                             <div class="text-block">
-                                <h3 class="title">¿Puedo cancelar mi compra?</h3>
+                                <h2 class="title">¿Puedo cancelar mi compra?</h2>
                                 <p>
                                     La satisfacción de nuestros clientes es fundamental para nosotros, pero como plataforma
                                     de intercambio de entradas entre particulares, nuestras transacciones son finales, por
@@ -88,7 +88,7 @@
                                 </p>
                             </div>
                             <div class="text-block">
-                                <h3 class="title">¿Cómo me pongo en contacto con Pointickets?</h3>
+                                <h2 class="title">¿Cómo me pongo en contacto con Pointickets?</h2>
                                 <ul>
                                     <li>Mándanos un WhatsApp</li>
                                     <li>Llámanos</li>
@@ -125,11 +125,18 @@ export default {
         PageSidebarOne,
         ScrollToTop
     },
-    head() {
+     head() {
         return {
-            title: 'Preguntas Frecuentes'
+            title: 'Preguntas frecuentes',
+            meta: [
+                {
+                    hid: 'Preguntas frecuentes | Pointickets',
+                    name: 'Preguntas frecuentes | Pointickets',
+                    content: 'Te respondemos a las preguntas más comunes.Te resolvemos todo para que no tengas dudas en comprar o vender entradas de tus eventos.'
+                }
+            ]
         }
-    },
+    }
 
 }
 </script>

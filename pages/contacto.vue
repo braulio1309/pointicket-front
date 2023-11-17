@@ -3,14 +3,14 @@
 
         <HeaderOne />
 
-        <BreadCrumbTwo title='Contacto' />
+        <BreadCrumbTwo title='Contacta con nosotros' />
 
         <section class="contact-us-area">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-xl-4 col-lg-6">
                         <div class="contact-us-info">
-                            <h3 class="heading-title">Estamos para ti!</h3>
+                            <h4 class="heading-title">Nuestro equipo de atención al cliente está disponible para ayudarte con cualquier duda o problema que tengas.</h4>
                             <ul class="address-list">
                                 <li>
                                     <h5 class="title">Email</h5>
@@ -68,7 +68,8 @@
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me">Estoy de acuerdo con los <a href="/terms-condition"> terminos y condiciones</a></label>
+                                            <label for="remember-me">Estoy de acuerdo con los <a href="/terms-condition">
+                                                    terminos y condiciones</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12">
@@ -110,6 +111,7 @@
 </template>
 
 <script>
+
 import emailjs from 'emailjs-com';
 import MouseMove from '~~/components/animation/MouseMove.vue';
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
@@ -142,7 +144,7 @@ export default {
     },
     methods: {
         handleSubmit() {
-            if(!this.checkbox){
+            if (!this.checkbox) {
                 this.checkValidation = true;
                 return;
             }
@@ -198,7 +200,14 @@ export default {
     },
     head() {
         return {
-            title: 'contacto'
+            title: 'contacto',
+            meta: [
+                {
+                    hid: 'Contacta con nosotros | Pointickets',
+                    name: 'Contacta con nosotros | Pointickets',
+                    content: '¿Tienes alguna duda? Ponte en contacto con nuestro equipo de atención al cliente y te responderemos lo antes posible.'
+                }
+            ]
         }
     }
 }

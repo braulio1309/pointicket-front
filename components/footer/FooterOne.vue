@@ -14,8 +14,7 @@
                             <div class="widget-information">
                                 <ul class="information-list">
                                     <li><span>Ubicación:</span>España</li>
-                                    <li><span>Llama:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
-                                    <li><span>Email:</span><a href="mailto:hola@pointicket.com" target="_blank">hola@pointicket.com</a></li>
+                                    <li><span>Email:</span><a href="mailto:info@pointicket.com" target="_blank">info@pointicket.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -56,10 +55,7 @@
                                 </div>
                                 <ul class="social-share icon-transparent">
                                     <li><a href="https://facebook.com/" target="_blank" class="color-fb"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="https://linkedin.com/" target="_blank" class="color-linkd"><i class="icon-linkedin2"></i></a></li>
                                     <li><a href="https://instagram.com/" target="_blank" class="color-ig"><i class="icon-instagram"></i></a></li>
-                                    <li><a href="https://twitter.com/" target="_blank" class="color-twitter"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="https://youtube.com/" target="_blank" class="color-yt"><i class="icon-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>

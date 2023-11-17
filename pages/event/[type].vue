@@ -31,7 +31,8 @@
                     <div class="col-lg-12 order-lg-1 col-pr--35" v-if="this.events.length == 0">
                         <div class="col-12 mt--50">
                             <div class="alert alert-info" role="alert">
-                                No se ha encontrado su evento buscado, puede escribirnos para sugerir agregarlo en los proximos días
+                                No se ha encontrado su evento buscado, puede escribirnos para sugerir agregarlo en los
+                                proximos días
                             </div>
                             <div class="offset-xl-2 col-lg-6">
                                 <div class="contact-form form-style-2">
@@ -361,9 +362,22 @@ export default {
     },
     head() {
         return {
-            title: 'Eventos'
+            title: 'Eventos',
+            meta: (this.type === 'buy') ? [
+                {
+                    hid: 'Compra entradas para tus eventos favoritos | Pointickets',
+                    name: 'Compra entradas para tus eventos favoritos | Pointickets',
+                    content: 'Compra y vende entradas de futbol para los mejores partidos en el Bernabéu, entradas de conciertos, festivales, teatro y otros eventos en Pointickets.'
+                }
+            ] : [
+                {
+                    hid: 'Vender entradas | Pointickets',
+                    name: 'Vender entradas | Pointickets',
+                    content: 'Venta de entradas para tus eventos deportivos favoritos. Encuentra compradores rápidamente y obtén el mejor precio por tus entradas.'
+                }
+            ]
         }
-    },
+    }
 
 }
 </script>

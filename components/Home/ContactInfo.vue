@@ -3,21 +3,14 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
-                    <div class="home-one-cta edu-cta-box bg-image bg-image--7">
-                        <div class="inner">
-                            <div class="content text-md-end">
-                                <span class="subtitle">Escribenos:</span>
-                                <h3 class="title"><a href="mailto:info@pointickets.com"
-                                        target="_blank">info@pointickets.com</a></h3>
-                            </div>
-                            <div class="sparator">
-                                <span>o</span>
-                            </div>
-                            <div class="content">
-                                <span class="subtitle">Llamanos:</span>
-                                <h3 class="title"><a href="tel:+011235641231">+01 123 5641 231</a></h3>
-                            </div>
-                        </div>
+                    <div class=" edu-cta-box bg-image bg-image--7">
+                            <h4 class="widget-title" style="color: white;">Newsletter</h4><br>
+                                <p class="description" style="font-size: large;">Ingresa tu email para mantenerte informado</p>
+                                <div class="">
+                                    <input v-model="input" style="border-radius: 10px; margin-bottom:15px; position:relative;" type="email" placeholder="Correo">
+                                    <button class="edu-btn btn-medium" type="button">Suscribete <i
+                                            class="icon-4"></i></button>
+                                </div>
                         <ul class="shape-group">
                             <MouseMove addClassName="shape-01" dataDepth="2" imgSrc="/images/cta/shape-06.png" />
                             <MouseMove addClassName="shape-02" dataDepth="-2" imgSrc="/images/cta/shape-12.png" />
@@ -127,7 +120,8 @@ export default {
             email: '',
             checkbox: false,
             emailValidation: false,
-            checkValidation: false
+            checkValidation: false,
+            input: ''
         }
     },
     methods: {

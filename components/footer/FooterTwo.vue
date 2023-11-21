@@ -34,10 +34,10 @@
                             <div class="inner">
                                 <ul class="footer-link link-hover">
                                     <li>
-                                        <NuxtLink to="/event/buy">Eventos</NuxtLink>
+                                        <NuxtLink to="/comprar-entradas">Eventos</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/event/sell">Vender entradas</NuxtLink>
+                                        <NuxtLink to="/vender-entradas">Vender entradas</NuxtLink>
                                     </li>
                                 </ul>
                             </div>

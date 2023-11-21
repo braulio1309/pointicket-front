@@ -35,7 +35,7 @@
                     },
                     
                     {
-                        url: '/event/buy',
+                        url: '/comprar-entradas',
                         title: 'Comprar entradas',
                     },
                     {

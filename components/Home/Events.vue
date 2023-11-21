@@ -12,11 +12,11 @@
             <div class="row g-5">
                 <div class="col-md-6 col-xl-3" data-aos-delay="10" data-aos="fade-up" data-aos-duration="100"
                     v-for="event in events.slice(0, 8)" :key="event.id">
-                    <LastEvents :event="event" :type="'buy'" />
+                    <LastEvents :event="event" :type="'comprar'" />
                 </div>
             </div>
             <div class="course-view-all" data-aos-delay="10" data-aos="fade-up" data-aos-duration="100">
-                <NuxtLink to="/event/buy" class="edu-btn">Ver más eventos <i class="icon-4"></i></NuxtLink>
+                <NuxtLink to="/comprar-entradas" class="edu-btn">Ver más eventos <i class="icon-4"></i></NuxtLink>
             </div>
         </div>
     </div>

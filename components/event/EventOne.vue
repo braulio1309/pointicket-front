@@ -22,7 +22,7 @@
                     <li><i class="icon-40"></i>{{ eventInfo.location }}</li>
                 </ul>
                 <div class="read-more-btn">
-                    <NuxtLink class="edu-btn btn-small btn-secondary" :to="'/tickets/'+type+'/' + eventInfo.id">{{ (type === 'buy')? 'Comprar': 'Vender' }} <i
+                    <NuxtLink class="edu-btn btn-small btn-secondary" :to="'/tickets/'+type+'/' + eventInfo.id">{{ (type === 'comprar')? 'Comprar': 'Vender' }} <i
                             class="icon-4"></i></NuxtLink>
                 </div>
             </div>

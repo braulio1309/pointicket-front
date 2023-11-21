@@ -14,11 +14,16 @@
                                 <h2 class="title">Dudas sobre la compra de entradas:</h2>
                                 <ul>
 
-                                    <li><h3 class="title"><b>¿Mis asientos estaran juntos?</b></h3> <br>Sí, las entradas adquiridas del mismo
+                                    <li class="lista">
+                                        <h3 class="title"><b>¿Mis asientos estaran juntos?</b></h3> <br>Sí, las entradas
+                                        adquiridas del mismo
                                         anuncio estarán juntas, a menos que se especifique algo distinto durante el proceso
-                                        de confirmación de compra.</li>
+                                        de confirmación de compra.
+                                    </li>
 
-                                    <li><h3 class="title">¿En qué lugar estarán mis asientos?</h3><b></b> Todos los detalles disponibles sobre la
+                                    <li class="lista">
+                                        <h3 class="title">¿En qué lugar estarán mis asientos?</h3><b></b> Todos los detalles
+                                        disponibles sobre la
                                         localización de tu asiento se muestran en tu email de confirmación.
 
                                     </li>
@@ -30,7 +35,8 @@
                                 <h2 class="title">Dudas de como recibir mis entradas:</h2>
                                 <ul>
 
-                                    <li><h3 class="title"><b>¿Cuándo recibiré mis entradas?</b></h3><b></b> <br>
+                                    <li class="lista">
+                                        <h3 class="title"><b>¿Cuándo recibiré mis entradas?</b></h3><b></b> <br>
                                         Deberías recibir tus entradas, entradas electrónicas incluidas, en la semana
                                         anterior al evento, ya que los organizadores suelen emitir las entradas en fechas
                                         muy próximas al evento, a menudo en la misma semana.
@@ -55,7 +61,9 @@
 
                                     </li>
 
-                                    <li><h3 class="title"><b>¿Por qué el precio que aparece en la entrada es diferente del que pago yo?</b></h3>
+                                    <li class="lista">
+                                        <h3 class="title"><b>¿Por qué el precio que aparece en la entrada es diferente del
+                                                que pago yo?</b></h3>
                                         <br><br>
                                         Las entradas de Pointickets se venden a precios que pueden estar por encima, por
                                         debajo o igual que el valor nominal que aparece en la entrada.<br><br>
@@ -63,7 +71,9 @@
                                         valor nominal debido a la alta demanda. En Pointickets muchas entradas se venden más
                                         baratas que el precio nominal.
                                     </li>
-                                    <li><h3 class="title"><b>¿Por qué en mis entradas aparece el nombre de otra persona?</b></h3> <br><br>
+                                    <li class="lista">
+                                        <h3 class="title"><b>¿Por qué en mis entradas aparece el nombre de otra persona?</b>
+                                        </h3> <br><br>
                                         Pointickets permite que terceras partes, particulares incluidos, vendan entradas en
                                         su plataforma. En algunos casos, puede aparecer el nombre del comprador original en
                                         la entrada. La entrada sigue siendo válida. Tu nombre no tiene que ser el mismo que
@@ -108,7 +118,14 @@
     </div>
 </template>
 
-
+<style>
+.privacy-policy ul .lista:after {
+    content: none;
+    /* Esto elimina el contenido generado por ::before */
+    list-style-type: none !important;
+    /* Esto elimina la viñeta del elemento */
+}
+</style>
 <script>
 
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
@@ -125,7 +142,7 @@ export default {
         PageSidebarOne,
         ScrollToTop
     },
-     head() {
+    head() {
         return {
             title: 'Preguntas frecuentes',
             meta: [

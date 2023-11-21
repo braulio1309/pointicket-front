@@ -22,7 +22,7 @@
                         <ul class="header-action">
                             
                             <li class="header-btn">
-                                <NuxtLink to="/event/sell" class="edu-btn btn-medium">VENDER ENTRADAS <i class="icon-4"></i>
+                                <NuxtLink to="/vender-entradas" class="edu-btn btn-medium">VENDER ENTRADAS <i class="icon-4"></i>
                                 </NuxtLink>
                             </li>
                             <li class="mobile-menu-bar d-block d-xl-none">

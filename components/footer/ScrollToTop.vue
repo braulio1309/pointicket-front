@@ -13,7 +13,7 @@ export default {
         if (result) {
             document.addEventListener("scroll", () => {
                 if (window.scrollY > 200) {
-                    result.style.display = "block";
+                    result.style.display = "none"; //block
                 } else {
                     result.style.display = "none";
                 }

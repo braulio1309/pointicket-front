@@ -11,12 +11,10 @@
                                         alt="Light Logo">
                                 </NuxtLink>
                             </div>
-                            <p class="description">Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor
-                                incidid unt labore dolore.</p>
+                            <p class="description"></p>
                             <div class="widget-information">
                                 <ul class="information-list">
                                     <li><span>Ubicación:</span>España</li>
-                                    <li><span>Llama:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
                                     <li><span>Email:</span><a href="mailto:info@pointicket.com"
                                             target="_blank">info@pointicket.com</a></li>
                                 </ul>

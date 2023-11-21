@@ -34,7 +34,7 @@ export default {
   methods: {
     saveSearch() {
       window.localStorage.setItem('search', this.data);
-      this.$router.push('/event/buy');
+      this.$router.push('/comprar-entradas');
     }
   }
 };

@@ -5,7 +5,7 @@
                 <div class="col-xl-8">
                     <div class=" edu-cta-box bg-image bg-image--7">
                             <h4 class="widget-title" style="color: white;">Newsletter</h4><br>
-                                <p class="description" style="font-size: large;">Ingresa tu email para mantenerte informado</p>
+                                <p class="description" style="font-size: large; color:white;">Ingresa tu email para mantenerte informado</p>
                                 <div class="">
                                     <input v-model="input" style="border-radius: 10px; margin-bottom:15px; position:relative;" type="email" placeholder="Correo">
                                     <button class="edu-btn btn-medium" type="button">Suscribete <i

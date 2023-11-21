@@ -14,7 +14,7 @@
                 <h6 class="title">
                     <NuxtLink :to="'/tickets/'+type+'/'+ event.id">{{ event.attributes.title }}</NuxtLink>
                 </h6>
-                <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'buy')? 'Comprar': 'Vender' }}</a>
+                <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'comprar')? 'Comprar': 'Vender' }}</a>
 
                 
             </div>

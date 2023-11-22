@@ -8,27 +8,15 @@
         <section class="section-gap-equal error-page-area">
             <div class="container">
                 <div class="edu-error">
-                    <div class="thumbnail">
-                        <img src="/images/others/404.png" alt="404 Error">
-                        <ul class="shape-group">
-                            <MouseMove addClassName="shape-1" dataDepth="2" imgSrc="/images/about/shape-25.png" />
-                            <MouseMove addClassName="shape-2" dataDepth="-2" imgSrc="/images/about/shape-15.png" />
-                            <MouseMove addClassName="shape-3" dataDepth="2" imgSrc="/images/about/shape-13.png" />
-                            <MouseMove addClassName="shape-4" dataDepth="-2" imgSrc="/images/counterup/shape-02.png" />
-                        </ul>
-                    </div>
+                    
                     <div class="content">
-                        <h2 class="title">404 - Page Not Found</h2>
-                        <h4 class="subtitle">The page you are looking for does not exist.</h4>
-                        <NuxtLink to="/" class="edu-btn"><i class="icon-west"></i>Back to Homepage</NuxtLink>
+                        <h2 class="title">404 - Página no encontrada</h2>
+                        <h4 class="subtitle">Está página no existe.</h4>
+                        <NuxtLink to="/" class="edu-btn"><i class="icon-west"></i>Volver al inicio</NuxtLink>
                     </div>
                 </div>
             </div>
-            <ul class="shape-group">
-                <li class="shape-1">
-                    <img src="/images/others/map-shape-2.png" alt="Shape">
-                </li>
-            </ul>
+            
         </section>
 
         <FooterOne />

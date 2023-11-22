@@ -100,9 +100,11 @@
                             <div class="text-block">
                                 <h2 class="title">¿Cómo me pongo en contacto con Pointickets?</h2>
                                 <ul>
+                                    <li><a href="/contacto"
+                                                style="text-decoration: underline;">Contáctanos a través de nuestro formulario.</a></li>
+                                    <li>Puedes escribirnos a <a href="mailto:info@pointickets.com"
+                                                style="text-decoration: underline;">info@pointicket.com</a> y te responderemos lo antes posible.</li>
                                     <li>Mándanos un WhatsApp</li>
-                                    <li>Llámanos</li>
-                                    <li>Mándanos un mensaje.</li>
                                 </ul>
                             </div>
 

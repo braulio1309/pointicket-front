@@ -52,7 +52,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h6 class="title">Compra y vende entradas en pocos clics</h6>
+                        <h6 class="title">Compra y vende entradas en pocos clics.</h6>
                     </div>
                 </div>
                 <div class="features-box features-style-2 edublink-svg-animate">
@@ -75,7 +75,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h6 class="title">Satisfacción garantizada para nuestros clientes</h6>
+                        <h6 class="title">Satisfacción garantizada para nuestros clientes.</h6>
                     </div>
                 </div>
                 

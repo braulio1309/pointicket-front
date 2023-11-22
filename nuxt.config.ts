@@ -17,6 +17,10 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Spartan:wght@400;500;600;700;800&display=swap",
         },
+        {
+          rel: "stylesheet",
+          href: "https://sibforms.com/forms/end-form/build/sib-styles.css",
+        }
       ],
       script: [
         {
@@ -33,6 +37,7 @@ export default defineNuxtConfig({
           })(window,document,'script','dataLayer','GTM-5W3F2VFP');`,
           tagPriority: 'high'
         },
+        { src: 'https://js.stripe.com/v3' },
       ],
       noscript: [
         {
@@ -48,6 +53,8 @@ export default defineNuxtConfig({
     public: {
       apiBase: process.env.API_BASE_URL || "/test",
       apiBaseImage: process.env.API_BASE_IMAGE || "/",
+      STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
+
     },
   },
 });

@@ -50,7 +50,8 @@
                                             <label>Cupón de descuento</label>
                                             <input type="text" id="email" v-model="coupon">
                                             <p v-if="resultCouponAmount">Cupon disponible - €{{ amountDiscount }}</p>
-                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ percentageDiscount }}%</p>
+                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ percentageDiscount }}%
+                                            </p>
                                             <p v-if="errorCoupon">Cupón no válido</p>
 
                                         </div>
@@ -100,19 +101,24 @@
 
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td >€{{ ticket.attributes.endPrice * ticket.attributes.seat +
+                                                <td>€{{ ticket.attributes.endPrice * ticket.attributes.seat +
                                                     (ticket.attributes.endPrice * ticket.attributes.seat * 0.1) }}
                                                 </td>
                                             </tr>
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
-                                                
-                                                <td v-if="resultCouponAmount">€{{ (ticket.attributes.endPrice * ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) - amountDiscount }}
+
+                                                <td v-if="resultCouponAmount">€{{ (ticket.attributes.endPrice *
+                                                    ticket.attributes.seat +
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
+                                                    amountDiscount }}
                                                 </td>
-                                                <td v-if="resultCouponPercentage">€{{ (ticket.attributes.endPrice * ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) - ((percentageDiscount/100) * (ticket.attributes.endPrice * ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1))) }}
+                                                <td v-if="resultCouponPercentage">€{{ (ticket.attributes.endPrice *
+                                                    ticket.attributes.seat +
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
+                                                    ((percentageDiscount / 100) * (ticket.attributes.endPrice *
+                                                        ticket.attributes.seat +
+                                                        (ticket.attributes.endPrice * ticket.attributes.seat * 0.1))) }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -121,6 +127,9 @@
                             </div>
                             <div class="order-payment">
                                 <div class="row justify-content-center">
+                                    <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey"
+                                        :line-items="lineItems" :success-url="'http://localhost:3000/exitoso/'+ticketId"
+                                        :cancel-url="'http://localhost:3000/fallido/'+ticketId" @loading="v => loading = v" />
                                     <button type="button" @click="savePurchase" :disabled="isLoading"
                                         class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
                                 </div>
@@ -164,19 +173,23 @@ import FooterOne from '~~/components/footer/FooterOne.vue';
 import ScrollToTop from '~~/components/footer/ScrollToTop.vue';
 import axios from 'axios';
 import qs from 'qs';
+import { StripeCheckout } from '@vue-stripe/vue-stripe';
 
 export default {
     components: {
         HeaderOne,
         BreadCrumbTwo,
         FooterOne,
-        ScrollToTop
+        ScrollToTop,
+        StripeCheckout
     },
     data() {
+        const config = useRuntimeConfig();
+
         return {
             variable: false,
             title: 'Pagar',
-            ticketId: null,
+            ticketId: this.$route.params.id,
             ticket: null,
             user: '',
             result: false,
@@ -187,7 +200,9 @@ export default {
             resultCouponPercentage: false,
             percentgeDiscount: 0,
             amountDiscount: 0,
-            errorCoupon: false
+            errorCoupon: false,
+            lineItems: null,
+            publishableKey: config.public.STRIPE_PUBLIC_KEY
 
 
         }
@@ -199,20 +214,22 @@ export default {
     },
     methods: {
 
-        getEvent() {
+        async getEvent() {
             const config = useRuntimeConfig();
-            axios
+            console.log(this.ticketId)
+            let response = await axios
                 .get(`${config.public.apiBase}tickets/` + this.ticketId + '?populate=*', {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
-                })
-                .then((response) => {
-                    this.ticket = response.data.data;
-                })
-                .catch((error) => {
-                    console.error('Error al buscar al evento', error);
                 });
+            this.ticket = response.data.data;
+            console.log('ticket', this.ticket)
+            this.lineItems = [{
+                price: this.ticket.attributes.price_id,
+                quantity: 1,
+            }];
+            console.log(this.lineItems);
         },
         async verifyCoupon() {
             const config = useRuntimeConfig();
@@ -250,16 +267,16 @@ export default {
                     },
                 })
                 .then((response) => {
-                    let amount =  response.data.data[0].attributes.amount;
-                    let percentage =  response.data.data[0].attributes.percentage;
+                    let amount = response.data.data[0].attributes.amount;
+                    let percentage = response.data.data[0].attributes.percentage;
                     this.errorCoupon = false;
 
-                    if(amount){
+                    if (amount) {
                         this.amountDiscount = amount;
                         this.resultCouponAmount = true;
 
                     }
-                    if(percentage){
+                    if (percentage) {
                         this.percentageDiscount = percentage;
                         this.resultCouponPercentage = true;
                     }
@@ -270,41 +287,18 @@ export default {
                 });
         },
         savePurchase() {
-            this.isLoading = true;
-            const config = useRuntimeConfig();
-            let data = {
-                user: this.user,
-                ticket: this.ticket,
-                subtotal: this.ticket.attributes.endPrice * this.ticket.attributes.seat,
-                total: this.ticket.attributes.endPrice * this.ticket.attributes.seat + (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1),
-                taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1,
-            };
-
-            axios
-                .post(`${config.public.apiBase}purchases`, { data }, {
-                    headers: {
-                        Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
-                    },
-                })
-                .then((response) => {
-                    this.message = response.data;
-                    this.result = true;
-
-                })
-                .catch((error) => {
-                    // Maneja los errores, por ejemplo, muestra un mensaje de error
-                    console.error('Error al actualizar el usuario', error);
-                });
+            this.$refs.checkoutRef.redirectToCheckout();
         },
         userData() {
             const userData = window.localStorage.getItem('userData');
             this.user = JSON.parse(userData);
         },
     },
-    mounted() {
+    async mounted() {
         this.ticketId = this.$route.params.id;
-        this.getEvent();
+        await this.getEvent();
         this.userData();
+
     },
 
 }

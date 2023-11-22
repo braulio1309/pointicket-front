@@ -4,13 +4,20 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <div class=" edu-cta-box bg-image bg-image--7">
-                            <h4 class="widget-title" style="color: white;">Newsletter</h4><br>
-                                <p class="description" style="font-size: large; color:white;">Ingresa tu email para mantenerte informado</p>
-                                <div class="">
-                                    <input v-model="input" style="border-radius: 10px; margin-bottom:15px; position:relative;" type="email" placeholder="Correo">
-                                    <button class="edu-btn btn-medium" type="button">Suscribete <i
-                                            class="icon-4"></i></button>
-                                </div>
+                        <div v-if="showResultNews" class="col-12">
+                            <div id="contact-form" class="alert alert-success" role="alert">
+                                ¡Te has suscrito con éxito!
+                            </div>
+                        </div>
+                        <h4 class="widget-title" style="color: white;">¡Suscríbete a nuestra newsletter!</h4><br>
+                        <p class="description" style="font-size: large; color:white;">Mantente informado de todas las
+                            novedades en eventos deportivos.</p>
+                        <div class="">
+                            <input v-model="input" style="border-radius: 10px; margin-bottom:15px; position:relative;"
+                                type="email" placeholder="Correo">
+                            <button :disabled="isLoadingNews" @click="newsletter" class="edu-btn btn-medium"
+                                type="button">Suscríbete <i class="icon-4"></i></button>
+                        </div>
                         <ul class="shape-group">
                             <MouseMove addClassName="shape-01" dataDepth="2" imgSrc="/images/cta/shape-06.png" />
                             <MouseMove addClassName="shape-02" dataDepth="-2" imgSrc="/images/cta/shape-12.png" />
@@ -26,8 +33,8 @@
                     <div class="col-lg-8">
                         <div class="contact-form">
                             <div class="section-title section-center">
-                                <h3 class="title">¿Tu Evento no está disponible? Contáctanos por Whatsapp o llena este
-                                    formulario</h3>
+                                <h3 class="title">Contáctanos por Whatsapp o completa este formulario.</h3>
+                                <p class="description">Mantente informado de todas las novedades en eventos deportivos.</p>
                             </div>
                             <div v-if="showResult" class="col-12">
                                 <div id="contact-form" class="alert alert-success" role="alert">
@@ -41,7 +48,7 @@
                             </div>
                             <div v-if="checkValidation" class="col-12">
                                 <div class="alert alert-danger" role="alert">
-                                    Debe aceptar los <a href="/terms-condition" style="text-decoration: underline;">terminos y condiciones</a>
+                                    He leído y acepto los <a href="/terms-condition" style="text-decoration: underline;">términos y condiciones de uso.</a>
                                 </div>
                             </div>
 
@@ -63,7 +70,7 @@
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me">Estoy de acuerdo con los <a href="/terms-condition" style="text-decoration: underline;"> terminos y condiciones</a></label>
+                                            <label for="remember-me">He leído y acepto los <a href="/terms-condition" style="text-decoration: underline;">términos y condiciones de uso.</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12 text-center">
@@ -113,7 +120,9 @@ export default {
         return {
             resultText: '',
             showResult: false,
+            showResultNews: false,
             isLoading: false,
+            isLoadingNews: false,
             message: '',
             name: '',
             phone: '',
@@ -126,10 +135,10 @@ export default {
     },
     methods: {
         validateEmail() {
-            
+
         },
         handleSubmit() {
-            if(!this.checkbox){
+            if (!this.checkbox) {
                 this.checkValidation = true;
                 return;
             }
@@ -156,6 +165,28 @@ export default {
                 .catch((error) => {
                     this.emailValidation = true;
                     this.isLoading = false;
+                    console.error('Error al enviar formulario', error.response.data.error);
+                });
+        },
+        newsletter() {
+
+            this.isLoadingNews = true;
+            this.showResultNews = false;
+
+            const config = useRuntimeConfig();
+
+            let data = {
+                email: this.input,
+            };
+            axios
+                .post(`${config.public.apiBase}contacts`, { data })
+                .then((response) => {
+                    this.isLoadingNews = false;
+                    this.showResultNews = true;
+                })
+                .catch((error) => {
+                    this.isLoadingNews = false;
+                    this.showResultNews = false;
                     console.error('Error al enviar formulario', error.response.data.error);
                 });
         },

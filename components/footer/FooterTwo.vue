@@ -34,28 +34,13 @@
                             <div class="inner">
                                 <ul class="footer-link link-hover">
                                     <li>
-                                        <NuxtLink to="/comprar-entradas">Eventos</NuxtLink>
+                                        <NuxtLink to="/comprar-entradas">Comprar entradas</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink to="/vender-entradas">Vender entradas</NuxtLink>
                                     </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="edu-footer-widget quick-link-widget">
-                            <h4 class="widget-title">Links</h4>
-                            <div class="inner">
-                                <ul class="footer-link link-hover">
                                     <li>
                                         <NuxtLink to="/preguntas-frecuentes">Preguntas frecuentes</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink to="/privacy-policy">Politicas de privacidad</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink to="/terms-condition">Terminos y condiciones</NuxtLink>
                                     </li>
                                     <li v-if="logged">
                                         <NuxtLink to="/profile">Mi perfil</NuxtLink>
@@ -68,6 +53,22 @@
                                     </li>
                                     <li>
                                         <NuxtLink to="/contacto">Contacto</NuxtLink>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="edu-footer-widget quick-link-widget">
+                            <h4 class="widget-title">Políticas</h4>
+                            <div class="inner">
+                                <ul class="footer-link link-hover">
+                                    
+                                    <li>
+                                        <NuxtLink to="/privacy-policy">Politicas de privacidad</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="/terms-condition">Términos y condiciones</NuxtLink>
                                     </li>
                                 </ul>
                             </div>

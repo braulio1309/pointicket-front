@@ -10,7 +10,8 @@
                 <div class="row g-5">
                     <div class="col-xl-4 col-lg-6">
                         <div class="contact-us-info">
-                            <h4 class="heading-title">Nuestro equipo de atención al cliente está disponible para ayudarte con cualquier duda o problema que tengas.</h4>
+                            <h4 class="heading-title">Nuestro equipo de atención al cliente está disponible para ayudarte
+                                con cualquier duda o problema que tengas.</h4>
                             <ul class="address-list">
                                 <li>
                                     <h5 class="title">Email</h5>
@@ -32,7 +33,7 @@
                     <div class="offset-xl-2 col-lg-6">
                         <div class="contact-form form-style-2">
                             <div class="section-title">
-                                <h4 class="title">Escribenos</h4>
+                                <h4 class="title">Escríbenos</h4>
                             </div>
                             <div v-if="showResult" class="col-12">
                                 <div class="alert alert-success" role="alert">
@@ -68,8 +69,8 @@
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me">Estoy de acuerdo con los <a href="/terms-condition">
-                                                    terminos y condiciones</a></label>
+                                            <label for="remember-me"> He leído y acepto los <a href="/terms-condition"
+                                                style="text-decoration: underline;">términos y condiciones de uso.</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12">

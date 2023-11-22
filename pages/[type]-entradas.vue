@@ -74,12 +74,7 @@
                                         </div>
                                     </form>
 
-                                    <ul class="shape-group">
-                                        <MouseMove addClassName="shape-1" dataDepth="1"
-                                            imgSrc="/images/about/shape-13.png" />
-                                        <MouseMove addClassName="shape-2" dataDepth="-1"
-                                            imgSrc="/images/counterup/shape-02.png" />
-                                    </ul>
+                                    
                                 </div>
                             </div>
                         </div>

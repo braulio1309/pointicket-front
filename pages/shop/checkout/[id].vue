@@ -128,8 +128,8 @@
                             <div class="order-payment">
                                 <div class="row justify-content-center">
                                     <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey"
-                                        :line-items="lineItems" :success-url="'http://localhost:3000/exitoso/'+ticketId"
-                                        :cancel-url="'http://localhost:3000/fallido/'+ticketId" @loading="v => loading = v" />
+                                        :line-items="lineItems" :success-url="'https://pointickets.com/exitoso/'+ticketId"
+                                        :cancel-url="'https://pointickets.com/fallido/'+ticketId" @loading="v => loading = v" />
                                     <button type="button" @click="savePurchase" :disabled="isLoading"
                                         class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
                                 </div>

@@ -112,7 +112,10 @@
 </template>
 
 <script>
-
+definePageMeta({
+  title: 'Contacta con nosotros | Pointickets',
+  description: '¿Tienes alguna duda? Ponte en contacto con nuestro equipo de atención al cliente y te responderemos lo antes posible.'                
+})
 import emailjs from 'emailjs-com';
 import MouseMove from '~~/components/animation/MouseMove.vue';
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';

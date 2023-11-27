@@ -129,7 +129,10 @@
 }
 </style>
 <script>
-
+definePageMeta({
+  title: 'Preguntas frecuentes | Pointickets',
+  description: 'Te respondemos a las preguntas más comunes.Te resolvemos todo para que no tengas dudas en comprar o vender entradas de tus eventos.'                
+})
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
 import FooterOne from '~~/components/footer/FooterOne.vue';

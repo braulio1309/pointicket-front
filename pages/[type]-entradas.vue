@@ -170,9 +170,7 @@
 <script>
 definePageMeta({
   title:'Compra entradas para tus eventos favoritos | Pointickets' ,
-  meta: [
-    { name: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas.' }
-  ],
+  description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas.'                
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';

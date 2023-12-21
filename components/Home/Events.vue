@@ -2,8 +2,7 @@
     <div class="edu-course-area course-area-1 edu-section-gap bg-lighten01">
         <div class="container">
             <div class="section-title section-center" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
-                <h2 class='pre-title' style="font-size: medium;">Pointickets: lideres en compra venta de entradas deportivas</h2>
-                <h1 class="title" style="font-size: xx-large;">Compra entradas del Real Madrid y otros eventos deportivos</h1>
+                <h2 class='pre-title' style="font-size: medium;">Pointickets: líderes en compra venta de entradas deportivas</h2>
                 <p>Pointickets es la plataforma líder en compra y venta de entradas deportivas, con un amplio catálogo de entradas para el Real Madrid en el Santiago Bernabéu. Ofrecemos un amplio catálogo de entradas para el Real Madrid en el Santiago Bernabéu, a los mejores precios.</p>
 
                 <p>En Pointickets encontrarás entradas para todos los partidos del Real Madrid, tanto de Liga como de Champions League. También tenemos entradas para otro tipo de eventos, como conciertos, ferias y espectáculos.</p>

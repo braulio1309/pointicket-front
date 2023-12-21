@@ -363,7 +363,6 @@
             </div>
         </section>
 
-        <CTAOne />
 
         <FooterOne />
         <ScrollToTop />

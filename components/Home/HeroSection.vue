@@ -1,16 +1,21 @@
 <template>
   <div class="edu-breadcrumb-area breadcrumb-style-2 bg-image bg-estadio">
     <div class="container">
-      <div class="breadcrumb-inner">
-        <div class="row">
-          <div class="col-sm-10">
+      <h1 class="title" style="font-size:xx-large;color:white;margin-bottom: 60px !important; ">Compra entradas del Real Madrid y otros eventos deportivos</h1>
+
+      <div class="breadcrumb-inner" >
+
+        <div class="row" >
+
+          <div class="col-sm-10" >
+
             <div>
               <input v-model="data" placeholder="Buscar eventos" style="border-radius: 10px; padding: 0 25px;">
 
             </div>
           </div>
           <div class="col-sm-2">
-            <a @click="saveSearch" class="edu-btn btn-large">Buscar</a>
+            <a @click="saveSearch" class="edu-btn btn-large" >Buscar</a>
           </div>
         </div>
       </div>

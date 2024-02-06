@@ -12,7 +12,9 @@
                         <div class="privacy-policy terms-condition">
                             <div class="text-block">
                                 <h3 class="title">Introducción:</h3>
-                                <p>XXX SL proporciona un servicio a través de su sitio web: <a href="http://www.pointickets.com" target="_blank">http://www.pointickets.com</a>, que
+                                <p>XXX SL proporciona un servicio a través de su sitio web: <a
+                                        href="http://www.pointickets.com" target="_blank">http://www.pointickets.com</a>,
+                                    que
                                     permite a los usuarios que deseen comprar entradas (&quot;Compradores&quot;) encontrar
                                     usuarios que
                                     quieren venderlas (&quot;Vendedores&quot;). Pointickets no tiene derechos de propiedad
@@ -450,6 +452,17 @@
                                     No obstante lo anterior las partes harán todo lo razonablemente necesario para solventar
                                     los
                                     conflictos de forma amistosa
+                                </p>
+                            </div>
+                            <div class="text-block">
+
+                                <h4 class="title">
+                                    Nombre de la empresa o nombre completo: WANDERLUST DREAMS SL
+                                </h4>
+                                <p>
+                                    Teléfono: 655941059 <br>
+                                    URL del sitio web: https://pointickets.com/ <br>
+                                    Datos de facturación:  B56956220. AVENIDA EL FERROL 4 28029 MADRID <br>
                                 </p>
                             </div>
                         </div>

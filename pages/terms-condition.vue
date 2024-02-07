@@ -12,7 +12,7 @@
                         <div class="privacy-policy terms-condition">
                             <div class="text-block">
                                 <h3 class="title">Introducción:</h3>
-                                <p>XXX SL proporciona un servicio a través de su sitio web: <a
+                                <p>WANDERLUST DREAMS SL proporciona un servicio a través de su sitio web: <a
                                         href="http://www.pointickets.com" target="_blank">http://www.pointickets.com</a>,
                                     que
                                     permite a los usuarios que deseen comprar entradas (&quot;Compradores&quot;) encontrar

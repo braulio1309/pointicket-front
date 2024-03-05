@@ -38,6 +38,10 @@ export default defineNuxtConfig({
           tagPriority: 'high'
         },
         { src: 'https://js.stripe.com/v3' },
+        { 
+          src: 'https://api.paycomet.com/gateway/paycomet.jetiframe.js?lang=es',
+          tagPosition: 'bodyClose'
+        }
       ],
       noscript: [
         {
@@ -47,6 +51,12 @@ export default defineNuxtConfig({
         }
       ]
     },
+    modules: [
+      '@nuxt/i18n',
+    ],
+    i18n: {
+      vueI18n: './i18n.config.ts' // if you are using custom path, default 
+    }
   },
   runtimeConfig: {
     // Public keys that are exposed to the client
@@ -57,4 +67,5 @@ export default defineNuxtConfig({
 
     },
   },
+
 });

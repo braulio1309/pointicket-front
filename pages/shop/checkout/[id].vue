@@ -50,7 +50,8 @@
                                             <label>Cupón de descuento</label>
                                             <input type="text" id="email" v-model="coupon">
                                             <p v-if="resultCouponAmount">Cupon disponible - €{{ amountDiscount }}</p>
-                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ percentageDiscount }}%
+                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ percentageDiscount
+                                                }}%
                                             </p>
                                             <p v-if="errorCoupon">Cupón no válido</p>
 
@@ -59,7 +60,8 @@
                                     <div class="col-lg-4">
                                         <div class="form-group" style="margin-top: 35px;">
 
-                                            <button type="button" @click="verifyCoupon" class="edu-btn btn-small">Verificar
+                                            <button type="button" @click="verifyCoupon"
+                                                class="edu-btn btn-small">Verificar
                                                 <i class="icon-4"></i></button>
                                         </div>
 
@@ -81,8 +83,8 @@
                                         <tbody>
                                             <tr>
                                                 <td> {{ ticket.attributes.Category }}, {{
-                                                    ticket.attributes.evento.data.attributes.title }}, Fila {{
-        this.ticket.attributes.Fila }}</td>
+            ticket.attributes.evento.data.attributes.title }}, Fila {{
+            this.ticket.attributes.Fila }}</td>
                                                 <td><span class="quantity">x {{ ticket.attributes.seat }}</span></td>
                                                 <td> €{{ ticket.attributes.endPrice }}</td>
                                             </tr>
@@ -102,23 +104,23 @@
                                             <tr class="order-total">
                                                 <td>Total</td>
                                                 <td>€{{ ticket.attributes.endPrice * ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1) }}
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1) }}
                                                 </td>
                                             </tr>
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
 
                                                 <td v-if="resultCouponAmount">€{{ (ticket.attributes.endPrice *
-                                                    ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
-                                                    amountDiscount }}
+            ticket.attributes.seat +
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
+            amountDiscount }}
                                                 </td>
                                                 <td v-if="resultCouponPercentage">€{{ (ticket.attributes.endPrice *
+            ticket.attributes.seat +
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
+            ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
-                                                    ((percentageDiscount / 100) * (ticket.attributes.endPrice *
-                                                        ticket.attributes.seat +
-                                                        (ticket.attributes.endPrice * ticket.attributes.seat * 0.1))) }}
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1))) }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -127,21 +129,152 @@
                             </div>
                             <div class="order-payment">
                                 <div class="row justify-content-center">
-                                    <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey"
+                                    <!--<stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey"
                                         :line-items="lineItems" :success-url="'https://pointickets.com/exitoso/'+ticketId"
                                         :cancel-url="'https://pointickets.com/fallido/'+ticketId" @loading="v => loading = v" />
                                     <button type="button" @click="savePurchase" :disabled="isLoading"
-                                        class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
+                                        class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>-->
+                                    <div class="container">
+                                        <div class="row">
+                                            <aside class="col-sm-6">
+                                                <article class="card">
+                                                    <div class="card-body p-5">
+                                                        <p> <img
+                                                                src="http://bootstrap-ecommerce.com/main/images/icons/pay-visa.png">
+                                                            <img
+                                                                src="http://bootstrap-ecommerce.com/main/images/icons/pay-mastercard.png">
+                                                            <img
+                                                                src="http://bootstrap-ecommerce.com/main/images/icons/pay-american-ex.png">
+                                                        </p>
+                                                        <p class="alert alert-success">Some text success or error</p>
+
+                                                        <form role="form" id="paycometPaymentForm"
+                                                            @submit.prevent="customFunction()" method="POST">
+                                                            <input type="hidden" name="amount" value="10">
+                                                            <input type="hidden" data-paycomet="jetID"
+                                                                value="MOjURkhgnIzm3fG8t6A5rwWxT4ZP9SLH">
+                                                            <div class="form-group">
+                                                                <label for="username">Full name (on the card)</label>
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text"><i
+                                                                                class="fa fa-user"></i></span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control"
+                                                                        name="username" data-paycomet="cardHolderName"
+                                                                        placeholder="" required="">
+                                                                </div> <!-- input-group.// -->
+                                                            </div> <!-- form-group.// -->
+
+                                                            <div class="form-group">
+                                                                <label for="cardNumber">Card number</label>
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text"><i
+                                                                                class="fa fa-credit-card"></i></span>
+                                                                    </div>
+                                                                    <div id="paycomet-pan"
+                                                                        style="padding:0px; height:36px;"></div>
+                                                                    <input
+                                                                        paycomet-style="width: 100%; height: 21px; font-size:14px; padding-left:7px; padding-top:8px; border:0px;"
+                                                                        paycomet-name="pan"
+                                                                        paycomet-placeholder="Introduce tu tarjeta..."
+                                                                        v-model="cardNumber">
+                                                                </div> <!-- input-group.// -->
+                                                            </div> <!-- form-group.// -->
+
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label><span class="hidden-xs">Expiration</span>
+                                                                        </label>
+                                                                        <div class="form-inline">
+                                                                            <select class="form-control"
+                                                                                style="width:45%"
+                                                                                data-paycomet="dateMonth" v-model="expiryMount">
+                                                                                <option>MM</option>
+                                                                                <option value="01">01 - January</option>
+                                                                                <option value="02">02 - February
+                                                                                </option>
+                                                                                <option value="03">03 - March</option>
+                                                                                <option value="04">04 - April</option>
+                                                                                <option value="05">05 - May</option>
+                                                                                <option value="06">06 - June</option>
+                                                                                <option value="07">07 - July</option>
+                                                                                <option value="08">08 - August</option>
+                                                                                <option value="09">09 - September
+                                                                                </option>
+                                                                                <option value="10">10 - October</option>
+                                                                                <option value="11">11 - November
+                                                                                </option>
+                                                                                <option value="12">12 - December
+                                                                                </option>
+                                                                            </select>
+                                                                            <span style="width:10%; text-align: center">
+                                                                                / </span>
+                                                                            <select class="form-control"
+                                                                                style="width:45%"
+                                                                                data-paycomet="dateYear" v-model="expiryYear">
+                                                                                <option>YY</option>
+                                                                                <option value="20">2020</option>
+                                                                                <option value="21">2021</option>
+                                                                                <option value="22">2022</option>
+                                                                                <option value="23">2023</option>
+                                                                                <option value="24">2024</option>
+                                                                                <option value="25">2025</option>
+                                                                                <option value="26">2026</option>
+                                                                                <option value="27">2027</option>
+                                                                                <option value="28">2028</option>
+                                                                                <option value="29">2029</option>
+                                                                                <option value="30">2030</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label data-toggle="tooltip" title=""
+                                                                            data-original-title="3 digits code on back side of the card">CVV
+                                                                            <i
+                                                                                class="fa fa-question-circle"></i></label>
+                                                                        <div id="paycomet-cvc2"
+                                                                            style="height: 36px; padding:0px;"></div>
+                                                                        <input paycomet-name="cvc2"
+                                                                            paycomet-style="border:0px; width: 100%; height: 21px; font-size:12px; padding-left:7px; padding-tap:8px;"
+                                                                            paycomet-placeholder="CVV2"
+                                                                            class="form-control" required=""
+                                                                            type="text"
+                                                                            v-model="cvc2">
+                                                                    </div> <!-- form-group.// -->
+                                                                </div>
+
+                                                            </div> <!-- row.// -->
+                                                            <button class="subscribe btn btn-primary btn-block"
+                                                                type="submit"> Confirm </button>
+                                                        </form>
+                                                        <div id="paymentErrorMsg">
+
+                                                        </div>
+                                                    </div> <!-- card-body.// -->
+                                                </article> <!-- card.// -->
+                                            </aside>
+                                        </div>
+                                    </div>
                                 </div>
                                 <br><br>
                                 <div class="row justify-content-center">
                                     <br>
                                     <p class="text-center" style="font-size: 11px;">
                                         Tu pago es 100% seguro<br>
-                                        Tus transacciones están seguras gracias a nuestro sistema de pago 3D Secure. Esto
-                                        quiere decir que cuando hayas pagado, la entidad de tu tarjeta bancaria te pedirá un
-                                        código que llega por SMS en el que validarán que estas comprando correctamente.<br>
-                                        Además usamos tecnología de seguridad SSL para proteger todos tus datos personales.
+                                        Tus transacciones están seguras gracias a nuestro sistema de pago 3D Secure.
+                                        Esto
+                                        quiere decir que cuando hayas pagado, la entidad de tu tarjeta bancaria te
+                                        pedirá un
+                                        código que llega por SMS en el que validarán que estas comprando
+                                        correctamente.<br>
+                                        Además usamos tecnología de seguridad SSL para proteger todos tus datos
+                                        personales.
                                     </p>
                                     <div class="col-sm-4">
                                         <img src="../../../assets/images/pagos/mastercard.png">
@@ -168,8 +301,8 @@
 
 <script>
 definePageMeta({
-  title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
-  description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '                
+    title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
+    description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
@@ -206,8 +339,11 @@ export default {
             amountDiscount: 0,
             errorCoupon: false,
             lineItems: null,
-            publishableKey: config.public.STRIPE_PUBLIC_KEY
-
+            publishableKey: config.public.STRIPE_PUBLIC_KEY,
+            expiryMonth: '',
+            expiryYear: '',
+            cvc2: '',
+            cardNumber: ''
 
         }
     },
@@ -297,6 +433,37 @@ export default {
             const userData = window.localStorage.getItem('userData');
             this.user = JSON.parse(userData);
         },
+        async customFunction() {
+            const body = {
+                terminal: 68638,  // Reemplaza con el valor correcto
+                cvc2: this.cvc2,
+                jetToken: 'MOjURkhgnIzm3fG8t6A5rwWxT4ZP9SLH',
+                expiryYear: this.expiryYear,
+                expiryMonth: this.expiryMounth,
+                pan: this.cardNumber,
+                order: 'PAY987654321',
+                productDescription: 'Random product',
+                language: 'es',
+                notify: 1,
+                cardHolderName: 'Michael Scott',
+            };
+
+            // Cabeceras de la solicitud
+            const headers = {
+                'PAYCOMET-API-TOKEN': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a'  // Reemplaza con tu token real
+            };
+
+            try {
+                // Realizar la solicitud POST con Axios
+                const response = await axios.post('https://rest.paycomet.com/v1/cards', body, { headers });
+
+                // Manejar la respuesta
+                console.log('Respuesta:', response.data);
+            } catch (error) {
+                // Manejar errores
+                console.error('Error:', error);
+            }
+        }
     },
     async mounted() {
         this.ticketId = this.$route.params.id;

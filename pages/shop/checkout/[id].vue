@@ -450,7 +450,9 @@ export default {
 
             // Cabeceras de la solicitud
             const headers = {
-                'PAYCOMET-API-TOKEN': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a'  // Reemplaza con tu token real
+                'PAYCOMET-API-TOKEN': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a',
+                'accept': 'application/json',
+                'content-type': 'application/json',
             };
 
             try {

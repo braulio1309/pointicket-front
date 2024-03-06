@@ -139,13 +139,7 @@
                                             <aside class="col-sm-6">
                                                 <article class="card">
                                                     <div class="card-body p-5">
-                                                        <p> <img
-                                                                src="http://bootstrap-ecommerce.com/main/images/icons/pay-visa.png">
-                                                            <img
-                                                                src="http://bootstrap-ecommerce.com/main/images/icons/pay-mastercard.png">
-                                                            <img
-                                                                src="http://bootstrap-ecommerce.com/main/images/icons/pay-american-ex.png">
-                                                        </p>
+                                                       
                                                         <p class="alert alert-success">Some text success or error</p>
 
                                                         <form role="form" id="paycometPaymentForm"

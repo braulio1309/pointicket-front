@@ -139,7 +139,7 @@
                                             <aside class="col-sm-6">
                                                 <article class="card">
                                                     <div class="card-body p-5">
-                                                       
+
                                                         <p class="alert alert-success">Some text success or error</p>
 
                                                         <form role="form" id="paycometPaymentForm"
@@ -185,7 +185,8 @@
                                                                         <div class="form-inline">
                                                                             <select class="form-control"
                                                                                 style="width:45%"
-                                                                                data-paycomet="dateMonth" v-model="expiryMount">
+                                                                                data-paycomet="dateMonth"
+                                                                                v-model="expiryMount">
                                                                                 <option>MM</option>
                                                                                 <option value="01">01 - January</option>
                                                                                 <option value="02">02 - February
@@ -208,7 +209,8 @@
                                                                                 / </span>
                                                                             <select class="form-control"
                                                                                 style="width:45%"
-                                                                                data-paycomet="dateYear" v-model="expiryYear">
+                                                                                data-paycomet="dateYear"
+                                                                                v-model="expiryYear">
                                                                                 <option>YY</option>
                                                                                 <option value="20">2020</option>
                                                                                 <option value="21">2021</option>
@@ -237,8 +239,7 @@
                                                                         <input paycomet-name="cvc2"
                                                                             paycomet-style="border:0px; width: 100%; height: 21px; font-size:12px; padding-left:7px; padding-tap:8px;"
                                                                             paycomet-placeholder="CVV2"
-                                                                            class="form-control" required=""
-                                                                            type="text"
+                                                                            class="form-control" required="" type="text"
                                                                             v-model="cvc2">
                                                                     </div> <!-- form-group.// -->
                                                                 </div>
@@ -447,17 +448,24 @@ export default {
                 'pAYCOMETAPITOKEN ': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a',
                 'accept': 'application/json',
                 'content-type': 'application/json',
+                'Access-Control-Allow-Origin': 'https://www.pointickets.com',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Authorization',
             };
 
             try {
                 // Realizar la solicitud POST con Axios
-                const response = await axios.post('https://rest.paycomet.com/v1/cards', body, { headers });
+            axios.post('https://rest.paycomet.com/v1/cards', body, { headers }).
+                then(response => {
+                    console.log('Respuesta:', response.data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
 
                 // Manejar la respuesta
-                console.log('Respuesta:', response.data);
             } catch (error) {
                 // Manejar errores
-                console.error('Error:', error);
             }
         }
     },

@@ -37,11 +37,7 @@ export default defineNuxtConfig({
           })(window,document,'script','dataLayer','GTM-5W3F2VFP');`,
           tagPriority: 'high'
         },
-        { src: 'https://js.stripe.com/v3' },
-        { 
-          src: 'https://api.paycomet.com/gateway/paycomet.jetiframe.js?lang=es',
-          tagPosition: 'bodyClose'
-        }
+        { src: 'https://js.stripe.com/v3' }
       ],
       noscript: [
         {

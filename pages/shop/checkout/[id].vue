@@ -432,8 +432,7 @@ export default {
             const body = {
                 terminal: 68638,  // Reemplaza con el valor correcto
                 cvc2: '123',
-                jetToken: 'MOjURkhgnIzm3fG8t6A5rwWxT4ZP9SLH',
-                expiryYear: '2025',
+                expiryYear: '25',
                 expiryMonth: '05',
                 pan: '5445288852200883',
                 order: 'PAY987654321',
@@ -445,15 +444,11 @@ export default {
 
             // Cabeceras de la solicitud
             const headers = {
-                'pAYCOMETAPITOKEN ': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a',
+                'pAYCOMETAPITOKEN': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a',
                 'accept': 'application/json',
                 'content-type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://www.pointickets.com',
-                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-                'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Authorization',
             };
 
-            try {
                 // Realizar la solicitud POST con Axios
             axios.post('https://rest.paycomet.com/v1/cards', body, { headers }).
                 then(response => {
@@ -463,10 +458,6 @@ export default {
                     console.error('Error:', error);
                 });
 
-                // Manejar la respuesta
-            } catch (error) {
-                // Manejar errores
-            }
         }
     },
     async mounted() {

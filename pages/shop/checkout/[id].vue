@@ -430,11 +430,11 @@ export default {
         async customFunction() {
             const body = {
                 terminal: 68638,  // Reemplaza con el valor correcto
-                cvc2: this.cvc2,
+                cvc2: '123',
                 jetToken: 'MOjURkhgnIzm3fG8t6A5rwWxT4ZP9SLH',
-                expiryYear: this.expiryYear,
-                expiryMonth: this.expiryMounth,
-                pan: this.cardNumber,
+                expiryYear: '2025',
+                expiryMonth: '05',
+                pan: '5445288852200883',
                 order: 'PAY987654321',
                 productDescription: 'Random product',
                 language: 'es',
@@ -444,7 +444,7 @@ export default {
 
             // Cabeceras de la solicitud
             const headers = {
-                'PAYCOMET-API-TOKEN': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a',
+                'pAYCOMETAPITOKEN ': '9dfefc472fe9bdf8a6ee2939dfe93f8d11b3082a',
                 'accept': 'application/json',
                 'content-type': 'application/json',
             };

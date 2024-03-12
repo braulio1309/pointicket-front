@@ -188,8 +188,7 @@ export default {
         HeaderOne,
         BreadCrumbTwo,
         FooterOne,
-        ScrollToTop,
-        StripeCheckout
+        ScrollToTop
     },
     data() {
         const config = useRuntimeConfig();

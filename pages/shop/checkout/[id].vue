@@ -316,6 +316,8 @@ export default {
     },
     async mounted() {
         this.ticketId = this.$route.params.id;
+        localStorage.setItem('ticketId', this.ticketId);
+        console.log(localStorage.getItem('ticketId'));
         await this.getEvent();
         this.userData();
 

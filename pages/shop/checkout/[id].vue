@@ -91,7 +91,7 @@
 
                                             <tr class="order-total">
                                                 <td>Iva</td>
-                                                <td>€{{ ticket.attributes.endPrice * 0.1 }}</td>
+                                                <td>€{{ parseFloat(ticket.attributes.endPrice * 0.1).toFixed(2) }}</td>
                                             </tr>
 
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">

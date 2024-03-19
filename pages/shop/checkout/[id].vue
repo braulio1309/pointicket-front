@@ -213,10 +213,6 @@ export default {
             expiryYear: '',
             cvc2: '',
             cardNumber: '',
-            showIframe: false,
-            iframeSrc: '',
-            variableToSend: 'Hola desde Vue.js',
-
         }
     },
     head() {
@@ -298,18 +294,21 @@ export default {
                     console.error('Error al buscar al evento', error);
                 });
         },
-        savePurchase() {
-            this.$refs.checkoutRef.redirectToCheckout();
-        },
         userData() {
             const userData = window.localStorage.getItem('userData');
             this.user = JSON.parse(userData);
         },
         async customFunction() {
-            let myForm = document.getElementById("paycometPaymentForm");
-            console.log(myForm);
-            const url = `https://tpv.tiendogs.com/tpv.html?price=${this.ticket.attributes.endPrice * this.ticket.attributes.seat +
-            (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1)}`;
+            let finalAmount = this.ticket.attributes.endPrice * this.ticket.attributes.seat +
+            (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1);
+            if(this.resultCouponPercentage){
+                finalAmount -= (this.percentageDiscount / 100) * finalAmount;
+            }
+
+            if(this.resultCouponAmount){
+                finalAmount -= this.amountDiscount;
+            }
+            const url = `https://tpv.tiendogs.com/tpv.html?price=${parseFloat(finalAmount).toFixed(2)}`;
 
             window.location.href = url;
         }
@@ -317,7 +316,6 @@ export default {
     async mounted() {
         this.ticketId = this.$route.params.id;
         localStorage.setItem('ticketId', this.ticketId);
-        console.log(localStorage.getItem('ticketId'));
         await this.getEvent();
         this.userData();
 

@@ -86,7 +86,7 @@
             ticket.attributes.evento.data.attributes.title }}, Fila {{
             this.ticket.attributes.Fila }}</td>
                                                 <td><span class="quantity">x {{ ticket.attributes.seat }}</span></td>
-                                                <td> €{{ ticket.attributes.endPrice }}</td>
+                                                <td> €{{ parseFloat(ticket.attributes.endPrice).toFixed(2) }}</td>
                                             </tr>
 
                                             <tr class="order-total">
@@ -103,24 +103,24 @@
 
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td>€{{ ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1) }}
+                                                <td>€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)).toFixed(2) }}
                                                 </td>
                                             </tr>
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
 
-                                                <td v-if="resultCouponAmount">€{{ (ticket.attributes.endPrice *
+                                                <td v-if="resultCouponAmount">€{{ parseFloat((ticket.attributes.endPrice *
             ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
-            amountDiscount }}
+            amountDiscount).toFixed(2) }}
                                                 </td>
-                                                <td v-if="resultCouponPercentage">€{{ (ticket.attributes.endPrice *
+                                                <td v-if="resultCouponPercentage">€{{ parseFloat((ticket.attributes.endPrice *
             ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
             ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1))) }}
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1))))toFixed(2) }}
                                                 </td>
                                             </tr>
                                         </tbody>

@@ -103,7 +103,7 @@
                                     <li><a href="/contacto"
                                                 style="text-decoration: underline;">Contáctanos a través de nuestro formulario.</a></li>
                                     <li>Puedes escribirnos a <a href="mailto:info@pointickets.com"
-                                                style="text-decoration: underline;">info@pointicket.com</a> y te responderemos lo antes posible.</li>
+                                                style="text-decoration: underline;">info@pointickets.com</a> y te responderemos lo antes posible.</li>
                                     <li>Mándanos un WhatsApp</li>
                                 </ul>
                             </div>

@@ -13,7 +13,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#gn-ques"
-                                        type="button" role="tab" aria-selected="true">Listado</button>
+                                        type="button" role="tab" aria-selected="true">Tus eventos</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rg-ques" type="button"
@@ -53,123 +53,85 @@
                         <div class="tab-content faq-page-tab-content" id="faq-accordion">
                             <div class="tab-pane fade show active" id="gn-ques" role="tabpanel">
                                 <div class="row">
-                                    <div class="col-sm-5" v-for="ticket in tickets">
-                                        <div class="card">
-                                            <div class="edu-course course-style-1 hover-button-bg-white">
-                                                <div class="inner">
-                                                    <div class="thumbnail">
 
-                                                        <div class="time-top">
-                                                            <span class="duration"><i class="icon-61"></i>{{ ticket.id
-                                                            }}</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6 class="title">
-                                                            {{ ticket.attributes.evento.data.attributes.title }}
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{
-                                                                ticket.attributes.Category }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{
-                                                                ticket.attributes.Sector }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{ ticket.attributes.Fila
-                                                            }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                    </div>
-                                                </div>
+                                    <table v-if="tickets.length > 0" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Evento</th>
+                                            <th scope="col">Sector</th>
+                                            <th scope="col">Categoría</th>
+                                            <th scope="col">Fila</th>
+                                            <th scope="col">Precio</th>
 
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="(item, index) in tickets" :key="index">
+                                            <td scope="row">{{ item.id }}</td>
+                                            <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
+                                            <td scope="row">{{ item.attributes.Sector }}</td>
+                                            <td scope="row">{{ item.attributes.Category }}</td>
+                                            <td scope="row">{{ item.attributes.Fila }}</td>
+                                            <td scope="row">{{ item.attributes.endPrice }} €</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
 
                             </div>
                             <div class="tab-pane fade" id="rg-ques" role="tabpanel">
                                 <div class="row">
-                                    <div class="col-sm-5" v-for="ticket in ticketsSells">
-                                        <div class="card">
-                                            <div class="edu-course course-style-1 hover-button-bg-white">
-                                                <div class="inner">
-                                                    <div class="thumbnail">
+                                    <table v-if="ticketsSells.length > 0" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Evento</th>
+                                            <th scope="col">Sector</th>
+                                            <th scope="col">Categoría</th>
+                                            <th scope="col">Fila</th>
+                                            <th scope="col">Precio</th>
 
-                                                        <div class="time-top">
-                                                            <span class="duration"><i class="icon-61"></i>{{ ticket.id
-                                                            }}</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6 class="title">
-                                                            {{ ticket.attributes.evento.data.attributes.title }}
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{
-                                                                ticket.attributes.Category }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{
-                                                                ticket.attributes.Sector }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{ ticket.attributes.Fila
-                                                            }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="(item, index) in ticketsSells" :key="index">
+                                            <td scope="row">{{ item.id }}</td>
+                                            <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
+                                            <td scope="row">{{ item.attributes.Sector }}</td>
+                                            <td scope="row">{{ item.attributes.Category }}</td>
+                                            <td scope="row">{{ item.attributes.Fila }}</td>
+                                            <td scope="row">{{ item.attributes.endPrice }} €</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="ad-ques" role="tabpanel">
                                 <div class="row">
-                                    <div class="col-sm-5" v-for="ticket in purchases">
-                                        <div class="card">
-                                            <div class="edu-course course-style-1 hover-button-bg-white">
-                                                <div class="inner">
-                                                    <div class="thumbnail">
+                                    <table v-if="purchases.length > 0" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Evento</th>
+                                            <th scope="col">Sector</th>
+                                            <th scope="col">Categoría</th>
+                                            <th scope="col">Fila</th>
+                                            <th scope="col">Precio</th>
 
-                                                        <div class="time-top">
-                                                            <span class="duration"><i class="icon-61"></i>{{ ticket.id
-                                                            }}</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6 class="title">
-                                                            {{ ticket.attributes.evento.data.attributes.title }}
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{
-                                                                ticket.attributes.Category }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{
-                                                                ticket.attributes.Sector }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                        <h6 class="title">
-                                                            <NuxtLink to="//">{{ ticket.attributes.Fila
-                                                            }}
-                                                            </NuxtLink>
-                                                        </h6>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="(item, index) in purchases" :key="index">
+                                            <td scope="row">{{ item.id }}</td>
+                                            <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
+                                            <td scope="row">{{ item.attributes.Sector }}</td>
+                                            <td scope="row">{{ item.attributes.Category }}</td>
+                                            <td scope="row">{{ item.attributes.Fila }}</td>
+                                            <td scope="row">{{ item.attributes.endPrice }} €</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="com-policy" role="tabpanel">
@@ -402,7 +364,13 @@ export default {
             showResult: false,
             tickets: '',
             purchases: '',
-            ticketsSells: ''
+            ticketsSells: '',
+            items: [
+                { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+                { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
+                { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
+                { age: 38, first_name: 'Jami', last_name: 'Carney' }
+            ]
         }
     },
     mounted() {
@@ -511,10 +479,11 @@ export default {
             const query = qs.stringify({
                 filters: {
                     compra: {
-                        id: {
-                            $eq: this.user.id,
+                        user: {
+                            id: {
+                                $eq: this.user.id,
+                            }
                         }
-
                     },
                 },
             }, {
@@ -528,6 +497,7 @@ export default {
                 })
                 .then((response) => {
                     this.purchases = response.data.data;
+                    console.log('compradas', this.purchases, response.data)
                 })
                 .catch((error) => {
                     console.error('Error al actualizar el usuario', error);
@@ -555,6 +525,7 @@ export default {
                 })
                 .then((response) => {
                     this.tickets = response.data.data;
+                    console.log(this.tickets);
                 })
                 .catch((error) => {
                     console.error('Error al actualizar el usuario', error);

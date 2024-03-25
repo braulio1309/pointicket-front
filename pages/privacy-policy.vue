@@ -307,7 +307,7 @@
                                     datos
                                     personales o desea ejercer cualquiera de los derechos anteriormente descritos, póngase
                                     en
-                                    contacto con info@pointicket.com
+                                    contacto con info@pointickets.com
                                 </p>
                             </div>
                             

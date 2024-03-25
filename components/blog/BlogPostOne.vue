@@ -14,13 +14,9 @@
                 <h5 class="title">
                     <NuxtLink to="/">{{ blogInfo.title }}</NuxtLink>
                 </h5>
-                <ul class="blog-meta">
-                    <li><i class="icon-27"></i>{{ blogInfo.date }}</li>
-                    <li><i class="icon-28"></i>{{ blogInfo.comment }}</li>
-                </ul>
-                <p>{{ blogInfo.excerpt }}</p>
+                
                 <div class="button-group">
-                    <a href="#" class="edu-btn btn-medium mt--50">Detalles</a>
+                    <a href="#" class="edu-btn btn-medium mt--50">Ver más</a>
                 </div>
             </div>
         </div>

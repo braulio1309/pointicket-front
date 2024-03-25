@@ -15,8 +15,8 @@
                             <div class="widget-information">
                                 <ul class="information-list">
                                     <li><span>Ubicación:</span>España</li>
-                                    <li><span>Email:</span><a href="mailto:info@pointicket.com"
-                                            target="_blank">info@pointicket.com</a></li>
+                                    <li><span>Email:</span><a href="mailto:info@pointickets.com"
+                                            target="_blank">info@pointickets.com</a></li>
                                 </ul>
                             </div>
                             <ul class="social-share icon-transparent">

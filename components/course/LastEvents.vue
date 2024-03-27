@@ -6,7 +6,7 @@
                     <img :src="this.url.substring(0, this.url.length - 1)+event.attributes.image.data[0].attributes.url" :alt="event.attributes.title">
                 </NuxtLink>
                 <div class="time-top">
-                    <span class="duration"><i class="icon-61"></i>{{ event.attributes.title }}</span>
+                    <span class="duration"><i class="icon-61"></i>{{ new Date(event.attributes.endDate ).toLocaleString('en-US') }}</span>
                 </div>
             </div>
             <div class="content">

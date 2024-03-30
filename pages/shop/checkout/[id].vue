@@ -215,7 +215,7 @@ export default {
             amountDiscount: 0,
             errorCoupon: false,
             lineItems: null,
-            couponObject
+            couponObject: null
         }
     },
     head() {

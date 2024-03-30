@@ -133,7 +133,7 @@ export default {
         await this.getEvent();
         this.userData();
         this.savePurchase();
-        if(localStorage.getItem('couponId'))
+        if(localStorage.getItem('coupon'))
                 this.coupon = await this.getCoupon(parseInt(localStorage.getItem('couponId')));
     },
 

@@ -312,7 +312,7 @@ export default {
 
             finalAmount += this.fees;
             if(this.couponObject)
-                localStorage.setItem('couponId', this.couponObject.id);
+                localStorage.setItem('coupon', this.couponObject.id);
             localStorage.setItem('price', finalAmount);
 
             const url = `https://tpv.tiendogs.com/tpv.html?price=${parseFloat(finalAmount).toFixed(2)}`;

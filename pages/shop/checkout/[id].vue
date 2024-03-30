@@ -102,16 +102,12 @@
                                             </tr>
                                             <tr class="order-total">
                                                 <td>Gastos de gestión</td>
-                                                <td v-if="ticket.attributes.endPrice === 'Electrónica'">€ 5</td>
-                                                <td v-else>€ 10</td>
+                                                <td >€ {{fees}}</td>
                                             </tr>
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td v-if="ticket.attributes.endPrice === 'Electrónica'">€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2) + 5 }}
-                                                </td>
-                                                <td v-else>€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2) + 10 }}
+                                                <td >€{{ (parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2)) + fees }}
                                                 </td>
                                             </tr>
 
@@ -120,16 +116,16 @@
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
 
-                                                <td v-if="resultCouponAmount">€{{ parseFloat((ticket.attributes.endPrice *
+                                                <td v-if="resultCouponAmount">€{{ (parseFloat((ticket.attributes.endPrice *
             ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
-            amountDiscount).toFixed(2) }}
+            amountDiscount).toFixed(2)) + fees}}
                                                 </td>
-                                                <td v-if="resultCouponPercentage">€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
+                                                <td v-if="resultCouponPercentage">€{{ (parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
             ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))).toFixed(2) }}
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))).toFixed(2)) + fees }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -218,7 +214,8 @@ export default {
             amountDiscount: 0,
             errorCoupon: false,
             lineItems: null,
-            couponObject: null
+            couponObject: null,
+            fees: 0
         }
     },
     head() {
@@ -313,7 +310,7 @@ export default {
                 finalAmount -= this.amountDiscount;
             }
 
-            finalAmount += (this.ticket.attributes.type == 'Electrónica')? 5: 10;
+            finalAmount += this.fees;
             if(this.errorCoupon)
                 localStorage.setItem('couponId', this.couponObject.id);
             localStorage.setItem('price', finalAmount);
@@ -328,6 +325,10 @@ export default {
         localStorage.setItem('ticketId', this.ticketId);
         await this.getEvent();
         this.userData();
+        if(this.ticket.attributes.type === 'Electrónica')
+            this.fees = 5;
+        else 
+            this.fees = 10;
 
     },
 

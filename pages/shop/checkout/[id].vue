@@ -91,7 +91,7 @@
 
                                             <tr class="order-total">
                                                 <td>Iva</td>
-                                                <td>€{{ parseFloat(ticket.attributes.endPrice * 0.1).toFixed(2) }}</td>
+                                                <td>€{{ parseFloat(ticket.attributes.endPrice * 0.21).toFixed(2) }}</td>
                                             </tr>
 
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
@@ -100,23 +100,30 @@
                                                 <td v-if="resultCouponPercentage">{{ percentage }} %</td>
 
                                             </tr>
-
+                                            <tr class="order-total">
+                                                <td>Gastos de gestión</td>
+                                                <td v-if="ticket.attributes.endPrice === 'Electrónica'">€ 5</td>
+                                                <td v-else>€ 10</td>
+                                            </tr>
                                             <tr class="order-total">
                                                 <td>Total</td>
                                                 <td>€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)).toFixed(2) }}
                                                 </td>
                                             </tr>
+
+                                            
+
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
 
                                                 <td v-if="resultCouponAmount">€{{ parseFloat((ticket.attributes.endPrice *
             ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
             amountDiscount).toFixed(2) }}
                                                 </td>
                                                 <td v-if="resultCouponPercentage">€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)) -
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
             ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
                                                     (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)))).toFixed(2) }}
@@ -200,7 +207,7 @@ export default {
             user: '',
             result: false,
             isLoading: false,
-            coupon: '',
+            coupon: {},
             couponVerify: false,
             resultCouponAmount: false,
             resultCouponPercentage: false,
@@ -299,7 +306,7 @@ export default {
         },
         async customFunction() {
             let finalAmount = this.ticket.attributes.endPrice * this.ticket.attributes.seat +
-            (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1);
+            (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21);
             if(this.resultCouponPercentage){
                 finalAmount -= (this.percentageDiscount / 100) * finalAmount;
             }
@@ -307,6 +314,11 @@ export default {
             if(this.resultCouponAmount){
                 finalAmount -= this.amountDiscount;
             }
+
+            finalAmount += (this.ticket.attributes.type == 'Electrónica')? 5: 10;
+            localStorage.setItem('coupon', JSON.stringify(this.coupon));
+            localStorage.setItem('price', finalAmount);
+
             const url = `https://tpv.tiendogs.com/tpv.html?price=${parseFloat(finalAmount).toFixed(2)}`;
 
             window.location.href = url;

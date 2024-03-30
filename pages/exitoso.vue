@@ -72,7 +72,6 @@ export default {
 
         async getEvent() {
             const config = useRuntimeConfig();
-            console.log(this.ticketId)
             let response = await axios
                 .get(`${config.public.apiBase}tickets/` + this.ticketId + '?populate=*', {
                     headers: {
@@ -84,12 +83,16 @@ export default {
         
         savePurchase() {
             const config = useRuntimeConfig();
+            const urlParams = new URLSearchParams(window.location.search);
+            const reference = urlParams.get('r');
             let data = {
                 user: this.user,
                 ticket: this.ticket,
                 subtotal: this.ticket.attributes.endPrice * this.ticket.attributes.seat,
-                total: this.ticket.attributes.endPrice * this.ticket.attributes.seat + (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1),
-                taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1,
+                total: parseFloat(localStorage.getItem('price')),
+                taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21,
+                descuento: JSON.parse(localStorage.getItem('coupon')),
+                bankReference: reference
             };
 
             axios

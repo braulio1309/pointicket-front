@@ -107,8 +107,11 @@
                                             </tr>
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td>€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2) }}
+                                                <td v-if="ticket.attributes.endPrice === 'Electrónica'">€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2) + 5 }}
+                                                </td>
+                                                <td v-else>€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2) + 10 }}
                                                 </td>
                                             </tr>
 
@@ -311,7 +314,7 @@ export default {
             }
 
             finalAmount += (this.ticket.attributes.type == 'Electrónica')? 5: 10;
-            if(!this.errorCoupon)
+            if(this.errorCoupon)
                 localStorage.setItem('couponId', this.couponObject.id);
             localStorage.setItem('price', finalAmount);
 

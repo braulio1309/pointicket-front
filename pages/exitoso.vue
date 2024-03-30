@@ -80,14 +80,24 @@ export default {
                 });
             this.ticket = response.data.data;
         },
-        
-        savePurchase() {
+
+        async getCoupon(coupon){
+            const config = useRuntimeConfig();
+            let response = await axios
+                .get(`${config.public.apiBase}coupons/` + coupon, {
+                    headers: {
+                        Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                    },
+                });
+            return response.data.data;
+        },
+        async savePurchase() {
             const config = useRuntimeConfig();
             const urlParams = new URLSearchParams(window.location.search);
             const reference = urlParams.get('r');
             let couponId = null;
             if(localStorage.getItem('couponId'))
-                couponId = parseInt(localStorage.getItem('couponId'));
+                couponId = await getCoupon(parseInt(localStorage.getItem('couponId')));
             let data = {
                 user: this.user,
                 ticket: this.ticket,

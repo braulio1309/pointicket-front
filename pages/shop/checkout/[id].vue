@@ -311,7 +311,7 @@ export default {
             }
 
             finalAmount += this.fees;
-            if(this.errorCoupon)
+            if(this.couponObject)
                 localStorage.setItem('couponId', this.couponObject.id);
             localStorage.setItem('price', finalAmount);
 

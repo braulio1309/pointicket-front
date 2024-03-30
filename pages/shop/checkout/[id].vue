@@ -106,8 +106,8 @@
                                             </tr>
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td >€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2) + fees }}
+                                                <td >€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) + fees).toFixed(2) }}
                                                 </td>
                                             </tr>
 
@@ -116,16 +116,16 @@
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
 
-                                                <td v-if="resultCouponAmount">€{{ parseFloat((ticket.attributes.endPrice *
+                                                <td v-if="resultCouponAmount">€{{ parseFloat(((ticket.attributes.endPrice *
             ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
-            amountDiscount).toFixed(2) + fees}}
+            amountDiscount) + fees).toFixed(2)}}
                                                 </td>
-                                                <td v-if="resultCouponPercentage">€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
+                                                <td v-if="resultCouponPercentage">€{{ parseFloat(((ticket.attributes.endPrice * ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
             ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))).toFixed(2) + fees }}
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))) + fees).toFixed(2) }}
                                                 </td>
                                             </tr>
                                         </tbody>

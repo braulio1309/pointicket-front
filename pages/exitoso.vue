@@ -53,7 +53,7 @@ export default {
             user: '',
             result: false,
             isLoading: false,
-            coupon: '',
+            coupon: null,
             couponVerify: false,
             resultCouponAmount: false,
             resultCouponPercentage: false,
@@ -95,16 +95,13 @@ export default {
             const config = useRuntimeConfig();
             const urlParams = new URLSearchParams(window.location.search);
             const reference = urlParams.get('r');
-            let couponId = null;
-            if(localStorage.getItem('couponId'))
-                couponId = await getCoupon(parseInt(localStorage.getItem('couponId')));
             let data = {
                 user: this.user,
                 ticket: this.ticket,
                 subtotal: this.ticket.attributes.endPrice * this.ticket.attributes.seat,
                 total: parseFloat(localStorage.getItem('price')),
                 taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21,
-                descuento: couponId,
+                descuento: this.coupon,
                 bankReference: reference
             };
             localStorage.removeItem('coupon');
@@ -136,6 +133,8 @@ export default {
         await this.getEvent();
         this.userData();
         this.savePurchase();
+        if(localStorage.getItem('couponId'))
+                this.coupon = await this.getCoupon(parseInt(localStorage.getItem('couponId')));
     },
 
 }

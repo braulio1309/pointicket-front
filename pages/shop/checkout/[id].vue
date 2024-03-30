@@ -100,14 +100,20 @@
                                                 <td v-if="resultCouponPercentage">{{ percentageDiscount }} %</td>
 
                                             </tr>
+                                            <tr v-if="ticket.attributes.type == 'Papel'" class="order-total">
+                                                <td>Gastos de envío</td>
+                                                <td >€ 10</td>
+                                            </tr>
+
                                             <tr class="order-total">
                                                 <td>Gastos de gestión</td>
                                                 <td >€ {{fees}}</td>
                                             </tr>
+
                                             <tr class="order-total">
                                                 <td>Total</td>
                                                 <td >€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) + fees).toFixed(2) }}
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) + fees + feeEnvio).toFixed(2) }}
                                                 </td>
                                             </tr>
 
@@ -119,13 +125,13 @@
                                                 <td v-if="resultCouponAmount">€{{ parseFloat(((ticket.attributes.endPrice *
             ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
-            amountDiscount) + fees).toFixed(2)}}
+            amountDiscount) + fees + feeEnvio).toFixed(2)}}
                                                 </td>
                                                 <td v-if="resultCouponPercentage">€{{ parseFloat(((ticket.attributes.endPrice * ticket.attributes.seat +
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
             ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))) + fees).toFixed(2) }}
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))) + fees + feeEnvio).toFixed(2) }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -215,7 +221,8 @@ export default {
             errorCoupon: false,
             lineItems: null,
             couponObject: null,
-            fees: 0
+            fees: 5,
+            feeEnvio: 0
         }
     },
     head() {
@@ -276,6 +283,7 @@ export default {
                 })
                 .then((response) => {
                     this.couponObject = response.data.data[0];
+                    localStorage.setItem('coupon', this.couponObject.id);
                     let amount = response.data.data[0].attributes.amount;
                     let percentage = response.data.data[0].attributes.percentage;
                     this.errorCoupon = false;
@@ -311,8 +319,6 @@ export default {
             }
 
             finalAmount += this.fees;
-            if(this.couponObject)
-                localStorage.setItem('coupon', this.couponObject.id);
             localStorage.setItem('price', finalAmount);
 
             const url = `https://tpv.tiendogs.com/tpv.html?price=${parseFloat(finalAmount).toFixed(2)}`;
@@ -325,10 +331,9 @@ export default {
         localStorage.setItem('ticketId', this.ticketId);
         await this.getEvent();
         this.userData();
-        if(this.ticket.attributes.type === 'Electrónica')
-            this.fees = 5;
-        else 
-            this.fees = 10;
+        if(this.ticket.attributes.type === 'Papel'){
+            this.feeEnvio = 10
+        }
 
     },
 

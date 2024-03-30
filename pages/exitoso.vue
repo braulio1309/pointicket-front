@@ -85,16 +85,21 @@ export default {
             const config = useRuntimeConfig();
             const urlParams = new URLSearchParams(window.location.search);
             const reference = urlParams.get('r');
+            let couponId = null;
+            if(localStorage.getItem('couponId'))
+                couponId = parseInt(localStorage.getItem('couponId'));
             let data = {
                 user: this.user,
                 ticket: this.ticket,
                 subtotal: this.ticket.attributes.endPrice * this.ticket.attributes.seat,
                 total: parseFloat(localStorage.getItem('price')),
                 taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21,
-                descuento: JSON.parse(localStorage.getItem('coupon')),
+                descuento: couponId,
                 bankReference: reference
             };
-
+            localStorage.removeItem('coupon');
+            localStorage.removeItem('price');
+            localStorage.removeItem('ticketId');
             axios
                 .post(`${config.public.apiBase}purchases`, { data }, {
                     headers: {

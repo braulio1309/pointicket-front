@@ -97,7 +97,7 @@
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Descuento</td>
                                                 <td v-if="resultCouponAmount">€{{ amountDiscount }}</td>
-                                                <td v-if="resultCouponPercentage">{{ percentage }} %</td>
+                                                <td v-if="resultCouponPercentage">{{ percentageDiscount }} %</td>
 
                                             </tr>
                                             <tr class="order-total">
@@ -108,7 +108,7 @@
                                             <tr class="order-total">
                                                 <td>Total</td>
                                                 <td>€{{ parseFloat(ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)).toFixed(2) }}
+            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)).toFixed(2) }}
                                                 </td>
                                             </tr>
 
@@ -126,7 +126,7 @@
             (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
             ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.1)))).toFixed(2) }}
+                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))).toFixed(2) }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -207,7 +207,7 @@ export default {
             user: '',
             result: false,
             isLoading: false,
-            coupon: {},
+            coupon: null,
             couponVerify: false,
             resultCouponAmount: false,
             resultCouponPercentage: false,
@@ -215,10 +215,7 @@ export default {
             amountDiscount: 0,
             errorCoupon: false,
             lineItems: null,
-            expiryMonth: '',
-            expiryYear: '',
-            cvc2: '',
-            cardNumber: '',
+            couponObject
         }
     },
     head() {
@@ -230,7 +227,6 @@ export default {
 
         async getEvent() {
             const config = useRuntimeConfig();
-            console.log(this.ticketId)
             let response = await axios
                 .get(`${config.public.apiBase}tickets/` + this.ticketId + '?populate=*', {
                     headers: {
@@ -238,12 +234,10 @@ export default {
                     },
                 });
             this.ticket = response.data.data;
-            console.log('ticket', this.ticket)
             this.lineItems = [{
                 price: this.ticket.attributes.price_id,
                 quantity: 1,
             }];
-            console.log(this.lineItems);
         },
         async verifyCoupon() {
             const config = useRuntimeConfig();
@@ -281,6 +275,7 @@ export default {
                     },
                 })
                 .then((response) => {
+                    this.couponObject = response.data.data[0];
                     let amount = response.data.data[0].attributes.amount;
                     let percentage = response.data.data[0].attributes.percentage;
                     this.errorCoupon = false;
@@ -316,7 +311,8 @@ export default {
             }
 
             finalAmount += (this.ticket.attributes.type == 'Electrónica')? 5: 10;
-            localStorage.setItem('coupon', JSON.stringify(this.coupon));
+            if(!this.errorCoupon)
+                localStorage.setItem('couponId', this.couponObject.id);
             localStorage.setItem('price', finalAmount);
 
             const url = `https://tpv.tiendogs.com/tpv.html?price=${parseFloat(finalAmount).toFixed(2)}`;

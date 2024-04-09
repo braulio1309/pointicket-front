@@ -321,7 +321,7 @@ export default {
             finalAmount += this.fees;
             localStorage.setItem('price', finalAmount);
 
-            const url = `https://tpv.tiendogs.com/tpv.html?price=${parseFloat(finalAmount).toFixed(2)}`;
+            const url = `https://tpv.pointickets.com/?price=${parseFloat(finalAmount).toFixed(2)}`;
 
             window.location.href = url;
         }

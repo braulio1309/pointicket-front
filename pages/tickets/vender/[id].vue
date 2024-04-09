@@ -351,27 +351,46 @@ export default {
                 'CAT 1 Premium': 'naranja'
             },
             valueSector: {
-                'CAT 3 - sectores 633 a 611 / sectores 634 a 612': 
-                [
-                    {
-                    min: 611, max: 633
-                    }
+                'CAT 3 - sectores 633 a 611 / sectores 634 a 612': [
+                    {min: 611, max: 633}
                 ],
-                'CAT 2 - fondo': [],
+                'CAT 2 - fondo': [
+                    {min:109, max: 128},
+                    {min:207, max: 228},
+                    {min:309, max: 326},
+                    {min:409, max: 434},
+                    {min:513, max: 534},
+                ],
                 'CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636': [
-                    {
-                    min: 609, max: 610
-                    },
-                    {
-                    min: 701, max: 702
-                    },
-                    {
-                    min: 635, max: 636
-                    }
+                    {min: 609, max: 610},
+                    {min: 701, max: 702},
+                    {min: 635, max: 636}
                 ],
-                'CAT 1 - Alta': [],
-                'CAT 1': [],
-                'CAT 1 Premium': []
+                'CAT 1 - Alta': [
+                    {min:501, max:507},
+                    {min:509, max:512},
+                    {min:518, max:518},
+                    {min:535, max:544},
+                ],
+                'CAT 1': [
+                    {min:107, max:108},
+                    {min:205, max:208},
+                    {min:307, max:310},
+                    {min:405, max:410},
+                    {min:227, max:230},
+                    {min:325, max:330},
+                    {min:433, max:438},
+                ],
+                'CAT 1 Premium': [
+                    {min:101, max:106},
+                    {min:200, max:204},
+                    {min:301, max:306},
+                    {min:401, max:404},
+                    {min:129, max:134},
+                    {min:231, max:234},
+                    {min:332, max:336},
+                    {min:439, max:444},
+                ]
             },
             color: null
         }

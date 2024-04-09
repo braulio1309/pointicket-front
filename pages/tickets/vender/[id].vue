@@ -71,52 +71,38 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>Categoria</label>
-                                                                        <select class="edu-select" v-model="category">
-                                                                            <option value="VIP PREMIUM">VIP PREMIUM</option>
+                                                                        <select class="edu-select" v-model="category" @change="handleChange">
                                                                             <option value="VIP">VIP</option>
-                                                                            <option value="Segundo Anfiteatro Lateral">
-                                                                                Segundo Anfiteatro Lateral</option>
-                                                                            <option value="Tercer Anfiteatro Lateral">Tercer
-                                                                                Anfiteatro Lateral</option>
-                                                                            <option value="Cuarto Anfiteatro Lateral">Cuarto
-                                                                                Anfiteatro Lateral</option>
-                                                                            <option value="Grada De Fondo">Grada De Fondo
+                                                                            <option value="CAT 3 - sectores 633 a 611 / sectores 634 a 612">
+                                                                                CAT 3 - sectores 633 a 611 / sectores 634 a 612</option>
+                                                                            <option value="CAT 2 - fondo"> CAT 2 - fondo</option>
+                                                                            <option value="CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636">CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636</option>
+                                                                            <option value="CAT 1 - Alta">CAT 1 - Alta
                                                                             </option>
-                                                                            <option value="Tribuna de Fondo">Tribuna de
-                                                                                Fondo</option>
-                                                                            <option value="Primer Anfiteatro de Fondo">
-                                                                                Primer Anfiteatro de Fondo</option>
-                                                                            <option value="Segundo Anfiteatro de Fondo">
-                                                                                Segundo Anfiteatro de Fondo</option>
-                                                                            <option value="Tercer Anfiteatro de Fondo">
-                                                                                Tercer Anfiteatro de Fondo</option>
-                                                                            <option value="Cuarto Anfiteatro de Fondo">
-                                                                                Cuarto Anfiteatro de Fondo</option>
+                                                                            <option value="CAT 1">CAT 1</option>
+                                                                            <option value="CAT 1 Premium">
+                                                                                CAT 1 Premium</option>
                                                                         </select>
 
                                                                     </div>
 
                                                                 </div>
+
                                                                 <div class="col-12">
                                                                     <div class="form-group">
+                                                                        <div v-if="color" class="alert alert-light" role="alert">
+                                                                            Indicar sector marcados en color {{ color }}
+                                                                        </div>
                                                                         <label>Sector</label>
-                                                                        <select class="edu-select" v-model="sector">
-                                                                            <option value="Lateral Oeste">Lateral Oeste
-                                                                            </option>
-                                                                            <option value="Lateral Este">Lateral Este
-                                                                            </option>
-                                                                            <option value="Fondo Norte">Fondo Norte</option>
-                                                                            <option value="Fondo Sur">Fondo Sur</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Fila</label>
                                                                         <input type="text" class="form-control"
-                                                                            placeholder="Fila" v-model="row">
+                                                                            placeholder="Sector" v-model="row" @input="validateRange">
+                                                                            <div v-if="!validateSector" class="alert alert-danger" role="alert">
+                                                                                El asiento no está en el sector designado
+                                                                            </div>
+                                                                            <div v-else class="alert alert-success" role="alert">
+                                                                                El asiento es correcto
+                                                                            </div>
                                                                     </div>
-
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
@@ -128,7 +114,7 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <button v-if="type && sector && category && row" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
+                                                                        <button v-if="type && category && validateSector" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -341,7 +327,7 @@ export default {
             title: 'Comprar entrada',
             filterData: [],
             selectedCategory: 'all',
-            row: '',
+            row: 0,
             sector: '',
             category: '',
             startPrice: 0,
@@ -354,7 +340,40 @@ export default {
             finish: false,
             isLoading: false,
             seat: 1,
-            userCopy: ''
+            userCopy: '',
+            validateSector: null,
+            valueColor: {
+                'CAT 3 - sectores 633 a 611 / sectores 634 a 612': 'morado',
+                'CAT 2 - fondo': 'rojo',
+                'CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636': 'verde',
+                'CAT 1 - Alta': 'amarillo',
+                'CAT 1': 'azul',
+                'CAT 1 Premium': 'naranja'
+            },
+            valueSector: {
+                'CAT 3 - sectores 633 a 611 / sectores 634 a 612': 
+                [
+                    {
+                    min: 611, max: 633
+                    }
+                ],
+                'CAT 2 - fondo': [],
+                'CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636': [
+                    {
+                    min: 609, max: 610
+                    },
+                    {
+                    min: 701, max: 702
+                    },
+                    {
+                    min: 635, max: 636
+                    }
+                ],
+                'CAT 1 - Alta': [],
+                'CAT 1': [],
+                'CAT 1 Premium': []
+            },
+            color: null
         }
     },
     computed: {
@@ -371,6 +390,23 @@ export default {
                 this.filterData = this.items.filter((item) => item.category.includes(cat));
             }
         },
+        handleChange(){
+            this.color = this.valueColor[this.category];
+        },
+        validateRange() {
+            let number = parseInt(this.row);
+            if (this.valueSector[this.category] instanceof Array) {
+                for (let i = 0; i < this.valueSector[this.category].length; i++) {
+                    let range = this.valueSector[this.category][i];
+                    if (number >= range.min && number <= range.max) {
+                        this.validateSector = true;
+                        break;
+                    }else {
+                        this.validateSector = false;
+                    }
+                }
+            }
+        },
         handleImagePopup(indexNum) {
             this.$refs.image_popup.showImg(indexNum);
         },
@@ -379,7 +415,6 @@ export default {
         },
         handleFileUpload(event) {
             this.selectedFile = event.target.files[0];
-            console.log(this.selectedFile)
         },
         lastPrice() {
             if (this.newPrice === '')

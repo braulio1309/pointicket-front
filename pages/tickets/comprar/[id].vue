@@ -63,7 +63,7 @@
                                                                                                 {{
                                                                                                     event.attributes.seat }}
                                                                                                 Entradas - {{
-                                                                                                    event.attributes.Category }}
+                                                                                                    event.attributes.Category.slice(0, 5) }}
                                                                                             </NuxtLink>
                                                                                         </h6>
                                                                                         <h7 class="title">

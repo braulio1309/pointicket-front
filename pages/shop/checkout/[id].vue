@@ -78,13 +78,13 @@
                         <div class="col-lg-6">
                             <div class="order-summery checkout-summery">
                                 <div class="summery-table-wrap">
-                                    <h4 class="title">Tu orden</h4>
+                                    <h4 class="title">Tu orden para {{
+            ticket.attributes.evento.data.attributes.title }}</h4>
                                     <table class="table summery-table">
                                         <tbody>
                                             <tr>
-                                                <td> {{ ticket.attributes.Category }}, {{
-            ticket.attributes.evento.data.attributes.title }}, Fila {{
-            this.ticket.attributes.Fila }}</td>
+                                                <td> {{ ticket.attributes.Category }}, Tipo: {{
+            this.ticket.attributes.type }}, Fila: {{ ticket.attributes.Fila }}</td>
                                                 <td><span class="quantity">x {{ ticket.attributes.seat }}</span></td>
                                                 <td> €{{ parseFloat(ticket.attributes.endPrice).toFixed(2) }}</td>
                                             </tr>

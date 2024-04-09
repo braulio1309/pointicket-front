@@ -23,14 +23,14 @@
                         </div>
                         <div class="form-group">
                             <label for="current-log-password">Contraseña*</label>
-                            <input type="password" v-model="password"
+                            <input :type="showPassword" v-model="password"
                                 placeholder="Contraseña">
-                            <span class="password-show"><i class="icon-76"></i></span>
+                            <span class="password-show" @click="toggleShowPassword"><i class="icon-76"></i></span>
                         </div>
-                        <div class="form-group chekbox-area">
-                            <div class="edu-form-check">
-                                <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                <label for="remember-me">Recuerdame</label>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" id="remember-me" v-model="checkbox" class="chec form-check-input">
+                                <label class="form-check-label" for="remember-me"><NuxtLink >Recuerdame</NuxtLink></label>
                             </div>
                             <a href="/recuperar" class="password-reset">Perdiste tu contraseña?</a>
                         </div>
@@ -64,7 +64,8 @@ export default {
             error: false,
             errorMsg: `An error occurred, please try again`,
             auth: '',
-            checkbox: false
+            checkbox: true,
+            showPassword: 'password'
         }
     },
     mounted() {
@@ -91,6 +92,13 @@ export default {
         },
         forgotPassword(){
             this.$router.push('/email-recuperar-clave');
+        },
+        toggleShowPassword(){
+            if(this.showPassword == 'password'){
+                this.showPassword = 'text';
+            } else {
+                this.showPassword = 'password';
+            }
         }
     }
 

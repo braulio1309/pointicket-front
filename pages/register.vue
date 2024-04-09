@@ -27,13 +27,12 @@
                         </div>
                         <div class="form-group">
                             <label for="log-password">Contraseña*</label>
-                            <input type="password" v-model="password" placeholder="Contraseña">
-                            <span class="password-show"><i class="icon-76"></i></span>
+                            <input :type="showPassword" v-model="password" placeholder="Contraseña">
+                            <span class="password-show" @click="toggleShowPassword"><i class="icon-76"></i></span>
                         </div>
                         <div class="form-group">
                             <label for="log-password">Telefono*</label>
                             <input type="text" placeholder="123465" v-model="phone">
-                            <span class="password-show"><i class="icon-76"></i></span>
                         </div>
                         <div class="form-group">
                             <div class="form-check">
@@ -76,7 +75,8 @@ export default {
             error: false,
             errorMsg: `An error occurred, please try again`,
             checkbox: true,
-            success: false
+            success: false,
+            showPassword: 'password',
         }
     },
     methods: {
@@ -96,6 +96,13 @@ export default {
                 console.log(error)
                 this.error = true
                 this.password = ''
+            }
+        },
+        toggleShowPassword(){
+            if(this.showPassword == 'password'){
+                this.showPassword = 'text';
+            } else {
+                this.showPassword = 'password';
             }
         }
     }

@@ -4,9 +4,7 @@
             <div class="content">
                 <div class="row">
                     <div class="col-sm-6">
-                        <ul class="event-meta">
-                            <li>{{ eventInfo.fullDate }}</li>
-                        </ul>
+                        
                         <h6 class="title">
                             <NuxtLink to="/event/event-details">{{ eventInfo.title }}</NuxtLink>
                         </h6>

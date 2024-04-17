@@ -151,8 +151,8 @@ export default {
                 user: this.user,
                 ticket: this.ticket,
                 subtotal: this.ticket.attributes.endPrice * this.ticket.attributes.seat,
-                total: this.ticket.attributes.endPrice * this.ticket.attributes.seat + (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1),
-                taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.1,
+                total: this.ticket.attributes.endPrice * this.ticket.attributes.seat + (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21),
+                taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21,
             };
 
             axios

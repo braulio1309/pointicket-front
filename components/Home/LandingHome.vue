@@ -6,6 +6,9 @@
                 <h1 class="title" style="color:white;margin-bottom: 60px !important;  text-align: center;
     justify-content: center;">Compra tus Entradas para el Tour del <span  style="display: block; margin: 0 auto;">Santiago Bernabéu</span>
                 </h1>
+                <div style="text-align: center;">
+                    <a class="edu-btn btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none;">Comprar entradas<i class="icon-east"></i></a>
+                </div>
             </div>
         </div>
         <Features />
@@ -35,7 +38,7 @@
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="edu-btn btn-border btn-medium" href="#">Comprar<i class="icon-east"></i></a>
+                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none;">Comprar<i class="icon-east"></i></a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +59,7 @@
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="edu-btn btn-border btn-medium" href="#">Comprar<i class="icon-east"></i></a>
+                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none;">Comprar<i class="icon-east"></i></a>
                             </div>
                         </div>
                     </div>
@@ -77,7 +80,7 @@
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu">Comprar<i class="icon-east"></i></a>
+                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none;">Comprar<i class="icon-east"></i></a>
                             </div>
                         </div>
                     </div>

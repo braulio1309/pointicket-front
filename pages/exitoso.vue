@@ -26,8 +26,8 @@
 
 <script>
 definePageMeta({
-  title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
-  description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '                
+    title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
+    description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
@@ -61,6 +61,12 @@ export default {
             amountDiscount: 0,
             errorCoupon: false,
             lineItems: null,
+            data: null,
+            validatePrice: {
+                'Classic': 33,
+                'Classic Hora Flexible': 40,
+                'Premium': 50,
+            }
         }
     },
     head() {
@@ -81,7 +87,7 @@ export default {
             this.ticket = response.data.data;
         },
 
-        async getCoupon(coupon){
+        async getCoupon(coupon) {
             const config = useRuntimeConfig();
             let response = await axios
                 .get(`${config.public.apiBase}coupons/` + coupon, {
@@ -126,15 +132,54 @@ export default {
         userData() {
             const userData = window.localStorage.getItem('userData');
             this.user = JSON.parse(userData);
-        }
+        },
+        async saveTour() {
+            const config = useRuntimeConfig();
+            const urlParams = new URLSearchParams(window.location.search);
+            const reference = urlParams.get('r');
+            let dataTour = JSON.parse(localStorage.getItem('tour'));
+            dataTour.user = this.user;
+            const tourCreated = await axios.post(`${config.public.apiBase}tours-santiago-bernabeu`, { data: dataTour }, {
+                headers: {
+                    Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                },
+            });
+
+            let dataPurchase = {
+                user: this.user,
+                tour: tourCreated.data.data,
+                subtotal: this.validatePrice[this.data.type] * this.data.seat,
+                total: this.validatePrice[this.data.type] * this.data.seat + (this.validatePrice[this.data.type] * this.data.seat * 0.21),
+                taxes: this.validatePrice[this.data.type] * this.data.seat * 0.21,
+                bankReference: reference
+            };
+            const purchase = await axios.post(`${config.public.apiBase}purchases`, { data: dataPurchase }, {
+                headers: {
+                    Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                },
+            });
+            this.message = response.data;
+            this.result = true;
+            localStorage.removeItem('tour');
+
+        },
     },
     async mounted() {
-        this.ticketId = parseInt(localStorage.getItem('ticketId'));
-        await this.getEvent();
+        this.data = (localStorage.getItem('tour')) ? JSON.parse(localStorage.getItem('tour')) : null;
         this.userData();
-        this.savePurchase();
-        if(localStorage.getItem('coupon'))
+        console.log(this.data)
+        if (!this.data) {
+            this.ticketId = parseInt(localStorage.getItem('ticketId'));
+            await this.getEvent();
+            this.userData();
+            this.savePurchase();
+            if (localStorage.getItem('coupon'))
                 this.coupon = await this.getCoupon(parseInt(localStorage.getItem('couponId')));
+        } else {
+            this.saveTour();
+        }
+
+
     },
 
 }

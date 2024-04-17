@@ -62,7 +62,7 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>Tipo de entrada</label>
-                                                                        <select class="edu-select" v-model="type">
+                                                                        <select class="edu-select" v-model="data.type">
                                                                             <option value="Classic">Classic</option>
                                                                             <option value="Classic Hora Flexible">Classic Hora Flexible</option>
                                                                             <option value="Premium">Premium</option>
@@ -72,13 +72,13 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>Fecha</label>
-                                                                        <input type="date" class="form-control">
+                                                                        <input type="date" v-model="data.date" class="form-control">
 
                                                                     </div>
 
                                                                     <div class="form-group">
                                                                         <label>Hora</label>
-                                                                        <input type="time" class="form-control">
+                                                                        <input type="time" v-model="data.hour" class="form-control">
 
                                                                     </div>
 
@@ -89,13 +89,13 @@
                                                                     <div class="form-group">
                                                                         <label>Cantidad de entradas</label>
                                                                         <input type="number" class="form-control"
-                                                                            placeholder="Asientos" v-model="seat" max="4"
+                                                                            placeholder="Asientos" v-model="data.seat"
                                                                             min="1">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <button class="edu-btn btn-medium mt--50">Iniciar proceso de pago</button>
+                                                                        <button @click="checkout" class="edu-btn btn-medium mt--50">Iniciar proceso de pago</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -323,6 +323,12 @@ export default {
             seat: 1,
             userCopy: '',
             validateSector: null,
+            data: {
+                type: '',
+                seat: 0,
+                date: null,
+                hour: null
+            },
             valueColor: {
                 'CAT 3 - sectores 633 a 611 / sectores 634 a 612': 'morado',
                 'CAT 2 - fondo': 'rojo',
@@ -392,6 +398,10 @@ export default {
         },
         handleChange(){
             this.color = this.valueColor[this.category];
+        },
+        checkout(){
+            localStorage.setItem('tour', JSON.stringify(this.data));
+            this.$router.push('/shop/checkout/tour-santiago-bernabeu');
         },
         validateRange() {
             let number = parseInt(this.row);
@@ -540,10 +550,7 @@ export default {
             window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder vender una entrada');
             this.$router.push('/login');
         }else {
-            this.filterData = this.items
-            this.userData();
-            this.eventId = this.$route.params.id;
-            this.getEvent();
+            this.filterData = this.items;
         }
         
     },

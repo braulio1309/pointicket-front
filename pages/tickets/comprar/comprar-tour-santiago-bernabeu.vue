@@ -20,8 +20,8 @@
                         <div class="isotope-wrapper" style="margin-top: 100px;">
                             <div class="isotop-button isotop-filter nav">
                                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#undergraduate"
-                                    role="tab">Tipo de entrada</button>
-                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab"
+                                    role="tab">Información de entrada</button>
+                                <!--<button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab"
                                     :disabled="!type || !sector || !category || !row">Precio
                                     de venta</button>
                                 <button v-if="this.type == 'Electrónica'" class="nav-link" data-bs-toggle="pill"
@@ -30,10 +30,10 @@
                                 <button v-if="!this.userCopy.iban || !this.userCopy.holder || !this.userCopy.type_account"
                                     class="nav-link" data-bs-toggle="pill" :disabled="!startPrice || !newPrice"
                                     data-bs-target="#bank" role="tab">Datos
-                                    bancarios</button>
+                                    bancarios</button>-->
 
                             </div>
-                            <div class="tab-content" v-if="this.event">
+                            <div class="tab-content">
                                 <div class="tab-pane fade show active" id="undergraduate" role="tabpanel">
                                     <div class="row">
                                         <div class="col-md-12 col-lg-12">
@@ -43,12 +43,13 @@
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">
                                                             <img
-                                                                src="../../../assets/images/compra-entradas/distribucion.png">
+                                                                src="../../../assets/images/compra-entradas/bernabeu.jpeg">
                                                         </div>
 
                                                         <div class="text-block">
-                                                            <h4 class="title">{{ this.event.data.attributes.title }}</h4>
-                                                            <p>{{ this.event.data.attributes.description }}</p>
+                                                            <h4 class="title">Tour Santiago Bernabeu</h4>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque, diam in varius accumsan, enim erat faucibus magna, sed porttitor felis nisl nec urna. Suspendisse laoreet lacus nec aliquet bibendum. Vivamus blandit hendrerit sapien, vitae tincidunt lorem egestas et. Donec aliquam volutpat orci nec ultrices. Fusce in euismod ante. Maecenas molestie nulla lectus, sit amet sollicitudin tortor rutrum sed. Integer ipsum lorem, porta vel tortor malesuada, placerat faucibus massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis sollicitudin orci sed augue lobortis, 
+                                                                sit amet ultricies ligula viverra. Nullam sapien lectus, sodales vitae felis nec, mollis pharetra purus.</p>
 
                                                         </div>
                                                     </div>
@@ -62,51 +63,31 @@
                                                                     <div class="form-group">
                                                                         <label>Tipo de entrada</label>
                                                                         <select class="edu-select" v-model="type">
-                                                                            <option value="Papel">Papel</option>
-                                                                            <option value="Electrónica">Electrónica</option>
-                                                                            <option value="Móvil">Móvil</option>
+                                                                            <option value="Classic">Classic</option>
+                                                                            <option value="Classic Hora Flexible">Classic Hora Flexible</option>
+                                                                            <option value="Premium">Premium</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Categoria</label>
-                                                                        <select class="edu-select" v-model="category" @change="handleChange">
-                                                                            <option value="VIP">VIP</option>
-                                                                            <option value="CAT 3 - sectores 633 a 611 / sectores 634 a 612">
-                                                                                CAT 3 - sectores 633 a 611 / sectores 634 a 612</option>
-                                                                            <option value="CAT 2 - fondo"> CAT 2 - fondo</option>
-                                                                            <option value="CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636">CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636</option>
-                                                                            <option value="CAT 1 - Alta">CAT 1 - Alta
-                                                                            </option>
-                                                                            <option value="CAT 1">CAT 1</option>
-                                                                            <option value="CAT 1 Premium">
-                                                                                CAT 1 Premium</option>
-                                                                        </select>
+                                                                        <label>Fecha</label>
+                                                                        <input type="date" class="form-control">
 
                                                                     </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Hora</label>
+                                                                        <input type="time" class="form-control">
+
+                                                                    </div>
+
 
                                                                 </div>
 
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <div v-if="color" class="alert alert-light" role="alert">
-                                                                            Indicar sector marcados en color {{ color }}
-                                                                        </div>
-                                                                        <label>Sector</label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Sector" v-model="row" @input="validateRange">
-                                                                            <div v-if="!validateSector" class="alert alert-danger" role="alert">
-                                                                                El asiento no está en el sector designado
-                                                                            </div>
-                                                                            <div v-else class="alert alert-success" role="alert">
-                                                                                El asiento es correcto
-                                                                            </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Cantidad de asientos</label>
+                                                                        <label>Cantidad de entradas</label>
                                                                         <input type="number" class="form-control"
                                                                             placeholder="Asientos" v-model="seat" max="4"
                                                                             min="1">
@@ -114,7 +95,7 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <button v-if="type && category && validateSector" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
+                                                                        <button class="edu-btn btn-medium mt--50">Iniciar proceso de pago</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -324,7 +305,7 @@ export default {
     data() {
         return {
             type: '', // Variable para almacenar el valor seleccionado
-            title: 'Comprar entrada',
+            title: 'Comprar Tour Santiago Bernabeu',
             filterData: [],
             selectedCategory: 'all',
             row: 0,
@@ -352,7 +333,7 @@ export default {
             },
             valueSector: {
                 'CAT 3 - sectores 633 a 611 / sectores 634 a 612': [
-                    {min: 611, max: 634}
+                    {min: 611, max: 633}
                 ],
                 'CAT 2 - fondo': [
                     {min:109, max: 128},
@@ -362,8 +343,9 @@ export default {
                     {min:513, max: 534},
                 ],
                 'CAT 2 Lateral - sectores 609 a 610 / sectores 701 a 702 y 635 a 636': [
-                    {min: 601, max: 610},
-                    {min: 635, max: 710}
+                    {min: 609, max: 610},
+                    {min: 701, max: 702},
+                    {min: 635, max: 636}
                 ],
                 'CAT 1 - Alta': [
                     {min:501, max:507},
@@ -423,10 +405,7 @@ export default {
                         this.validateSector = false;
                     }
                 }
-            }else
-                if(this.category == 'VIP'){
-                    this.validateSector = true;
-                }
+            }
         },
         handleImagePopup(indexNum) {
             this.$refs.image_popup.showImg(indexNum);

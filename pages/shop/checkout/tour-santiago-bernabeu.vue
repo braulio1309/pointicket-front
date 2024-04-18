@@ -312,8 +312,9 @@ export default {
             this.user = JSON.parse(userData);
         },
         async customFunction() {
+            console.log(this.data)
             let finalAmount = (this.validatePrice[this.data.type] * this.data.seat +
-            (this.validatePrice[data.type] * this.data.seat * 0.21)) + this.fees;
+            (this.validatePrice[this.data.type] * this.data.seat * 0.21)) + this.fees;
             if(this.resultCouponPercentage){
                 finalAmount -= (this.percentageDiscount / 100) * finalAmount;
             }
@@ -332,6 +333,7 @@ export default {
     },
     mounted() {
         this.data = JSON.parse(localStorage.getItem('tour'));
+        console.log(this.data);
         this.userData();
     }
 }

@@ -78,8 +78,7 @@
 
                                                                     <div class="form-group">
                                                                         <label>Hora</label>
-                                                                        <input type="time" v-model="data.hour" class="form-control">
-
+                                                                        <input type="time" v-model="data.hour" class="form-control" step="1">
                                                                     </div>
 
 

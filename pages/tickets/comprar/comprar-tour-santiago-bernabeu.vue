@@ -21,17 +21,6 @@
                             <div class="isotop-button isotop-filter nav">
                                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#undergraduate"
                                     role="tab">Información de entrada</button>
-                                <!--<button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab"
-                                    :disabled="!type || !sector || !category || !row">Precio
-                                    de venta</button>
-                                <button v-if="this.type == 'Electrónica'" class="nav-link" data-bs-toggle="pill"
-                                    data-bs-target="#file" role="tab" :disabled="!startPrice || !newPrice">Carga la
-                                    entrada</button>
-                                <button v-if="!this.userCopy.iban || !this.userCopy.holder || !this.userCopy.type_account"
-                                    class="nav-link" data-bs-toggle="pill" :disabled="!startPrice || !newPrice"
-                                    data-bs-target="#bank" role="tab">Datos
-                                    bancarios</button>-->
-
                             </div>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="undergraduate" role="tabpanel">
@@ -78,7 +67,7 @@
 
                                                                     <div class="form-group">
                                                                         <label>Hora</label>
-                                                                        <input type="time" v-model="data.hour" class="form-control" step="1">
+                                                                        <input type="time" v-model="data.hour" class="form-control">
                                                                     </div>
 
 
@@ -102,119 +91,6 @@
 
 
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="graduate" role="tabpanel">
-                                    <div class="row ">
-                                        <div class="col-md-12 col-lg-12" style="padding: 100px;">
-                                            <div class="col-lg-12 order-lg-1 col-pr--35 login-form-box">
-
-                                                <div class="row">
-                                                    <div class="col-12 mb--50">
-                                                        <div class="form-group">
-                                                            <label>¿Qué precio tiene la entrada originalmente?</label>
-                                                            <input type="number" class="form-control"
-                                                                placeholder="Precio de adquisición" v-model="startPrice">
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="form-group">
-                                                            <label>¿Cuanto quieres cobrar por la entrada?</label>
-                                                            <input type="number" class="form-control"
-                                                                placeholder="Precio de venta" v-model="newPrice">
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="col-12 text-center" style="margin-top:20px;">
-                                                        <div class="form-group">
-                                                            <h5>El precio de cada entrada será de {{ lastPrice() }}</h5>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="form-group">
-                                                            <button v-if="startPrice && newPrice && type == 'Electrónica'" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
-                                                            <button v-if="startPrice && newPrice && type != 'Electrónica'" @click="saveTicket" class="edu-btn btn-medium mt--50">Guardar</button>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="file" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-12">
-                                            <div class="row ">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <div class="col-lg-12 order-lg-1 col-pr--35 login-form-box">
-
-                                                        <div class="row">
-                                                            <div class="col-12 mb--50" style="padding: 100px;">
-                                                                <div class="form-group">
-                                                                    <label>Carga tu entrada</label>
-                                                                    <input type="file" class="form-control"
-                                                                        @change="handleFileUpload">
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <button v-if="this.user.holder && this.user.iban && this.user.type_account && this.selectedFile" type="button" @click="saveTicket"
-                                                                class="edu-btn btn-medium" :disabled="isLoading">Guardar
-                                                                <i class="icon-4"></i></button>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <button v-if="(!this.user.holder || !this.user.iban || !this.user.type_account) && this.selectedFile" type="button" @click="nextTab"
-                                                                class="edu-btn btn-medium" :disabled="isLoading">Siguiente
-                                                                <i class="icon-4"></i></button>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="bank" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-12">
-                                            <div class="row ">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <div class="login-form-box registration-form">
-                                                        <h3 class="title">Ingrese sus datos bancarios</h3>
-                                                        <form>
-                                                            <div class="form-group">
-                                                                <label for="reg-name">Títular*</label>
-                                                                <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.holder">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="log-email">IBAN*</label>
-                                                                <input type="text" name="log-email" id="log-email"
-                                                                    placeholder="Iban" v-model="this.user.iban">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="reg-name">Tipo de cuenta*</label>
-                                                                <input type="text" name="reg-name" id="reg-name"
-                                                                    placeholder="Nombre" v-model="this.user.type_account">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <button v-if="this.user.holder && this.user.iban && this.user.type_account" type="button" @click="saveTicket"
-                                                                    class="edu-btn btn-medium" :disabled="isLoading">Guardar
-                                                                    <i class="icon-4"></i></button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -399,6 +275,8 @@ export default {
             this.color = this.valueColor[this.category];
         },
         checkout(){
+            this.data.hour += `:00`
+            console.log(this.data)
             localStorage.setItem('tour', JSON.stringify(this.data));
             this.$router.push('/shop/checkout/tour-santiago-bernabeu');
         },

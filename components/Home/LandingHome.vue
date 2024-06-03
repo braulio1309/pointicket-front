@@ -27,12 +27,11 @@
                                 <div class="price-wrap">
                                     <span class="amount">33.00€</span>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consect adipisicing elit sed. do eilt sed</p>
                             </div>
                             <div class="pricing-body">
                                 <ul class="list-item">
                                     <li><i class="icon-20"></i>Museo del Real Madrid C.F</li>
-                                    <li><i class="icon-20"></i>Vista panorámica del interior del Estadio</li>
+                                    <li><i class="icon-20"></i>Vista panorámica del Estadio</li>
                                     <li><i class="icon-20"></i>Recorrido (reducido por obras)</li>
                                     <!--<li class="item-off"><i class="icon-20"></i>Course discussions</li>-->
                                 </ul>
@@ -49,12 +48,11 @@
                                 <div class="price-wrap">
                                     <span class="amount">40.00€</span>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consect adipisicing elit sed. do eilt sed</p>
                             </div>
                             <div class="pricing-body">
                                 <ul class="list-item">
                                     <li><i class="icon-20"></i>Entrada Classic</li>
-                                    <li><i class="icon-20"></i>Hora abierta dentro de la fecha seleccionada</li>
+                                    <li><i class="icon-20"></i>Hora abierta </li>
                                     <li><i class="icon-20"></i>Recorrido reducido por obras</li>
                                 </ul>
                             </div>
@@ -70,7 +68,6 @@
                                 <div class="price-wrap">
                                     <span class="amount">50.00€</span>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consect adipisicing elit sed. do eilt sed</p>
                             </div>
                             <div class="pricing-body">
                                 <ul class="list-item">

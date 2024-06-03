@@ -37,8 +37,7 @@
 
                                                         <div class="text-block">
                                                             <h4 class="title">Tour Santiago Bernabeu</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque, diam in varius accumsan, enim erat faucibus magna, sed porttitor felis nisl nec urna. Suspendisse laoreet lacus nec aliquet bibendum. Vivamus blandit hendrerit sapien, vitae tincidunt lorem egestas et. Donec aliquam volutpat orci nec ultrices. Fusce in euismod ante. Maecenas molestie nulla lectus, sit amet sollicitudin tortor rutrum sed. Integer ipsum lorem, porta vel tortor malesuada, placerat faucibus massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis sollicitudin orci sed augue lobortis, 
-                                                                sit amet ultricies ligula viverra. Nullam sapien lectus, sodales vitae felis nec, mollis pharetra purus.</p>
+                                                            <p>{{ text[data.type] }}</p>
 
                                                         </div>
                                                     </div>
@@ -61,13 +60,13 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>Fecha</label>
-                                                                        <input type="date" v-model="data.date" class="form-control">
+                                                                        <input type="date" style="font-size: 1.1em;" v-model="data.date" class="form-control">
 
                                                                     </div>
 
                                                                     <div class="form-group">
                                                                         <label>Hora</label>
-                                                                        <input type="time" v-model="data.hour" class="form-control">
+                                                                        <input type="time" style="font-size: 1.1em;" v-model="data.hour" class="form-control">
                                                                     </div>
 
 
@@ -77,7 +76,7 @@
                                                                     <div class="form-group">
                                                                         <label>Cantidad de entradas</label>
                                                                         <input type="number" class="form-control"
-                                                                            placeholder="Asientos" v-model="data.seat"
+                                                                            placeholder="Asientos" style="font-size: 1.1em;" v-model="data.seat"
                                                                             min="1">
                                                                     </div>
                                                                 </div>
@@ -199,10 +198,21 @@ export default {
             userCopy: '',
             validateSector: null,
             data: {
-                type: '',
+                type: 'Classic',
                 seat: 0,
                 date: null,
                 hour: null
+            },
+            text: {
+                'Classic': `Museo del Real Madrid C.F,
+Vista panorámica del Estadio,
+Recorrido (reducido por obras)`,
+                'Classic Hora Flexible': `Entrada Classic,
+Hora abierta en la fecha seleccionada,
+Recorrido reducido por obras`,
+                'Premium': `Entrada Classic,
+Servicio Guía,
+Recorrido reducido por obras`
             },
             valueColor: {
                 'CAT 3 - sectores 633 a 611 / sectores 634 a 612': 'morado',
@@ -276,7 +286,6 @@ export default {
         },
         checkout(){
             this.data.hour += `:00`
-            console.log(this.data)
             localStorage.setItem('tour', JSON.stringify(this.data));
             this.$router.push('/shop/checkout/tour-santiago-bernabeu');
         },

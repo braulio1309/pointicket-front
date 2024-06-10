@@ -168,7 +168,7 @@ export default {
         this.data = (localStorage.getItem('tour')) ? JSON.parse(localStorage.getItem('tour')) : null;
         this.userData();
         console.log(this.data)
-        if (!this.data) {
+        if (this.data) {
             this.ticketId = parseInt(localStorage.getItem('ticketId'));
             await this.getEvent();
             this.userData();

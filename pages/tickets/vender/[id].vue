@@ -24,7 +24,7 @@
                                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab"
                                     :disabled="!type || !sector || !category || !row">Precio
                                     de venta</button>
-                                <button v-if="this.type == 'Electrónica'" class="nav-link" data-bs-toggle="pill"
+                                <button v-if="this.type == 'Digital'" class="nav-link" data-bs-toggle="pill"
                                     data-bs-target="#file" role="tab" :disabled="!startPrice || !newPrice">Carga la
                                     entrada</button>
                                 <button v-if="!this.userCopy.iban || !this.userCopy.holder || !this.userCopy.type_account"
@@ -62,9 +62,11 @@
                                                                     <div class="form-group">
                                                                         <label>Tipo de entrada</label>
                                                                         <select class="edu-select" v-model="type">
-                                                                            <option value="Papel">Papel</option>
+                                                                            <!--<option value="Papel">Papel</option>
                                                                             <option value="Electrónica">Electrónica</option>
-                                                                            <option value="Móvil">Móvil</option>
+                                                                            <option value="Móvil">Móvil</option>-->
+                                                                            <option value="Digital">Digital</option>
+                                                                            <option value="Física">Física</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -158,8 +160,8 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <button v-if="startPrice && newPrice && type == 'Electrónica'" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
-                                                            <button v-if="startPrice && newPrice && type != 'Electrónica'" @click="saveTicket" class="edu-btn btn-medium mt--50">Guardar</button>
+                                                            <button v-if="startPrice && newPrice && type == 'Digital'" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
+                                                            <button v-if="startPrice && newPrice && type != 'Digital'" @click="saveTicket" class="edu-btn btn-medium mt--50">Guardar</button>
 
                                                         </div>
                                                     </div>
@@ -180,19 +182,21 @@
                                                             <div class="col-12 mb--50" style="padding: 100px;">
                                                                 <div class="form-group">
                                                                     <label>Carga tu entrada</label>
-                                                                    <input type="file" class="form-control"
-                                                                        @change="handleFileUpload">
+                                                                    <!--<input type="file" class="form-control"
+                                                                        @change="handleFileUpload">-->
+                                                                        <input type="text" class="form-control"
+                                                                        placeholder="Link de entrada" v-model="enlace">
                                                                 </div>
 
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <button v-if="this.user.holder && this.user.iban && this.user.type_account && this.selectedFile" type="button" @click="saveTicket"
+                                                            <button v-if="this.user.holder && this.user.iban && this.user.type_account && this.enlace" type="button" @click="saveTicket"
                                                                 class="edu-btn btn-medium" :disabled="isLoading">Guardar
                                                                 <i class="icon-4"></i></button>
                                                         </div>
                                                         <div class="form-group">
-                                                            <button v-if="(!this.user.holder || !this.user.iban || !this.user.type_account) && this.selectedFile" type="button" @click="nextTab"
+                                                            <button v-if="(!this.user.holder || !this.user.iban || !this.user.type_account) && this.enlace" type="button" @click="nextTab"
                                                                 class="edu-btn btn-medium" :disabled="isLoading">Siguiente
                                                                 <i class="icon-4"></i></button>
                                                         </div>
@@ -342,6 +346,7 @@ export default {
             seat: 1,
             userCopy: '',
             validateSector: null,
+            enlace: '',
             valueColor: {
                 'CAT 3 - sectores 633 a 611 / sectores 634 a 612': 'morado',
                 'CAT 2 - fondo': 'rojo',
@@ -537,7 +542,8 @@ export default {
                 evento: this.eventId,
                 type: this.type,
                 ticket: (this.selectedFile) ? file[0] : null,
-                seat: this.seat
+                seat: this.seat,
+                enlace: this.enlace
             }
             axios
                 .post(`${config.public.apiBase}tickets`, { data }, {

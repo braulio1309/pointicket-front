@@ -19,7 +19,7 @@
                                 </li>
                                 <li>
                                     <h5 class="title">Teléfono</h5>
-                                    <p><a href="tel:+34655941059">(+034) 655 94 10 59</a></p>
+                                    <p><a href="tel:+34655941059">(+34) 655 94 10 59</a></p>
                                 </li>
                             </ul>
                             <ul class="social-share">

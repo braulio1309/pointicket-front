@@ -167,16 +167,16 @@ export default {
     async mounted() {
         this.data = (localStorage.getItem('tour')) ? JSON.parse(localStorage.getItem('tour')) : null;
         this.userData();
-        //if (!this.data) {
+        if (this.data) {
             this.ticketId = parseInt(localStorage.getItem('ticketId'));
             await this.getEvent();
             this.userData();
             this.savePurchase();
             if (localStorage.getItem('coupon'))
                 this.coupon = await this.getCoupon(parseInt(localStorage.getItem('couponId')));
-        /*} else {
+        } else {
             this.saveTour();
-        }*/
+        }
 
 
     },

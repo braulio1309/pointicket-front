@@ -23,10 +23,8 @@
                                 </li>
                             </ul>
                             <ul class="social-share">
-                                <li><a href="#"><i class="icon-share-alt"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
+                                <li><a href="https://www.facebook.com/people/Poin-Tickets/61552598728672/"><i class="icon-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/pointickets"><i class="icon-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>

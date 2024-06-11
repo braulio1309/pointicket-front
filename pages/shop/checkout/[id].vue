@@ -331,7 +331,7 @@ export default {
         localStorage.setItem('ticketId', this.ticketId);
         await this.getEvent();
         this.userData();
-        if(this.ticket.attributes.type === 'Papel'){
+        if(this.ticket.attributes.type === 'Física'){
             this.feeEnvio = 10
         }
 

@@ -169,6 +169,7 @@ export default {
         this.userData();
         if (this.data) {
             this.ticketId = parseInt(localStorage.getItem('ticketId'));
+            console.log('Entrada', this.ticketId)
             await this.getEvent();
             this.userData();
             this.savePurchase();

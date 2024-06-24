@@ -13,14 +13,14 @@
                                         <div class="content position-top">
                                             
                                             <div class="category-wrap">
-                                                <NuxtLink to="/" class="blog-category">Tour Santiago Bernabeu</NuxtLink>
+                                                <NuxtLink to="/tour-santiago-bernabeu" class="blog-category">Tour Santiago Bernabeu</NuxtLink>
                                             </div>
                                             <h5 class="title">
-                                                <NuxtLink to="/">Tour Santiago Bernabeu</NuxtLink>
+                                                <NuxtLink to="/tour-santiago-bernabeu">Tour Santiago Bernabeu</NuxtLink>
                                             </h5>
                                             
                                             <div class="button-group">
-                                                <a href="#" class="edu-btn btn-medium mt--50">Comprar entradas</a>
+                                                <a href="/tour-santiago-bernabeu" class="edu-btn btn-medium mt--50">Comprar entradas</a>
                                             </div>
                                         </div>
                                     </div>

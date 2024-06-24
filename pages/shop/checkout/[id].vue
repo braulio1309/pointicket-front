@@ -319,7 +319,7 @@ export default {
             }
 
             finalAmount += this.fees;
-            if(ticket.attributes.type != 'Digital')
+            if(this.ticket.attributes.type != 'Digital')
                 finalAmount += 10;
             localStorage.setItem('price', finalAmount);
 

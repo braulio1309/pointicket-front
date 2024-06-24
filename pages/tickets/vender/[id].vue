@@ -186,6 +186,7 @@
                                                                         @change="handleFileUpload">-->
                                                                         <input type="text" class="form-control"
                                                                         placeholder="Link de entrada" v-model="enlace">
+                                                                        <p> Si no posee el link de la entrada puede colocar un / para poder activar la opción de colocarlo mas adelante</p>
                                                                 </div>
 
                                                             </div>

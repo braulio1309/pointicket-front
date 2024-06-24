@@ -100,7 +100,7 @@
                                                 <td v-if="resultCouponPercentage">{{ percentageDiscount }} %</td>
 
                                             </tr>
-                                            <tr v-if="ticket.attributes.type == 'Papel'" class="order-total">
+                                            <tr v-if="ticket.attributes.type != 'Digital'" class="order-total">
                                                 <td>Gastos de envío</td>
                                                 <td >€ 10</td>
                                             </tr>

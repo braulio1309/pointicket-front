@@ -11,6 +11,7 @@
                     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading">¡Compra exitosa!</h4>
                         <p>Te llegará un correo con los detalles de tu compra. </p>
+                        Referencia: 0000{{ this.ticketId }}
                         <hr>
                         <p class="mb-0">Cualquier duda puedes contactarnos por los medios indicados.
                         </p>

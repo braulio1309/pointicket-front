@@ -462,7 +462,7 @@
                                 <p>
                                     Teléfono: 655941059 <br>
                                     URL del sitio web: https://pointickets.com/ <br>
-                                    Datos de facturación:  B10526994. Villa de Marín 4  28029 <br>
+                                    Datos de facturación: Villa de Marín 4  28029,  B10526994<br>
                                 </p>
                             </div>
                         </div>

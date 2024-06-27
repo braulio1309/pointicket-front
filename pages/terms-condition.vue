@@ -12,7 +12,7 @@
                         <div class="privacy-policy terms-condition">
                             <div class="text-block">
                                 <h3 class="title">Introducción:</h3>
-                                <p>WANDERLUST DREAMS SL proporciona un servicio a través de su sitio web: <a
+                                <p>Platinumtickets SL proporciona un servicio a través de su sitio web: <a
                                         href="http://www.pointickets.com" target="_blank">http://www.pointickets.com</a>,
                                     que
                                     permite a los usuarios que deseen comprar entradas (&quot;Compradores&quot;) encontrar
@@ -457,12 +457,12 @@
                             <div class="text-block">
 
                                 <h4 class="title">
-                                    Nombre de la empresa o nombre completo: WANDERLUST DREAMS SL
+                                    Nombre de la empresa o nombre completo: Platinumtickets SL
                                 </h4>
                                 <p>
                                     Teléfono: 655941059 <br>
                                     URL del sitio web: https://pointickets.com/ <br>
-                                    Datos de facturación:  B56956220. AVENIDA EL FERROL 4 28029 MADRID <br>
+                                    Datos de facturación:  B10526994. Villa de Marín 4  28029 <br>
                                 </p>
                             </div>
                         </div>

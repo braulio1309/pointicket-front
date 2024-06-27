@@ -11,9 +11,9 @@
                     <div class="col-lg-12">
                         <div class="privacy-policy terms-condition">
                             <div class="text-block">
-                                <p>Esta Política de Privacidad establece las bases sobre las que WANDERLUST DREAMS SL (en adelante,
+                                <p>Esta Política de Privacidad establece las bases sobre las que Platinumtickets SL (en adelante,
                                     “nosotros” o
-                                    el “Responsable del Tratamiento”) con domicilio en B56956220. AVENIDA EL FERROL 4 28029 - Madrid, España, sociedad que
+                                    el “Responsable del Tratamiento”) con domicilio en B10526994. Villa de Marín 4 28029 - Madrid, España, sociedad que
                                     actualmente opera en España trata sus datos de carácter personal cuando nos los facilite
                                     durante su experiencia a través de la página web https://www.pointickets.com (en
                                     adelante,
@@ -45,7 +45,7 @@
                                     Mediante la aceptación a estas Condiciones Generales, el Usuario expresa su
                                     consentimiento
                                     expreso para que los Datos Personales sean incorporados al Fichero de Datos Personales y
-                                    sean objeto de tratamiento automatizado por WANDERLUST DREAMS SL con las finalidades antes indicadas.
+                                    sean objeto de tratamiento automatizado por Platinumtickets SL con las finalidades antes indicadas.
                                 </p>
 
                             </div>

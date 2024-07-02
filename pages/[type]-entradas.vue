@@ -85,8 +85,8 @@
 
                 <div v-if="getPaginateCount > 1">
                     <div class="edublink-vue-pagination">
-                        <pagination v-model="currentPage" :per-page="perPage" :records="eventItems.length"
-                            @paginate="paginateClickCallback" :options="paginationOptions" />
+                        <!--<pagination v-model="currentPage" :per-page="perPage" :records="eventItems.length"
+                            @paginate="paginateClickCallback" :options="paginationOptions" />-->
                     </div>
                 </div>
             </div>

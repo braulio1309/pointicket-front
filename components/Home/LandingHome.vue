@@ -25,7 +25,7 @@
                             <div class="pricing-header">
                                 <h6 class="title">Classic</h6>
                                 <div class="price-wrap">
-                                    <span class="amount">33.00€</span>
+                                    <span class="amount">45.00€</span>
                                 </div>
                             </div>
                             <div class="pricing-body">
@@ -46,7 +46,7 @@
                             <div class="pricing-header">
                                 <h6 class="title">Classic Hora Flexible</h6>
                                 <div class="price-wrap">
-                                    <span class="amount">40.00€</span>
+                                    <span class="amount">50.00€</span>
                                 </div>
                             </div>
                             <div class="pricing-body">
@@ -66,7 +66,7 @@
                             <div class="pricing-header">
                                 <h6 class="title">Premium</h6>
                                 <div class="price-wrap">
-                                    <span class="amount">50.00€</span>
+                                    <span class="amount">65.00€</span>
                                 </div>
                             </div>
                             <div class="pricing-body">

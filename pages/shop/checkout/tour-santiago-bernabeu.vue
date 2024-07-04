@@ -223,9 +223,9 @@ export default {
             feeEnvio: 0,
             data: null,
             validatePrice: {
-                'Classic': 33,
-                'Classic Hora Flexible': 40,
-                'Premium': 50,
+                'Classic': 35,
+                'Classic Hora Flexible': 50,
+                'Premium': 65,
             }
         }
     },

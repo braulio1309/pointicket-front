@@ -83,7 +83,14 @@ export default {
                 const { jwt, user } = res.data
                 window.localStorage.setItem('jwt', jwt)
                 window.localStorage.setItem('userData', JSON.stringify(user))
-                this.$router.push('/')
+
+                if(localStorage.getItem('lastRoute')){
+                    localStorage.removeItem('lastRoute')
+                    this.$router.push(`/shop/checkout/${localStorage.getItem('lastevent')}`);
+
+                }else{
+                    this.$router.push('/')
+                }
             } catch (error) {
                 console.log(error)
                 this.error = true

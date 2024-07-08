@@ -329,14 +329,21 @@ export default {
         }
     },
     async mounted() {
-        this.ticketId = this.$route.params.id;
-        localStorage.setItem('ticketId', this.ticketId);
-        await this.getEvent();
-        this.userData();
-        if(this.ticket.attributes.type === 'Física'){
-            this.feeEnvio = 10
-        }
+        if (window.localStorage.getItem('jwt') == null) {
+            window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar o vender una entrada');
+            localStorage.setItem('lastRoute', 'checkout');
+            this.$router.push('/login');
+        } else {
+            this.ticketId = this.$route.params.id;
+            localStorage.setItem('ticketId', this.ticketId);
+            await this.getEvent();
+            this.userData();
+            if(this.ticket.attributes.type === 'Física'){
+                this.feeEnvio = 10
+            }
 
+        }
+        
     },
 
 }

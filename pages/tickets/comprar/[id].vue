@@ -262,9 +262,9 @@ export default {
             });
             axios
                 .get(`${config.public.apiBase}events/${this.eventId}?populate[0]=tickets&populate[1]=tickets.compra&${query}`, {
-                    headers: {
+                    /*headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
-                    },
+                    },*/
                 })
                 .then((response) => {
                     this.event = response.data;
@@ -279,14 +279,11 @@ export default {
         },
     },
     mounted() {
-        if (window.localStorage.getItem('jwt') == null) {
-            window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar o vender una entrada');
-            this.$router.push('/login');
-        } else {
-            this.filterData = this.items;
-            this.eventId = this.$route.params.id;
-            this.getEvent();
-        }
+       
+        this.filterData = this.items;
+        this.eventId = this.$route.params.id;
+        localStorage.setItem('lastevent', this.eventId)
+        this.getEvent();
 
     },
     head() {

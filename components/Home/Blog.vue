@@ -91,8 +91,8 @@
                 </div>
             </div>
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 col-12" data-aos-delay="100" data-aos="fade-up" data-aos-duration="800"
-                    v-for="blog in blogItems.slice(0, 3)" :key="blog.id">
+                <div class="col-lg-6 col-md-6 col-12" data-aos-delay="100" data-aos="fade-up" data-aos-duration="800"
+                    v-for="blog in blogItems.slice(0, 2)" :key="blog.id">
                     <BlogPostOne :blogInfo="blog" />
                 </div>
             </div>

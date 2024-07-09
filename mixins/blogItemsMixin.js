@@ -2,7 +2,7 @@ export default {
     data() {
         return {
             blogItems: [
-                {
+                /*{
                     id: 1,
                     title: "Partidos Seleccion española",
                     category: "DEPORTES",
@@ -18,13 +18,14 @@ export default {
                     excerpt2: "Lorem ipsum dolor sit amet consec tetur adipisicing sed eiusmod tempor incid idunt labore.",
                     excerpt3: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip.",
                     excerpt4: "Lorem ipsum dolor sit amet cons tetur adip isicing sed eiusmod."
-                },
+                },*/
                 {
                     id: 2,
                     title: "Tour por el Santiago Bernabeu",
                     category: "DEPORTES",
-                    imgSrc: "estadio.png",
+                    imgSrc: "Bernabeu.jpg",
                     thumbSrc: "small-post-02.jpg",
+                    url: '/tour-santiago-bernabeu',
                     alt: "blog image",
                     date: "Oct 15, 2022",
                     dateOnly: "15",
@@ -45,7 +46,8 @@ export default {
                     id: 3,
                     title: "Partidos de baloncesto",
                     category: "DEPORTES",
-                    imgSrc: "basket.png",
+                    imgSrc: "Tabares.jpg",
+                    url: '#',
                     thumbSrc: "small-post-03.jpg",
                     alt: "blog image",
                     date: "Nov 11, 2022",

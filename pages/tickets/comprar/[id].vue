@@ -36,6 +36,7 @@
 
                                                         <div class="text-block">
                                                             <h4 class="title">{{ event.data.attributes.title }}</h4>
+                                                            <p>Estadio Santiago Bernabéu - Madrid</p><br>
                                                             <p>{{ event.data.attributes.description }}</p>
                                                         </div>
                                                     </div>

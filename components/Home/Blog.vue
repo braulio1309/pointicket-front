@@ -9,8 +9,10 @@
                             <div class="">
                                 <div class="container">
                                     <div class="row g-5">
+                                        <h2 style="color:white; text-align: center;" class="">Tour Santiago Bernabeu</h2>
                                         <div class="col-lg-4" data-aos-delay="100" data-aos="fade-up"
                                             data-aos-duration="800">
+                                            
                                             <div class="pricing-table">
                                                 <div class="pricing-header">
                                                     <h6 class="title">Classic</h6>

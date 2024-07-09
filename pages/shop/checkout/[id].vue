@@ -90,7 +90,7 @@
                                             </tr>
 
                                             <tr class="order-total">
-                                                <td>Iva</td>
+                                                <td>IVA</td>
                                                 <td>€{{ parseFloat(ticket.attributes.endPrice * 0.21).toFixed(2) }}</td>
                                             </tr>
 

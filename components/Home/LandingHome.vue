@@ -94,7 +94,7 @@
                         de entradas para el Real Madrid en el Santiago Bernabéu, a los mejores precios.</p>
 
                     <p>En Pointickets encontrarás entradas para todos los partidos del Real Madrid, tanto de Liga como
-                        de Champions League. También tenemos entradas para otro tipo de eventos, como conciertos, ferias
+                        de Champions League. También tenemos entradas para otro tipo de eventos, como conciertos
                         y espectáculos.</p>
 
                 </div>

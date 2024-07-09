@@ -374,11 +374,17 @@ export default {
         }
     },
     mounted() {
-        this.isLogged();
-        this.getUserData();
-        this.getTicketsSells();
-        this.getTicketsBuy();
-        this.getAllTickets();
+        if (window.localStorage.getItem('jwt') == null) {
+            window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar o vender una entrada');
+            localStorage.setItem('lastRoute', 'checkout');
+            this.$router.push('/login');
+        }else {
+            this.isLogged();
+            this.getUserData();
+            this.getTicketsSells();
+            this.getTicketsBuy();
+            this.getAllTickets();
+        }
     },
     methods: {
         isLogged() {

@@ -94,7 +94,7 @@
                                             </tr>
 
                                             <tr class="order-total">
-                                                <td>Iva</td>
+                                                <td>IVA</td>
                                                 <td>€{{ parseFloat(validatePrice[data.type] * 0.21 * data.seat).toFixed(2) }}</td>
                                             </tr>
 

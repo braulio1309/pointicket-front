@@ -213,7 +213,7 @@ export default {
             ],
             eventItems: [],
             currentPage: 1,
-            perPage: 9,
+            perPage: 100,
             paginationOptions: {
                 texts: {
                     nextPage: '',

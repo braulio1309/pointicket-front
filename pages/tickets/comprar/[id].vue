@@ -64,10 +64,10 @@
                                                                                                     event.attributes.seat }}
                                                                                                 Entradas - {{
                                                                                                     event.attributes.Category.slice(0, 5) }} 
-                                                                                                <span v-if="event.attributes.Category.includes('premium')"> Premium</span>
-                                                                                                <span v-if="event.attributes.Category.includes('alta')"> Alta</span>
+                                                                                                <span v-if="event.attributes.Category.includes('Premium')"> Premium</span>
+                                                                                                <span v-if="event.attributes.Category.includes('Alta')"> Alta</span>
                                                                                                 <span v-if="event.attributes.Category.includes('fondo')"> Fondo</span>
-                                                                                                <span v-if="event.attributes.Category.includes('Lateral')"> Fondo</span>
+                                                                                                <span v-if="event.attributes.Category.includes('lateral')"> Fondo</span>
 
 
 

@@ -230,7 +230,8 @@ export default {
         getItems() {
             let start = (this.currentPage - 1) * this.perPage;
             let end = this.currentPage * this.perPage;
-            return this.eventItems.filter(item => item.attributes.compra.data === null).slice(start, end);
+            return this.eventItems.sort((a, b) => a.attributes.endPrice - b.attributes.endPrice)
+            .filter(item => item.attributes.compra.data === null).slice(start, end);
         },
         getPaginateCount() {
             return Math.ceil(this.eventItems.length / this.perPage);

@@ -9,7 +9,7 @@
             </div>
             <div class="content">
                 
-                <h5 class="title" style="font-size:11px ;">
+                <h5 class="title" style="font-size:12px ;">
                     <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">{{ eventInfo.attributes.title }}</NuxtLink>
                 </h5>
                 <p v-html="eventInfo.attributes.description"></p>

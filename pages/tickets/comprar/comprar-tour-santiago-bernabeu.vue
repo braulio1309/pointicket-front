@@ -66,7 +66,9 @@
 
                                                                     <div class="form-group">
                                                                         <label>Hora</label>
-                                                                        <input type="time" style="font-size: 1.1em;" v-model="data.hour" class="form-control">
+                                                                        <select v-model="data.hour" class="form-control" style="font-size: 1.1em;">
+                                                                            <option v-for="time in generateTimes()" :key="time" :value="time">{{ time }}</option>
+                                                                        </select>
                                                                     </div>
 
 
@@ -302,6 +304,21 @@ Recorrido reducido por obras`
                     }
                 }
             }
+        },
+        generateTimes() {
+            const times = [];
+            let start = 9.5; // 9:30 AM
+            const end = 18.5; // 6:30 PM
+            
+            while (start <= end) {
+                let hour = Math.floor(start);
+                let minutes = (start - hour) * 60;
+                let formattedTime = `${hour.toString().padStart(2, '0')}:${minutes === 0 ? '00' : '30'}`;
+                times.push(formattedTime);
+                start += 0.5;
+            }
+            
+            return times;
         },
         handleImagePopup(indexNum) {
             this.$refs.image_popup.showImg(indexNum);

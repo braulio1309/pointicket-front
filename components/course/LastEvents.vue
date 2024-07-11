@@ -7,10 +7,11 @@
                 </NuxtLink>
             </div>
             <div class="content">
-                <span class="course-level">{{ event.attributes.description }}</span>
                 <h6 class="title" style="font-size:12px ;">
                     <NuxtLink :to="'/tickets/'+type+'/'+ event.id">{{ event.attributes.title }}</NuxtLink>
                 </h6>
+                <span class="course-level">{{ event.attributes.description }}</span>
+                La fechas no es fija y puede sufrir cambios
                 <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'comprar')? 'Comprar': 'Vender' }}</a>
 
                 

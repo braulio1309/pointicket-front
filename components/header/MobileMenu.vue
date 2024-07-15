@@ -1,7 +1,7 @@
 <template>
     <ul class="edublink-mobile-menu mainmenu">
         <li v-for='(link, i) in menus' :key='i'>
-            <NuxtLink :to="link.url" v-html="link.title"></NuxtLink>
+            <NuxtLink :to="link.url">{{ link.title }}</NuxtLink>
             <span class="submenu-toggle" v-if="link.submenu">
                 <i class="ri-arrow-down-s-line"></i>
             </span>
@@ -41,6 +41,11 @@
                     {
                         url: '/preguntas-frecuentes',
                         title: 'FAQs',
+                        
+                    },
+                    {
+                        url: '/tour-santiago-bernabeu',
+                        title: 'Tour Santiago Bernabeu',
                         
                     },
                     {

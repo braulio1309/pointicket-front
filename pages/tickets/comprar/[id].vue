@@ -69,7 +69,7 @@
                                                                                                 <span v-if="event.attributes.Category.includes('Alta')"> Alta</span>
                                                                                                 <span v-if="event.attributes.Category.includes('fondo')"> Fondo</span>
                                                                                                 <span v-if="event.attributes.Category.includes('lateral')"> Fondo</span><br>
-                                                                                                <span> Sector: {{ event.attributes.Fila }}</span>
+                                                                                                <span v-if="event.attributes.Fila"> Sector: {{ event.attributes.Fila }}</span>
 
 
 

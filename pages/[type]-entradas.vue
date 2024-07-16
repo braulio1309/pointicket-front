@@ -185,8 +185,13 @@ export default {
         },
         getEvents() {
             const config = useRuntimeConfig();
+            const querySort = qs.stringify({
+                sort: ['endDate:asc'], 
+            }, {
+                encodeValuesOnly: true, // prettify URL
+            });
 
-            let query = `${config.public.apiBase}events/?populate=*`;
+            let query = `${config.public.apiBase}events/?populate=*&${querySort}`;
 
             if (window.localStorage.getItem('search') != '') {
                 let search = qs.stringify({

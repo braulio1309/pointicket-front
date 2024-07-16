@@ -25,7 +25,7 @@
 import SectionTitle from '../common/SectionTitle.vue';
 import LastEvents from '../course/LastEvents.vue';
 import axios from 'axios';
-
+import qs from 'qs';
 
 export default {
     components: {
@@ -44,8 +44,13 @@ export default {
 
         getEvents() {
             const config = useRuntimeConfig();
+            const query = qs.stringify({
+                sort: ['endDate:asc'], 
+            }, {
+                encodeValuesOnly: true, // prettify URL
+            });
 
-            axios.get(`${config.public.apiBase}events?populate=*`)
+            axios.get(`${config.public.apiBase}events?populate=*&${query}`)
                 .then(response => {
                     this.events = response.data.data;
                 })

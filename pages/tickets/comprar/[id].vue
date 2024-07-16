@@ -240,6 +240,8 @@ export default {
             this.selectedCategory = cat;
             if (this.selectedCategory === 'Todas') {
                 this.eventItems = this.fullTickets;
+            } else if(cat >= 4) {
+                this.eventItems = this.fullTickets.filter((item) => item.attributes.seat >= cat[0]);
             } else {
                 this.eventItems = this.fullTickets.filter((item) => item.attributes.seat == cat[0]);
             }

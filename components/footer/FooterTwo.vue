@@ -34,6 +34,9 @@
                             <div class="inner">
                                 <ul class="footer-link link-hover">
                                     <li>
+                                        <NuxtLink to="/tour-santiago-bernabeu">Tour del Santiago Bernabeu</NuxtLink>
+                                    </li>
+                                    <li>
                                         <NuxtLink to="/comprar-entradas">Comprar entradas</NuxtLink>
                                     </li>
                                     <li>

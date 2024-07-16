@@ -69,10 +69,7 @@
                                                                                                 <span v-if="event.attributes.Category.includes('Alta')"> Alta</span>
                                                                                                 <span v-if="event.attributes.Category.includes('fondo')"> Fondo</span>
                                                                                                 <span v-if="event.attributes.Category.includes('lateral')"> Fondo</span><br>
-                                                                                                <span v-if="event.attributes.Fila"> Sector: {{ event.attributes.Fila }}</span>
-
-
-
+                                                                                                <span v-if="event.attributes.Fila > 0"> Sector: {{ event.attributes.Fila }}</span>
                                                                                             </NuxtLink>
                                                                                         </h6>
                                                                                         <h7 class="title">

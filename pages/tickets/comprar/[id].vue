@@ -68,7 +68,8 @@
                                                                                                 <span v-if="event.attributes.Category.includes('Premium')"> Premium</span>
                                                                                                 <span v-if="event.attributes.Category.includes('Alta')"> Alta</span>
                                                                                                 <span v-if="event.attributes.Category.includes('fondo')"> Fondo</span>
-                                                                                                <span v-if="event.attributes.Category.includes('lateral')"> Fondo</span>
+                                                                                                <span v-if="event.attributes.Category.includes('lateral')"> Fondo</span><br>
+                                                                                                <span> Sector: {{ event.attributes.Fila }}</span>
 
 
 

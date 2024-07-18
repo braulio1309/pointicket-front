@@ -60,7 +60,7 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>Fecha</label>
-                                                                        <input type="date" style="font-size: 1.1em;" v-model="data.date" class="form-control">
+                                                                        <input type="date" style="font-size: 1.1em;" v-model="data.date" class="form-control" :min="today">
 
                                                                     </div>
 
@@ -205,6 +205,7 @@ export default {
                 date: null,
                 hour: null
             },
+            today: new Date().toISOString().split('T')[0],
             text: {
                 'Classic': `Museo del Real Madrid C.F,
 Vista panorámica del Estadio,

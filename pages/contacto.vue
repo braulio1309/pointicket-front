@@ -18,8 +18,8 @@
                                     <p><a href="mailto:info@pointickets.com" target="_blank">info@pointickets.com</a></p>
                                 </li>
                                 <li>
-                                    <h5 class="title">Teléfono</h5>
-                                    <p><a href="tel:+34689898936">(+34) 689 89 89 36</a></p>
+                                    <h5 class="title">WhatsApp</h5>
+                                    <p><a href="https://wa.link/5sd3xh" target="_blank">Mándanos un WhatsApp</a></p>
                                 </li>
                             </ul>
                             <ul class="social-share">

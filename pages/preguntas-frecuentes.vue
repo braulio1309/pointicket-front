@@ -100,7 +100,8 @@
                                                 style="text-decoration: underline;">Contáctanos a través de nuestro formulario.</a></li>
                                     <li>Puedes escribirnos a <a href="mailto:info@pointickets.com"
                                                 style="text-decoration: underline;">info@pointickets.com</a> y te responderemos lo antes posible.</li>
-                                    <li>Mándanos un WhatsApp</li>
+                                    <li><a href="https://wa.link/5sd3xh"
+                                        style="text-decoration: underline;">Mándanos un WhatsApp</a></li>
                                 </ul>
                             </div>
 

@@ -12,6 +12,7 @@
                 </h6>
                 <span class="course-level" style="margin-bottom: 5px !important;">{{ event.attributes.description }}</span><br>
                 <span v-if="event.attributes.description.length == 10" style="font-size:9px ; margin-top: 5px; margin-bottom: 5px;">La fecha puede sufrir cambios</span>
+                <span v-else style="font-size:9px ; margin-top: 5px; margin-bottom: 5px;"></span>
                 <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'comprar')? 'Comprar': 'Vender' }}</a>
 
                 

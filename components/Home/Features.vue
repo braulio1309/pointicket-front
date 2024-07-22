@@ -75,7 +75,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h6 class="title">Satisfacción garantizada para nuestros clientes.</h6>
+                        <h6 class="title">Pago 100% seguro.</h6>
                     </div>
                 </div>
                 

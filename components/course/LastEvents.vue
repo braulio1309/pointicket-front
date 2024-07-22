@@ -11,8 +11,10 @@
                     <NuxtLink :to="'/tickets/'+type+'/'+ event.id">{{ event.attributes.title }}</NuxtLink>
                 </h6>
                 <span class="course-level" style="margin-bottom: 5px !important;">{{ event.attributes.description }}</span><br>
-                <span v-if="event.attributes.description.length == 10" style="font-size:9px ; margin-top: 5px; margin-bottom: 5px;">La fecha puede sufrir cambios</span>
-                <span v-else style="font-size:9px ; margin-top: 5px; margin-bottom: 5px;"></span>
+                <span :style="{ display: event.attributes.description.length == 10 ? 'inline' : 'none', fontSize: '9px', marginTop: '5px', marginBottom: '5px' }">
+                    La fecha puede sufrir cambios
+                </span>
+                <br>
                 <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'comprar')? 'Comprar': 'Vender' }}</a>
 
                 

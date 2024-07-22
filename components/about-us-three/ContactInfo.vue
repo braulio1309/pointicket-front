@@ -14,7 +14,7 @@
                             </div>
                             <div class="content">
                                 <span class="subtitle">Llamanos:</span>
-                                <h3 class="title"><a href="tel:+34655941059">+34 655 9410 59</a></h3>
+                                <h3 class="title"><a href="tel:+34689898936">(+34) 689 89 89 36</a></h3>
                             </div>
                         </div>
                         <ul class="shape-group">

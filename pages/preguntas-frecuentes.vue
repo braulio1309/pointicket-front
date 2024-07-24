@@ -35,7 +35,7 @@
 
                                     <li class="lista">
                                         <h3 class="title"><b>¿Cuándo recibiré mis entradas?</b></h3>
-                                        Deberías recibir tus entradas, entradas electrónicas incluidas, en la semana
+                                        Recibirás tus entradas, entradas electrónicas incluidas, en la semana
                                         anterior al evento, ya que los organizadores suelen emitir las entradas en fechas
                                         muy próximas al evento, a menudo en la misma semana.
                                         <br><br>

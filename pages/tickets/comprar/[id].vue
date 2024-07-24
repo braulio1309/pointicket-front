@@ -206,7 +206,7 @@ export default {
                 {
                     thumb: '/images/gallery/gallery-04.jpg',
                     src: '/images/gallery/gallery-04.jpg',
-                    category: ['4 entradas']
+                    category: ['+4 entradas']
                 },
 
             ],

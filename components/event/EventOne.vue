@@ -13,7 +13,7 @@
                     <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">{{ eventInfo.attributes.title }}</NuxtLink>
                 </h5>
                 <p v-html="eventInfo.attributes.description"></p>
-                <p style="font-size:9px ;" v-if="eventInfo.attributes.description.length == 10">Las fechas pueden sufrir cambios</p>
+                <p style="font-size:9px ;" v-if="eventInfo.attributes.description.length == 10">Pendiente de Confirmación</p>
                 <p v-else>-</p>
                 <div class="read-more-btn">
                     <NuxtLink class="edu-btn btn-small btn-secondary" :to="'/tickets/'+type+'/' + eventInfo.id">{{ (type === 'comprar')? 'Comprar': 'Vender' }} <i

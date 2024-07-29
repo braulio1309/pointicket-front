@@ -238,6 +238,7 @@ export default {
     methods: {
         filterHandler(cat) {
             this.selectedCategory = cat;
+            console.log(cat)
             if (this.selectedCategory === 'Todas') {
                 this.eventItems = this.fullTickets;
             } else if(cat >= 4) {

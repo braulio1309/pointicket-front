@@ -265,6 +265,9 @@ export default {
                         compra: {
                             $null: true,
                         },
+                        publishedAt: {
+                            $null: false,
+                        },
                     }
                 },
             }, {

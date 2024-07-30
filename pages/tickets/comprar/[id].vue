@@ -283,8 +283,8 @@ export default {
                     this.event = response.data;
                     this.eventItems = this.event.data.attributes.tickets;
                     this.eventItems = this.eventItems.data;
+                    this.eventItems = this.eventItems.data.filter(item => item.publishedAt !== null);
                     this.fullTickets = this.eventItems;
-                    console.log(this.eventItems[0])
                 })
                 .catch((error) => {
                     console.error('Error al buscar al evento', error);

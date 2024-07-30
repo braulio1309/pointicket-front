@@ -242,9 +242,9 @@ export default {
             if (this.selectedCategory === 'Todas') {
                 this.eventItems = this.fullTickets;
             } else if(parseInt(cat[1]) >= 4) {
-                this.eventItems = this.fullTickets.filter((item) => item.attributes.seat >= parseInt(cat[1]));
+                this.eventItems = this.fullTickets.filter((item) => item.attributes.seat >= parseInt(cat[1]) && item.attributes.publishedAt !== null);
             } else {
-                this.eventItems = this.fullTickets.filter((item) => item.attributes.seat == cat[0]);
+                this.eventItems = this.fullTickets.filter((item) => item.attributes.seat == cat[0] && item.attributes.publishedAt !== null);
             }
         },
         formatDate(fechaISO) {
@@ -283,8 +283,7 @@ export default {
                     this.event = response.data;
                     this.eventItems = this.event.data.attributes.tickets;
                     this.eventItems = this.eventItems.data;
-                    this.eventItems = this.eventItems.data.filter(item => item.publishedAt !== null);
-                    this.fullTickets = this.eventItems;
+                    this.fullTickets = this.eventItems.filter(item => item.attributes.publishedAt !== null);
                 })
                 .catch((error) => {
                     console.error('Error al buscar al evento', error);

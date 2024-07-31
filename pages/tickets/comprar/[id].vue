@@ -77,6 +77,8 @@
                                                                                                 :to="'/shop/checkout/' + event.id">
                                                                                                 €{{
                                                                                                     event.attributes.endPrice }}
+                                                                                                <span>Por entrada</span>
+           
                                                                                             </NuxtLink>
                                                                                         </h7>
                                                                                     </div>

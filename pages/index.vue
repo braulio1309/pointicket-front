@@ -23,6 +23,11 @@ export default {
           hid: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
           name: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
           content: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas.'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'Compra entradas Real Madrid, compra entradas bernabeu, entradas deportivas'
         }
       ]
     }

@@ -135,6 +135,17 @@ import AboutSectionOne from "./AboutSectionOne.vue";
 import ScrollToTop from "../footer/ScrollToTop.vue";
 
 export default {
+    head() {
+        return {
+            meta: [
+                {
+                    hid: 'keywords',
+                    name: 'keywords',
+                    content: 'Compra entradas Real Madrid, compra entradas bernabeu, entradas deportivas'
+                }
+            ]
+        }
+    },
     name: "app",
     components: {
         HeroSection,

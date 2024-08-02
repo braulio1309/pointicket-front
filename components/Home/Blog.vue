@@ -1,6 +1,11 @@
 <template>
    <div class="edu-blog-area blog-area-1 edu-section-gap">
-    <SectionTitle preTitle='Categorías' title='Eventos más vendidos' alignment='section-center' />
+     <div class="section-title" :class="alignment" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
+        <span class="pre-title" :class="preTitleClass" v-html="preTitle" v-if="preTitle"></span>
+        <h3 class="text-center title">Eventos más vendidos</h3>
+        <span class="shape-line text-center" v-if="!disableMark"><i class="icon-19"></i></span>
+        <p v-html="subTitle" v-if="subTitle"></p>
+    </div>
 
     <div class="container">
         <div class="hero-banner bg-image bg-madrid mb--20" style="border-radius: 10px; height: 100px !important;">

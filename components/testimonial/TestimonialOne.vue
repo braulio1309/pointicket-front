@@ -7,7 +7,7 @@
                         <div class="section-title section-left" data-aos-delay="50" data-aos="fade-up"
                             data-aos-duration="800">
                             <span class="pre-title">Testimonios</span>
-                            <h2 class="title">Opiniones de clientes</h2>
+                            <h3 class="title">Opiniones de clientes</h3>
                             <span class="shape-line"><i class="icon-19"></i></span>
                             <p>Nuestro objetivo es ofrecer a nuestros clientes una experiencia de compra sencilla y segura. Por eso, trabajamos con las principales entidades de pago online y contamos con un sistema de seguridad de última generación.</p>
                             

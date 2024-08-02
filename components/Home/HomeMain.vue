@@ -20,8 +20,8 @@
 
 <script>
 definePageMeta({
-  title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
-  description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '                
+    title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
+    description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '
 })
 import HeroSection from "./HeroSection.vue";
 import ContactInfo from "./ContactInfo.vue";
@@ -41,25 +41,37 @@ import AboutSectionOne from "./AboutSectionOne.vue";
 import ScrollToTop from "../footer/ScrollToTop.vue";
 
 export default {
+    head() {
+        return {
+            meta: [
+                {
+                    hid: 'keywords',
+                    name: 'keywords',
+                    content: 'Compra entradas Real Madrid, compra entradas bernabeu, entradas deportivas'
+                }
+            ]
+        }
+    },
     name: "app",
     components: {
-    HeroSection,
-    ContactInfo,
-    Features,
-    Categories,
-    CTAOne,
-    LogoOne,
-    Blog,
-    FooterTwo,
-    Events,
-    TestimonialOne,
-    Instructor,
-    HeaderOne,
-    FunFact,
-    AboutSectionOne,
-    ScrollToTop
-},
-    
+        HeroSection,
+        ContactInfo,
+        Features,
+        Categories,
+        CTAOne,
+        LogoOne,
+        Blog,
+        FooterTwo,
+        Events,
+        TestimonialOne,
+        Instructor,
+        HeaderOne,
+        FunFact,
+        AboutSectionOne,
+        ScrollToTop,
+
+    },
+
 };
 </script>
 

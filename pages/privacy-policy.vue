@@ -324,6 +324,10 @@
 </template>
 
 <script>
+definePageMeta({
+  title: 'Políticas de privacidad | Pointickets',
+  description: 'Políticas de privacidad'                
+})
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
 import FooterOne from '~~/components/footer/FooterOne.vue';

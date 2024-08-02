@@ -113,6 +113,10 @@ Para cualquier duda sobre el Concurso, los participantes pueden contactar con la
 </template>
 
 <script>
+definePageMeta({
+  title: 'Bases legales | Pointickets',
+  description: 'Bases legales concurso'                
+})
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
 import FooterOne from '~~/components/footer/FooterOne.vue';

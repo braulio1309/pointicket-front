@@ -57,6 +57,7 @@
                                     <li>
                                         <NuxtLink to="/contacto">Contacto</NuxtLink>
                                     </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -70,9 +71,14 @@
                                     <li>
                                         <NuxtLink to="/privacy-policy">Politicas de privacidad</NuxtLink>
                                     </li>
+                                    
                                     <li>
                                         <NuxtLink to="/terms-condition">Términos y condiciones</NuxtLink>
                                     </li>
+                                    <li>
+                                        <NuxtLink to="/bases-legales-concurso">Politicas de concurso</NuxtLink>
+                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>

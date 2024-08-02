@@ -73,6 +73,9 @@
                                     <li>
                                         <NuxtLink to="/terms-condition">Términos y condiciones</NuxtLink>
                                     </li>
+                                    <li>
+                                        <NuxtLink to="/bases-legales-concurso">Politicas de concurso</NuxtLink>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

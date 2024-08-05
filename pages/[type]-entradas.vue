@@ -3,7 +3,7 @@
 
         <HeaderOne />
 
-        <BreadCrumbTwo pageTitle='Eventos' title='Eventos' />
+        <BreadCrumbTwo pageTitle='Eventos' title='Vende o compra entradas de fútbol de tus eventos favoritos' />
 
         <div class="edu-event-area event-area-1 section-gap-equal">
             <div class="container">
@@ -99,8 +99,8 @@
 
 <script>
 definePageMeta({
-  title:'Compra entradas para tus eventos favoritos | Pointickets' ,
-  description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas.'                
+  title:(this.$route.params.type === 'comprar')? 'Compra entradas de futbol para tus eventos favoritos | Pointickets' :'Vende entradas de futbol para tus eventos favoritos | Pointickets' ,
+  description: 'Vive la emoción del futbol'                
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';

@@ -125,7 +125,7 @@ export default {
     data() {
         return {
             currentPage: 1,
-            perPage: 9,
+            perPage: 30,
             events: [],
             data: '',
             categories: '',

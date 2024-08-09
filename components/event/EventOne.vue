@@ -2,7 +2,7 @@
     <div class="edu-event">
         <div class="inner">
             <div class="thumbnail">
-                <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">
+                <NuxtLink :to="'/tickets/'+type+'r/' + eventInfo.id">
                     <img :src="this.url.substring(0, this.url.length - 1) + eventInfo.attributes.image.data[0].attributes.url" />
                 </NuxtLink>
                 
@@ -10,7 +10,7 @@
             <div class="content">
                 
                 <h5 class="title" style="font-size:12px ;">
-                    <NuxtLink :to="'/tickets/'+type+'/' + eventInfo.id">{{ eventInfo.attributes.title }}</NuxtLink>
+                    <NuxtLink :to="'/tickets/'+type+'r/' + eventInfo.id">{{ eventInfo.attributes.title }}</NuxtLink>
                 </h5>
                 <p v-html="eventInfo.attributes.description"></p>
                 <p style="font-size:9px ;" v-if="eventInfo.attributes.description.length == 10">Pendiente de Confirmación</p>

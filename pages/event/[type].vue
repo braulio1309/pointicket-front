@@ -364,7 +364,7 @@ export default {
     head() {
         return {
             title: 'sdaasd',
-            meta: (this.$route.params.type === 'comprar') ? [
+            meta: (this.$route.params.type === 'compra') ? [
                 {
                     hid: 'Compra entradas para tus eventos favoritos | Pointickets',
                     name: 'Compra entradas para tus eventos favoritos | Pointickets',

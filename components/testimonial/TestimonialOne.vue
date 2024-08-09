@@ -29,7 +29,9 @@
                         <swiper-slide>
                             <div class="testimonial-grid">
                                 <div class="content">
-                                    <p>“Encontré entradas en el Bernabéu para el partido del Real Madrid contra el Barcelona en la fila 1, en la zona VIP, por solo 50 euros. El proceso de compra fue muy sencillo y rápido.”</p>
+                                    <p>“Soy mexicano aficionado al Real Madrid.. en mi última experiencia Madrileña compramos los boletos para el clásico y para la Semifinal de la champions….
+La experiencia fue excelente, Pointickets es una plataforma muy confiable y siempre estuvo al pendiente de que no hubiera problemas… Además de que me entregó los boletos puntualmente…
+Definitivamente mi próxima compra la haré por esta web..”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -37,7 +39,7 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Juan Pérez</h5>
+                                    <h5 class="title">Alberto</h5>
                                 </div>
                             </div>
                         </swiper-slide>
@@ -45,7 +47,9 @@
                             <div class="testimonial-grid">
                                 
                                 <div class="content">
-                                    <p>“Vendí mis entradas para el partido del Real Madrid contra el Atlético de Madrid en menos de una hora. El equipo de Pointickets me ayudó a encontrar un comprador rápidamente y me pagaron el precio que pedía.”
+                                    <p>“Gracias a Pointickets por haberme permitido disfrutar de un partido de Champions.
+Era la primera vez que compraba en la web y estaba nervioso al ver que no recibia las entradas, pero cumplieron con lo prometido y las recibi la semana anterior al partido.
+Destacar la disponibilidad de su servicio de atencion al cliente a traves de whatsapp.”
                                     </p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
@@ -54,14 +58,14 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">María Garcia</h5>
+                                    <h5 class="title">Ali</h5>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="testimonial-grid">
                                 <div class="content">
-                                    <p>“Siempre encuentro las entradas que busco en Pointickets. El catálogo es muy amplio y los precios son muy competitivos.”</p>
+                                    <p>“Asistir a un partido del Real Madrid en la Champions League fue una experiencia inolvidable! :ojos_de_corazón: Desde el momento en que llegué al estadio, pude sentir la emoción en el aire. La multitud vestida con los colores del equipo, los cánticos que resonaban por todo el lugar y la majestuosidad del Santiago Bernabéu hicieron que mi corazón latiera más rápido. Cada jugada, cada gol y cada celebración eran pura magia. Ver a los jugadores en acción y ser parte de esa energía única fue algo que recordaré para siempre.”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -76,7 +80,10 @@
                         <swiper-slide>
                             <div class="testimonial-grid">
                                 <div class="content">
-                                    <p>“Pointickets es una empresa muy profesional. El servicio de atención al cliente es excelente y siempre responden a mis preguntas de forma rápida y clara.”</p>
+                                    <p>“Increíble experiencia para mi nieto y para mi!!! El contacto personal del equipo de ventas fue excepcional.
+Todo se facilitó en un 100%.
+Los asientos excelentes, trato profesional y amistoso, Los recomiendo y volvería a utilizarlo.
+Gracias PT!!!!”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -84,7 +91,7 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Ana Rodríguez</h5>
+                                    <h5 class="title">Ana</h5>
                                 </div>
                             </div>
                         </swiper-slide>
@@ -92,7 +99,7 @@
                             <div class="testimonial-grid">
                                 
                                 <div class="content">
-                                    <p>“Recomiendo Pointickets a todos los que quieran comprar o vender entradas para eventos deportivos. Es una empresa segura y fiable, con un excelente servicio al cliente.”.</p>
+                                    <p>“I bought two tickets through Pointickets for the highly anticipated Real Madrid vs. Seville for the 2023-2024 season at the iconic Santiago Bernabéu stadium. Not only was the delivery fast, but my interactions with Pointickets were incredibly smooth and hassle-free. The pointickets team's willingness to help and their ability to suggest premium seating options at exceptionally competitive prices really enhanced my overall experience...”.</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -100,14 +107,19 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Luis Sánchez</h5>
+                                    <h5 class="title">Abdullah</h5>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="testimonial-grid">
                                 <div class="content">
-                                    <p>“Estaba desesperada porque no encontraba a nadie a quien vender mis entradas para el derbi madrileño. En Pointickets me ayudaron a encontrar un comprador en menos de una hora y me pagaron el precio que pedía. ¡Estoy muy contenta!”</p>
+                                    <p>“Para nosotros encontrar una empresa que nos de confianza y garantía, es lo primordial.
+En POINTICKETS, encontramos eso y más
+Atención profesional, comunicación clara y fluída.
+Conseguimos todo lo que busca un cliente
+Precio justo para un producto y servicio.
+Súper recomendados.”</p>
                                     <div class="rating-icon">
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
@@ -115,7 +127,7 @@
                                         <i class="icon-23"></i>
                                         <i class="icon-23"></i>
                                     </div>
-                                    <h5 class="title">Laura Mendez</h5>
+                                    <h5 class="title">Maria Ortiz</h5>
                                 </div>
                             </div>
                         </swiper-slide>

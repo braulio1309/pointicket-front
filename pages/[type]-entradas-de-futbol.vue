@@ -3,7 +3,8 @@
 
         <HeaderOne />
 
-        <BreadCrumbTwo pageTitle='Eventos' title='Vende o compra entradas de fútbol de tus eventos favoritos' />
+        <BreadCrumbTwo v-if="this.$route.params.type === 'compra'" pageTitle='Compra entradas de fútbol de tus eventos favoritos' title='Eventos' />
+        <BreadCrumbTwo v-else pageTitle='Vende entradas de fútbol de tus eventos favoritos' title='Eventos' />
 
         <div class="edu-event-area event-area-1 section-gap-equal">
             <div class="container">
@@ -99,7 +100,7 @@
 
 <script>
 definePageMeta({
-  title:(this.$route.params.type === 'comprar')? 'Compra entradas de futbol para tus eventos favoritos | Pointickets' :'Vende entradas de futbol para tus eventos favoritos | Pointickets' ,
+  title: (this && this.$route && this.$route.params && this.$route.params.type && this.$route.params.type == 'compra')? 'Compra entradas de futbol para tus eventos favoritos | Pointickets' : 'Vende entradas de futbol para tus eventos favoritos | Pointickets' ,
   description: 'Vive la emoción del futbol'                
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
@@ -287,7 +288,7 @@ export default {
     head() {
         return {
             titleTemplate: 'Eventos',
-            meta: (this.$route.params.type === 'comprar') ? [
+            meta: (this.$route.params.type === 'compra') ? [
                 {
                     hid: 'bbvPointickets',
                     name: 'Compra entradas para tus eventos favoritos | Pointickets',

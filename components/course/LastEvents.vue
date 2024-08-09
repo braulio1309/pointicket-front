@@ -15,7 +15,7 @@
                     Pendiente de Confirmación
                 </span>
                 <br>
-                <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'comprar')? 'Comprar': 'Vender' }}</a>
+                <a :href="'/tickets/'+type+'/'+ event.id" class="edu-btn btn-large">{{ (type === 'compra')? 'Comprar': 'Vender' }}</a>
 
                 
             </div>

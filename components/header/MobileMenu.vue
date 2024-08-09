@@ -35,7 +35,7 @@
                     },
                     
                     {
-                        url: '/comprar-entradas',
+                        url: '/compra-entradas-de-futbol',
                         title: 'Comprar entradas',
                     },
                     {

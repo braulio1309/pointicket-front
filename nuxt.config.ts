@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import axios from 'axios';
+
 export default defineNuxtConfig({
   css: [
     "bootstrap/scss/bootstrap.scss",
@@ -53,6 +55,7 @@ export default defineNuxtConfig({
     },
     modules: [
       '@nuxt/i18n',
+      '@nuxtjs/sitemap',
     ],
     i18n: {
       vueI18n: './i18n.config.ts' // if you are using custom path, default 
@@ -67,5 +70,43 @@ export default defineNuxtConfig({
 
     },
   },
+  sitemap: {
+    hostname: 'https://pointickets.com', // Reemplaza con tu dominio
+    gzip: true, // Opcional: comprime el sitemap
+    routes: async () => {
+      // Rutas estáticas
+      const staticRoutes = [
+        '/',
+        '/compra-entradas-de-futbol',
+        '/vende-entradas-de-futbol',
+        '/preguntas-frecuentes',
+        '/tour-santiago-bernabeu',
+        '/exitoso',
+        '/privacy-policy',
+        '/terms-condition',
+        '/contacto',
+        '/profile'
+      ];
+
+      // Obtener rutas dinámicas de una API
+      const { data } = await axios.get('https://admin.pointickets.com/api/events'); // Reemplaza con tu API
+      const venderRoutes = data.map((event:any) => `/tickets/vender/${event.id}`);
+      const comprarRoutes = data.map((event:any) => `/tickets/comprar/${event.id}`);
+
+      // Combinar rutas estáticas y dinámicas
+      return [...staticRoutes, ...venderRoutes, ...comprarRoutes];
+    }
+  },
+  build: {
+    extractCSS: true, // Extraer CSS en archivos separados
+    optimizeCSS: true, // Minimizar CSS
+    postcss: {
+      plugins: {
+        cssnano: {
+          preset: 'default',
+        },
+      },
+    },
+  }
 
 });

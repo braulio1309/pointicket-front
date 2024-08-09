@@ -39,7 +39,7 @@ export default {
   methods: {
     saveSearch() {
       window.localStorage.setItem('search', this.data);
-      this.$router.push('/comprar-entradas');
+      this.$router.push('/compra-entradas-de-futbol');
     }
   }
 };

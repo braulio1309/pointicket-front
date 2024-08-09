@@ -16,7 +16,7 @@
                 <p style="font-size:9px ;" v-if="eventInfo.attributes.description.length == 10">Pendiente de Confirmación</p>
                 <p v-else>-</p>
                 <div class="read-more-btn">
-                    <NuxtLink class="edu-btn btn-small btn-secondary" :to="'/tickets/'+type+'/' + eventInfo.id">{{ (type === 'comprar')? 'Comprar': 'Vender' }} <i
+                    <NuxtLink class="edu-btn btn-small btn-secondary" :to="'/tickets/'+type+'r/' + eventInfo.id">{{ (type === 'compra')? 'Comprar': 'Vender' }} <i
                             class="icon-4"></i></NuxtLink>
                 </div>
             </div>

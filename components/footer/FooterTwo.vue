@@ -37,10 +37,10 @@
                                         <NuxtLink to="/tour-santiago-bernabeu">Tour del Santiago Bernabeu</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/comprar-entradas">Comprar entradas</NuxtLink>
+                                        <NuxtLink to="/compra-entradas-de-futbol">Comprar entradas</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/vender-entradas">Vender entradas</NuxtLink>
+                                        <NuxtLink to="/vende-entradas-de-futbol">Vender entradas</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink to="/preguntas-frecuentes">Preguntas frecuentes</NuxtLink>

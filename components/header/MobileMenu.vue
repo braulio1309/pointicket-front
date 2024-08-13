@@ -31,12 +31,14 @@
                     {
                         url: '/',
                         title: 'Inicio',
-                        
                     },
-                    
                     {
                         url: '/compra-entradas-de-futbol',
                         title: 'Comprar entradas',
+                    },
+                    {
+                        url: '/vende-entradas-de-futbol',
+                        title: 'Vender entradas',
                     },
                     {
                         url: '/preguntas-frecuentes',

@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="edu-course-area course-area-3">
                     <div class="container" v-if="event">
-                        <div class="isotope-wrapper" style="margin-top: 100px;">
+                        <div class="isotope-wrapper">
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="undergraduate" role="tabpanel">
                                     <div class="row">
@@ -26,7 +26,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row row--30">
+                                            <div class="row row--30" style="margin-top: -100px;">
                                                 <div class="col-lg-6 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">

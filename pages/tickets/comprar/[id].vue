@@ -153,6 +153,16 @@
     #edu-btn:hover {
         color: black !important;
     }
+    @media (max-width: 768px) {
+    img {
+        height: 300px; /* Ajusta esta altura según tus necesidades */
+        object-fit: cover; 
+    }
+    .edu-blog-sidebar {
+        margin-top: -30px;
+        height: 50%;
+    }
+}
 }
 </style>
 

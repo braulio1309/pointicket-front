@@ -16,20 +16,20 @@
                                         type="button" role="tab" aria-selected="true">Tus eventos</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rg-ques" type="button"
-                                        role="tab" aria-selected="false">Vendidas</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rg-ques"
+                                        type="button" role="tab" aria-selected="false">Vendidas</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ad-ques" type="button"
-                                        role="tab" aria-selected="false">Compradas</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ad-ques"
+                                        type="button" role="tab" aria-selected="false">Compradas</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#com-policy" type="button"
-                                        role="tab" aria-selected="false">Pagos</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#com-policy"
+                                        type="button" role="tab" aria-selected="false">Pagos</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pay-option" type="button"
-                                        role="tab" aria-selected="false">Cuenta</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pay-option"
+                                        type="button" role="tab" aria-selected="false">Cuenta</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#terms-condition"
@@ -44,7 +44,7 @@
                                         type="button" role="tab" aria-selected="false">Facturación</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" type="button" @click="logout" >Cerrar sesión</button>
+                                    <button class="nav-link" type="button" @click="logout">Cerrar sesión</button>
                                 </li>
                             </ul>
                         </div>
@@ -57,23 +57,25 @@
                                     <table v-if="tickets.length > 0" class="table table-striped">
                                         <thead>
                                             <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Evento</th>
-                                            <th scope="col">Sector</th>
-                                            <th scope="col">Categoría</th>
-                                            <th scope="col">Fila</th>
-                                            <th scope="col">Precio</th>
-
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Evento</th>
+                                                <th scope="col">Sector</th>
+                                                <th scope="col">Categoría</th>
+                                                <th scope="col">Fila</th>
+                                                <th scope="col">Precio</th>
+                                                <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr v-for="(item, index) in tickets" :key="index">
-                                            <td scope="row">{{ item.id }}</td>
-                                            <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
-                                            <td scope="row">{{ item.attributes.Sector }}</td>
-                                            <td scope="row">{{ item.attributes.Category }}</td>
-                                            <td scope="row">{{ item.attributes.Fila }}</td>
-                                            <td scope="row">{{ item.attributes.endPrice }} €</td>
+                                                <td scope="row">{{ item.id }}</td>
+                                                <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
+                                                <td scope="row">{{ item.attributes.Sector }}</td>
+                                                <td scope="row">{{ item.attributes.Category }}</td>
+                                                <td scope="row">{{ item.attributes.Fila }}</td>
+                                                <td scope="row">{{ item.attributes.endPrice }} €</td>
+                                                <td scope="row"><button :class='`btn btn-${(item.attributes.publishedAt)?"danger": "success"}`'
+                                                        @click="StatusTicket(item.id, item.attributes.publishedAt)">{{ (item.attributes.publishedAt)? "Ocultar": "Publicar" }}</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -85,23 +87,23 @@
                                     <table v-if="ticketsSells.length > 0" class="table table-striped">
                                         <thead>
                                             <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Evento</th>
-                                            <th scope="col">Sector</th>
-                                            <th scope="col">Categoría</th>
-                                            <th scope="col">Fila</th>
-                                            <th scope="col">Precio</th>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Evento</th>
+                                                <th scope="col">Sector</th>
+                                                <th scope="col">Categoría</th>
+                                                <th scope="col">Fila</th>
+                                                <th scope="col">Precio</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr v-for="(item, index) in ticketsSells" :key="index">
-                                            <td scope="row">{{ item.id }}</td>
-                                            <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
-                                            <td scope="row">{{ item.attributes.Sector }}</td>
-                                            <td scope="row">{{ item.attributes.Category }}</td>
-                                            <td scope="row">{{ item.attributes.Fila }}</td>
-                                            <td scope="row">{{ item.attributes.endPrice }} €</td>
+                                                <td scope="row">{{ item.id }}</td>
+                                                <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
+                                                <td scope="row">{{ item.attributes.Sector }}</td>
+                                                <td scope="row">{{ item.attributes.Category }}</td>
+                                                <td scope="row">{{ item.attributes.Fila }}</td>
+                                                <td scope="row">{{ item.attributes.endPrice }} €</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -112,23 +114,23 @@
                                     <table v-if="purchases.length > 0" class="table table-striped">
                                         <thead>
                                             <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Evento</th>
-                                            <th scope="col">Sector</th>
-                                            <th scope="col">Categoría</th>
-                                            <th scope="col">Fila</th>
-                                            <th scope="col">Precio</th>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Evento</th>
+                                                <th scope="col">Sector</th>
+                                                <th scope="col">Categoría</th>
+                                                <th scope="col">Fila</th>
+                                                <th scope="col">Precio</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr v-for="(item, index) in purchases" :key="index">
-                                            <td scope="row">{{ item.id }}</td>
-                                            <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
-                                            <td scope="row">{{ item.attributes.Sector }}</td>
-                                            <td scope="row">{{ item.attributes.Category }}</td>
-                                            <td scope="row">{{ item.attributes.Fila }}</td>
-                                            <td scope="row">{{ item.attributes.endPrice }} €</td>
+                                                <td scope="row">{{ item.id }}</td>
+                                                <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
+                                                <td scope="row">{{ item.attributes.Sector }}</td>
+                                                <td scope="row">{{ item.attributes.Category }}</td>
+                                                <td scope="row">{{ item.attributes.Fila }}</td>
+                                                <td scope="row">{{ item.attributes.endPrice }} €</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -139,7 +141,7 @@
                             </div>
                             <div class="tab-pane fade" id="pay-option" role="tabpanel">
                                 <div class="login-form-box registration-form">
-                                    
+
                                     <h3 class="title">Ingrese sus datos personales</h3>
                                     <div v-if="showResult" class="col-12">
                                         <div class="alert alert-success" role="alert">
@@ -152,11 +154,10 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label for="reg-name">Nombre y apellido</label>
-                                                        <input type="text" v-model="user.fullname"
-                                                            placeholder="Nombre">
+                                                        <input type="text" v-model="user.fullname" placeholder="Nombre">
                                                     </div>
                                                 </div>
-                                               
+
 
                                             </div>
 
@@ -173,7 +174,7 @@
                                                         <input type="text" v-model="user.phone" placeholder="Telefono">
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
 
                                             <div class="row">
@@ -240,7 +241,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <button @click="updateUser()" type="button" class="edu-btn btn-medium">Guardar
+                                            <button @click="updateUser()" type="button"
+                                                class="edu-btn btn-medium">Guardar
                                                 <i class="icon-4"></i></button>
                                         </div>
                                     </form>
@@ -288,13 +290,15 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label for="reg-name">Provincia*</label>
-                                                        <input type="text" v-model="user.province" placeholder="Provincia">
+                                                        <input type="text" v-model="user.province"
+                                                            placeholder="Provincia">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label for="reg-name">Poblacion*</label>
-                                                        <input type="text" v-model="user.poblation" placeholder="Poblacion">
+                                                        <input type="text" v-model="user.poblation"
+                                                            placeholder="Poblacion">
                                                     </div>
                                                 </div>
                                             </div>
@@ -312,7 +316,8 @@
 
 
                                         <div class="form-group">
-                                            <button type="button" class="edu-btn btn-medium" @click="updateUser()">Guardar
+                                            <button type="button" class="edu-btn btn-medium"
+                                                @click="updateUser()">Guardar
                                                 <i class="icon-4"></i></button>
 
                                         </div>
@@ -333,8 +338,8 @@
 
 <script>
 definePageMeta({
-  title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
-  description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '                
+    title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
+    description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
@@ -374,19 +379,61 @@ export default {
         }
     },
     mounted() {
-        if (window.localStorage.getItem('jwt') == null) {
-            window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar o vender una entrada');
-            localStorage.setItem('lastRoute', 'checkout');
-            this.$router.push('/login');
-        }else {
-            this.isLogged();
-            this.getUserData();
-            this.getTicketsSells();
-            this.getTicketsBuy();
-            this.getAllTickets();
-        }
+        const config = useRuntimeConfig();
+
+        axios
+            .get(`${config.public.apiBase}users/me`, {
+                headers: {
+                    Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
+                },
+            })
+            .then((response) => {
+                this.isLogged();
+                this.getUserData();
+                this.getTicketsSells();
+                this.getTicketsBuy();
+                this.getAllTickets();
+            })
+            .catch((error) => {
+                window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar o vender una entrada');
+                localStorage.setItem('lastRoute', 'checkout');
+                this.$router.push('/login');
+            });
+
     },
     methods: {
+        async StatusTicket(id, publishedAt) {
+            const config = useRuntimeConfig();
+
+            const now = new Date();
+
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Los meses comienzan en 0
+            const day = String(now.getDate()).padStart(2, '0');
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            console.log(publishedAt)
+            try {
+                const response = await axios.put(
+                    `${config.public.apiBase}tickets/${id}`,{
+                        data: {
+                            publishedAt: (publishedAt)? null: `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+                        }
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
+                        }
+                    }
+                );
+                this.getAllTickets();
+                console.log('Respuesta del servidor:', response.data);
+            } catch (error) {
+                console.error('Error al actualizar:', error);
+            }
+        },
         isLogged() {
 
             const jwt = window.localStorage.getItem('jwt');
@@ -440,7 +487,7 @@ export default {
                     console.error('Error al actualizar el usuario', error);
                 });
         },
-        logout(){
+        logout() {
             window.localStorage.removeItem('jwt');
             window.localStorage.removeItem('user');
             this.$router.push('/');
@@ -519,19 +566,19 @@ export default {
                             $eq: this.user.id,
                         }
                     },
+                    
                 },
             }, {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&${query}`, {
+                .get(`${config.public.apiBase}tickets/?populate=*&${query}&publicationState=preview`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
                 })
                 .then((response) => {
                     this.tickets = response.data.data;
-                    console.log(this.tickets);
                 })
                 .catch((error) => {
                     console.error('Error al actualizar el usuario', error);

@@ -34,7 +34,7 @@
                                                                 src="../../../assets/images/compra-entradas/distribucion.png">
                                                         </div>
 
-                                                        <div class="text-block">
+                                                        <div id="event-section" class="text-block">
                                                             <h4 class="title">{{ event.data.attributes.title }}</h4>
                                                             <p>Estadio Santiago Bernabéu - Madrid</p>
                                                             <p>{{ event.data.attributes.description }}</p>
@@ -250,6 +250,12 @@ export default {
     methods: {
         filterHandler(cat) {
             this.selectedCategory = cat;
+            if (window.innerWidth < 768) {
+                const section = document.getElementById('event-section');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
             console.log(cat)
             if (this.selectedCategory === 'Todas') {
                 this.eventItems = this.fullTickets;

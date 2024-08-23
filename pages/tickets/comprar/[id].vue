@@ -258,7 +258,7 @@ export default {
             }
             console.log(cat)
             if (this.selectedCategory === 'Todas') {
-                this.eventItems = this.fullTickets;
+                this.eventItems = this.fullTickets.filter((item) => item.attributes.publishedAt !== null);
             } else if(parseInt(cat[1]) >= 4) {
                 this.eventItems = this.fullTickets.filter((item) => item.attributes.seat >= parseInt(cat[1]) && item.attributes.publishedAt !== null);
             } else {

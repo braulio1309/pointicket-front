@@ -544,7 +544,8 @@ export default {
                 type: this.type,
                 ticket: (this.selectedFile) ? file[0] : null,
                 seat: this.seat,
-                enlace: this.enlace
+                enlace: this.enlace,
+                publishedAt: null
             }
             axios
                 .post(`${config.public.apiBase}tickets`, { data }, {

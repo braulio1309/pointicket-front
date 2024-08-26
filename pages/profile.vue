@@ -3,7 +3,7 @@
 
         <HeaderOne />
 
-        <section class="edu-section-gap faq-page-area">
+        <section v-if="show" class="edu-section-gap faq-page-area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -369,6 +369,7 @@ export default {
             showResult: false,
             tickets: '',
             purchases: '',
+            show: false,
             ticketsSells: '',
             items: [
                 { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
@@ -388,6 +389,7 @@ export default {
                 },
             })
             .then((response) => {
+                this.show = true;
                 this.isLogged();
                 this.getUserData();
                 this.getTicketsSells();

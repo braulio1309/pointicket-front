@@ -28,7 +28,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h6 class="title">Todos los pedidos están garantizados al 100%.</h6>
+                        <h6 class="title">{{ $t('Home.guaranteed_orders') }}</h6>
                     </div>
                 </div>
                 <div class="features-box features-style-2 edublink-svg-animate">
@@ -52,7 +52,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h6 class="title">Compra y vende entradas en pocos clics.</h6>
+                        <h6 class="title">{{ $t('Home.Buy_and_sell_tickets_in_just_a_few_clicks') }}</h6>
                     </div>
                 </div>
                 <div class="features-box features-style-2 edublink-svg-animate">
@@ -75,7 +75,7 @@
                         </svg>
                     </div>
                     <div class="content">
-                        <h6 class="title">Pago 100% seguro.</h6>
+                        <h6 class="title">{{ $t('Home.secure_payment') }}</h6>
                     </div>
                 </div>
                 

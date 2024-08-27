@@ -3,12 +3,13 @@
 
         <HeaderOne />
 
-        <section v-if="show" class="edu-section-gap faq-page-area">
+        <section class="edu-section-gap faq-page-area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="faq-page-nav">
-                            <h3 class="title">Bienvenido</h3>
+                            <h3 class="title">{{ $t('Welcome') }}</h3>
+                            
                             <p>{{ user.fullname }}</p>
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">

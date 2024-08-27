@@ -20,7 +20,14 @@
                     </div>
                     <div class="header-right">
                         <ul class="header-action">
-                            
+                            <li>
+                                <form>
+                                <select id="locale-select" class="form-control" v-model="$i18n.locale">
+                                    <option value="es">{{ $t('spanish') }}</option>
+                                    <option value="en">{{ $t('english') }}</option>
+                                </select>
+                            </form>
+                            </li>
                             <li class="header-btn">
                                 <NuxtLink to="/vende-entradas-de-futbol" class="edu-btn btn-medium">VENDER ENTRADAS <i class="icon-4"></i>
                                 </NuxtLink>

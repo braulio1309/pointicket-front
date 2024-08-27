@@ -9,14 +9,13 @@
                                 ¡Te has suscrito con éxito!
                             </div>
                         </div>
-                        <h4 class="widget-title" style="color: white;">¡Suscríbete a nuestra newsletter!</h4><br>
-                        <p class="description" style="font-size: large; color:white;">Mantente informado de todas las
-                            novedades en eventos deportivos.</p>
+                        <h4 class="widget-title" style="color: white;">{{ $t('Home.Subscribe_to_our_newsletter') }}</h4><br>
+                        <p class="description" style="font-size: large; color:white;">{{ $t('Home.keep_information') }}</p>
                         <div class="">
                             <input v-model="input" style="border-radius: 10px; margin-bottom:15px; position:relative;"
                                 type="email" placeholder="Correo">
                             <button :disabled="isLoadingNews" @click="newsletter" class="edu-btn btn-medium"
-                                type="button">Suscríbete <i class="icon-4"></i></button>
+                                type="button">{{ $t('Home.subscribe') }} <i class="icon-4"></i></button>
                         </div>
                         <ul class="shape-group">
                             <MouseMove addClassName="shape-01" dataDepth="2" imgSrc="/images/cta/shape-06.png" />
@@ -33,8 +32,8 @@
                     <div class="col-lg-8">
                         <div class="contact-form">
                             <div class="section-title section-center">
-                                <h3 class="title">Contáctanos por Whatsapp o completa este formulario.</h3>
-                                <p class="description">Mantente informado de todas las novedades en eventos deportivos.</p>
+                                <h3 class="title">{{ $t('Home.contact_us') }}</h3>
+                                <p class="description">{{ $t('Home.keep_information_events') }}</p>
                             </div>
                             <div v-if="showResult" class="col-12">
                                 <div id="contact-form" class="alert alert-success" role="alert">

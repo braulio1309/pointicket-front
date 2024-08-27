@@ -1,7 +1,7 @@
 <template>
   <div class="edu-breadcrumb-area breadcrumb-style-2 bg-image bg-estadio">
     <div class="container">
-      <h1 class="title" style="font-size:xx-large;color:white;margin-bottom: 60px !important; ">Compra entradas del Real Madrid y otros eventos deportivos</h1>
+      <h1 class="title" style="font-size:xx-large;color:white;margin-bottom: 60px !important; ">{{ $t('Home.title') }}</h1>
 
       <div class="breadcrumb-inner" >
 
@@ -10,12 +10,12 @@
           <div class="col-sm-10" >
 
             <div>
-              <input v-model="data" placeholder="Buscar eventos" style="border-radius: 10px; padding: 0 25px;">
+              <input v-model="data" :placeholder="$t('Home.search_events')" style="border-radius: 10px; padding: 0 25px;">
 
             </div>
           </div>
           <div class="col-sm-2">
-            <a @click="saveSearch" class="edu-btn btn-large" >Buscar</a>
+            <a @click="saveSearch" class="edu-btn btn-large" >{{ $t('Home.search') }}</a>
           </div>
         </div>
       </div>

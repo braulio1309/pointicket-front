@@ -2,7 +2,7 @@
    <div class="edu-blog-area blog-area-1 edu-section-gap">
      <div class="section-title" :class="alignment" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
         <span class="pre-title" :class="preTitleClass" v-html="preTitle" v-if="preTitle"></span>
-        <h3 class="text-center title">Eventos más vendidos</h3>
+        <h3 class="text-center title">{{ $t('Home.best_selling_events') }}</h3>
         <span class="shape-line text-center" v-if="!disableMark"><i class="icon-19"></i></span>
         <p v-html="subTitle" v-if="subTitle"></p>
     </div>
@@ -25,33 +25,33 @@
                                             </div>
                                             <div class="pricing-body">
                                                 <ul class="list-item">
-                                                    <li><i class="icon-20"></i>Museo del Real Madrid C.F</li>
-                                                    <li><i class="icon-20"></i>Vista panorámica del Estadio</li>
-                                                    <li><i class="icon-20"></i>Recorrido (reducido por obras)</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.museum') }}</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.panoramic_view') }}</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.museum') }}</li>
                                                 </ul>
                                             </div>
                                             <div class="pricing-btn">
-                                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none">Comprar<i class="icon-east"></i></a>
+                                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none">{{ $t('Home.buy') }}<i class="icon-east"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
                                         <div class="pricing-table">
                                             <div class="pricing-header">
-                                                <h6 class="title">Classic Hora Flexible</h6>
+                                                <h6 class="title">{{ $t('Home.flexible_hour') }}</h6>
                                                 <div class="price-wrap">
                                                     <span class="amount">50.00€</span>
                                                 </div>
                                             </div>
                                             <div class="pricing-body">
                                                 <ul class="list-item">
-                                                    <li><i class="icon-20"></i>Entrada Classic</li>
-                                                    <li><i class="icon-20"></i>Hora abierta</li>
-                                                    <li><i class="icon-20"></i>Recorrido reducido por obras</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.classic') }}</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.open_hour') }}</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.route') }}</li>
                                                 </ul>
                                             </div>
                                             <div class="pricing-btn">
-                                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none">Comprar<i class="icon-east"></i></a>
+                                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none">{{ $t('Home.buy') }}<i class="icon-east"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -65,13 +65,13 @@
                                             </div>
                                             <div class="pricing-body">
                                                 <ul class="list-item">
-                                                    <li><i class="icon-20"></i>Entrada Classic</li>
-                                                    <li><i class="icon-20"></i>Servicio Guía</li>
-                                                    <li><i class="icon-20"></i>Recorrido reducido por obras</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.classic') }}</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.open_hour') }}</li>
+                                                    <li><i class="icon-20"></i>{{ $t('Home.route') }}</li>
                                                 </ul>
                                             </div>
                                             <div class="pricing-btn">
-                                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none">Comprar<i class="icon-east"></i></a>
+                                                <a class="edu-btn btn-border btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none">{{ $t('Home.buy') }}<i class="icon-east"></i></a>
                                             </div>
                                         </div>
                                     </div>

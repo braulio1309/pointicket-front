@@ -4,7 +4,7 @@
             <div class="header-top">
                 <div class="header-top-left">
                     <div class="header-notify">
-                        Pointickets es un proveedor secundario de entradas.
+                        {{ $t('provider') }}
                     </div>
                 </div>
                 <div class="header-top-right">
@@ -19,13 +19,16 @@
                         </li>
 
                         <li v-if="logged">
-                            <NuxtLink to="/profile">Bienvenido {{ this.user.fullname }}</NuxtLink>
+                            <NuxtLink to="/profile">{{ $t('Welcome') }} {{ this.user.fullname }}</NuxtLink>
                         </li>
+                      
                         <li><a href="mailto:info@pointickets.com" target="_blank"><i class="icon-envelope"></i>
                                 info@pointickets.com</a></li>
                         <li class="social-icon">
-                            <a href="https://www.facebook.com/profile.php?id=61552598728672" target="_blank"><i class="icon-facebook"></i></a>
-                            <a href="https://www.instagram.com/pointickets" target="_blank"><i class="icon-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61552598728672" target="_blank"><i
+                                    class="icon-facebook"></i></a>
+                            <a href="https://www.instagram.com/pointickets" target="_blank"><i
+                                    class="icon-instagram"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +47,10 @@ export default {
         return {
             showModal: false,
             logged: false,
-            user: ''
+            user: '',
+            locale: '',
+            locales: '',
+            availableLocales: []
 
         };
     },

@@ -2,10 +2,10 @@
     <div class="edu-course-area course-area-1 edu-section-gap bg-lighten01">
         <div class="container">
             <div class="section-title section-center" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
-                <h2 class='pre-title' style="font-size: medium;">Pointickets: líderes en compra venta de entradas deportivas</h2>
-                <p>Pointickets es la plataforma líder en compra y venta de entradas deportivas, con un amplio catálogo de entradas para el Real Madrid en el Santiago Bernabéu. Ofrecemos un amplio catálogo de entradas para el Real Madrid en el Santiago Bernabéu, a los mejores precios.</p>
+                <h2 class='pre-title' style="font-size: medium;">{{ $t('Home.second_title') }}</h2>
+                <p>{{ $t('Home.leader_buy') }}</p>
 
-                <p>En Pointickets encontrarás entradas para todos los partidos del Real Madrid, tanto de Liga como de Champions League. También tenemos entradas para otro tipo de eventos, como conciertos y espectáculos.</p>
+                <p>{{ $t('Home.pointickets_tickets') }}</p>
 
             </div>
             <div class="row g-5">
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="course-view-all" data-aos-delay="10" data-aos="fade-up" data-aos-duration="100">
-                <NuxtLink to="/compra-entradas-de-futbol" class="edu-btn">Ver más eventos <i class="icon-4"></i></NuxtLink>
+                <NuxtLink to="/compra-entradas-de-futbol" class="edu-btn">{{ $t('more') }} <i class="icon-4"></i></NuxtLink>
             </div>
         </div>
     </div>

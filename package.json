@@ -18,6 +18,8 @@
     "vue-i18n": "^9.14.0"
   },
   "dependencies": {
+    "@nuxt/ui": "^2.8.1",
+    "@nuxtjs/sitemap": "^5.3.2",
     "@vue-stripe/vue-stripe": "^4.5.0",
     "@yeger/vue-masonry-wall": "^4.1.0",
     "aos": "^2.3.4",

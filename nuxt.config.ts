@@ -56,29 +56,7 @@ export default defineNuxtConfig({
     },
     modules: [
       '@nuxt/i18n',
-      '@nuxtjs/sitemap',
     ],
-    i18n: {
-      locales: [
-        {
-          code: 'en',
-          name: 'English',
-          file: 'en.json' 
-        },
-        {
-          code: 'es',
-          name: 'Español',
-          file: 'es.json' 
-        }
-      ],
-      defaultLocale: 'en',
-      lazy: true,
-      langDir: 'locales/',
-      strategy: 'no_prefix',
-      vueI18n: {
-        fallbackLocale: 'en',
-      }
-    },
   },
   runtimeConfig: {
     // Public keys that are exposed to the client
@@ -88,34 +66,6 @@ export default defineNuxtConfig({
       STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
 
     },
-  },
-  sitemap: {
-    hostname: 'https://pointickets.com', // Reemplaza con tu dominio
-    //gzip: true, // Opcional: comprime el sitemap
-    debug: true,
-    sources: async () => {
-      // Rutas estáticas
-      const staticRoutes = [
-        '/',
-        '/compra-entradas-de-futbol',
-        '/vende-entradas-de-futbol',
-        '/preguntas-frecuentes',
-        '/tour-santiago-bernabeu',
-        '/exitoso',
-        '/privacy-policy',
-        '/terms-condition',
-        '/contacto',
-        '/profile'
-      ];
-
-      // Obtener rutas dinámicas de una API
-      const { data } = await axios.get('https://admin.pointickets.com/api/events'); // Reemplaza con tu API
-      const venderRoutes = data.map((event:any) => `/tickets/vender/${event.id}`);
-      const comprarRoutes = data.map((event:any) => `/tickets/comprar/${event.id}`);
-
-      // Combinar rutas estáticas y dinámicas
-      return [...staticRoutes, ...venderRoutes, ...comprarRoutes];
-    }
   },
   build: {
     extractCSS: true, // Extraer CSS en archivos separados

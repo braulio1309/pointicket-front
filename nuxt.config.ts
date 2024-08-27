@@ -2,6 +2,7 @@
 import axios from 'axios';
 
 export default defineNuxtConfig({
+
   css: [
     "bootstrap/scss/bootstrap.scss",
     "swiper/css/bundle",
@@ -58,8 +59,26 @@ export default defineNuxtConfig({
       '@nuxtjs/sitemap',
     ],
     i18n: {
-      vueI18n: './i18n.config.ts' // if you are using custom path, default 
-    }
+      locales: [
+        {
+          code: 'en',
+          name: 'English',
+          file: 'en.json' 
+        },
+        {
+          code: 'es',
+          name: 'Español',
+          file: 'es.json' 
+        }
+      ],
+      defaultLocale: 'en',
+      lazy: true,
+      langDir: 'locales/',
+      strategy: 'no_prefix',
+      vueI18n: {
+        fallbackLocale: 'en',
+      }
+    },
   },
   runtimeConfig: {
     // Public keys that are exposed to the client
@@ -72,8 +91,9 @@ export default defineNuxtConfig({
   },
   sitemap: {
     hostname: 'https://pointickets.com', // Reemplaza con tu dominio
-    gzip: true, // Opcional: comprime el sitemap
-    routes: async () => {
+    //gzip: true, // Opcional: comprime el sitemap
+    debug: true,
+    sources: async () => {
       // Rutas estáticas
       const staticRoutes = [
         '/',

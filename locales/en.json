@@ -33,14 +33,14 @@
         "pointickets_tickets": "At Pointickets, you will find tickets for all Real Madrid matches, both for La Liga and Champions League. We also have tickets for other events like concerts and shows.",
         "pending_confirmation": "Pending Confirmation",
         "best_selling_events": "Best Selling Events",
-        "testimonies":"Testimonials",
+        "testimonies": "Testimonials",
         "opinions": "Customer Opinions",
         "opinion_text": "Our goal is to provide our customers with a simple and secure shopping experience. Therefore, we work with the main online payment entities and have state-of-the-art security systems.",
         "Subscribe_to_our_newsletter": "Subscribe to our newsletter!",
         "keep_information": "Stay informed of all the latest sports events",
         "subscribe": "Subscribe",
         "contact_us": "Contact us via Whatsapp or complete this form.",
-        "keep_information_events":"Stay informed of all the latest sports events.",
+        "keep_information_events": "Stay informed of all the latest sports events.",
         "readed": "I have read and accept the terms and conditions of use.",
         "send": "Send",
         "sport": "SPORTS",
@@ -53,7 +53,29 @@
         "route": "Route (reduced due to construction)",
         "panoramic_view": "Panoramic Stadium View",
         "buy": "Buy",
+        "sell": "Sell",
         "see_more": "See more",
         "flexible_hour": "Classic Flexible Hour"
+    },
+    "Menu": {
+        "home": "Home",
+        "buy_tickets": "Buy tickets",
+        "sell_tickets": "Sell tickets",
+        "contact_us": "Contact us",
+        "faq": "Frequently Asked Questions",
+        "profile": "My profile",
+        "ubication": "Location",
+        "policy": "Privacy policy",
+        "terms": "Terms and conditions",
+        "contest": "Contest policies",
+        "login": "Login",
+        "register": "Register",
+        "policy_title": "Policies",
+        "tickets": "Tickets"
+    },
+    "Events": {
+        "title": "Buy football tickets to your favourite events",
+        "title_sell": "Sell football tickets to your favourite events",
+        "events": "Eventos"
     }
 }

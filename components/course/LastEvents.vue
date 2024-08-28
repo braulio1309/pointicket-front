@@ -12,7 +12,7 @@
                 </h6>
                 <span class="course-level" style="margin-bottom: 5px !important;">{{ event.attributes.description }}</span><br>
                 <span :style="{ display: event.attributes.description.length == 10 ? 'inline' : 'none', fontSize: '9px', marginTop: '5px', marginBottom: '5px' }">
-                    Pendiente de Confirmación
+                    {{ $t('Home.pending_confirmation') }}
                 </span>
                 <br>
                 <a :href="'/tickets/'+type+'r/'+ event.id" class="edu-btn btn-large">{{ (type === 'compra')? 'Comprar': 'Vender' }}</a>

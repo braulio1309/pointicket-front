@@ -3,18 +3,18 @@
 
         <HeaderOne />
 
-        <BreadCrumbTwo v-if="this.$route.params.type === 'compra'" pageTitle='Compra entradas de fútbol de tus eventos favoritos' title='Eventos' />
-        <BreadCrumbTwo v-else pageTitle='Vende entradas de fútbol de tus eventos favoritos' title='Eventos' />
+        <BreadCrumbTwo v-if="this.$route.params.type === 'compra'" :pageTitle="$t('Events.title')" :title="$t('Events.events')" />
+        <BreadCrumbTwo v-else :pageTitle="$t('Events.title_sell')" :title="$t('Events.events')" />
 
         <div class="edu-event-area event-area-1 section-gap-equal">
             <div class="container">
                 <div class="breadcrumb-inner">
                     <div class="row">
                         <div class="col-sm-10">
-                            <input v-model="data" placeholder="Buscar eventos" style="border-radius: 10px;">
+                            <input v-model="data" :placeholder="$t('Home.search_events')" style="border-radius: 10px;">
                         </div>
                         <div class="col-sm-2">
-                            <a href="#" @click="getEvents" class="edu-btn btn-large">Buscar</a>
+                            <a href="#" @click="getEvents" class="edu-btn btn-large">{{ $t('Home.search') }}</a>
                         </div>
                     </div>
                 </div>

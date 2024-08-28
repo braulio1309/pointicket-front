@@ -53,7 +53,29 @@
         "route": "Recorrido (reducido por obras)",
         "panoramic_view": "Vista panorámica del Estadio",
         "buy": "Comprar",
+        "sell": "Vender",
         "see_more": "Ver más",
         "flexible_hour": "Classic Hora Flexible"
+    },
+    "Menu": {
+        "home": "Inicio",
+        "buy_tickets": "Comprar entradas",
+        "sell_tickets": "Vender entradas",
+        "contact_us": "Contacto",
+        "faq": "Preguntas frecuentes",
+        "profile": "Mi perfil",
+        "ubication": "Ubicación",
+        "policy": "Politicas de privacidad",
+        "terms": "Términos y condiciones",
+        "contest": "Politicas de concurso",
+        "login": "Iniciar sesión",
+        "register": "Registrarse",
+        "policy_title": "Políticas",
+        "tickets": "Entradas"
+    },
+    "Events": {
+        "title": "Compra entradas de fútbol de tus eventos favoritos",
+        "title_sell": "Vende entradas de fútbol de tus eventos favoritos",
+        "events": "Eventos"
     }
 }

@@ -14,7 +14,7 @@
                             <p class="description"></p>
                             <div class="widget-information">
                                 <ul class="information-list">
-                                    <li><span>Ubicación:</span>España</li>
+                                    <li><span>{{ $t('Menu.ubication') }}:</span>España</li>
                                     <li><span>Email:</span><a href="mailto:info@pointickets.com"
                                             target="_blank">info@pointickets.com</a></li>
                                 </ul>
@@ -30,55 +30,52 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="edu-footer-widget explore-widget">
-                            <h4 class="widget-title">Entradas</h4>
+                            <h4 class="widget-title">{{ $t('Menu.tickets') }}</h4>
                             <div class="inner">
                                 <ul class="footer-link link-hover">
                                     <li>
                                         <NuxtLink to="/tour-santiago-bernabeu">Tour del Santiago Bernabeu</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/compra-entradas-de-futbol">Comprar entradas</NuxtLink>
+                                        <NuxtLink to="/compra-entradas-de-futbol">{{ $t('Menu.buy_tickets') }}</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/vende-entradas-de-futbol">Vender entradas</NuxtLink>
+                                        <NuxtLink to="/vende-entradas-de-futbol">{{ $t('Menu.sell_tickets') }}</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/preguntas-frecuentes">Preguntas frecuentes</NuxtLink>
+                                        <NuxtLink to="/preguntas-frecuentes">{{ $t('Menu.faq') }}</NuxtLink>
                                     </li>
                                     <li v-if="logged">
-                                        <NuxtLink to="/profile">Mi perfil</NuxtLink>
+                                        <NuxtLink to="/profile">{{ $t('Menu.profile') }}</NuxtLink>
                                     </li>
                                     <li v-if="!logged">
-                                        <NuxtLink to="/login">Iniciar sesión</NuxtLink>
+                                        <NuxtLink to="/login">{{ $t('Menu.login') }}</NuxtLink>
                                     </li>
                                     <li v-if="!logged">
-                                        <NuxtLink to="/register">Registrarse</NuxtLink>
+                                        <NuxtLink to="/register">{{ $t('Menu.register') }}</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/contacto">Contacto</NuxtLink>
+                                        <NuxtLink to="/contacto">{{ $t('Menu.contact_us') }}</NuxtLink>
                                     </li>
-                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="edu-footer-widget quick-link-widget">
-                            <h4 class="widget-title">Políticas</h4>
+                            <h4 class="widget-title">{{ $t('Menu.policy_title') }}</h4>
                             <div class="inner">
                                 <ul class="footer-link link-hover">
                                     
                                     <li>
-                                        <NuxtLink to="/privacy-policy">Politicas de privacidad</NuxtLink>
-                                    </li>
-                                    
-                                    <li>
-                                        <NuxtLink to="/terms-condition">Términos y condiciones</NuxtLink>
+                                        <NuxtLink to="/privacy-policy">{{ $t('Menu.policy') }}</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink to="/bases-legales-concurso">Politicas de concurso</NuxtLink>
+                                        <NuxtLink to="/terms-condition">{{ $t('Menu.terms') }}</NuxtLink>
                                     </li>
-                                    
+                                    <li>
+                                        <NuxtLink to="/bases-legales-concurso">{{ $t('Menu.contest') }}</NuxtLink>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

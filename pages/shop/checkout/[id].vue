@@ -89,10 +89,10 @@
                                                 <td> €{{ parseFloat(ticket.attributes.endPrice).toFixed(2) }}</td>
                                             </tr>
 
-                                            <tr class="order-total">
+                                           <!-- <tr class="order-total">
                                                 <td>IVA</td>
                                                 <td>€{{ parseFloat(ticket.attributes.endPrice * 0.21).toFixed(2) }}</td>
-                                            </tr>
+                                            </tr>-->
 
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Descuento</td>
@@ -113,7 +113,7 @@
                                             <tr class="order-total">
                                                 <td>Total</td>
                                                 <td >€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) + fees + feeEnvio).toFixed(2) }}
+            (0)) + fees + feeEnvio).toFixed(2) }}
                                                 </td>
                                             </tr>
 
@@ -124,14 +124,14 @@
 
                                                 <td v-if="resultCouponAmount">€{{ parseFloat(((ticket.attributes.endPrice *
             ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
+            (0)) -
             amountDiscount) + fees + feeEnvio).toFixed(2)}}
                                                 </td>
                                                 <td v-if="resultCouponPercentage">€{{ parseFloat(((ticket.attributes.endPrice * ticket.attributes.seat +
-            (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)) -
+            (0)) -
             ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
-                                                    (ticket.attributes.endPrice * ticket.attributes.seat * 0.21)))) + fees + feeEnvio).toFixed(2) }}
+                                                    (0)))) + fees + feeEnvio).toFixed(2) }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -308,8 +308,8 @@ export default {
             this.user = JSON.parse(userData);
         },
         async customFunction() {
-            let finalAmount = this.ticket.attributes.endPrice * this.ticket.attributes.seat +
-            (this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21);
+            let finalAmount = this.ticket.attributes.endPrice * this.ticket.attributes.seat + 0;
+            //(this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21);
             if(this.resultCouponPercentage){
                 finalAmount -= (this.percentageDiscount / 100) * finalAmount;
             }

@@ -34,11 +34,11 @@
                     },
                     {
                         url: '/compra-entradas-de-futbol',
-                        title: $t('Menu.buy_tickets'),
+                        title: 'Comprar entradas',
                     },
                     {
                         url: '/vende-entradas-de-futbol',
-                        title: $t('Menu.sell_tickets'),
+                        title: 'Vender entradas',
                     },
                     {
                         url: '/preguntas-frecuentes',
@@ -52,7 +52,7 @@
                     },
                     {
                         url: '/contacto',
-                        title: $t('Menu.contact_us'),
+                        title: 'Contacto',
                         
                     },
                     

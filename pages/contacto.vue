@@ -3,15 +3,14 @@
 
         <HeaderOne />
 
-        <BreadCrumbTwo title='Contacta con nosotros' />
+        <BreadCrumbTwo :title="$t('ContactUs.title')" />
 
         <section class="contact-us-area">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-xl-4 col-lg-6">
                         <div class="contact-us-info">
-                            <h4 class="heading-title">Nuestro equipo de atención al cliente está disponible para ayudarte
-                                con cualquier duda o problema que tengas.</h4>
+                            <h4 class="heading-title">{{ $t('ContactUs.second_title') }}</h4>
                             <ul class="address-list">
                                 <li>
                                     <h5 class="title">Email</h5>
@@ -31,11 +30,11 @@
                     <div class="offset-xl-2 col-lg-6">
                         <div class="contact-form form-style-2">
                             <div class="section-title">
-                                <h4 class="title">Escríbenos</h4>
+                                <h4 class="title">{{ $t('ContactUs.textus') }}</h4>
                             </div>
                             <div v-if="showResult" class="col-12">
                                 <div class="alert alert-success" role="alert">
-                                    Gracias por contactarnos!
+                                    {{ $t('ContactUs.thanks') }}
                                 </div>
                             </div>
                             <div v-if="emailValidation" class="col-12">
@@ -52,13 +51,13 @@
                             <form class="rnt-contact-form rwt-dynamic-form">
                                 <div class="row row--10">
                                     <div class="form-group col-12">
-                                        <input type="text" v-model="name" placeholder="Nombre">
+                                        <input type="text" v-model="name" :placeholder="$t('Register.name')">
                                     </div>
                                     <div class="form-group col-12">
                                         <input type="email" v-model="email" placeholder="Email">
                                     </div>
                                     <div class="form-group col-12">
-                                        <input type="tel" v-model="phone" placeholder="Telefono">
+                                        <input type="tel" v-model="phone" :placeholder="$t('Register.phone')">
                                     </div>
                                     <div class="form-group col-12">
                                         <textarea v-model="message" cols="30" rows="4"
@@ -67,8 +66,8 @@
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me"> He leído y acepto los <a href="/terms-condition"
-                                                style="text-decoration: underline;">términos y condiciones de uso.</a></label>
+                                            <label for="remember-me"> {{ $t('ContactUs.readed') }} <a href="/terms-condition"
+                                                style="text-decoration: underline;">{{ $t('ContactUs.terms') }}</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12">
@@ -78,7 +77,7 @@
                                                 Cargando... <i class="fas fa-spinner fa-spin"></i>
                                             </span>
                                             <span v-else>
-                                                Enviar<i class="icon-4"></i>
+                                                {{ $t('Home.send') }}<i class="icon-4"></i>
                                             </span>
                                         </button>
 

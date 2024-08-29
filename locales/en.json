@@ -16,7 +16,8 @@
         "name_lastname": "Name and Last Name",
         "phone": "Phone",
         "agree": "I agree to the Terms and Conditions",
-        "create_account": "Create account"
+        "create_account": "Create account",
+        "name": "Name"
     },
     "Home": {
         "home": "Home",
@@ -77,5 +78,14 @@
         "title": "Buy football tickets to your favourite events",
         "title_sell": "Sell football tickets to your favourite events",
         "events": "Eventos"
+    },
+    "ContactUs": {
+        "title": "Contact us",
+        "second_title": "Our customer service team is available to help you with any questions or issues you may have.",
+        "textus": "Write to us",
+        "message": "Write your message",
+        "readed": "I have read and accept the",
+        "terms": "terms and conditions of use.",
+        "thanks": "Thanks for contact us!"
     }
 }

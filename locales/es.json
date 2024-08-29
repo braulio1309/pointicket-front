@@ -16,7 +16,8 @@
         "name_lastname": "Nombre y apellido",
         "phone": "Teléfono",
         "agree": "Estoy de acuerdo con los Terminos y condiciones",
-        "create_account": "Crear cuenta"
+        "create_account": "Crear cuenta",
+        "name": "Nombre"
     },
     "Home": {
         "home": "Inicio",
@@ -77,5 +78,14 @@
         "title": "Compra entradas de fútbol de tus eventos favoritos",
         "title_sell": "Vende entradas de fútbol de tus eventos favoritos",
         "events": "Eventos"
+    },
+    "ContactUs": {
+        "title": "Contacta con nosotros",
+        "second_title": "Nuestro equipo de atención al cliente está disponible para ayudarte con cualquier duda o problema que tengas.",
+        "textus": "Escríbenos",
+        "message": "Escribe tu mensaje",
+        "readed": "He leído y acepto los",
+        "terms": "términos y condiciones de uso.",
+        "thanks": "Gracias por contactarnos!"
     }
 }

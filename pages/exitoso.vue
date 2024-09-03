@@ -169,7 +169,7 @@ export default {
         this.data = (localStorage.getItem('tour')) ? JSON.parse(localStorage.getItem('tour')) : null;
         console.log(this.data)
         this.userData();
-        if (this.data) {
+        if (this.data == null) {
             this.ticketId = parseInt(localStorage.getItem('ticketId'));
             console.log('Entrada', this.ticketId)
             await this.getEvent();
@@ -178,14 +178,7 @@ export default {
             if (localStorage.getItem('coupon'))
                 this.coupon = await this.getCoupon(parseInt(localStorage.getItem('couponId')));
         } else {
-            //this.saveTour();
-            this.ticketId = parseInt(localStorage.getItem('ticketId'));
-            console.log('Entrada', this.ticketId)
-            await this.getEvent();
-            this.userData();
-            this.savePurchase();
-            if (localStorage.getItem('coupon'))
-                this.coupon = await this.getCoupon(parseInt(localStorage.getItem('couponId')));
+            this.saveTour();
         }
 
 

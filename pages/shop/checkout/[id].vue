@@ -3,7 +3,7 @@
 
         <HeaderOne />
 
-        <BreadCrumbTwo pageTitle='Finalizar pago' title='Finalizar' />
+        <BreadCrumbTwo :pageTitle="$t('Checkout.finish_pay')" :title="$t('Checkout.finish')" />
 
         <section class="checkout-page-area section-gap-equal" v-if="ticket">
             <div class="container">
@@ -20,11 +20,11 @@
                     <div class="row row--25">
                         <div class="col-lg-6">
                             <div class="checkout-billing">
-                                <h3 class="title">Detalles</h3>
+                                <h3 class="title">{{ $t('Checkout.detail') }}</h3>
                                 <div class="row g-lg-5">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label>Nombre*</label>
+                                            <label>{{ $t('Checkout.name') }}*</label>
                                             <input type="text" id="first-name" v-model="user.username" readonly>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Phone*</label>
+                                            <label>{{ $t('Register.phone') }}*</label>
                                             <input type="tel" id="phone" v-model="user.phone" readonly>
                                         </div>
                                     </div>
@@ -47,13 +47,13 @@
                                 <div class="row g-lg-6">
                                     <div class="col-lg-8">
                                         <div class="form-group">
-                                            <label>Cupón de descuento</label>
+                                            <label>{{ $t('Checkout.discount_coupon') }}</label>
                                             <input type="text" id="email" v-model="coupon">
-                                            <p v-if="resultCouponAmount">Cupon disponible - €{{ amountDiscount }}</p>
-                                            <p v-if="resultCouponPercentage">Cupon disponible - {{ percentageDiscount
+                                            <p v-if="resultCouponAmount">{{ $t('Checkout.available_coupon') }} - €{{ amountDiscount }}</p>
+                                            <p v-if="resultCouponPercentage">{{ $t('Checkout.available_coupon') }} - {{ percentageDiscount
                                                 }}%
                                             </p>
-                                            <p v-if="errorCoupon">Cupón no válido</p>
+                                            <p v-if="errorCoupon">{{ $t('Checkout.not_coupon') }}</p>
 
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                                         <div class="form-group" style="margin-top: 35px;">
 
                                             <button type="button" @click="verifyCoupon"
-                                                class="edu-btn btn-small">Verificar
+                                                class="edu-btn btn-small">{{ $t('Checkout.verify') }}
                                                 <i class="icon-4"></i></button>
                                         </div>
 
@@ -69,7 +69,7 @@
 
                                 </div>
                                 <div class="form-group mt--50 mb-0">
-                                    <label>Observaciones</label>
+                                    <label>{{ $t('Checkout.remarks') }}</label>
                                     <textarea id="notes" rows="4"
                                         placeholder="Notes about your order, e.g. speacial notes for delivery."></textarea>
                                 </div>
@@ -78,13 +78,13 @@
                         <div class="col-lg-6">
                             <div class="order-summery checkout-summery">
                                 <div class="summery-table-wrap">
-                                    <h4 class="title">Tu orden para {{
+                                    <h4 class="title">{{ $t('Checkout.your_order') }} {{
             ticket.attributes.evento.data.attributes.title }}</h4>
                                     <table class="table summery-table">
                                         <tbody>
                                             <tr>
-                                                <td> {{ ticket.attributes.Category }}, Tipo: {{
-            this.ticket.attributes.type }}, Fila: {{ ticket.attributes.Fila }}</td>
+                                                <td> {{ ticket.attributes.Category }}, {{ $t('Checkout.type') }}: {{
+            this.ticket.attributes.type }}, {{ $t('Checkout.row') }}: {{ ticket.attributes.Fila }}</td>
                                                 <td><span class="quantity">x {{ ticket.attributes.seat }}</span></td>
                                                 <td> €{{ parseFloat(ticket.attributes.endPrice).toFixed(2) }}</td>
                                             </tr>
@@ -95,18 +95,18 @@
                                             </tr>-->
 
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
-                                                <td>Descuento</td>
+                                                <td>{{ $t('Checkout.discount') }}</td>
                                                 <td v-if="resultCouponAmount">€{{ amountDiscount }}</td>
                                                 <td v-if="resultCouponPercentage">{{ percentageDiscount }} %</td>
 
                                             </tr>
                                             <tr v-if="ticket.attributes.type != 'Digital'" class="order-total">
-                                                <td>Gastos de envío</td>
+                                                <td>{{ $t('Checkout.shipping_cost') }}</td>
                                                 <td >€ 10</td>
                                             </tr>
 
                                             <tr class="order-total">
-                                                <td>Gastos de gestión</td>
+                                                <td>{{ $t('Checkout.management_fees') }}</td>
                                                 <td >€ {{fees}}</td>
                                             </tr>
 
@@ -141,22 +141,16 @@
                             <div class="order-payment">
                                 <div class="row justify-content-center">
                                     
-                                    <button type="button" class="edu-btn btn-medium" @click="customFunction()">Iniciar proceso de pago</button>
+                                    <button type="button" class="edu-btn btn-medium" @click="customFunction()">{{ $t('Checkout.start_payment_process') }}</button>
 
                                 </div>
                                 <br><br>
                                 <div class="row justify-content-center">
                                     <br>
                                     <p class="text-center" style="font-size: 11px;">
-                                        Tu pago es 100% seguro<br>
-                                        Tus transacciones están seguras gracias a nuestro sistema de pago 3D Secure.
-                                        Esto
-                                        quiere decir que cuando hayas pagado, la entidad de tu tarjeta bancaria te
-                                        pedirá un
-                                        código que llega por SMS en el que validarán que estas comprando
-                                        correctamente.<br>
-                                        Además usamos tecnología de seguridad SSL para proteger todos tus datos
-                                        personales.
+                                        {{ $t('Checkout.pay_secure') }}<br>
+                                        {{ $t('Checkout.your_transaction') }}<br>
+                                        {{ $t('Checkout.we_use') }}
                                     </p>
                                     <div class="col-sm-4">
                                         <img src="../../../assets/images/pagos/mastercard.png">

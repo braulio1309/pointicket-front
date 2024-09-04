@@ -17,7 +17,8 @@
         "phone": "Phone",
         "agree": "I agree to the Terms and Conditions",
         "create_account": "Create account",
-        "name": "Name"
+        "name": "Name",
+        "date_bird": "Fecha de nacimiento"
     },
     "Home": {
         "home": "Home",
@@ -87,5 +88,162 @@
         "readed": "I have read and accept the",
         "terms": "terms and conditions of use.",
         "thanks": "Thanks for contact us!"
+    },
+    "Buy": {
+        "ticket": "Ticket",
+        "looking_tickets": "What tickets are you looking for?",
+        "per_tickets": "Per ticket",
+        "tickets": "Tickets",
+        "all": "All"
+    },
+    "Checkout": {
+        "detail": "Detail",
+        "your_order": "Your order for",
+        "shipping_cost": "Shipping cost",
+        "management_fees": "Management fees",
+        "start_payment_process": "Start payment process",
+        "verify": "Verify",
+        "discount_coupon": "Discount coupon",
+        "remarks": "Remarks",
+        "name": "Name",
+        "pay_secure": "Your payment is 100% secure",
+        "your_transaction": "Your transactions are secure thanks to our 3D Secure payment system. This means that when you have paid, your bank card entity will ask you for a code sent via SMS to validate that you are purchasing correctly.",
+        "we_use": "Additionally, we use SSL security technology to protect all your personal data.",
+        "row": "Row",
+        "discount": "Discount",
+        "type": "Type",
+        "available_coupon": "Available coupon",
+        "not_coupon": "Coupon not available",
+        "finish_pay": "Finish payment process",
+        "finish": "Finish"
+    },
+    "Profile": {
+        "your_events": "Your events",
+        "sold": "Sold",
+        "purchased": "Purchased",
+        "pay": "Payments",
+        "account": "Account",
+        "address": "Addresses",
+        "bank_data": "Bank data",
+        "billing": "Billing",
+        "logout": "Logout",
+        "event": "Event",
+        "category": "Category",
+        "row": "Row",
+        "price": "Price",
+        "actions": "Actions",
+        "hide": "Hide",
+        "publish": "Publish",
+        "company_name": "Company name",
+        "country": "Country",
+        "province": "Province",
+        "tax_domicile": "Tax domicile",
+        "poblation": "Town/City",
+        "save": "Save",
+        "holder": "Holder",
+        "account_type": "Account type",
+        "add_address": "Enter your address",
+        "add_bank_data": "Enter your bank data",
+        "add_billing_data": "Enter your billing data",
+        "add_personal_data": "Enter your personal data",
+        "saved": "Successfully saved"
+    },
+    "purchase_questions": {
+        "faq": "Frequently asked questions",
+        "title": "Questions about buying tickets:",
+        "seats_together_title": "Will my seats be together?",
+        "seats_together_text": "Yes, tickets purchased from the same listing will be together, unless otherwise specified during the purchase confirmation process.",
+        "seat_location_title": "Where will my seats be located?",
+        "seat_location_text": "All available details about your seat location are displayed in your confirmation email."
+    },
+    "delivery_questions": {
+        "title": "Questions about how to receive my tickets:",
+        "when_receive_tickets_title": "When will I receive my tickets?",
+        "when_receive_tickets_text": "You will receive your tickets, including electronic tickets, in the week leading up to the event, as organizers usually issue tickets very close to the event date, often within the same week.",
+        "instant_download_tickets_text": "If you purchased instant download electronic tickets, you will be able to print them almost immediately.",
+        "track_order_status_text": "You can track the status of your order in the Purchases section.",
+        "ensure_receive_on_time_title": "Ways to ensure you receive your tickets on time:",
+        "ensure_receive_on_time_text_1": "Make sure your delivery address is correct. Check your delivery address here.",
+        "ensure_receive_on_time_text_2": "Ensure you choose a delivery address where someone can sign for the delivery, such as your workplace.",
+        "ensure_receive_on_time_text_3": "If you are traveling to the event, add your travel address and the start date of your trip as soon as possible, and we will make sure the tickets are sent to the correct location.",
+        "ensure_receive_on_time_text_4": "Ensure that the phone number listed on your account is correct, in case we need to contact you."
+    },
+    "pricing_questions": {
+        "price_difference_title": "Why is the price on the ticket different from what I paid?",
+        "price_difference_text": "Tickets on Pointickets are sold at prices that may be above, below, or equal to the nominal value displayed on the ticket.",
+        "price_demand_text": "The price of tickets for the most popular events may be higher than the nominal value due to high demand. At Pointickets, many tickets are sold for less than the nominal price."
+    },
+    "name_on_ticket_questions": {
+        "different_name_title": "Why does my ticket show someone else's name?",
+        "different_name_text": "Pointickets allows third parties, including individuals, to sell tickets on its platform. In some cases, the name of the original buyer may appear on the ticket. The ticket remains valid. Your name does not need to match the name on the ticket for you to access the event.",
+        "personalize_ticket_text": "If it is necessary to personalize the ticket with the attendee's name, our Customer Service team will contact you."
+    },
+    "cancellation_questions": {
+        "cancel_purchase_title": "Can I cancel my purchase?",
+        "cancel_purchase_text": "Customer satisfaction is essential to us, but as a platform for ticket exchange between individuals, our transactions are final, so neither the buyer nor the seller can cancel the order on their part. These policies ensure the application of the FanProtect Guarantee for all our customers.",
+        "customer_service_text": "However, if you have problems attending the event after the purchase, please contact our Customer Service team, and we will try to offer you the best possible solution."
+    },
+    "contact_questions": {
+        "contact_us_title": "How can I contact Pointickets?",
+        "contact_us_text": "Contact us through our form.",
+        "email_us_text": "You can email us at info@pointickets.com, and we will respond as soon as possible.",
+        "whatsapp_text": "Send us a WhatsApp."
+    },
+    "privacy_policy": {
+        "intro": {
+            "title": "Privacy Policy",
+            "text": "This Privacy Policy sets out the basis on which Platinumtickets SL (hereinafter, “we” or the “Data Controller”) with its registered office at Villa de Marín 4 28029 - Madrid, Spain, B10526994, a company currently operating in Spain, processes your personal data when you provide it during your experience through the website https://www.pointickets.com (hereinafter, “the Website”). We also remind you that every time you use the Website, provide us with, or require us to access any type of information that allows us to identify you, such as your name, email, billing or shipping addresses, phone number, type of device or debit or credit card number, etc. (hereinafter, “Personal Data”), whether for browsing, purchasing our products, or using its services or features, you will be under the application of this Privacy Policy, along with the General Conditions of the Website, and other referenced documents that are in force at each moment, and you should review these texts to ensure you agree with them. This Privacy Policy and our General Conditions may be modified. It is your responsibility to read them periodically, as those in force at the time of using the Website will apply. In the context of distance selling, it is mandatory to provide certain personal information as it is necessary to process and deliver the products, as well as to prepare your invoices. Such personal information is strictly confidential. Not providing such personal information would mean not being able to carry out the purchase. By accepting these General Conditions, the User expresses their explicit consent for Personal Data to be incorporated into the Personal Data File and to be subject to automated processing by Platinumtickets SL for the aforementioned purposes."
+        },
+        "personal_data": {
+            "title": "Personal Data",
+            "text": "Personal Data refers to any information or data that can identify you directly (e.g., your name) or indirectly (e.g., your national identity document or ID). Personal Data includes information such as email addresses / private postal addresses / mobile phone numbers, usernames, profile pictures, personal preferences and shopping habits, user-generated content, financial information, and social assistance information, among others. It may also include unique numerical identifiers such as your computer’s IP address or your mobile device’s MAC address, as well as information obtained through cookies. This Policy covers all personal data collected and used by Pointickets."
+        },
+        "data_collection": {
+            "title": "Collection of Personal Data and Purposes of Processing",
+            "text": "Please note that before you start using any of our services or functionalities, you must read this Policy, as well as the General Terms of Use for the specific section that pertains to that service or functionality. In that section, you will see if there are any specific conditions for its use, or if a specific processing of your Personal Data is required.",
+            "text2": "Failure to provide certain information marked as mandatory may result in the inability to manage your registration as a user or the use of certain functionalities or services available through https://www.pointickets.com.",
+            "text3": "By doing so, the user (you) guarantees that the Personal Data provided is true and accurate and agrees to notify any changes or modifications to it. Any loss or damage caused to the Website, to the data controllers, or to any third party due to the provision of incorrect, inaccurate, or incomplete information in the registration forms will be the sole responsibility of the user."
+        },
+        "data_usage": {
+            "title": "How We Use Your Data",
+            "text": "We and our service providers use personal information for the following purposes:",
+            "text1": "To provide the functionality of the Services, such as organizing access to your registered account, allowing you to purchase tickets, managing your relationship with us, and providing you with related benefits, special promotions, or customer service;",
+            "text2": "To respond to your inquiries and fulfill your requests when you contact us through one of our online contact forms or otherwise, for example, when you send us questions, suggestions, compliments, or complaints, or when you request a quote or other information about our Services.",
+            "text3": "To carry out the transactions you make, process returns and exchanges, verify your information, and provide you with related benefits, special promotions, or customer service.",
+            "text4": "To send you administrative information, such as changes to our terms, conditions, and policies.",
+            "text5": "To make it possible for you to send messages to another person through the Services, if you choose to do so."
+        },
+        "data_analysis": {
+            "title": "Analyzing Personal Data",
+            "text": "Analyzing personal data for the creation of commercial reports and the provision of personalized services. "
+        },
+        "promotions": {
+            "title": "Participating in Promotions",
+            "text": "Allowing you to participate in sweepstakes, contests, or other promotions. We may offer you the opportunity to participate in sweepstakes, contests, or other promotions. Some of these promotions have additional rules that contain information on how we will use and disclose your personal information. Please read those additional rules before choosing to participate."
+        },
+        "business_purposes": {
+            "title": "Business Purposes",
+            "text": "Carrying out audits to verify that our internal processes are functioning as intended and to comply with legal, regulatory, or contractual requirements. Preventing and detecting fraud attempts and monitoring anti-fraud security to verify your identity as part of our authentication process, comply with our legal or regulatory requirements, and detect and prevent cyberattacks or identity theft attempts. For training and quality purposes and to investigate any claims you may make, or as evidence in any dispute or litigation expected between you and us. Developing new products and services. Enhancing, improving, repairing, maintaining, or modifying our current products and services, as well as undertaking quality and security assurance measures. Identifying usage trends, for example, understanding which parts of our Services are of most interest to users. Determining the effectiveness of our promotional campaigns so we can tailor our campaigns to the needs and interests of our users. For the operation and expansion of our business activities, for example, understanding which parts of our Services are of most interest to our users so we can focus our efforts on meeting their interests."
+        },
+        "data_transfer": {
+            "title": "Data Transfer",
+            "text": "The Personal Data we collect from you may be transferred to, accessed from, and stored in a destination outside the European Economic Area (EEA). It may also be processed by staff operating outside the EEA who work for us or for one of our service providers. Service providers located outside the EEA, such as Facebook, Inc or Google, LLC, may access your personal data. These service providers are covered by the ‘Privacy Shield’ and are therefore required to protect your personal data in accordance with a set of well-defined protection and safeguards standards established by the European Union."
+        },
+        "data_retention": {
+            "title": "Retention of Personal Data",
+            "text": "We only retain your Personal Data for as long as we need it for the purpose for which we process your Personal Data, to meet your needs or to comply with our legal obligations. We may retain some personal data to comply with legal or regulatory obligations, as well as to manage our rights (e.g., to assert our claims in court) or for statistical or historical purposes. When we no longer need to use your personal data, it will be deleted from our systems and records or anonymized so that it can no longer be identified."
+        },
+        "data_storage": {
+            "title": "Storage of Personal Data",
+            "text": "We are committed to protecting your Personal Data and taking all reasonable precautions to do so. We contractually require trusted third parties who handle your Personal Data to do the same. We always strive to protect your Personal Data, and once we have received your personal information, we use strict procedures and security features to try to prevent unauthorized access. As transmission of information over the Internet is not completely secure, we cannot guarantee the security of your data transmitted to our site. Therefore, any transmission is at your own risk."
+        },
+        "privacy_rights": {
+            "title": "Your Privacy Rights",
+            "text": "Applicable data protection laws grant you the right to object to the processing of your data in certain circumstances, particularly for direct marketing purposes, profile building for direct marketing, and for other legitimate interests in processing. If you do not wish to receive our marketing emails, you can opt out by selecting the ‘unsubscribe’ option in the marketing communications we send you or by changing your account preferences at any time. Please note that if you choose to stop receiving our marketing emails, we may still send you important administrative messages from which you cannot opt out."
+        },
+        "contact_info": {
+            "title": "Contact Us",
+            "text": "If you have any questions or concerns about how we handle and use your personal data or wish to exercise any of the rights described above, please contact us at info@pointickets.com."
+        }
     }
 }

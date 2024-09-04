@@ -13,7 +13,7 @@
                                         <div class="col-md-12 col-lg-12">
                                             <div class="edu-gallery-area edu-section-gap">
                                                 <div class="container">
-                                                    <h4 class="text-center"> ¿Que entradas estas buscando?</h4>
+                                                    <h4 class="text-center"> {{ $t('Buy.looking_tickets') }}</h4>
 
                                                     <div class="isotope-wrapper">
                                                         <div class="isotop-button button-transparent isotop-filter">
@@ -52,18 +52,13 @@
                                                                             <div class="content">
                                                                                 <div class="row">
                                                                                     <div class="col-sm-6">
-                                                                                        <ul class="event-meta">
-                                                                                            <li>{{
-                                                                                                formatDate(event.attributes.createdAt)
-                                                                                            }}
-                                                                                            </li>
-                                                                                        </ul>
+                                                                                        
                                                                                         <h6 class="title">
                                                                                             <NuxtLink
                                                                                                 :to="'/shop/checkout/' + event.id">
                                                                                                 {{
                                                                                                     event.attributes.seat }}
-                                                                                                Entradas - {{
+                                                                                                {{ $t('Buy.tickets') }} - {{
                                                                                                     event.attributes.Category.slice(0, 5) }} 
                                                                                                 <span v-if="event.attributes.Category.includes('Premium')"> Premium</span>
                                                                                                 <span v-if="event.attributes.Category.includes('Alta')"> Alta</span>
@@ -77,7 +72,7 @@
                                                                                                 :to="'/shop/checkout/' + event.id">
                                                                                                 €{{
                                                                                                     event.attributes.endPrice }}
-                                                                                                <span>Por entrada</span>
+                                                                                                <span>{{ $t('Buy.per_tickets') }}</span>
            
                                                                                             </NuxtLink>
                                                                                         </h7>
@@ -88,7 +83,7 @@
                                                                                                 id="btn"
                                                                                                 class="edu-btn btn-medium"
                                                                                                 :to="'/shop/checkout/' + event.id">
-                                                                                                Comprar <i
+                                                                                                {{ $t('Home.buy') }} <i
                                                                                                     class="icon-4"></i>
                                                                                             </NuxtLink>
                                                                                         </div>

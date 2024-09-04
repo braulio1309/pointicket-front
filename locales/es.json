@@ -17,7 +17,8 @@
         "phone": "Teléfono",
         "agree": "Estoy de acuerdo con los Terminos y condiciones",
         "create_account": "Crear cuenta",
-        "name": "Nombre"
+        "name": "Nombre",
+        "date_bird": "Fecha de nacimiento"
     },
     "Home": {
         "home": "Inicio",
@@ -34,14 +35,14 @@
         "pointickets_tickets": "En Pointickets encontrarás entradas para todos los partidos del Real Madrid, tanto de Liga como de Champions League. También tenemos entradas para otro tipo de eventos, como conciertos y espectáculos.",
         "pending_confirmation": "Pendiente de Confirmación",
         "best_selling_events": "Eventos más vendidos",
-        "testimonies":"Testimonios",
+        "testimonies": "Testimonios",
         "opinions": "Opiniones de clientes",
         "opinion_text": "Nuestro objetivo es ofrecer a nuestros clientes una experiencia de compra sencilla y segura. Por eso, trabajamos con las principales entidades de pago online y contamos con un sistema de seguridad de última generación.",
         "Subscribe_to_our_newsletter": "¡Suscríbete a nuestro newsletter!",
         "keep_information": "Mantente informado de todas las novedades en eventos deportivos",
         "subscribe": "Suscríbete",
         "contact_us": "Contáctanos por Whatsapp o completa este formulario.",
-        "keep_information_events":"Mantente informado de todas las novedades en eventos deportivos.",
+        "keep_information_events": "Mantente informado de todas las novedades en eventos deportivos.",
         "readed": "He leído y acepto los términos y condiciones de uso.",
         "send": "Enviar",
         "sport": "DEPORTES",
@@ -87,5 +88,162 @@
         "readed": "He leído y acepto los",
         "terms": "términos y condiciones de uso.",
         "thanks": "Gracias por contactarnos!"
+    },
+    "Buy": {
+        "ticket": "Entrada",
+        "looking_tickets": "¿Qué entradas estas buscando?",
+        "per_tickets": "Por entrada",
+        "tickets": "Entradas",
+        "all": "Todas"
+    },
+    "Checkout": {
+        "detail": "Detalles",
+        "your_order": "Tu orden para",
+        "shipping_cost": "Gastos de envío",
+        "management_fees": "Gastos de gestión",
+        "start_payment_process": "Iniciar proceso de pago",
+        "verify": "Verificar",
+        "discount_coupon": "Cupón de descuento",
+        "remarks": "Observaciones",
+        "name": "Nombre",
+        "pay_secure": "Tu pago es 100% seguro",
+        "your_transaction": "Tus transacciones están seguras gracias a nuestro sistema de pago 3D Secure. Esto quiere decir que cuando hayas pagado, la entidad de tu tarjeta bancaria te pedirá un código que llega por SMS en el que validarán que estas comprando correctamente.",
+        "we_use": " Además usamos tecnología de seguridad SSL para proteger todos tus datos personales.",
+        "row": "Fila",
+        "discount": "Descuento",
+        "type": "Tipo",
+        "available_coupon": "Cupón disponible",
+        "not_coupon": "Cupón no disponible",
+        "finish_pay": "Finalizar pago",
+        "finish": "Finalizar"
+    },
+    "Profile": {
+        "your_events": "Tus eventos",
+        "sold": "Vendidas",
+        "purchased": "Compradas",
+        "pay": "Pagos",
+        "account": "Cuenta",
+        "address": "Direcciones",
+        "bank_data": "Datos bancarios",
+        "billing": "Facturación",
+        "logout": "Cerrar sesión",
+        "event": "Evento",
+        "category": "Categoría",
+        "row": "Fila",
+        "price": "Precio",
+        "actions": "Acciones",
+        "hide": "Ocultar",
+        "publish": "Publicar",
+        "company_name": "Razón social",
+        "country": "País",
+        "province": "Provincia",
+        "tax_domicile": "Domicilio fiscal",
+        "poblation": "Población",
+        "save": "Guardar",
+        "holder": "Titular",
+        "account_type": "Tipo de cuenta",
+        "add_address": "Ingresa tu dirección",
+        "add_bank_data": "Ingresa tus datos bancarios",
+        "add_billing_data": "Ingresa tus datos de facturación",
+        "add_personal_data": "Ingresa tus datos personales",
+        "saved": "Se han guardado exitosamente"
+    },
+    "purchase_questions": {
+        "faq": "Preguntas frecuentes",
+        "title": "Dudas sobre la compra de entradas:",
+        "seats_together_title": "¿Mis asientos estarán juntos?",
+        "seats_together_text": "Sí, las entradas adquiridas del mismo anuncio estarán juntas, a menos que se especifique algo distinto durante el proceso de confirmación de compra.",
+        "seat_location_title": "¿En qué lugar estarán mis asientos?",
+        "seat_location_text": "Todos los detalles disponibles sobre la localización de tu asiento se muestran en tu email de confirmación."
+    },
+    "delivery_questions": {
+        "title": "Dudas de como recibir mis entradas:",
+        "when_receive_tickets_title": "¿Cuándo recibiré mis entradas?",
+        "when_receive_tickets_text": "Recibirás tus entradas, entradas electrónicas incluidas, en la semana anterior al evento, ya que los organizadores suelen emitir las entradas en fechas muy próximas al evento, a menudo en la misma semana.",
+        "instant_download_tickets_text": "Si compraste entradas electrónicas de Descarga instantánea, podrás imprimirlas casi de inmediato.",
+        "track_order_status_text": "Puedes seguir el estado de tu pedido en el apartado Compras.",
+        "ensure_receive_on_time_title": "Formas de garantizar que recibirás tus entradas a tiempo:",
+        "ensure_receive_on_time_text_1": "Asegúrate de que tu dirección de entrega es correcta. Comprueba tu dirección de entrega aquí.",
+        "ensure_receive_on_time_text_2": "Asegúrate de elegir una dirección de entrega donde alguien pueda firmar la entrega, como, por ejemplo, en tu lugar de trabajo.",
+        "ensure_receive_on_time_text_3": "Si viajas al evento, añade tu dirección de viaje y la fecha de comienzo del viaje cuanto antes y nos aseguraremos de que las entradas se envíen al lugar correcto.",
+        "ensure_receive_on_time_text_4": "Asegúrate de que el número de teléfono que aparece en tu cuenta es correcto, por si tenemos que ponernos en contacto contigo."
+    },
+    "pricing_questions": {
+        "price_difference_title": "¿Por qué el precio que aparece en la entrada es diferente del que pago yo?",
+        "price_difference_text": "Las entradas de Pointickets se venden a precios que pueden estar por encima, por debajo o igual que el valor nominal que aparece en la entrada.",
+        "price_demand_text": "El precio de las entradas para los eventos más populares puede ser más alto que el valor nominal debido a la alta demanda. En Pointickets muchas entradas se venden más baratas que el precio nominal."
+    },
+    "name_on_ticket_questions": {
+        "different_name_title": "¿Por qué en mis entradas aparece el nombre de otra persona?",
+        "different_name_text": "Pointickets permite que terceras partes, particulares incluidos, vendan entradas en su plataforma. En algunos casos, puede aparecer el nombre del comprador original en la entrada. La entrada sigue siendo válida. Tu nombre no tiene que ser el mismo que aparece en la entrada para que puedas acceder al evento.",
+        "personalize_ticket_text": "Si fuera necesario personalizar la entrada con el nombre del asistente nuestro equipo de Atención al Cliente contactará contigo."
+    },
+    "cancellation_questions": {
+        "cancel_purchase_title": "¿Puedo cancelar mi compra?",
+        "cancel_purchase_text": "La satisfacción de nuestros clientes es fundamental para nosotros, pero como plataforma de intercambio de entradas entre particulares, nuestras transacciones son finales, por lo que ni el comprador ni el vendedor pueden cancelar el pedido por su parte. Estas políticas vigentes aseguran la aplicación de la Garantía FanProtect para todos nuestros clientes.",
+        "customer_service_text": "No obstante si una vez realizada la compra tuvieras problemas para acudir al evento ponte en contacto con nuestro equipo de Atención al Cliente, donde intentaremos ofrecerte la mejor solución posible."
+    },
+    "contact_questions": {
+        "contact_us_title": "¿Cómo me pongo en contacto con Pointickets?",
+        "contact_us_text": "Contáctanos a través de nuestro formulario.",
+        "email_us_text": "Puedes escribirnos a info@pointickets.com y te responderemos lo antes posible.",
+        "whatsapp_text": "Mándanos un WhatsApp."
+    },
+    "privacy_policy": {
+        "intro": {
+            "title": "Política de Privacidad",
+            "text": "Esta Política de Privacidad establece las bases sobre las que Platinumtickets SL (en adelante, “nosotros” o el “Responsable del Tratamiento”) con domicilio en Villa de Marín 4 28029 - Madrid, España, B10526994, sociedad que actualmente opera en España, trata sus datos de carácter personal cuando nos los facilite durante su experiencia a través de la página web https://www.pointickets.com (en adelante, “la Web”). Igualmente, le recordamos que cada vez que al usar la Web, nos facilite, o sea necesario que accedamos a cualquier tipo de información que por sus características nos permita identificarle, como su nombre y apellidos, e-mail, direcciones de facturación o envío, número de teléfono, tipo de dispositivo o número de tarjeta de débito o crédito, etc. (en adelante, “Datos Personales”), ya sea para navegar por la misma, comprar nuestros productos o hacer uso de sus servicios o funcionalidades, estará bajo la aplicación de esta Política de Privacidad, junto con las Condiciones Generales de la Web, y otros documentos referenciados en las mismas vigentes en cada momento, debiendo revisar dichos textos para comprobar que está conforme con ellos. Esta Política de Privacidad y nuestras Condiciones Generales podrían ser modificadas. Es su responsabilidad leerlos periódicamente, ya que resultarán aplicables aquellos que se encuentren vigentes en el momento de uso de la Web. En el ámbito de la venta a distancia, es obligatorio proporcionar cierta información personal, ya que esta información es necesaria tanto para procesar y entregar los productos, así como para preparar sus facturas. Tal información personal es estrictamente confidencial. No proporcionar tal información personal implicaría no poder realizar la compraventa. Mediante la aceptación a estas Condiciones Generales, el Usuario expresa su consentimiento expreso para que los Datos Personales sean incorporados al Fichero de Datos Personales y sean objeto de tratamiento automatizado por Platinumtickets SL con las finalidades antes indicadas."
+        },
+        "personal_data": {
+            "title": "Datos Personales",
+            "text": "Datos Personales hace referencia a cualquier información o datos que pueda identificarlo directamente (por ejemplo, su nombre) o indirectamente (por ejemplo, su documento nacional de identidad o D.N.I.). Los Datos Personales incluyen información tal como el correo electrónico / direcciones postales particulares / teléfono móvil, nombres de usuario, imágenes de perfil, preferencias personales y hábitos de compra, contenido generado por el usuario, información financiera e información de asistencia social, entre otros. También podría incluir identificadores numéricos únicos como la dirección IP de su ordenador o la dirección MAC de su dispositivo móvil, así como también la información que obtenemos a través de cookies. Esta Política cubre todos los datos personales recopilados y utilizados por Pointickets."
+        },
+        "data_collection": {
+            "title": "Recogida de Datos Personales y Finalidades del Tratamiento",
+            "text": "Recuerde que antes de empezar a utilizar cualquiera de nuestros servicios o funcionalidades, deberá leer esta Política, así como las Condiciones Generales de uso de la sección específica que verse sobre ese servicio o funcionalidad. En dicha sección podrá ver si hay alguna condición particular para su uso, o si se requiere un tratamiento específico de sus Datos Personales.",
+            "text2:": "El hecho de no facilitar cierta información señalada como obligatoria, puede con llevar que no sea posible gestionar su registro como usuario o el uso de determinadas funcionalidades o servicios disponibles a través de https://www.pointickets.com.",
+            "text3": "Por el presente, el usuario (usted) garantiza que los Datos Personales proporcionados son ciertos y exactos y se compromete a notificar cualquier cambio o modificación de estos. Cualquier pérdida o daño causado a la Web, a los responsables del Tratamiento o a cualquier tercero mediante la comunicación de información errónea, inexacta o incompleta en los formularios de registro será responsabilidad exclusiva del usuario."
+        },
+        "data_usage": {
+            "title": "¿Cómo Usamos Tus Datos?",
+            "text": "Nosotros y nuestros proveedores de servicios utilizamos la información personal para los siguientes fines: ",
+            "text1": "Proporcionar la funcionalidad de los Servicios, tal como organizar el acceso a tu cuenta registrada, permitirte comprar entradas, gestionar tu relación con nosotros y proporcionarte beneficios relacionados, promociones especiales o servicio de atención al cliente;",
+            "text2": "Responder a tus consultas y satisfacer tus peticiones, cuando te pongas en contacto con nosotros a través de uno de nuestros formularios de contacto en línea o de otro modo, por ejemplo, cuando nos envíes preguntas, sugerencias, cumplidos o quejas, o cuando solicites un presupuesto u otra información sobre nuestros Servicios.",
+            "text3": "Llevar a cabo las transacciones que realices, procesar devoluciones y cambios, verificar tu información y proporcionarte beneficios relacionados, promociones especiales o servicio al cliente.",
+            "text4": "Enviarte información administrativa, como cambios en nuestros términos, condiciones y políticas.",
+            "text5": "Hacer posible que envíes mensajes a otra persona a través de los Servicios, si así decides hacerlo."
+        },
+        "data_analysis": {
+            "title": "Análisis de Datos Personales",
+            "text": "Analizar datos personales para la elaboración de informes comerciales y la prestación de servicios personalizados."
+        },
+        "promotions": {
+            "title": "Participación en Promociones",
+            "text": "Permitir tu participación en sorteos, concursos u otras promociones. Podemos ofrecerte la oportunidad de participar en sorteos, concursos u otras promociones. Algunas de estas promociones tienen reglas adicionales que contienen información sobre cómo utilizaremos y divulgaremos tu información personal. Por favor, lee esas normas adicionales antes de elegir participar."
+        },
+        "business_purposes": {
+            "title": "Fines Comerciales",
+            "text": "Realizar auditorías, con el fin de verificar que nuestros procesos internos funcionan según lo previsto y para cumplir con los requisitos legales, reglamentarios o contractuales. Prevenir y detectar intentos de fraude y supervisar la seguridad anti-fraude para, por ejemplo, verificar tu identidad como parte de nuestro proceso de autentificación, cumplir con nuestros requisitos legales o reglamentarios, y detectar y prevenir ciberataques o intentos de cometer robos de identidad. Para fines de formación y calidad y para investigar cualquier reclamación que puedas presentar, o como prueba en cualquier disputa o litigio previsto entre tú y nosotros. Desarrollar nuevos productos y servicios. Potenciar, mejorar, reparar, mantener o modificar nuestros productos y servicios actuales, así como para emprender medidas de garantía de calidad y seguridad. Identificar las tendencias de uso, por ejemplo, entender qué partes de nuestros Servicios son las que más interesan a los usuarios. Determinar la eficacia de nuestras campañas promocionales, de modo que podamos adaptar nuestras campañas a las necesidades e intereses de nuestros usuarios. Para el funcionamiento y la expansión de nuestras actividades comerciales, por ejemplo, entender qué partes de nuestros Servicios son las que más interesan a nuestros usuarios, de modo que podamos centrar nuestras energías en satisfacer los intereses de nuestros usuarios."
+        },
+        "data_transfer": {
+            "title": "Transferencia de Datos",
+            "text": "Los Datos Personales que recabamos de usted pueden transferirse a, acceder desde, y almacenarse en un destino fuera del Espacio Económico Europeo (EEE). También pueden ser tratados por miembros del personal que operan fuera del EEE y que trabajan para nosotros o para uno de nuestros proveedores de servicios. Prestadores de servicios ubicados fuera del EEE tales como Facebook, Inc o Google, LLC podrán acceder a sus datos de carácter personal. Estos prestadores de servicios se encuentran acogidos al ‘Privacy Shield’ o escudo de privacidad y, por tanto, se encuentran obligados a proteger sus datos personales con arreglo a una serie de normas de protección y salvaguardias bien definidas por la Unión Europea."
+        },
+        "data_retention": {
+            "title": "Conservación de Datos Personales",
+            "text": "Solo conservamos sus Datos Personales durante el tiempo que los necesitemos para el propósito para el que tratamos sus Datos Personales, para satisfacer sus necesidades o para cumplir con nuestras obligaciones legales. Es posible que retengamos algunos datos personales para cumplir con nuestras obligaciones legales o reglamentarias, así como para administrar nuestros derechos (por ejemplo, para hacer valer nuestras reclamaciones ante los tribunales) o con fines estadísticos o históricos. Cuando ya no necesitemos usar sus datos personales, se eliminarán de nuestros sistemas y registros o se anonimizarán para que ya no podamos identificarlos. No ofrecemos ni vendemos sus datos personales."
+        },
+        "data_storage": {
+            "title": "Almacenamiento de Datos Personales",
+            "text": "Nos comprometemos a proteger sus Datos Personales y a tomar todas las precauciones razonables para hacerlo. Exigimos contractualmente que los terceros de confianza que manejan sus Datos Personales hagan lo mismo. Siempre hacemos nuestro mejor esfuerzo para proteger sus Datos Personales y una vez que hemos recibido su información personal, utilizamos procedimientos estrictos y funciones de seguridad para tratar de evitar el acceso no autorizado. Como la transmisión de información a través de Internet no es completamente segura, no podemos garantizar la seguridad de sus datos transmitidos a nuestro sitio. Por ello, cualquier transmisión es bajo su propio riesgo."
+        },
+        "privacy_rights": {
+            "title": "Tus Derechos en Materia de Privacidad",
+            "text": "Las leyes de protección de datos aplicables le conceden el derecho a oponerse al tratamiento de sus datos en algunas circunstancias, en particular para fines de publicidad directa, para la elaboración de perfiles con fines de publicidad directa y para otros intereses legítimos en el tratamiento. Si no quieres seguir recibiendo nuestros mensajes de correo electrónico relacionados con publicidad, puedes hacerlo seleccionando la opción ‘cancelar suscripción’ en las comunicaciones publicitarias que te enviamos o cambiando las preferencias de tu cuenta en cualquier momento. Ten en cuenta que, si optas por dejar de recibir nuestros correos electrónicos publicitarios, podemos seguir enviándote mensajes administrativos importantes, de los cuales no puedes darte de baja."
+        },
+        "contact": {
+            "title": "Contacto",
+            "text": "Si tiene cualquier duda o preocupación acerca de la forma en que tratamos y usamos sus datos personales o desea ejercer cualquiera de los derechos anteriormente descritos, póngase en contacto con info@pointickets.com."
+        }
     }
 }

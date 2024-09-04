@@ -1,9 +1,8 @@
 <template>
     <div id="main-wrapper" class="main-wrapper">
-
         <HeaderOne />
 
-        <BreadCrumbTwo title='Preguntas frecuentes' />
+        <BreadCrumbTwo :title="$t('purchase_questions.faq')" />
 
         <section class="privacy-policy-area terms-condition-area">
             <div class="container">
@@ -11,103 +10,81 @@
                     <div class="col-lg-12">
                         <div class="privacy-policy terms-condition">
                             <div class="text-block">
-                                <h2 class="title">Dudas sobre la compra de entradas:</h2>
+                                <h2 class="title">{{ $t('purchase_questions.title') }}</h2>
                                 <ul>
                                     <li class="lista">
-                                        <h3 class="title"><b>¿Mis asientos estaran juntos?</b></h3> Sí, las entradas
-                                        adquiridas del mismo
-                                        anuncio estarán juntas, a menos que se especifique algo distinto durante el proceso
-                                        de confirmación de compra.
+                                        <h3 class="title"><b>{{ $t('purchase_questions.seats_together_title') }}</b></h3>
+                                        {{ $t('purchase_questions.seats_together_text') }}
                                     </li>
 
                                     <li class="lista">
-                                        <h3 class="title">¿En qué lugar estarán mis asientos?</h3><b></b> Todos los detalles
-                                        disponibles sobre la
-                                        localización de tu asiento se muestran en tu email de confirmación.
-
+                                        <h3 class="title">{{ $t('purchase_questions.seat_location_title') }}</h3>
+                                        {{ $t('purchase_questions.seat_location_text') }}
                                     </li>
                                 </ul>
-
                             </div>
                             <div class="text-block">
-                                <h2 class="title">Dudas de como recibir mis entradas:</h2>
+                                <h2 class="title">{{ $t('delivery_questions.title') }}</h2>
                                 <ul>
-
                                     <li class="lista">
-                                        <h3 class="title"><b>¿Cuándo recibiré mis entradas?</b></h3>
-                                        Recibirás tus entradas, entradas electrónicas incluidas, en la semana
-                                        anterior al evento, ya que los organizadores suelen emitir las entradas en fechas
-                                        muy próximas al evento, a menudo en la misma semana.
+                                        <h3 class="title"><b>{{ $t('delivery_questions.when_receive_tickets_title') }}</b></h3>
+                                        {{ $t('delivery_questions.when_receive_tickets_text') }}
                                         <br><br>
-                                        Si compraste entradas electrónicas de Descarga instantánea, podrás imprimirlas casi
-                                        de inmediato.<br><br>
-                                        Puedes seguir el estado de tu pedido en el apartado Compras.<br><br>
-                                        Formas de garantizar que recibirás tus entradas a tiempo:<br><br>
+                                        {{ $t('delivery_questions.instant_download_tickets_text') }}
+                                        <br><br>
+                                        {{ $t('delivery_questions.track_order_status_text') }}
+                                        <br><br>
+                                        {{ $t('delivery_questions.ensure_receive_on_time_title') }}
+                                        <br><br>
                                         <ul>
-                                            <li>Asegúrate de que tu dirección de entrega es correcta. Comprueba tu dirección
-                                                de entrega aquí.</li>
-                                            <li>Asegúrate de elegir una dirección de entrega donde alguien pueda firmar la
-                                                entrega, como, por ejemplo, en tu lugar de trabajo.</li>
-                                            <li>Si viajas al evento, añade tu dirección de viaje y la fecha de comienzo del
-                                                viaje cuanto antes y nos aseguraremos de que las entradas se envíen al lugar
-                                                correcto.</li>
-                                            <li>Asegúrate de que el número de teléfono que aparece en tu cuenta es correcto,
-                                                por si tenemos que ponernos en contacto contigo.</li>
-
-
+                                            <li>{{ $t('delivery_questions.ensure_receive_on_time_text_1') }}</li>
+                                            <li>{{ $t('delivery_questions.ensure_receive_on_time_text_2') }}</li>
+                                            <li>{{ $t('delivery_questions.ensure_receive_on_time_text_3') }}</li>
+                                            <li>{{ $t('delivery_questions.ensure_receive_on_time_text_4') }}</li>
                                         </ul>
-
-                                    </li>
-
-                                    <li class="lista">
-                                        <h3 class="title"><b>¿Por qué el precio que aparece en la entrada es diferente del
-                                                que pago yo?</b></h3>
-                                        Las entradas de Pointickets se venden a precios que pueden estar por encima, por
-                                        debajo o igual que el valor nominal que aparece en la entrada.<br><br>
-                                        El precio de las entradas para los eventos más populares puede ser más alto que el
-                                        valor nominal debido a la alta demanda. En Pointickets muchas entradas se venden más
-                                        baratas que el precio nominal.
                                     </li>
                                     <li class="lista">
-                                        <h3 class="title"><b>¿Por qué en mis entradas aparece el nombre de otra persona?</b>
-                                        </h3> 
-                                        Pointickets permite que terceras partes, particulares incluidos, vendan entradas en
-                                        su plataforma. En algunos casos, puede aparecer el nombre del comprador original en
-                                        la entrada. La entrada sigue siendo válida. Tu nombre no tiene que ser el mismo que
-                                        aparece en la entrada para que puedas acceder al evento.<br><br>
-                                        Si fuera necesario personalizar la entrada con el nombre del asistente nuestro
-                                        equipo de Atención al Cliente contactará contigo.
+                                        <h3 class="title"><b>{{ $t('pricing_questions.price_difference_title') }}</b></h3>
+                                        {{ $t('pricing_questions.price_difference_text') }}
+                                        <br><br>
+                                        {{ $t('pricing_questions.price_demand_text') }}
+                                    </li>
+                                    <li class="lista">
+                                        <h3 class="title"><b>{{ $t('name_on_ticket_questions.different_name_title') }}</b></h3>
+                                        {{ $t('name_on_ticket_questions.different_name_text') }}
+                                        <br><br>
+                                        {{ $t('name_on_ticket_questions.personalize_ticket_text') }}
                                     </li>
                                 </ul>
                             </div>
                             <div class="text-block">
-                                <h2 class="title">¿Puedo cancelar mi compra?</h2>
+                                <h2 class="title">{{ $t('cancellation_questions.cancel_purchase_title') }}</h2>
                                 <p>
-                                    La satisfacción de nuestros clientes es fundamental para nosotros, pero como plataforma
-                                    de intercambio de entradas entre particulares, nuestras transacciones son finales, por
-                                    lo que ni el comprador ni el vendedor pueden cancelar el pedido por su parte. Estas
-                                    políticas vigentes aseguran la aplicación de la Garantía FanProtect para todos nuestros
-                                    clientes.<br><br>
-                                    No obstante si una vez realizada la compra tuvieras problemas para acudir al evento
-                                    ponte en contacto con nuestro equipo de Atención al Cliente, donde intentaremos
-                                    ofrecerte la mejor solución posible.
+                                    {{ $t('cancellation_questions.cancel_purchase_text') }}
+                                    <br><br>
+                                    {{ $t('cancellation_questions.customer_service_text') }}
                                 </p>
                             </div>
                             <div class="text-block">
-                                <h2 class="title">¿Cómo me pongo en contacto con Pointickets?</h2>
+                                <h2 class="title">{{ $t('contact_questions.contact_us_title') }}</h2>
                                 <ul>
-                                    <li><a href="/contacto"
-                                                style="text-decoration: underline;">Contáctanos a través de nuestro formulario.</a></li>
-                                    <li>Puedes escribirnos a <a href="mailto:info@pointickets.com"
-                                                style="text-decoration: underline;">info@pointickets.com</a> y te responderemos lo antes posible.</li>
-                                    <li><a href="https://wa.link/5sd3xh"
-                                        style="text-decoration: underline;">Mándanos un WhatsApp</a></li>
+                                    <li>
+                                        <a href="/contacto" style="text-decoration: underline;">
+                                            {{ $t('contact_questions.contact_us_text') }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        {{ $t('contact_questions.email_us_text') }}
+                                    </li>
+                                    <li>
+                                        <a href="https://wa.link/5sd3xh" style="text-decoration: underline;">
+                                            {{ $t('contact_questions.whatsapp_text') }}
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -116,6 +93,7 @@
         <ScrollToTop />
     </div>
 </template>
+
 
 <style>
 .privacy-policy ul .lista:after {

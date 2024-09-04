@@ -14,38 +14,38 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#gn-ques"
-                                        type="button" role="tab" aria-selected="true">Tus eventos</button>
+                                        type="button" role="tab" aria-selected="true">{{ $t('Profile.your_events') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rg-ques"
-                                        type="button" role="tab" aria-selected="false">Vendidas</button>
+                                        type="button" role="tab" aria-selected="false">{{ $t('Profile.sold') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ad-ques"
-                                        type="button" role="tab" aria-selected="false">Compradas</button>
+                                        type="button" role="tab" aria-selected="false">{{ $t('Profile.purchased') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#com-policy"
-                                        type="button" role="tab" aria-selected="false">Pagos</button>
+                                        type="button" role="tab" aria-selected="false">{{ $t('Profile.pay') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pay-option"
-                                        type="button" role="tab" aria-selected="false">Cuenta</button>
+                                        type="button" role="tab" aria-selected="false">{{ $t('Profile.account') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#terms-condition"
-                                        type="button" role="tab" aria-selected="false">Direcciones</button>
+                                        type="button" role="tab" aria-selected="false">{{ $t('Profile.address') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bank" type="button"
-                                        role="tab" aria-selected="false">Datos bancarios</button>
+                                        role="tab" aria-selected="false">{{ $t('Profile.bank_data') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#facturation"
-                                        type="button" role="tab" aria-selected="false">Facturación</button>
+                                        type="button" role="tab" aria-selected="false">{{ $t('Profile.billing') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" type="button" @click="logout">Cerrar sesión</button>
+                                    <button class="nav-link" type="button" @click="logout">{{ $t('Profile.logout') }}</button>
                                 </li>
                             </ul>
                         </div>
@@ -59,12 +59,12 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
-                                                <th scope="col">Evento</th>
+                                                <th scope="col">{{ $t('Profile.event') }}</th>
                                                 <th scope="col">Sector</th>
-                                                <th scope="col">Categoría</th>
-                                                <th scope="col">Fila</th>
-                                                <th scope="col">Precio</th>
-                                                <th scope="col">Acciones</th>
+                                                <th scope="col">{{ $t('Profile.category') }}</th>
+                                                <th scope="col">{{ $t('Profile.row') }}</th>
+                                                <th scope="col">{{ $t('Profile.price') }}</th>
+                                                <th scope="col">{{ $t('Profile.actions') }}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -76,7 +76,7 @@
                                                 <td scope="row">{{ item.attributes.Fila }}</td>
                                                 <td scope="row">{{ item.attributes.endPrice }} €</td>
                                                 <td scope="row"><button :class='`btn btn-${(item.attributes.publishedAt)?"danger": "success"}`'
-                                                        @click="StatusTicket(item.id, item.attributes.publishedAt)">{{ (item.attributes.publishedAt)? "Ocultar": "Publicar" }}</button></td>
+                                                        @click="StatusTicket(item.id, item.attributes.publishedAt)">{{ (item.attributes.publishedAt)? $t('Profile.hide'): $t('Profile.publish') }}</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -89,11 +89,11 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
-                                                <th scope="col">Evento</th>
+                                                <th scope="col">{{ $t('Profile.event') }}</th>
                                                 <th scope="col">Sector</th>
-                                                <th scope="col">Categoría</th>
-                                                <th scope="col">Fila</th>
-                                                <th scope="col">Precio</th>
+                                                <th scope="col">{{ $t('Profile.category') }}</th>
+                                                <th scope="col">{{ $t('Profile.row') }}</th>
+                                                <th scope="col">{{ $t('Profile.price') }}</th>
 
                                             </tr>
                                         </thead>
@@ -116,11 +116,11 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
-                                                <th scope="col">Evento</th>
+                                                <th scope="col">{{ $t('Profile.event') }}</th>
                                                 <th scope="col">Sector</th>
-                                                <th scope="col">Categoría</th>
-                                                <th scope="col">Fila</th>
-                                                <th scope="col">Precio</th>
+                                                <th scope="col">{{ $t('Profile.category') }}</th>
+                                                <th scope="col">{{ $t('Profile.row') }}</th>
+                                                <th scope="col">{{ $t('Profile.price') }}</th>
 
                                             </tr>
                                         </thead>
@@ -143,10 +143,10 @@
                             <div class="tab-pane fade" id="pay-option" role="tabpanel">
                                 <div class="login-form-box registration-form">
 
-                                    <h3 class="title">Ingrese sus datos personales</h3>
+                                    <h3 class="title">{{ $t('Profile.add_personal_data') }}</h3>
                                     <div v-if="showResult" class="col-12">
                                         <div class="alert alert-success" role="alert">
-                                            Se han guardado exitosamente
+                                            {{ $t('Profile.saved') }}
                                         </div>
                                     </div>
                                     <form>
@@ -154,7 +154,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Nombre y apellido</label>
+                                                        <label for="reg-name">{{ $t('Register.name_lastname') }}</label>
                                                         <input type="text" v-model="user.fullname" placeholder="Nombre">
                                                     </div>
                                                 </div>
@@ -165,13 +165,13 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Fecha de nacimiento</label>
+                                                        <label for="reg-name">{{ $t('Register.date_bird') }}</label>
                                                         <input type="date" v-model="user.birthday" placeholder="Fecha">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Telefono</label>
+                                                        <label for="reg-name">{{ $t('Register.phone') }}</label>
                                                         <input type="text" v-model="user.phone" placeholder="Telefono">
                                                     </div>
                                                 </div>
@@ -190,7 +190,7 @@
 
 
                                         <div class="form-group mt-4">
-                                            <button type="button" class="edu-btn btn-medium" @click="updateUser">Guardar
+                                            <button type="button" class="edu-btn btn-medium" @click="updateUser">{{ $t('Profile.save') }}
                                                 <i class="icon-4"></i></button>
 
                                         </div>
@@ -199,21 +199,21 @@
                             </div>
                             <div class="tab-pane fade" id="terms-condition" role="tabpanel">
                                 <div class="login-form-box registration-form">
-                                    <h3 class="title">Ingrese su dirección</h3>
+                                    <h3 class="title">{{ $t('Profile.add_address') }}</h3>
                                     <div v-if="showResult" class="col-12">
                                         <div class="alert alert-success" role="alert">
-                                            Se han guardado exitosamente
+                                            {{ $t('Profile.saved') }}
                                         </div>
                                     </div>
                                     <form>
                                         <div class="form-group">
-                                            <label for="reg-name">Dirección*</label>
+                                            <label for="reg-name">{{ $t('Profile.address') }}*</label>
                                             <textarea class="form-control" v-model="user.address" cols="30" rows="4"
                                                 placeholder="Ingresa tu dirección"></textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <button @click="updateUser" type="button" class="edu-btn btn-medium">Guardar
+                                            <button @click="updateUser" type="button" class="edu-btn btn-medium">{{ $t('Profile.save') }}
                                                 <i class="icon-4"></i></button>
                                         </div>
                                     </form>
@@ -221,15 +221,15 @@
                             </div>
                             <div class="tab-pane fade" id="bank" role="tabpanel">
                                 <div class="login-form-box registration-form">
-                                    <h3 class="title">Ingrese sus datos bancarios</h3>
+                                    <h3 class="title">{{ $t('Profile.add_bank_data') }}</h3>
                                     <div v-if="showResult" class="col-12">
                                         <div class="alert alert-success" role="alert">
-                                            Se han guardado exitosamente
+                                            {{ $t('Profile.saved') }}
                                         </div>
                                     </div>
                                     <form>
                                         <div class="form-group">
-                                            <label for="reg-name">Títular*</label>
+                                            <label for="reg-name">{{ $t('Profile.holder') }}*</label>
                                             <input type="text" v-model="user.holder" placeholder="Titular">
                                         </div>
                                         <div class="form-group">
@@ -237,13 +237,13 @@
                                             <input type="email" v-model="user.iban" placeholder="IBAN">
                                         </div>
                                         <div class="form-group">
-                                            <label for="reg-name">Tipo de cuenta*</label>
+                                            <label for="reg-name">{{ $t('Profile.account_type') }}*</label>
                                             <input type="text" v-model="user.type_account" placeholder="Tipo de cuenta">
                                         </div>
 
                                         <div class="form-group">
                                             <button @click="updateUser()" type="button"
-                                                class="edu-btn btn-medium">Guardar
+                                                class="edu-btn btn-medium">{{ $t('Profile.save') }}
                                                 <i class="icon-4"></i></button>
                                         </div>
                                     </form>
@@ -251,10 +251,10 @@
                             </div>
                             <div class="tab-pane fade" id="facturation" role="tabpanel">
                                 <div class="login-form-box registration-form">
-                                    <h3 class="title">Ingrese sus datos de facturación</h3>
+                                    <h3 class="title">{{ $t('Profile.add_billing_data') }}</h3>
                                     <div v-if="showResult" class="col-12">
                                         <div class="alert alert-success" role="alert">
-                                            Se han guardado exitosamente
+                                            {{ $t('Profile.saved') }}
                                         </div>
                                     </div>
                                     <form>
@@ -262,7 +262,7 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Razon social*</label>
+                                                        <label for="reg-name">{{ $t('Profile.company_name') }}*</label>
                                                         <input type="text" v-model="user.social_reason"
                                                             placeholder="Razon social">
                                                     </div>
@@ -284,20 +284,20 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label for="reg-name">País*</label>
+                                                        <label for="reg-name">{{ $t('Profile.country') }}*</label>
                                                         <input type="text" v-model="user.country" placeholder="Pais">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Provincia*</label>
+                                                        <label for="reg-name">{{ $t('Profile.province') }}*</label>
                                                         <input type="text" v-model="user.province"
                                                             placeholder="Provincia">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Poblacion*</label>
+                                                        <label for="reg-name">{{ $t('Profile.poblation') }}*</label>
                                                         <input type="text" v-model="user.poblation"
                                                             placeholder="Poblacion">
                                                     </div>
@@ -306,7 +306,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
-                                                        <label for="reg-name">Domicilio fiscal*</label>
+                                                        <label for="reg-name">{{ $t('Profile.tax_domicile') }}*</label>
                                                         <input type="text" v-model="user.tax_domicile"
                                                             placeholder="Domicilio">
                                                     </div>
@@ -318,7 +318,7 @@
 
                                         <div class="form-group">
                                             <button type="button" class="edu-btn btn-medium"
-                                                @click="updateUser()">Guardar
+                                                @click="updateUser()">{{ $t('Profile.save') }}
                                                 <i class="icon-4"></i></button>
 
                                         </div>

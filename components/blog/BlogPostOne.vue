@@ -16,7 +16,7 @@
                 </h5>
                 
                 <div class="button-group">
-                    <a :href="blogInfo.url" class="edu-btn btn-medium mt--50">Ver más</a>
+                    <a :href="blogInfo.url" class="edu-btn btn-medium mt--50">{{ $t('Home.see_more') }}</a>
                 </div>
             </div>
         </div>

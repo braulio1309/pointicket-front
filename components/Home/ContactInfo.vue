@@ -6,7 +6,7 @@
                     <div class=" edu-cta-box bg-image bg-image--7">
                         <div v-if="showResultNews" class="col-12">
                             <div id="contact-form" class="alert alert-success" role="alert">
-                                ¡Te has suscrito con éxito!
+                                {{ $t('ContactUs.success') }} 
                             </div>
                         </div>
                         <h4 class="widget-title" style="color: white;">{{ $t('Home.Subscribe_to_our_newsletter') }}</h4><br>
@@ -37,7 +37,7 @@
                             </div>
                             <div v-if="showResult" class="col-12">
                                 <div id="contact-form" class="alert alert-success" role="alert">
-                                    Gracias por contactarnos!
+                                    {{ $t('ContactUs.thanks') }}
                                 </div>
                             </div>
                             <div v-if="emailValidation" class="col-12">
@@ -47,39 +47,39 @@
                             </div>
                             <div v-if="checkValidation" class="col-12">
                                 <div class="alert alert-danger" role="alert">
-                                    He leído y acepto los <a href="/terms-condition" style="text-decoration: underline;">términos y condiciones de uso.</a>
+                                    {{ $t('ContactUs.readed') }} <a href="/terms-condition" style="text-decoration: underline;">{{ $t('ContactUs.terms') }}.</a>
                                 </div>
                             </div>
 
                             <form class="rnt-contact-form rwt-dynamic-form" ref="form" @submit.prevent="handleSubmit">
                                 <div class="row row--10">
                                     <div class="form-group col-lg-6">
-                                        <input type="text" name="fullname" v-model="name" placeholder="Nombre">
+                                        <input type="text" name="fullname" v-model="name" :placeholder="$t('Register.name')">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <input type="email" name="email" v-model="email" placeholder="Email">
                                     </div>
                                     <div class="form-group col-12">
-                                        <input type="tel" name="phone" v-model="phone" placeholder="Telefono">
+                                        <input type="tel" name="phone" v-model="phone" placeholder="12345678...">
                                     </div>
                                     <div class="form-group col-12">
                                         <textarea name="message" cols="30" rows="6" v-model="message"
-                                            placeholder="Mensaje"></textarea>
+                                            :placeholder="$t('ContactUs.message')"></textarea>
                                     </div>
                                     <div class="form-group chekbox-area">
                                         <div class="edu-form-check">
                                             <input type="checkbox" id="remember-me" v-model="checkbox" class="chec">
-                                            <label for="remember-me">He leído y acepto los <a href="/terms-condition" style="text-decoration: underline;">términos y condiciones de uso.</a></label>
+                                            <label for="remember-me">{{ $t('ContactUs.readed') }} <a href="/terms-condition" style="text-decoration: underline;">{{ $t('ContactUs.terms') }}</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group col-12 text-center">
                                         <button class="rn-btn edu-btn btn-medium submit-btn" name="submit" type="submit"
                                             :disabled="isLoading" @click="handleSubmit">
                                             <span v-if="isLoading">
-                                                Cargando... <i class="fas fa-spinner fa-spin"></i>
+                                                {{ $t('ContactUs.loading') }} <i class="fas fa-spinner fa-spin"></i>
                                             </span>
                                             <span v-else>
-                                                Enviar<i class="icon-4"></i>
+                                                {{ $t('Home.send') }}<i class="icon-4"></i>
                                             </span>
                                         </button>
                                     </div>

@@ -4,46 +4,46 @@
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <div class="login-form-box registration-form">
-                    <h3 class="title">Registrarse</h3>
-                    <p>Tienes una cuenta? <a href="/login" style="text-decoration: underline;">Inicia sesión</a></p>
+                    <h3 class="title">{{ $t('Register.register') }}</h3>
+                    <p>{{ $t('Login.dont_have_account') }} <a href="/login" style="text-decoration: underline;">{{ $t('Login.login') }}</a></p>
                     <div v-if="success" class="col-12">
                         <div class="alert alert-success" role="alert">
-                            Te hemos enviado un correo para confirmar tu cuenta 
+                            {{ $t('Register.send') }}
                         </div>
                     </div>
                     <div v-if="error" class="col-12">
                         <div class="alert alert-danger" role="alert">
-                            Complete correctamente el formulario 
+                            {{ $t('Register.complete') }}
                         </div>
                     </div>
                     <form>
                         <div class="form-group">
-                            <label for="reg-name">Nombre y apellido*</label>
-                            <input type="text" v-model="fullname" placeholder="Nombre y apellido">
+                            <label for="reg-name">{{ $t('Register.name_lastname') }}*</label>
+                            <input type="text" v-model="fullname" :placeholder="$t('Register.name_lastname')">
                         </div>
                         <div class="form-group">
                             <label for="log-email">Email*</label>
                             <input type="email" v-model="email" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label for="log-password">Contraseña*</label>
-                            <input :type="showPassword" v-model="password" placeholder="Contraseña">
+                            <label for="log-password">{{ $t('Login.password')}}*</label>
+                            <input :type="showPassword" v-model="password" :placeholder="$t('Login.password')">
                             <span class="password-show" @click="toggleShowPassword"><i class="icon-76"></i></span>
                         </div>
                         <div class="form-group">
-                            <label for="log-password">Telefono*</label>
+                            <label for="log-password">{{ $t('Register.phone')}}*</label>
                             <input type="text" placeholder="123465" v-model="phone">
                         </div>
                         <div class="form-group">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="terms-condition" v-model="checkbox">
-                                <label class="form-check-label" for="terms-condition">Estoy de acuerdo con los
-                                    <NuxtLink to="/terms-condition">Terminos y condiciones</NuxtLink>
+                                <label class="form-check-label" for="terms-condition">{{ $t('Register.agree')}}
+                                    <NuxtLink to="/terms-condition">{{ $t('terms_condition.terms_condition')}}</NuxtLink>
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="edu-btn btn-medium" @click="register">Crear cuenta <i class="icon-4"></i></button>
+                            <button type="button" class="edu-btn btn-medium" @click="register">{{ $t('Register.create_account')}} <i class="icon-4"></i></button>
                         </div>
                     </form>
                 </div>

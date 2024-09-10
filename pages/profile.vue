@@ -391,7 +391,7 @@ export default {
             })
             .then((response) => {
                 this.show = true;
-                this.isLogged();
+                //this.isLogged();
                 this.getUserData();
                 this.getTicketsSells();
                 this.getTicketsBuy();

@@ -4,11 +4,11 @@
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <div class="login-form-box">
-                    <h3 class="title">Iniciar sesión</h3>
-                    <p>¿No tienes cuenta? <a href="/register" style="text-decoration: underline;">Registrate</a></p>
+                    <h3 class="title">{{ $t('Login.login') }}</h3>
+                    <p>{{ $t('Login.dont_have_account') }} <a href="/register" style="text-decoration: underline;">{{ $t('Register.register') }}</a></p>
                     <div v-if="error" class="col-12">
                         <div class="alert alert-danger" role="alert">
-                            Datos incorrectos, intente de nuevo
+                            {{ $t('Login.wrong_data') }}
                         </div>
                     </div>
                     <div v-if="this.auth" class="col-12">
@@ -22,7 +22,7 @@
                             <input type="email" v-model="email" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label for="current-log-password">Contraseña*</label>
+                            <label for="current-log-password">{{ $t('Login.password')}}*</label>
                             <input :type="showPassword" v-model="password"
                                 placeholder="Contraseña">
                             <span class="password-show" @click="toggleShowPassword"><i class="icon-76"></i></span>
@@ -30,12 +30,12 @@
                         <div class="form-group">
                             <div class="form-check">
                                 <input type="checkbox" id="remember-me" v-model="checkbox" class="chec form-check-input">
-                                <label class="form-check-label" for="remember-me"><NuxtLink >Recuerdame</NuxtLink></label>
+                                <label class="form-check-label" for="remember-me"><NuxtLink >{{ $t('Login.remember_me')}}</NuxtLink></label>
                             </div>
-                            <a href="/recuperar" class="password-reset">Perdiste tu contraseña?</a>
+                            <a href="/recuperar" class="password-reset">{{ $t('Login.lost_password')}}</a>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="edu-btn btn-medium" @click="login">Iniciar sesión <i class="icon-4"></i></button>
+                            <button type="button" class="edu-btn btn-medium" @click="login">{{ $t('Login.login')}} <i class="icon-4"></i></button>
                         </div>
                     </form>
                 </div>

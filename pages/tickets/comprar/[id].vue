@@ -44,42 +44,61 @@
                                                 <div class="col-lg-6">
                                                     <div class="edu-blog-sidebar">
                                                         <div class="col-lg-12 order-lg-1 col-pr--35">
-                                                            <div v-if="getItems.length > 0" class="row" v-for="event in getItems"
-                                                                    :key="event.id">
-                                                                <div class="col-12" v-if="!event.attributes.compra.data" >
-                                                                    <div  class="edu-event-list event-list-2">
+                                                            <div v-if="getItems.length > 0" class="row"
+                                                                v-for="event in getItems" :key="event.id">
+                                                                <div class="col-12"
+                                                                    v-if="!event.attributes.compra.data">
+                                                                    <div class="edu-event-list event-list-2">
                                                                         <div class="">
                                                                             <div class="content">
                                                                                 <div class="row">
                                                                                     <div class="col-sm-6">
-                                                                                        
+
                                                                                         <h6 class="title">
                                                                                             <NuxtLink
                                                                                                 :to="'/shop/checkout/' + event.id">
                                                                                                 {{
                                                                                                     event.attributes.seat }}
-                                                                                                {{ $t('Buy.tickets') }} - {{
-                                                                                                    event.attributes.Category.slice(0, 5) }} 
-                                                                                                <span v-if="event.attributes.Category.includes('Premium')"> Premium</span>
-                                                                                                <span v-if="event.attributes.Category.includes('Alta')"> Alta</span>
-                                                                                                <span v-if="event.attributes.Category.includes('fondo')"> Fondo</span>
-                                                                                                <span v-if="event.attributes.Category.includes('Lateral')"> Lateral</span><br>
-                                                                                                <span v-if="event.attributes.Fila > 0"> Sector: {{ event.attributes.Fila }}</span>
+                                                                                                {{ $t('Buy.tickets') }}
+                                                                                                - {{
+                                                                                                    event.attributes.Category.slice(0,
+                                                                                                5) }}
+                                                                                                <span
+                                                                                                    v-if="event.attributes.Category.includes('Premium')">
+                                                                                                    Premium</span>
+                                                                                                <span
+                                                                                                    v-if="event.attributes.Category.includes('Alta')">
+                                                                                                    Alta</span>
+                                                                                                <span
+                                                                                                    v-if="event.attributes.Category.includes('fondo')">
+                                                                                                    Fondo</span>
+                                                                                                <span
+                                                                                                    v-if="event.attributes.Category.includes('Lateral')">
+                                                                                                    Lateral</span><br>
+                                                                                                <span
+                                                                                                    v-if="event.attributes.Fila > 0">
+                                                                                                    Sector: {{
+                                                                                                    event.attributes.Fila
+                                                                                                    }}</span>
                                                                                             </NuxtLink>
                                                                                         </h6>
                                                                                         <h7 class="title">
                                                                                             <NuxtLink
                                                                                                 :to="'/shop/checkout/' + event.id">
                                                                                                 €{{
-                                                                                                    event.attributes.endPrice }}
-                                                                                                <span>{{ $t('Buy.per_tickets') }}</span>
-           
+                                                                                                    event.attributes.endPrice
+                                                                                                }}
+                                                                                                <span>{{
+                                                                                                    $t('Buy.per_tickets')
+                                                                                                    }}</span>
+
                                                                                             </NuxtLink>
                                                                                         </h7>
                                                                                     </div>
                                                                                     <div class="col-sm-6">
                                                                                         <div class="read-more-btn">
-                                                                                            <NuxtLink style="color: white;"
+                                                                                            <NuxtLink
+                                                                                                style="color: white;"
                                                                                                 id="btn"
                                                                                                 class="edu-btn btn-medium"
                                                                                                 :to="'/shop/checkout/' + event.id">
@@ -94,7 +113,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div  v-if="getItems.length === 0" class="alert alert-info">
+                                                            <div v-if="getItems.length === 0" class="alert alert-info">
                                                                 No hay entradas disponibles
                                                             </div>
                                                         </div>
@@ -148,11 +167,14 @@
     #edu-btn:hover {
         color: black !important;
     }
+
     @media (max-width: 768px) {
         img {
-            height: 300px; /* Ajusta esta altura según tus necesidades */
-            object-fit: cover; 
+            height: 300px;
+            /* Ajusta esta altura según tus necesidades */
+            object-fit: cover;
         }
+
         .edu-blog-sidebar {
             margin-top: -30px;
             height: 50%;
@@ -163,8 +185,8 @@
 
 <script>
 definePageMeta({
-  title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
-  description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '                
+    title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
+    description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';
@@ -190,7 +212,7 @@ export default {
         return {
             title: 'Vender Entradas',
             filterData: [],
-            selectedCategory: 'Todas',
+            selectedCategory: this.$t('Buy.all'),
             event: null,
             eventId: null,
             fullTickets: [],
@@ -198,22 +220,22 @@ export default {
                 {
                     thumb: '/images/gallery/gallery-01.jpg',
                     src: '/images/gallery/gallery-01.jpg',
-                    category: ['1 entrada']
+                    category: ['1 ' + this.$t('Buy.tickets')]
                 },
                 {
                     thumb: '/images/gallery/gallery-02.jpg',
                     src: '/images/gallery/gallery-02.jpg',
-                    category: ['2 entradas']
+                    category: ['2 ' + this.$t('Buy.tickets')]
                 },
                 {
                     thumb: '/images/gallery/gallery-03.jpg',
                     src: '/images/gallery/gallery-03.jpg',
-                    category: ['3 entradas']
+                    category: ['3 '+ this.$t('Buy.tickets')]
                 },
                 {
                     thumb: '/images/gallery/gallery-04.jpg',
                     src: '/images/gallery/gallery-04.jpg',
-                    category: ['+4 entradas']
+                    category: ['+4 ' +this.$t('Buy.tickets')]
                 },
 
             ],
@@ -228,21 +250,53 @@ export default {
             }
         }
     },
+    watch: {
+        '$i18n.locale'(newLocale, oldLocale) {
+            this.handleLanguageChange(newLocale, oldLocale);
+        }
+    },
     computed: {
         filterCategory() {
-            return ['Todas', ...new Set(this.items.map((elem) => elem.category[0]).flat())]
+            return [this.$t('Buy.all'), ...new Set(this.items.map((elem) => elem.category[0]).flat())]
         },
         getItems() {
             let start = (this.currentPage - 1) * this.perPage;
             let end = this.currentPage * this.perPage;
             return this.eventItems.sort((a, b) => a.attributes.endPrice - b.attributes.endPrice)
-            .filter(item => item.attributes.compra.data === null && item.attributes.publishedAt !== null).slice(start, end);
+                .filter(item => item.attributes.compra.data === null && item.attributes.publishedAt !== null).slice(start, end);
         },
         getPaginateCount() {
             return Math.ceil(this.eventItems.length / this.perPage);
         }
     },
     methods: {
+        handleLanguageChange(newLocale, oldLocale) {
+            this.selectedCategory = this.$t('Buy.all');
+            this.items = [
+                {
+                    thumb: '/images/gallery/gallery-01.jpg',
+                    src: '/images/gallery/gallery-01.jpg',
+                    category: ['1 ' + this.$t('Buy.tickets')]
+                },
+                {
+                    thumb: '/images/gallery/gallery-02.jpg',
+                    src: '/images/gallery/gallery-02.jpg',
+                    category: ['2 ' + this.$t('Buy.tickets')]
+                },
+                {
+                    thumb: '/images/gallery/gallery-03.jpg',
+                    src: '/images/gallery/gallery-03.jpg',
+                    category: ['3 ' + this.$t('Buy.tickets')]
+                },
+                {
+                    thumb: '/images/gallery/gallery-04.jpg',
+                    src: '/images/gallery/gallery-04.jpg',
+                    category: ['+4 ' + this.$t('Buy.tickets')]
+                },
+
+            ],
+            console.log(`Language changed from ${oldLocale} to ${newLocale}`);
+        },
         filterHandler(cat) {
             this.selectedCategory = cat;
             if (window.innerWidth < 768) {
@@ -251,9 +305,9 @@ export default {
                     section.scrollIntoView({ behavior: 'smooth' });
                 }
             }
-            if (this.selectedCategory === 'Todas') {
+            if (this.selectedCategory === 'Todas' || this.selectedCategory === 'All') {
                 this.eventItems = this.fullTickets.filter((item) => item.attributes.publishedAt !== null);
-            } else if(parseInt(cat[1]) >= 4) {
+            } else if (parseInt(cat[1]) >= 4) {
                 this.eventItems = this.fullTickets.filter((item) => (item.attributes.seat >= parseInt(cat[1]) && item.attributes.publishedAt !== null));
             } else {
                 this.eventItems = this.fullTickets.filter((item) => (item.attributes.seat == cat[0] && item.attributes.publishedAt !== null));
@@ -303,7 +357,6 @@ export default {
         },
     },
     mounted() {
-       
         this.filterData = this.items;
         this.eventId = this.$route.params.id;
         localStorage.setItem('lastevent', this.eventId)

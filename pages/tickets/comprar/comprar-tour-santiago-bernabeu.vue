@@ -8,11 +8,10 @@
                 <div class="edu-course-area course-area-3">
                     <div v-if="finish" class="col-12 mt--50 mb--50">
                         <div class="alert alert-success" role="alert">
-                            <h4 class="alert-heading">¡Entrada registrada exitosamente!</h4>
-                            <p>Tu entrada está en una etapa de aprobación, te llegará un correo en el momento de la
-                                aprobación.</p>
+                            <h4 class="alert-heading">{{ $t('Sell.good_save') }}</h4>
+                            <p>{{ $t('Sell.text_save') }}</p>
                             <hr>
-                            <p class="mb-0">Cualquier duda puedes contactarnos por los medios indicados.
+                            <p class="mb-0">{{ $t('Sell.contact') }}
                             </p>
                         </div>
                     </div>
@@ -20,7 +19,7 @@
                         <div class="isotope-wrapper" style="margin-top: 100px;">
                             <div class="isotop-button isotop-filter nav">
                                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#undergraduate"
-                                    role="tab">Información de entrada</button>
+                                    role="tab">{{ $t('Tour.ticket') }}</button>
                             </div>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="undergraduate" role="tabpanel">
@@ -49,7 +48,7 @@
                                                             <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Tipo de entrada</label>
+                                                                        <label>{{ $t('Sell.type') }}</label>
                                                                         <select class="edu-select" v-model="data.type">
                                                                             <option value="Classic">Classic</option>
                                                                             <option value="Classic Hora Flexible">Classic Hora Flexible</option>
@@ -59,13 +58,13 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Fecha</label>
+                                                                        <label>{{ $t('Tour.date') }}</label>
                                                                         <input type="date" style="font-size: 1.1em;" v-model="data.date" class="form-control" :min="today">
 
                                                                     </div>
 
                                                                     <div class="form-group">
-                                                                        <label>Hora</label>
+                                                                        <label>{{ $t('Tour.hour') }}</label>
                                                                         <select v-model="data.hour" class="form-control" style="font-size: 1.1em;">
                                                                             <option v-for="time in generateTimes()" :key="time" :value="time">{{ time }}</option>
                                                                         </select>
@@ -76,7 +75,7 @@
 
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Cantidad de entradas</label>
+                                                                        <label>{{ $t('Tour.count') }}</label>
                                                                         <input type="number" class="form-control"
                                                                             placeholder="Asientos" style="font-size: 1.1em;" v-model="data.seat"
                                                                             min="1">
@@ -84,7 +83,7 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <button @click="checkout" class="edu-btn btn-medium mt--50">Iniciar proceso de pago</button>
+                                                                        <button @click="checkout" class="edu-btn btn-medium mt--50">{{ $t('Checkout.start_payment_process') }}</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

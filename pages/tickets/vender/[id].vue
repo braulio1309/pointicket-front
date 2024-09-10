@@ -8,11 +8,10 @@
                 <div class="edu-course-area course-area-3">
                     <div v-if="finish" class="col-12 mt--50 mb--50">
                         <div class="alert alert-success" role="alert">
-                            <h4 class="alert-heading">¡Entrada registrada exitosamente!</h4>
-                            <p>Tu entrada está en una etapa de aprobación, te llegará un correo en el momento de la
-                                aprobación.</p>
+                            <h4 class="alert-heading">{{ $t('Sell.good_save') }}</h4>
+                            <p>{{ $t('Sell.text_save') }}</p>
                             <hr>
-                            <p class="mb-0">Cualquier duda puedes contactarnos por los medios indicados.
+                            <p class="mb-0">{{ $t('Sell.contact') }}
                             </p>
                         </div>
                     </div>
@@ -20,17 +19,14 @@
                         <div class="isotope-wrapper" style="margin-top: 100px;">
                             <div class="isotop-button isotop-filter nav">
                                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#undergraduate"
-                                    role="tab">Tipo de entrada</button>
+                                    role="tab">{{ $t('Sell.type') }}</button>
                                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#graduate" role="tab"
-                                    :disabled="!type || !sector || !category || !row">Precio
-                                    de venta</button>
+                                    :disabled="!type || !sector || !category || !row">{{ $t('Sell.price_title') }}</button>
                                 <button v-if="this.type == 'Digital'" class="nav-link" data-bs-toggle="pill"
-                                    data-bs-target="#file" role="tab" :disabled="!startPrice || !newPrice">Carga la
-                                    entrada</button>
+                                    data-bs-target="#file" role="tab" :disabled="!startPrice || !newPrice">{{ $t('Sell.ticket_upload') }}</button>
                                 <button v-if="!this.userCopy.iban || !this.userCopy.holder || !this.userCopy.type_account"
                                     class="nav-link" data-bs-toggle="pill" :disabled="!startPrice || !newPrice"
-                                    data-bs-target="#bank" role="tab">Datos
-                                    bancarios</button>
+                                    data-bs-target="#bank" role="tab">{{ $t('Sell.bank_data') }}</button>
 
                             </div>
                             <div class="tab-content" v-if="this.event">
@@ -60,7 +56,7 @@
                                                             <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Tipo de entrada</label>
+                                                                        <label>{{ $t('Sell.type') }}</label>
                                                                         <select class="edu-select" v-model="type">
                                                                             <!--<option value="Papel">Papel</option>
                                                                             <option value="Electrónica">Electrónica</option>
@@ -72,7 +68,7 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Categoria</label>
+                                                                        <label>{{ $t('Sell.category') }}</label>
                                                                         <select class="edu-select" v-model="category" @change="handleChange">
                                                                             <option value="VIP">VIP</option>
                                                                             <option value="CAT 3 - sectores 633 a 611 / sectores 634 a 612">
@@ -99,16 +95,16 @@
                                                                         <input type="text" class="form-control"
                                                                             placeholder="Sector" v-model="row" @input="validateRange">
                                                                             <div v-if="!validateSector" class="alert alert-danger" role="alert">
-                                                                                El asiento no está en el sector designado
+                                                                                {{ $t('Sell.bad_seat') }}
                                                                             </div>
                                                                             <div v-else class="alert alert-success" role="alert">
-                                                                                El asiento es correcto
+                                                                                {{ $t('Sell.good_seat') }}
                                                                             </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label>Cantidad de asientos</label>
+                                                                        <label>{{ $t('Sell.seat') }}</label>
                                                                         <input type="number" class="form-control"
                                                                             placeholder="Asientos" v-model="seat" max="4"
                                                                             min="1">
@@ -116,7 +112,7 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <button v-if="type && category && validateSector" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
+                                                                        <button v-if="type && category && validateSector" @click="nextTab" class="edu-btn btn-medium mt--50">{{ $t('Sell.next') }}</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -137,7 +133,7 @@
                                                 <div class="row">
                                                     <div class="col-12 mb--50">
                                                         <div class="form-group">
-                                                            <label>¿Qué precio tiene la entrada originalmente?</label>
+                                                            <label>{{ $t('Sell.original_price') }}</label>
                                                             <input type="number" class="form-control"
                                                                 placeholder="Precio de adquisición" v-model="startPrice">
                                                         </div>
@@ -145,7 +141,7 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label>¿Cuanto quieres cobrar por la entrada?</label>
+                                                            <label>{{ $t('Sell.price') }}</label>
                                                             <input type="number" class="form-control"
                                                                 placeholder="Precio de venta" v-model="newPrice">
                                                         </div>
@@ -154,14 +150,14 @@
 
                                                     <div class="col-12 text-center" style="margin-top:20px;">
                                                         <div class="form-group">
-                                                            <h5>El precio de cada entrada será de {{ lastPrice() }}</h5>
+                                                            <h5>{{ $t('Sell.price_final') }} {{ lastPrice() }}</h5>
                                                         </div>
 
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <button v-if="startPrice && newPrice && type == 'Digital'" @click="nextTab" class="edu-btn btn-medium mt--50">Siguiente</button>
-                                                            <button v-if="startPrice && newPrice && type != 'Digital'" @click="saveTicket" class="edu-btn btn-medium mt--50">Guardar</button>
+                                                            <button v-if="startPrice && newPrice && type == 'Digital'" @click="nextTab" class="edu-btn btn-medium mt--50">{{ $t('Sell.next') }}</button>
+                                                            <button v-if="startPrice && newPrice && type != 'Digital'" @click="saveTicket" class="edu-btn btn-medium mt--50">{{ $t('Profile.save') }}</button>
 
                                                         </div>
                                                     </div>
@@ -181,24 +177,24 @@
                                                         <div class="row">
                                                             <div class="col-12 mb--50" style="padding: 100px;">
                                                                 <div class="form-group">
-                                                                    <label>Carga tu entrada</label>
+                                                                    <label>{{ $t('Sell.ticket_upload') }}</label>
                                                                     <!--<input type="file" class="form-control"
                                                                         @change="handleFileUpload">-->
                                                                         <input type="text" class="form-control"
                                                                         placeholder="Link de entrada" v-model="enlace">
-                                                                        <p> Si no posee el link de la entrada puede colocar un / para poder activar la opción de colocarlo mas adelante</p>
+                                                                        <p> {{ $t('Sell.not_ticket') }}</p>
                                                                 </div>
 
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <button v-if="this.user.holder && this.user.iban && this.user.type_account && this.enlace" type="button" @click="saveTicket"
-                                                                class="edu-btn btn-medium" :disabled="isLoading">Guardar
+                                                                class="edu-btn btn-medium" :disabled="isLoading">{{ $t('Profile.save') }}
                                                                 <i class="icon-4"></i></button>
                                                         </div>
                                                         <div class="form-group">
                                                             <button v-if="(!this.user.holder || !this.user.iban || !this.user.type_account) && this.enlace" type="button" @click="nextTab"
-                                                                class="edu-btn btn-medium" :disabled="isLoading">Siguiente
+                                                                class="edu-btn btn-medium" :disabled="isLoading">{{ $t('Sell.next') }}
                                                                 <i class="icon-4"></i></button>
                                                         </div>
                                                     </div>
@@ -214,10 +210,10 @@
                                             <div class="row ">
                                                 <div class="col-md-12 col-lg-12">
                                                     <div class="login-form-box registration-form">
-                                                        <h3 class="title">Ingrese sus datos bancarios</h3>
+                                                        <h3 class="title">{{ $t('Profile.add_bank_data') }}</h3>
                                                         <form>
                                                             <div class="form-group">
-                                                                <label for="reg-name">Títular*</label>
+                                                                <label for="reg-name">{{ $t('Profile.holder') }}*</label>
                                                                 <input type="text" name="reg-name" id="reg-name"
                                                                     placeholder="Nombre" v-model="this.user.holder">
                                                             </div>
@@ -227,14 +223,14 @@
                                                                     placeholder="Iban" v-model="this.user.iban">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="reg-name">Tipo de cuenta*</label>
+                                                                <label for="reg-name">{{ $t('Profile.account_type') }}*</label>
                                                                 <input type="text" name="reg-name" id="reg-name"
                                                                     placeholder="Nombre" v-model="this.user.type_account">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <button v-if="this.user.holder && this.user.iban && this.user.type_account" type="button" @click="saveTicket"
-                                                                    class="edu-btn btn-medium" :disabled="isLoading">Guardar
+                                                                    class="edu-btn btn-medium" :disabled="isLoading">{{ $t('Profile.save') }}
                                                                     <i class="icon-4"></i></button>
                                                             </div>
                                                         </form>

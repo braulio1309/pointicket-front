@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="read-more-btn">
-                            <NuxtLink class="edu-btn btn-medium btn-border" to="/event/event-details">Comprar <i
+                            <NuxtLink class="edu-btn btn-medium btn-border" to="/event/event-details">{{$t('Home.buy')}} <i
                                     class="icon-4"></i></NuxtLink>
                         </div>
                     </div>

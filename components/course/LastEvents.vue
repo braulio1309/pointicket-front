@@ -15,7 +15,7 @@
                     {{ $t('Home.pending_confirmation') }}
                 </span>
                 <br>
-                <a :href="'/tickets/'+type+'r/'+ event.id" class="edu-btn btn-large">{{ (type === 'compra')? 'Comprar': 'Vender' }}</a>
+                <a :href="'/tickets/'+type+'r/'+ event.id" class="edu-btn btn-large">{{ (type === 'compra')? $t('Home.buy'): $t('Home.sell') }}</a>
 
                 
             </div>

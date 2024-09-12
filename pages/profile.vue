@@ -515,7 +515,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&${query}`, {
+                .get(`${config.public.apiBase}tickets/?populate=*${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
@@ -545,7 +545,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&${query}`, {
+                .get(`${config.public.apiBase}tickets/?populate=*${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
@@ -574,7 +574,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&${query}&publicationState=preview`, {
+                .get(`${config.public.apiBase}tickets/?populate=*&publicationState=preview&${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },

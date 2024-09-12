@@ -506,9 +506,8 @@ export default {
                         }
                     },
                     compra: {
-                        id: {
-                            $not: null,
-                        }
+                        
+                        $not: null,
 
                     },
                 },

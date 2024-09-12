@@ -482,7 +482,7 @@ export default {
                     },
                 })
                 .then((response) => {
-                    console.log(response.data)
+                    this.user = response.data
                     //this.tickets = response.data.tickets;
                     //this.purchases = response.data.compras;
                 })
@@ -501,9 +501,7 @@ export default {
             const query = qs.stringify({
                 filters: {
                     compra: {
-                        
-                        $null: true,
-
+                        $null: false
                     },
                 },
             }, {
@@ -540,7 +538,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&filters[user][id][$eq]=${this.user.id}`, {
+                .get(`${config.public.apiBase}tickets/?populate=*&filters[user][id][$eq]=${this.user.id}&${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },

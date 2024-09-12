@@ -127,7 +127,7 @@
                                         <tbody>
                                             <tr v-for="(item, index) in purchases" :key="index">
                                                 <td scope="row">{{ item.id }}</td>
-                                                <td scope="row">{{ item.attributes.evento.data.attributes.title }}</td>
+                                                <td scope="row">{{ item.attributes.evento.data?.attributes?.title }}</td>
                                                 <td scope="row">{{ item.attributes.Sector }}</td>
                                                 <td scope="row">{{ item.attributes.Category }}</td>
                                                 <td scope="row">{{ item.attributes.Fila }}</td>

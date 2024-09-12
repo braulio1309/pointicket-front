@@ -390,12 +390,16 @@ export default {
                 },
             })
             .then((response) => {
-                this.show = true;
                 //this.isLogged();
                 this.getUserData();
-                this.getTicketsSells();
-                this.getTicketsBuy();
-                this.getAllTickets();
+                if(this.user != '') {
+                    this.getTicketsSells();
+                    this.getTicketsBuy();
+                    this.getAllTickets();
+                    this.show = true;
+                }
+               
+
             })
             .catch((error) => {
                 window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar o vender una entrada');

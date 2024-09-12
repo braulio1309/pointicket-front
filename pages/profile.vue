@@ -390,14 +390,15 @@ export default {
                 },
             })
             .then((response) => {
-                //this.isLogged();
+                this.user = response.data;
+               /* this.isLogged();*/
                 this.getUserData();
-                if(this.user != '') {
-                    this.getTicketsSells();
-                    this.getTicketsBuy();
-                    this.getAllTickets();
-                    this.show = true;
-                }
+                
+                this.getTicketsSells();
+                this.getTicketsBuy();
+                this.getAllTickets();
+                this.show = true;
+                
                
 
             })
@@ -486,7 +487,7 @@ export default {
                     },
                 })
                 .then((response) => {
-                    this.user = response.data
+                   // this.user = response.data
                     //this.tickets = response.data.tickets;
                     //this.purchases = response.data.compras;
                 })

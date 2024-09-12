@@ -500,14 +500,9 @@ export default {
 
             const query = qs.stringify({
                 filters: {
-                    user: {
-                        id: {
-                            $eq: this.user.id,
-                        }
-                    },
                     compra: {
                         
-                        $not: null,
+                        $null: true,
 
                     },
                 },
@@ -515,7 +510,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*${query}`, {
+                .get(`${config.public.apiBase}tickets?populate=*&filters[user][id][$eq]=${this.user.id}&${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
@@ -545,7 +540,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*${query}`, {
+                .get(`${config.public.apiBase}tickets/?populate=*&filters[user][id][$eq]=${this.user.id}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
@@ -560,7 +555,7 @@ export default {
         },
         getAllTickets() {
             const config = useRuntimeConfig();
-
+            console.log(this.user.id)
             const query = qs.stringify({
                 filters: {
                     user: {
@@ -574,7 +569,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&publicationState=preview&${query}`, {
+                .get(`${config.public.apiBase}tickets?populate=*&publicationState=preview&filters[user][id][$eq]=${this.user.id}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },

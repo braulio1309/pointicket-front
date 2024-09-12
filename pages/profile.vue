@@ -506,14 +506,17 @@ export default {
             const query = qs.stringify({
                 filters: {
                     compra: {
-                        $null: false
+                        id: {
+                            $null: false
+                        }
+                       
                     },
                 },
             }, {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets?populate=*&filters[user][id][$eq]=${this.user.id}&${query}`, {
+                .get(`${config.public.apiBase}tickets?populate=*&publicationState=preview&filters[user][id][$eq]=${this.user.id}&${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
@@ -543,7 +546,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&filters[user][id][$eq]=${this.user.id}&${query}`, {
+                .get(`${config.public.apiBase}tickets/?populate=*&publicationState=preview&filters[user][id][$eq]=${this.user.id}&${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },

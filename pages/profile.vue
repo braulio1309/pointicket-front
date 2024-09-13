@@ -546,7 +546,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}tickets/?populate=*&publicationState=preview&filters[user][id][$eq]=${this.user.id}&${query}`, {
+                .get(`${config.public.apiBase}tickets/?populate=*&publicationState=preview&${query}`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },

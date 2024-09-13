@@ -1,31 +1,6 @@
 <template>
     <div class="home-one-cta-two cta-area-1">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8">
-                    <div class=" edu-cta-box bg-image bg-image--7">
-                        <div v-if="showResultNews" class="col-12">
-                            <div id="contact-form" class="alert alert-success" role="alert">
-                                {{ $t('ContactUs.success') }} 
-                            </div>
-                        </div>
-                        <h4 class="widget-title" style="color: white;">{{ $t('Home.Subscribe_to_our_newsletter') }}</h4><br>
-                        <p class="description" style="font-size: large; color:white;">{{ $t('Home.keep_information') }}</p>
-                        <div class="">
-                            <input v-model="input" style="border-radius: 10px; margin-bottom:15px; position:relative;"
-                                type="email" placeholder="Correo">
-                            <button :disabled="isLoadingNews" @click="newsletter" class="edu-btn btn-medium"
-                                type="button">{{ $t('Home.subscribe') }} <i class="icon-4"></i></button>
-                        </div>
-                        <ul class="shape-group">
-                            <MouseMove addClassName="shape-01" dataDepth="2" imgSrc="/images/cta/shape-06.png" />
-                            <MouseMove addClassName="shape-02" dataDepth="-2" imgSrc="/images/cta/shape-12.png" />
-                            <MouseMove addClassName="shape-03" dataDepth="-3" imgSrc="/images/cta/shape-04.png" />
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <section class="edu-section-gap contact-form-area">
             <div class="container">
                 <div class="row justify-content-center">

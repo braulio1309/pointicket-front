@@ -3,6 +3,7 @@
     "spanish": "Español",
     "english": "Ingles",
     "provider": "Pointickets es un proveedor secundario de entradas.",
+    "login_now": "Debes iniciar sesión para poder comprar o vender una entrada",
     "Login": {
         "login": "Iniciar sesión",
         "password": "Contraseña",

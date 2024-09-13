@@ -450,7 +450,7 @@ Recorrido reducido por obras`
     },
     mounted() {
         if(window.localStorage.getItem('jwt') == null) {
-            window.localStorage.setItem('notLogged', 'Debes iniciar sesión para poder comprar o vender una entrada');
+            window.localStorage.setItem('notLogged', this.$t('login_now'));
             this.$router.push('/login');
         }else {
             this.filterData = this.items;

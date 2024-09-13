@@ -3,6 +3,7 @@
     "english": "English",
     "spanish": "Spanish",
     "provider": "Pointickets is a secondary ticket provider.",
+    "login_now": "You must be logged in to be able to buy or sell a ticket",
     "Login": {
         "login": "Login",
         "password": "Password",

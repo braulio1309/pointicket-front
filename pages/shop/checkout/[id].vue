@@ -49,8 +49,10 @@
                                         <div class="form-group">
                                             <label>{{ $t('Checkout.discount_coupon') }}</label>
                                             <input type="text" id="email" v-model="coupon">
-                                            <p v-if="resultCouponAmount">{{ $t('Checkout.available_coupon') }} - €{{ amountDiscount }}</p>
-                                            <p v-if="resultCouponPercentage">{{ $t('Checkout.available_coupon') }} - {{ percentageDiscount
+                                            <p v-if="resultCouponAmount">{{ $t('Checkout.available_coupon') }} - €{{
+                                                amountDiscount }}</p>
+                                            <p v-if="resultCouponPercentage">{{ $t('Checkout.available_coupon') }} - {{
+                                                percentageDiscount
                                                 }}%
                                             </p>
                                             <p v-if="errorCoupon">{{ $t('Checkout.not_coupon') }}</p>
@@ -60,8 +62,8 @@
                                     <div class="col-lg-4">
                                         <div class="form-group" style="margin-top: 35px;">
 
-                                            <button type="button" @click="verifyCoupon"
-                                                class="edu-btn btn-small">{{ $t('Checkout.verify') }}
+                                            <button type="button" @click="verifyCoupon" class="edu-btn btn-small">{{
+                                                $t('Checkout.verify') }}
                                                 <i class="icon-4"></i></button>
                                         </div>
 
@@ -79,17 +81,18 @@
                             <div class="order-summery checkout-summery">
                                 <div class="summery-table-wrap">
                                     <h4 class="title">{{ $t('Checkout.your_order') }} {{
-            ticket.attributes.evento.data.attributes.title }}</h4>
+                                        ticket.attributes.evento.data.attributes.title }}</h4>
                                     <table class="table summery-table">
                                         <tbody>
                                             <tr>
                                                 <td> {{ ticket.attributes.Category }}, {{ $t('Checkout.type') }}: {{
-            this.ticket.attributes.type }}, {{ $t('Checkout.row') }}: {{ ticket.attributes.Fila }}</td>
+                                                    this.ticket.attributes.type }}, {{ $t('Checkout.row') }}: {{
+                                                    ticket.attributes.Fila }}</td>
                                                 <td><span class="quantity">x {{ ticket.attributes.seat }}</span></td>
                                                 <td> €{{ parseFloat(ticket.attributes.endPrice).toFixed(2) }}</td>
                                             </tr>
 
-                                           <!-- <tr class="order-total">
+                                            <!-- <tr class="order-total">
                                                 <td>IVA</td>
                                                 <td>€{{ parseFloat(ticket.attributes.endPrice * 0.21).toFixed(2) }}</td>
                                             </tr>-->
@@ -102,34 +105,37 @@
                                             </tr>
                                             <tr v-if="ticket.attributes.type != 'Digital'" class="order-total">
                                                 <td>{{ $t('Checkout.shipping_cost') }}</td>
-                                                <td >€ 10</td>
+                                                <td>€ 10</td>
                                             </tr>
 
                                             <tr class="order-total">
                                                 <td>{{ $t('Checkout.management_fees') }}</td>
-                                                <td >€ {{fees}}</td>
+                                                <td>€ {{ fees }}</td>
                                             </tr>
 
                                             <tr class="order-total">
                                                 <td>Total</td>
-                                                <td >€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat +
-            (0)) + fees + feeEnvio).toFixed(2) }}
+                                                <td>€{{ parseFloat((ticket.attributes.endPrice * ticket.attributes.seat
+                                                    +
+                                                    (0)) + fees + feeEnvio).toFixed(2) }}
                                                 </td>
                                             </tr>
 
-                                            
+
 
                                             <tr v-if="resultCouponAmount || resultCouponPercentage" class="order-total">
                                                 <td>Total con descuento aplicado</td>
 
-                                                <td v-if="resultCouponAmount">€{{ parseFloat(((ticket.attributes.endPrice *
-            ticket.attributes.seat +
-            (0)) -
-            amountDiscount) + fees + feeEnvio).toFixed(2)}}
+                                                <td v-if="resultCouponAmount">€{{
+                                                    parseFloat(((ticket.attributes.endPrice *
+                                                        ticket.attributes.seat +
+                                                    (0)) -
+                                                    amountDiscount) + fees + feeEnvio).toFixed(2)}}
                                                 </td>
-                                                <td v-if="resultCouponPercentage">€{{ parseFloat(((ticket.attributes.endPrice * ticket.attributes.seat +
-            (0)) -
-            ((percentageDiscount / 100) * (ticket.attributes.endPrice *
+                                                <td v-if="resultCouponPercentage">€{{
+                                                    parseFloat(((ticket.attributes.endPrice * ticket.attributes.seat +
+                                                        (0)) -
+                                                        ((percentageDiscount / 100) * (ticket.attributes.endPrice *
                                                     ticket.attributes.seat +
                                                     (0)))) + fees + feeEnvio).toFixed(2) }}
                                                 </td>
@@ -140,8 +146,13 @@
                             </div>
                             <div class="order-payment">
                                 <div class="row justify-content-center">
-                                    
-                                    <button type="button" class="edu-btn btn-medium" @click="customFunction()">{{ $t('Checkout.start_payment_process') }}</button>
+
+                                    <!--<button type="button" class="edu-btn btn-medium" @click="customFunction()">{{ $t('Checkout.start_payment_process') }}</button>-->
+                                    <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey"
+                                        :line-items="lineItems" :success-url="'https://pointickets.com/exitoso/'+ticketId"
+                                        :cancel-url="'https://pointickets.com/fallido/'+ticketId" @loading="v => loading = v" />
+                                    <button type="button" @click="savePurchase" :disabled="isLoading"
+                                        class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
 
                                 </div>
                                 <br><br>
@@ -187,13 +198,15 @@ import FooterOne from '~~/components/footer/FooterOne.vue';
 import ScrollToTop from '~~/components/footer/ScrollToTop.vue';
 import axios from 'axios';
 import qs from 'qs';
+import { StripeCheckout } from '@vue-stripe/vue-stripe';
 
 export default {
     components: {
         HeaderOne,
         BreadCrumbTwo,
         FooterOne,
-        ScrollToTop
+        ScrollToTop,
+        StripeCheckout
     },
     data() {
         const config = useRuntimeConfig();
@@ -206,6 +219,7 @@ export default {
             user: '',
             result: false,
             isLoading: false,
+            loading: false,
             coupon: null,
             couponVerify: false,
             resultCouponAmount: false,
@@ -216,7 +230,16 @@ export default {
             lineItems: null,
             couponObject: null,
             fees: 5,
-            feeEnvio: 0
+            feeEnvio: 0,
+            lineItems: [
+                {
+                    price: 'prod_Qu29n0nPnRvIMj', // The id of the one-time price you created in your Stripe dashboard
+                    quantity: 1,
+                },
+            ],
+            publishableKey: config.public.STRIPE_PUBLIC_KEY,
+            successURL: 'http://localhost::3000/exitoso',
+            cancelURL: 'http://localhost::3000/',
         }
     },
     head() {
@@ -225,7 +248,10 @@ export default {
         }
     },
     methods: {
-
+        savePurchase() {
+            // You will be redirected to Stripe's secure checkout page
+            this.$refs.checkoutRef.redirectToCheckout();
+        },
         async getEvent() {
             const config = useRuntimeConfig();
             let response = await axios
@@ -236,7 +262,7 @@ export default {
                 });
             this.ticket = response.data.data;
             this.lineItems = [{
-                price: this.ticket.attributes.price_id,
+                price: 'prod_Qu29n0nPnRvIMj',
                 quantity: 1,
             }];
         },
@@ -304,16 +330,16 @@ export default {
         async customFunction() {
             let finalAmount = this.ticket.attributes.endPrice * this.ticket.attributes.seat + 0;
             //(this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21);
-            if(this.resultCouponPercentage){
+            if (this.resultCouponPercentage) {
                 finalAmount -= (this.percentageDiscount / 100) * finalAmount;
             }
 
-            if(this.resultCouponAmount){
+            if (this.resultCouponAmount) {
                 finalAmount -= this.amountDiscount;
             }
 
             finalAmount += this.fees;
-            if(this.ticket.attributes.type != 'Digital')
+            if (this.ticket.attributes.type != 'Digital')
                 finalAmount += 10;
             localStorage.setItem('price', finalAmount);
 
@@ -324,6 +350,10 @@ export default {
     },
     async mounted() {
         localStorage.removeItem('tour');
+        this.lineItems = [{
+                price: 'prod_Qu29n0nPnRvIMj',
+                quantity: 1,
+            }];
 
         if (window.localStorage.getItem('jwt') == null) {
             window.localStorage.setItem('notLogged', this.$t('login_now'));
@@ -334,12 +364,12 @@ export default {
             localStorage.setItem('ticketId', this.ticketId);
             await this.getEvent();
             this.userData();
-            if(this.ticket.attributes.type === 'Física'){
+            if (this.ticket.attributes.type === 'Física') {
                 this.feeEnvio = 10
             }
 
         }
-        
+
     },
 
 }

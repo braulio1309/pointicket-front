@@ -233,7 +233,7 @@ export default {
             feeEnvio: 0,
             lineItems: [
                 {
-                    price: 'prod_Qu29n0nPnRvIMj', // The id of the one-time price you created in your Stripe dashboard
+                    price: 'price_1Q2E55GSfFvdyXFW5o2dg3EK', // The id of the one-time price you created in your Stripe dashboard
                     quantity: 1,
                 },
             ],
@@ -262,7 +262,7 @@ export default {
                 });
             this.ticket = response.data.data;
             this.lineItems = [{
-                price: 'prod_Qu29n0nPnRvIMj',
+                price: 'price_1Q2E55GSfFvdyXFW5o2dg3EK',
                 quantity: 1,
             }];
         },
@@ -351,7 +351,7 @@ export default {
     async mounted() {
         localStorage.removeItem('tour');
         this.lineItems = [{
-                price: 'prod_Qu29n0nPnRvIMj',
+                price: 'price_1Q2E55GSfFvdyXFW5o2dg3EK',
                 quantity: 1,
             }];
 

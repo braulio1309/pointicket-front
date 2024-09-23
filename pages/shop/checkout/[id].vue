@@ -323,6 +323,8 @@ export default {
         }
     },
     async mounted() {
+        localStorage.removeItem('tour');
+
         if (window.localStorage.getItem('jwt') == null) {
             window.localStorage.setItem('notLogged', this.$t('login_now'));
             localStorage.setItem('lastRoute', 'checkout');

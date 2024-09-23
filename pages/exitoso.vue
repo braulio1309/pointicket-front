@@ -64,9 +64,9 @@ export default {
             lineItems: null,
             data: null,
             validatePrice: {
-                'Classic': 33,
-                'Classic Hora Flexible': 40,
-                'Premium': 50,
+                'Classic': 45,
+                'Classic Hora Flexible': 50,
+                'Premium': 65,
             }
         }
     },

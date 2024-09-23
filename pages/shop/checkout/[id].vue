@@ -237,7 +237,7 @@ export default {
                     quantity: 1,
                 },
             ],
-            publishableKey: config.public.STRIPE_PUBLIC_KEY,
+            publishableKey: 'pk_test_51Q2DAGGSfFvdyXFWqZgD2Z7iH3JPZbW1yMO1wWPMHOdEr72OnFt1EcjZOaXamErfAIRyGJaOZrKCdmgtrBjQAl9z00PYVdw0qc',
             successURL: 'http://localhost::3000/exitoso',
             cancelURL: 'http://localhost::3000/',
         }

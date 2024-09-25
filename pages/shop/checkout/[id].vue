@@ -261,8 +261,9 @@ export default {
                     },
                 });
             this.ticket = response.data.data;
+            console.log(this.ticket.attributes.price_id)
             this.lineItems = [{
-                price: 'price_1Q2E55GSfFvdyXFW5o2dg3EK',
+                price: this.ticket.attributes.price_id,
                 quantity: 1,
             }];
         },

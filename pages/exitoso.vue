@@ -102,11 +102,13 @@ export default {
             const config = useRuntimeConfig();
             const urlParams = new URLSearchParams(window.location.search);
             const reference = urlParams.get('r');
+            const comision = (this.ticket.attributes.Category == 'Digital' || this.ticket.attributes.Category == 'Electrónica')? 5: 15;
+            const total = this.ticket.attributes.endPrice * this.ticket.attributes.seat + comision;
             let data = {
                 user: this.user,
                 ticket: this.ticket,
                 subtotal: this.ticket.attributes.endPrice * this.ticket.attributes.seat,
-                total: parseFloat(localStorage.getItem('price')),
+                total: total,
                 taxes: this.ticket.attributes.endPrice * this.ticket.attributes.seat * 0.21,
                 descuento: this.coupon,
                 bankReference: reference

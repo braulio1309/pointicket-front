@@ -237,7 +237,7 @@ export default {
                     quantity: 1,
                 },
             ],
-            publishableKey: 'pk_test_51Q2DAGGSfFvdyXFWqZgD2Z7iH3JPZbW1yMO1wWPMHOdEr72OnFt1EcjZOaXamErfAIRyGJaOZrKCdmgtrBjQAl9z00PYVdw0qc',
+            publishableKey: 'pk_live_51Q2DAGGSfFvdyXFWWAD6r5UDc7NPQ76P6Q8Tvxv45HGxj3U4xOl3mW2NH1h5ohvKXnXBtYILVvM7gCBgzCDnZtxu00HknVGWRA',
             successURL: 'http://localhost::3000/exitoso',
             cancelURL: 'http://localhost::3000/',
         }

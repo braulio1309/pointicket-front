@@ -147,12 +147,12 @@
                             <div class="order-payment">
                                 <div class="row justify-content-center">
 
-                                    <!--<button type="button" class="edu-btn btn-medium" @click="customFunction()">{{ $t('Checkout.start_payment_process') }}</button>-->
-                                    <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey"
+                                    <button type="button" class="edu-btn btn-medium" @click="customFunction()">{{ $t('Checkout.start_payment_process') }}</button>
+                                    <!--<stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey"
                                         :line-items="lineItems" :success-url="'https://pointickets.com/exitoso?r='+ticketId"
                                         :cancel-url="'https://pointickets.com/fallido/'+ticketId" @loading="v => loading = v" />
                                     <button type="button" @click="savePurchase" :disabled="isLoading"
-                                        class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>
+                                        class="edu-btn btn-medium">Pagar <i class="icon-4"></i></button>-->
 
                                 </div>
                                 <br><br>
@@ -261,7 +261,6 @@ export default {
                     },
                 });
             this.ticket = response.data.data;
-            console.log(this.ticket.attributes.price_id)
             this.lineItems = [{
                 price: this.ticket.attributes.price_id_production,
                 quantity: 1,

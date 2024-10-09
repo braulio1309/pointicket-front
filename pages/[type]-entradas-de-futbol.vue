@@ -9,10 +9,23 @@
        
         <div class="edu-event-area event-area-1 section-gap-equal">
             <div class="container">
-                <h2>{{ $t('Events.second_title') }}</h2>
-                <p>{{ $t('Events.paragraph_1') }}
+                <h2 v-if="this.$route.params.type === 'compra'">{{ $t('Events.second_title') }}</h2>
+                <p v-if="this.$route.params.type === 'compra'">{{ $t('Events.paragraph_1') }}
                 </p>
-                <p>{{ $t('Events.paragraph_2') }}
+                <p v-if="this.$route.params.type === 'compra'">{{ $t('Events.paragraph_2') }}
+                </p>
+                <h2 v-if="this.$route.params.type !== 'compra'">{{ $t('Events.sell_title') }}</h2>
+                <p v-if="this.$route.params.type !== 'compra'">{{ $t('Events.text_1') }} {{ $t('Events.text_2') }}
+                </p>
+                <p v-if="this.$route.params.type !== 'compra'">{{ $t('Events.step1') }} 
+                </p>
+                <p v-if="this.$route.params.type !== 'compra'">{{ $t('Events.step2') }} 
+                </p>
+                <p v-if="this.$route.params.type !== 'compra'">{{ $t('Events.step3') }} 
+                </p>
+                <p v-if="this.$route.params.type !== 'compra'">{{ $t('Events.step4') }} 
+                </p>
+                <p v-if="this.$route.params.type !== 'compra'">{{ $t('Events.text_3') }} 
                 </p>
                 <div class="breadcrumb-inner">
                     <div class="row">
@@ -26,6 +39,8 @@
                 </div>
             </div>
             <div class="container-fluid">
+                <h2 class="text-center">{{ $t('Events.title_intro') }}</h2>
+
                 <div class="row g-5">
                     <div class="col-lg-12 order-lg-1 col-pr--35" v-if="this.events.length > 0">
                         <div class="row g-5">

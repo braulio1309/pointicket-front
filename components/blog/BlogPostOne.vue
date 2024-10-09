@@ -11,9 +11,9 @@
                 <div class="category-wrap">
                     <NuxtLink to="/" class="blog-category">{{ blogInfo.category }}</NuxtLink>
                 </div>
-                <h5 class="title">
+                <h4 class="title">
                     <NuxtLink to="/">{{ blogInfo.title }}</NuxtLink>
-                </h5>
+                </h4>
                 
                 <div class="button-group">
                     <a :href="blogInfo.url" class="edu-btn btn-medium mt--50">{{ $t('Home.see_more') }}</a>

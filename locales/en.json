@@ -26,7 +26,7 @@
     },
     "Home": {
         "home": "Home",
-        "title": "Buy Real Madrid tickets and other sports events",
+        "title": "Real Madrid tickets and other sports events",
         "search_events": "Search events",
         "events": "Events",
         "more": "See more events",
@@ -34,9 +34,12 @@
         "guaranteed_orders": "All orders are 100% guaranteed.",
         "Buy_and_sell_tickets_in_just_a_few_clicks": "Buy and sell tickets in just a few clicks.",
         "secure_payment": "100% secure payment.",
-        "second_title": "Pointickets: leaders in buying and selling sports tickets",
-        "leader_buy": "Pointickets is the leading platform in buying and selling sports tickets, with a wide catalog of tickets for Real Madrid at Santiago Bernabéu. We offer a wide catalog of tickets for Real Madrid at Santiago Bernabéu at the best prices.",
-        "pointickets_tickets": "At Pointickets, you will find tickets for all Real Madrid matches, both for La Liga and Champions League. We also have tickets for other events like concerts and shows.",
+        "second_title": "My passion, my sport, my seat - My Real Madrid tickets",
+        "pre_title": "Pointickets makes it easy for you! Here you will find the cheapest tickets to see Real Madrid.",
+        "leader_buy": "Can you imagine watching Bellingham score a stunning goal and Mbappé breaking down the wing? Or Vinicius celebrating with the fans? Do you want to experience strong emotions and save money?",
+        "pointickets_tickets": "We know that the thrill of attending a live sporting event is an unparalleled experience. However, it can sometimes be tricky to find available tickets, especially for popular and highly demanded events. That's where we come in, helping you find the best tickets to see Real Madrid at the best price. Our mission is to ensure that your experience at Santiago Bernabéu is as exciting as the event itself, which is why we specialize in buying and selling tickets at competitive prices.",
+        "pointickets_tickets_second": "At Pointickets, we understand that you want to experience those special moments, which is why we strive to offer you Real Madrid tickets at affordable prices. We want you to enjoy the show without worrying about money and to have the chance to be part of the event you love so much.",
+        "pointickets_tickets_finish": "Feel the magic of Santiago Bernabéu!",
         "pending_confirmation": "Pending Confirmation",
         "best_selling_events": "Best Selling Events",
         "testimonies": "Testimonials",
@@ -82,18 +85,23 @@
     "Events": {
         "title": "Buy football tickets to your favourite events",
         "title_sell": "Sell football tickets to your favourite events",
-        "events": "Eventos"
+        "events": "Eventos",
+        "second_title": "Live the white passion! Your Real Madrid tickets are waiting for you",
+        "paragraph_1": "This year, don't miss the chance to experience something unique in one of the most iconic stadiums in the world. Come witness the magic of football at Santiago Bernabéu, where Real Madrid continues to make history. Buy football tickets to see Real Madrid in action this season and visit their fully renovated stadium. Not only will you enjoy a top-tier football spectacle, but you'll also be amazed by the stunning architecture of the new Bernabéu. Don't miss the chance to be part of this unforgettable experience and make sure to reserve your Real Madrid tickets today.",
+        "paragraph_2": "Be part of the legend! Santiago Bernabéu opens its doors for you to experience what it means to be a true Madridista. Enjoy watching Real Madrid from the best seats, feel the adrenaline of the big matches, and become a part of an unforgettable game."
     },
     "ContactUs": {
         "title": "Contact us",
         "second_title": "Our customer service team is available to help you with any questions or issues you may have.",
         "textus": "Write to us",
+        "text": "We would love to hear from you! If you have questions, suggestions, or need assistance, we are here to help. You can write to us through the form or call us at the number below. Our team will be happy to assist you as soon as possible. You can also find us on our social media. Don't hesitate to contact us!",
         "message": "Write your message",
         "readed": "I have read and accept the",
         "terms": "terms and conditions of use.",
         "thanks": "Thanks for contact us!",
         "loading": "Loading...",
-        "success": "You have successfully subscribed!"
+        "success": "You have successfully subscribed!",
+        "help": "Access our help center"
     },
     "Buy": {
         "ticket": "Ticket",
@@ -415,13 +423,17 @@
         "bank_data": "Bank details"
     },
     "Tour": {
-        "title": "Buy Your Tickets for the Tour of",
-        "buy": "Buy tickets",
+        "title": "Tour of the Bernabéu - Experience the History of Real Madrid",
+        "second_title": "Explore the Santiago Bernabéu Tour and Immerse Yourself in the Legend of Football",
+        "second_text": "If you want to dive into the rich history of Real Madrid and its legendary stadium, the Tour of the Bernabéu is the perfect experience. Explore every corner of this iconic stadium, from its museum filled with trophies and historical memorabilia to the stunning panoramic views of the city. Don't miss the opportunity to discover Madrid from one of its most emblematic and central points. Experience the thrill of being in the same place where so many pages of football history have been written and book your ticket for the Tour of the Bernabéu today.",
+        "third_title": "What Does the Tour of the Bernabéu Include?",
+        "third_text": "Experience a unique adventure with the Tour of the Bernabéu, where you can immerse yourself in the history and greatness of Real Madrid. Walk through the stadium from the pitch to the trophy rooms, passing by the players' locker room. With Pointickets, you have several options to enjoy this tour, including standard and VIP tickets that allow you to explore at your own pace or with expert guides. Don't miss the chance to walk where football legends have walked. Book your ticket and make your Madridista dream come true!",
+        "buy": "Buy Tickets",
         "buy_only": "Buy",
         "date": "Date",
-        "hour": "Hour",
-        "type": "Ticket type",
-        "ticket": "Ticket information",
-        "count": "Number of entries"
+        "hour": "Time",
+        "type": "Ticket Type",
+        "ticket": "Ticket Information",
+        "count": "Number of Tickets"
     }
 }

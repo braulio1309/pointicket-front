@@ -7,9 +7,9 @@
                 </NuxtLink>
             </div>
             <div class="content">
-                <h6 class="title" style="font-size:12px ;">
+                <h3 class="title" style="font-size:12px ;">
                     <NuxtLink :to="'/tickets/'+type+'r/'+ event.id">{{ event.attributes.title }}</NuxtLink>
-                </h6>
+                </h3>
                 <span class="course-level" style="margin-bottom: 5px !important;">{{ event.attributes.description }}</span><br>
                 <span :style="{ display: event.attributes.description.length == 10 ? 'inline' : 'none', fontSize: '9px', marginTop: '5px', marginBottom: '5px' }">
                     {{ $t('Home.pending_confirmation') }}

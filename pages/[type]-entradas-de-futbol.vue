@@ -6,8 +6,14 @@
         <BreadCrumbTwo v-if="this.$route.params.type === 'compra'" :pageTitle="$t('Events.title')" :title="$t('Events.events')" />
         <BreadCrumbTwo v-else :pageTitle="$t('Events.title_sell')" :title="$t('Events.events')" />
 
+       
         <div class="edu-event-area event-area-1 section-gap-equal">
             <div class="container">
+                <h2>{{ $t('Events.second_title') }}</h2>
+                <p>{{ $t('Events.paragraph_1') }}
+                </p>
+                <p>{{ $t('Events.paragraph_2') }}
+                </p>
                 <div class="breadcrumb-inner">
                     <div class="row">
                         <div class="col-sm-10">
@@ -100,8 +106,8 @@
 
 <script>
 definePageMeta({
-  title: (this && this.$route && this.$route.params && this.$route.params.type && this.$route.params.type == 'compra')? 'Compra entradas de futbol para tus eventos favoritos | Pointickets' : 'Vende entradas de futbol para tus eventos favoritos | Pointickets' ,
-  description: 'Vive la emoción del futbol'                
+  title: 'Tu asiento te espera, ¡compra entradas de fútbol ya!',
+  description: 'Compra entradas de fútbol y vive la emoción del juego en primera persona. ¡Encuentra tus asientos ideales y disfruta del estadio!'                
 })
 import BreadCrumbTwo from '~~/components/common/BreadCrumbTwo.vue';
 import HeaderOne from '~~/components/header/HeaderOne.vue';

@@ -2,7 +2,7 @@
    <div class="edu-blog-area blog-area-1 edu-section-gap">
      <div class="section-title" :class="alignment" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
         <span class="pre-title" :class="preTitleClass" v-html="preTitle" v-if="preTitle"></span>
-        <h3 class="text-center title">{{ $t('Home.best_selling_events') }}</h3>
+        <h4 class="text-center title">{{ $t('Home.best_selling_events') }}</h4>
         <span class="shape-line text-center" v-if="!disableMark"><i class="icon-19"></i></span>
         <p v-html="subTitle" v-if="subTitle"></p>
     </div>
@@ -18,7 +18,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12" data-aos-delay="100" data-aos="fade-up" data-aos-duration="800">
                                         <div class="pricing-table">
                                             <div class="pricing-header">
-                                                <h6 class="title">Classic</h6>
+                                                <h4 class="title">Classic</h4>
                                                 <div class="price-wrap">
                                                     <span class="amount">45.00€</span>
                                                 </div>
@@ -38,7 +38,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
                                         <div class="pricing-table">
                                             <div class="pricing-header">
-                                                <h6 class="title">{{ $t('Home.flexible_hour') }}</h6>
+                                                <h4 class="title">{{ $t('Home.flexible_hour') }}</h4>
                                                 <div class="price-wrap">
                                                     <span class="amount">50.00€</span>
                                                 </div>
@@ -58,7 +58,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12" data-aos-delay="200" data-aos="fade-up" data-aos-duration="800">
                                         <div class="pricing-table">
                                             <div class="pricing-header">
-                                                <h6 class="title">Premium</h6>
+                                                <h4 class="title">Premium</h4>
                                                 <div class="price-wrap">
                                                     <span class="amount">65.00€</span>
                                                 </div>

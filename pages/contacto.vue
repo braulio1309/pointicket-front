@@ -7,6 +7,8 @@
 
         <section class="contact-us-area">
             <div class="container">
+                <p> {{ $t('ContactUs.text') }}
+                </p>
                 <div class="row g-5">
                     <div class="col-xl-4 col-lg-6">
                         <div class="contact-us-info">
@@ -22,6 +24,7 @@
                                 </li>
                             </ul>
                             <ul class="social-share">
+                                <h4 class="title">{{ $t('ContactUs.help') }}</h4>
                                 <li><a href="https://www.facebook.com/people/Poin-Tickets/61552598728672/"><i class="icon-facebook"></i></a></li>
                                 <li><a href="https://www.instagram.com/pointickets"><i class="icon-instagram"></i></a></li>
                             </ul>
@@ -30,7 +33,7 @@
                     <div class="offset-xl-2 col-lg-6">
                         <div class="contact-form form-style-2">
                             <div class="section-title">
-                                <h4 class="title">{{ $t('ContactUs.textus') }}</h4>
+                                <h2 class="title">{{ $t('ContactUs.textus') }}</h2>
                             </div>
                             <div v-if="showResult" class="col-12">
                                 <div class="alert alert-success" role="alert">

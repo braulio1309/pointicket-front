@@ -4,12 +4,14 @@
         <div class="edu-breadcrumb-area breadcrumb-style-2 bg-image bg-estadio">
             <div class="container">
                 <h1 class="title" style="color:white;margin-bottom: 60px !important;  text-align: center;
-    justify-content: center;">{{ $t('Tour.title') }} <span  style="display: block; margin: 0 auto;">Santiago Bernabéu</span>
+    justify-content: center;">{{ $t('Tour.title') }}
                 </h1>
                 <div style="text-align: center;">
                     <a class="edu-btn btn-medium" href="/tickets/comprar/comprar-tour-santiago-bernabeu" style="color: white; text-decoration: none; border: none;">{{ $t('Tour.buy') }}<i class="icon-east"></i></a>
                 </div>
+                
             </div>
+           
         </div>
         <Features />
         <!--<Categories /> -->
@@ -17,13 +19,17 @@
         <div class="edu-course-area course-area-1 edu-section-gap bg-lighten01">
             <div class="edu-section-gap">
             <div class="container">
+                <h2>{{ $t('Tour.second_title') }}</h2>
+                <p>{{ $t('Tour.second_text') }}</p>
                 <SectionTitle preTitle='Pricing Table' title='Great Membership Plan' alignment='section-center' />
 
+                <h2>{{ $t('Tour.third_title') }}</h2>
+                <p>{{ $t('Tour.third_text') }}</p>
                 <div class="row g-5">
                     <div class="col-lg-4" data-aos-delay="100" data-aos="fade-up" data-aos-duration="800">
                         <div class="pricing-table">
                             <div class="pricing-header">
-                                <h6 class="title">Classic</h6>
+                                <h4 class="title">Classic</h4>
                                 <div class="price-wrap">
                                     <span class="amount">45.00€</span>
                                 </div>
@@ -44,7 +50,7 @@
                     <div class="col-lg-4" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
                         <div class="pricing-table">
                             <div class="pricing-header">
-                                <h6 class="title">{{ $t('Home.flexible_hour') }}</h6>
+                                <h4 class="title">{{ $t('Home.flexible_hour') }}</h4>
                                 <div class="price-wrap">
                                     <span class="amount">50.00€</span>
                                 </div>
@@ -64,7 +70,7 @@
                     <div class="col-lg-4" data-aos-delay="200" data-aos="fade-up" data-aos-duration="800">
                         <div class="pricing-table">
                             <div class="pricing-header">
-                                <h6 class="title">Premium</h6>
+                                <h4 class="title">Premium</h4>
                                 <div class="price-wrap">
                                     <span class="amount">65.00€</span>
                                 </div>
@@ -109,8 +115,8 @@
 
 <script>
 definePageMeta({
-    title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
-    description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '
+    title: 'Ven y disfruta del Tour por el Bernabéu',
+    description: '¿No puedes asistir a un partido del Real Madrid? Reserva el Tour por el Bernabéu y recorre la sala de museos, los vestuarios y los banquillos. Siéntete como un jugador del Real Madrid.'
 })
 import HeroSection from "./HeroSection.vue";
 import ContactInfo from "./ContactInfo.vue";

@@ -4,9 +4,10 @@
             <div class="section-title section-center" data-aos-delay="150" data-aos="fade-up" data-aos-duration="800">
                 <h2 class='pre-title' style="font-size: medium;">{{ $t('Home.second_title') }}</h2>
                 <p>{{ $t('Home.leader_buy') }}</p>
-
+                <p>{{ $t('Home.pre_title') }}</p>
                 <p>{{ $t('Home.pointickets_tickets') }}</p>
-
+                <p>{{ $t('Home.pointickets_tickets_second') }}</p>
+                <p>{{ $t('Home.pointickets_tickets_finish') }}</p>
             </div>
             <div class="row g-5">
                 <div class="col-md-6 col-xl-3" data-aos-delay="10" data-aos="fade-up" data-aos-duration="100"

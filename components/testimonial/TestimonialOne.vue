@@ -7,7 +7,7 @@
                         <div class="section-title section-left" data-aos-delay="50" data-aos="fade-up"
                             data-aos-duration="800">
                             <span class="pre-title">{{ $t('Home.testimonies') }}</span>
-                            <h3 class="title">{{ $t('Home.opinions') }}</h3>
+                            <h5 class="title">{{ $t('Home.opinions') }}</h5>
                             <span class="shape-line"><i class="icon-19"></i></span>
                             <p>{{ $t('Home.opinion_text') }}</p>
                             

@@ -26,7 +26,7 @@
     },
     "Home": {
         "home": "Inicio",
-        "title": "Compra entradas del Real Madrid y otros eventos deportivos",
+        "title": "Entradas del Real Madrid y otros eventos deportivos",
         "search_events": "Buscar eventos",
         "events": "Eventos",
         "more": "Ver más eventos",
@@ -34,13 +34,16 @@
         "guaranteed_orders": "Todos los pedidos están garantizados al 100%.",
         "Buy_and_sell_tickets_in_just_a_few_clicks": "Compra y vende entradas en pocos clics.",
         "secure_payment": "Pago 100% seguro.",
-        "second_title": "Pointickets: líderes en compra venta de entradas deportivas",
-        "leader_buy": "Pointickets es la plataforma líder en compra y venta de entradas deportivas, con un amplio catálogo de entradas para el Real Madrid en el Santiago Bernabéu. Ofrecemos un amplio catálogo de entradas para el Real Madrid en el Santiago Bernabéu, a los mejores precios.",
-        "pointickets_tickets": "En Pointickets encontrarás entradas para todos los partidos del Real Madrid, tanto de Liga como de Champions League. También tenemos entradas para otro tipo de eventos, como conciertos y espectáculos.",
+        "second_title": "Mi pasión, mi deporte, mi asiento - Mis entradas Real Madrid",
+        "pre_title": "¡Pointickets te lo pone fácil! Aquí encontrarás las entradas más baratas para ver el Real Madrid.",
+        "leader_buy": "¿Te imaginas ver a Bellingham marcar un golazo y a Mbappé desbordando por la banda? ¿O  a Vinicius celebrando con la afición? ¿Quieres vivir emociones fuertes y ahorrar dinero?",
+        "pointickets_tickets": "Sabemos que la emoción de asistir a un evento deportivo en vivo es una experiencia inigualable. Sin embargo, a veces puede ser complicado encontrar entradas disponibles, especialmente para eventos populares y muy demandados. Aquí es donde entramos nosotros, te ayudamos a encontrar las mejores entradas para ver el Real Madrid al mejor precio. Nuestra misión es asegurarnos de que tu experiencia en el estadio Santiago Bernabéu sea tan emocionante como el evento mismo, por eso nos especializamos en la  compra-venta de entradas a precios competitivos.",
+        "pointickets_tickets_second": "En Pointickets entendemos que quieras vivir esos momentos especiales y por eso nos esforzamos en ofrecerte entradas para el Real Madrid a precios accesibles. Queremos que disfrutes del espectáculo sin preocuparte por el dinero y que tengas la oportunidad de ser parte del evento que tanto amas.",
+        "pointickets_tickets_finish": "¡Siente la magia del Santiago Bernabéu!",
         "pending_confirmation": "Pendiente de Confirmación",
         "best_selling_events": "Eventos más vendidos",
         "testimonies": "Testimonios",
-        "opinions": "Opiniones de clientes",
+        "opinions": "Unidos por el deporte , Tu confianza es nuestra prioridad",
         "opinion_text": "Nuestro objetivo es ofrecer a nuestros clientes una experiencia de compra sencilla y segura. Por eso, trabajamos con las principales entidades de pago online y contamos con un sistema de seguridad de última generación.",
         "Subscribe_to_our_newsletter": "¡Suscríbete a nuestro newsletter!",
         "keep_information": "Mantente informado de todas las novedades en eventos deportivos",
@@ -80,20 +83,25 @@
         "tickets": "Entradas"
     },
     "Events": {
-        "title": "Compra entradas de fútbol de tus eventos favoritos",
-        "title_sell": "Vende entradas de fútbol de tus eventos favoritos",
-        "events": "Eventos"
+        "title": "Compra entradas de fútbol y disfruta en vivo",
+        "title_sell": "Consigue el mejor precio en la venta de entradas de fútbol",
+        "events": "Eventos",
+        "second_title": "¡Vive la pasión blanca! Tus tickets Real Madrid te esperan",
+        "paragraph_1": "Este año, no dejes pasar la oportunidad de vivir una experiencia única en uno de los estadios más emblemáticos del mundo. Ven a presenciar la magia del fútbol en el Santiago Bernabéu, donde el Real Madrid sigue haciendo historia. Compra entradas de fútbol para ver al Real Madrid en acción esta temporada y visita su estadio completamente remodelado. No solo disfrutarás de un espectáculo futbolístico de primer nivel, sino que también te maravillarás con la impresionante arquitectura del nuevo Bernabéu. No te pierdas la ocasión de ser parte de esta experiencia inolvidable y asegúrate de reservar tus tickets Real Madrid hoy mismo.",
+        "paragraph_2": "¡Sé parte de la leyenda! El Santiago Bernabéu te abre sus puertas para que vivas la experiencia de ser un verdadero madridista. Disfruta viendo al Real Madrid desde los mejores asientos, siente la adrenalina de los grandes partidos y conviértete en protagonista de un partido inolvidable."
     },
     "ContactUs": {
         "title": "Contacta con nosotros",
-        "second_title": "Nuestro equipo de atención al cliente está disponible para ayudarte con cualquier duda o problema que tengas.",
+        "second_title": "¿Tienes preguntas? Tenemos respuestas",
+        "text": "¡Nos encantaría saber de ti! Si tienes preguntas, sugerencias o necesitas ayuda, estamos aquí para ayudarte. Puedes escribirnos a través del formulario o llamarnos al número que ves a continuación. Nuestro equipo estará encantado de atenderte lo antes posible. También puedes encontrarnos en nuestras redes sociales. ¡No dudes en contactarnos!",
         "textus": "Escríbenos",
         "message": "Escribe tu mensaje",
         "readed": "He leído y acepto los",
         "terms": "términos y condiciones de uso.",
         "thanks": "Gracias por contactarnos!",
         "loading": "Cargando...",
-        "success": "¡Te has suscrito con éxito!"
+        "success": "¡Te has suscrito con éxito!",
+        "help": "Accede a nuestro centro de ayuda"
     },
     "Buy": {
         "ticket": "Entrada",
@@ -417,7 +425,11 @@
 
     },
     "Tour": {
-        "title": "Compra tus Entradas para el Tour del",
+        "title": "Tour por el Bernabéu - Vive la historia del Real Madrid",
+        "second_title": "Explora el Tour Santiago Bernabéu  y sumérgete en la leyenda del fútbol",
+        "second_text": "Si quieres sumergirte en la rica historia del Real Madrid y su legendario estadio, el Tour por el Bernabéu es la experiencia perfecta. Recorre cada rincón de este icónico estadio, desde su museo lleno de trofeos y recuerdos históricos hasta las impresionantes vistas panorámicas de la ciudad. No pierdas la oportunidad de descubrir Madrid desde uno de sus puntos más emblemáticos y céntricos. Vive la emoción de estar en el mismo lugar donde se han escrito tantas páginas de la historia del fútbol y reserva tu entrada para el Tour por el Bernabéu hoy mismo.",
+        "third_title":"¿Qué incluye el Tour por el Bernabéu?",
+        "third_text":"Vive una experiencia única con el Tour por el Bernabéu, donde podrás sumergirte en la historia y grandeza del Real Madrid. Recorre el estadio desde el campo de juego hasta las salas de trofeos, pasando por el vestuario de los jugadores. Con Pointickets, tienes varias opciones para disfrutar de este tour, incluyendo entradas estándar y VIP que te permiten explorar a tu ritmo o con guías expertos. No te pierdas la oportunidad de caminar por donde lo han hecho las leyendas del fútbol. ¡Reserva tu entrada y haz realidad tu sueño madridista!",
         "buy": "Comprar entradas",
         "buy_only": "Comprar",
         "date": "Fecha",

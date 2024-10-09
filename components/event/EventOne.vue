@@ -9,9 +9,9 @@
             </div>
             <div class="content">
                 
-                <h5 class="title" style="font-size:12px ;">
+                <h3 class="title" style="font-size:12px ;">
                     <NuxtLink :to="'/tickets/'+type+'r/' + eventInfo.id">{{ eventInfo.attributes.title }}</NuxtLink>
-                </h5>
+                </h3>
                 <p v-html="eventInfo.attributes.description"></p>
                 <p style="font-size:9px ;" v-if="eventInfo.attributes.description.length == 10">{{ $t('Home.pending_confirmation') }}</p>
                 <p v-else>-</p>

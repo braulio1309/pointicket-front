@@ -3,7 +3,7 @@
 
         <HeaderOne />
         <section class="">
-            <div class="container">
+            <div class="container" v-if="this.event">
 
                 <div class="edu-course-area course-area-3">
                     <div v-if="finish" class="col-12 mt--50 mb--50">
@@ -38,12 +38,16 @@
                                                 <div class="col-lg-6 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">
-                                                            <img
+                                                            <img v-if="this.event.data.attributes.type == null"
                                                                 src="../../../assets/images/compra-entradas/distribucion.png">
+                                                            <img v-if="this.event.data.attributes.type"
+                                                                :src="this.event.data.attributes.estadio.photo.data.attributes.url">
+
+
                                                         </div>
 
                                                         <div class="text-block">
-                                                            <h4 class="title">{{ this.event.data.attributes.title }}</h4>
+                                                            <h4 class="title">{{ this.event.data.attributes.title }} {{ (this.event.data.attributes.type)? ' - '+this.event.data.attributes.estadio.name: ''}}</h4>
                                                             <p>{{ this.event.data.attributes.description }}</p>
 
                                                         </div>
@@ -61,15 +65,15 @@
                                                                             <!--<option value="Papel">Papel</option>
                                                                             <option value="Electrónica">Electrónica</option>
                                                                             <option value="Móvil">Móvil</option>-->
-                                                                            <option value="Digital">Digital</option>
-                                                                            <option value="Física">Física</option>
+                                                                            <option value="Digital" selected>Digital</option>
+                                                                            <option v-if="this.event.data.attributes.type == null" value="Física">Física</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>{{ $t('Sell.category') }}</label>
-                                                                        <select class="edu-select" v-model="category" @change="handleChange">
+                                                                        <select v-if="this.event.data.attributes.type == null" class="edu-select" v-model="category" @change="handleChange">
                                                                             <option value="VIP">VIP</option>
                                                                             <option value="CAT 3 - sectores 633 a 611 / sectores 634 a 612">
                                                                                 CAT 3 - sectores 633 a 611 / sectores 634 a 612</option>
@@ -81,14 +85,22 @@
                                                                             <option value="CAT 1 Premium">
                                                                                 CAT 1 Premium</option>
                                                                         </select>
+                                                                        <select v-if="this.event.data.attributes.type" class="edu-select" v-model="category" @change="handleChange">
+                                                                            <option v-for="categorie in event.data.attributes.estadio.categories" 
+                                                                                    :key="categorie.value" 
+                                                                                    :value="categorie.value">
+                                                                                {{ categorie.text }}
+                                                                            </option>
+                                                                                                                                                
+                                                                        </select>
 
                                                                     </div>
 
                                                                 </div>
 
-                                                                <div class="col-12">
+                                                                <div class="col-12"  v-if="this.event.data.attributes.type == null">
                                                                     <div class="form-group">
-                                                                        <div v-if="color" class="alert alert-light" role="alert">
+                                                                        <div v-if="color && this.event.data.attributes.type == null" class="alert alert-light" role="alert">
                                                                             Indicar sector marcados en color {{ color }}
                                                                         </div>
                                                                         <label>Sector</label>
@@ -112,7 +124,7 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <button v-if="type && category && validateSector" @click="nextTab" class="edu-btn btn-medium mt--50">{{ $t('Sell.next') }}</button>
+                                                                        <button v-if="(type || this.event.data.attributes.type == null) && category" @click="nextTab" class="edu-btn btn-medium mt--50">{{ $t('Sell.next') }}</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -478,7 +490,7 @@ export default {
             const config = useRuntimeConfig();
 
             axios
-                .get(`${config.public.apiBase}events/` + this.eventId, {
+                .get(`${config.public.apiBase}events/${this.eventId}?populate=estadio&populate=estadio.photo`, {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },
@@ -486,6 +498,7 @@ export default {
                 .then((response) => {
                     console.log(response.data)
                     this.event = response.data;
+                    
                 })
                 .catch((error) => {
                     // Maneja los errores, por ejemplo, muestra un mensaje de error
@@ -532,7 +545,7 @@ export default {
                 user: this.user,
                 Category: this.category,
                 Sector: this.sector,
-                Fila: this.row,
+                Fila: null,
                 startPrice: this.startPrice,
                 newPrice: this.newPrice,
                 endPrice: this.lastPrice(this.newPrice),

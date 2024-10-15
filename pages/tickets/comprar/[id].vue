@@ -30,13 +30,17 @@
                                                 <div class="col-lg-6 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">
-                                                            <img
+                                                                <img v-if="this.event.data.attributes.type == null && this.event.data.attributes.estadio == null"
                                                                 src="../../../assets/images/compra-entradas/distribucion.png">
+                                                                <img v-if="this.event.data.attributes.type || this.event.data.attributes.estadio"
+                                                                    :src="this.event.data.attributes.estadio.photo.data.attributes.url">
                                                         </div>
 
                                                         <div id="event-section" class="text-block">
                                                             <h4 class="title">{{ event.data.attributes.title }}</h4>
-                                                            <p>Estadio Santiago Bernabéu - Madrid</p>
+                                                            <p v-if="this.event.data.attributes.type == null && this.event.data.attributes.estadio == null" >Estadio Santiago Bernabéu - Madrid</p>
+                                                            <p v-if="this.event.data.attributes.type || this.event.data.attributes.estadio" >{{ this.event.data.attributes.estadio.name }}</p>
+
                                                             <p>{{ event.data.attributes.description }}</p>
                                                         </div>
                                                     </div>
@@ -340,7 +344,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
             axios
-                .get(`${config.public.apiBase}events/${this.eventId}?populate[0]=tickets&populate[1]=tickets.compra&${query}`, {
+                .get(`${config.public.apiBase}events/${this.eventId}?populate[0]=tickets&populate[1]=tickets.compra&${query}&populate=estadio&populate=estadio.photo`, {
                     /*headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('jwt')}`, // Asegúrate de incluir un token JWT válido aquí
                     },*/

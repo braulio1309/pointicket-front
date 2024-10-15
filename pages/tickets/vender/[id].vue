@@ -38,9 +38,9 @@
                                                 <div class="col-lg-6 edu-blog-sidebar">
                                                     <div class="privacy-policy purchase-guide">
                                                         <div class="text-block text-center">
-                                                            <img v-if="this.event.data.attributes.type == null"
+                                                            <img v-if="this.event.data.attributes.type == null && this.event.data.attributes.estadio == null"
                                                                 src="../../../assets/images/compra-entradas/distribucion.png">
-                                                            <img v-if="this.event.data.attributes.type"
+                                                            <img v-if="this.event.data.attributes.type || this.event.data.attributes.estadio"
                                                                 :src="this.event.data.attributes.estadio.photo.data.attributes.url">
 
 
@@ -66,14 +66,14 @@
                                                                             <option value="Electrónica">Electrónica</option>
                                                                             <option value="Móvil">Móvil</option>-->
                                                                             <option value="Digital" selected>Digital</option>
-                                                                            <option v-if="this.event.data.attributes.type == null" value="Física">Física</option>
+                                                                            <option v-if="this.event.data.attributes.type == null && this.event.data.attributes.estadio == null" value="Física">Física</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label>{{ $t('Sell.category') }}</label>
-                                                                        <select v-if="this.event.data.attributes.type == null" class="edu-select" v-model="category" @change="handleChange">
+                                                                        <select v-if="this.event.data.attributes.type == null && this.event.data.attributes.estadio == null" class="edu-select" v-model="category" @change="handleChange">
                                                                             <option value="VIP">VIP</option>
                                                                             <option value="CAT 3 - sectores 633 a 611 / sectores 634 a 612">
                                                                                 CAT 3 - sectores 633 a 611 / sectores 634 a 612</option>
@@ -85,7 +85,7 @@
                                                                             <option value="CAT 1 Premium">
                                                                                 CAT 1 Premium</option>
                                                                         </select>
-                                                                        <select v-if="this.event.data.attributes.type" class="edu-select" v-model="category" @change="handleChange">
+                                                                        <select v-if="this.event.data.attributes.type || this.event.data.attributes.estadio != null" class="edu-select" v-model="category" @change="handleChange">
                                                                             <option v-for="categorie in event.data.attributes.estadio.categories" 
                                                                                     :key="categorie.value" 
                                                                                     :value="categorie.value">
@@ -98,9 +98,9 @@
 
                                                                 </div>
 
-                                                                <div class="col-12"  v-if="this.event.data.attributes.type == null">
+                                                                <div class="col-12"  v-if="this.event.data.attributes.type == null && this.event.data.attributes.estadio == null">
                                                                     <div class="form-group">
-                                                                        <div v-if="color && this.event.data.attributes.type == null" class="alert alert-light" role="alert">
+                                                                        <div v-if="color && this.event.data.attributes.type == null && this.event.data.attributes.estadio == null" class="alert alert-light" role="alert">
                                                                             Indicar sector marcados en color {{ color }}
                                                                         </div>
                                                                         <label>Sector</label>

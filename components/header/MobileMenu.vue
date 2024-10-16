@@ -34,20 +34,21 @@ export default {
                 },
                 {
                     url: '/compra-entradas-de-futbol',
-                    title: this.$t('Menu.buy_tickets'),
-                },
-                {
-                    url: '/vende-entradas-de-futbol',
-                    title: this.$t('Menu.sell_tickets'),
-                },
-                {
-                    url: '/preguntas-frecuentes',
-                    title: 'FAQs',
-
+                    title: 'Futbol',
                 },
                 {
                     url: '/tour-santiago-bernabeu',
-                    title: 'Tour Santiago Bernabeu',
+                    title: 'Tour Bernabeu',
+
+                },
+                {
+                    url: '/comprar-entradas-de-baloncesto',
+                    title: 'Baloncesto',
+
+                },
+                {
+                    url: '/comprar-entradas-de-conciertos',
+                    title: 'Conciertos',
 
                 },
                 {

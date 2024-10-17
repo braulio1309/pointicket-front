@@ -14,6 +14,8 @@
                 </h3>
                 <p v-html="eventInfo.attributes.description"></p>
                 <p style="font-size:9px ;" v-if="eventInfo.attributes.description.length == 10">{{ $t('Home.pending_confirmation') }}</p>
+                <p style="font-size:9px ;" v-if="eventInfo.attributes.count_buy">Se han vendido {{ Math.floor(Math.random() * (eventInfo.attributes.max - eventInfo.attributes.min + 1)) + eventInfo.attributes.min }} las ultimas 24 horas</p>
+
                 <p v-else>-</p>
                 <div class="read-more-btn">
                     <NuxtLink class="edu-btn btn-small btn-secondary" :to="'/tickets/'+type+'r/' + eventInfo.id">{{ (type === 'compra')? $t('Home.buy'): $t('Home.sell') }} <i

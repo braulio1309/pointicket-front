@@ -14,6 +14,9 @@
                 <span :style="{ display: event.attributes.description.length == 10 ? 'inline' : 'none', fontSize: '9px', marginTop: '5px', marginBottom: '5px' }">
                     {{ $t('Home.pending_confirmation') }}
                 </span>
+                <span  v-if="event.attributes.count_buy" :style="{ display: event.attributes.count_buy ? 'inline' : 'none', fontSize: '9px', marginTop: '5px', marginBottom: '5px' }">
+                    Se han vendido {{ Math.floor(Math.random() * (event.attributes.max - event.attributes.min + 1)) + event.attributes.min }} las ultimas 24 horas
+                </span>
                 <br>
                 <NuxtLink :to="'/tickets/'+type+'r/'+ event.id" class="edu-btn btn-large">{{ (type === 'compra')? $t('Home.buy'): $t('Home.sell') }} <i class="icon-4"></i></NuxtLink>
 

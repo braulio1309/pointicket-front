@@ -16,7 +16,7 @@
                             {{ $t('Register.complete') }}
                         </div>
                         <div v-if="message == 'Email or Username are already taken'"class="alert alert-danger" role="alert">
-                            {{ $t('Register.complete') }}
+                            {{ $t('Register.already') }}
                         </div>
                     </div>
                     <form>
@@ -97,7 +97,6 @@ export default {
                 this.error = false;
                 this.success = true;                
             } catch (error) {
-                console.log(error.response.data)
                 this.message = error.response.data.error.message;
             
                 this.error = true

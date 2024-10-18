@@ -97,11 +97,11 @@ export default {
                 this.error = false;
                 this.success = true;                
             } catch (error) {
-                if (error.response.data.error.message == 'Email or Username are already taken'){
+               
                     this.message = error.response.data.error.message;
-                }else {
+               
                     this.error = true
-                }
+                
                 this.password = ''
             }
         },

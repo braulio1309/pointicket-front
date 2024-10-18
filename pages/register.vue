@@ -97,10 +97,10 @@ export default {
                 this.error = false;
                 this.success = true;                
             } catch (error) {
-               
-                    this.message = error.response.data.error.message;
-               
-                    this.error = true
+                console.log(error.response.data)
+                this.message = error.response.data.error.message;
+            
+                this.error = true
                 
                 this.password = ''
             }

@@ -21,8 +21,9 @@
         "create_account": "Crear cuenta",
         "name": "Nombre",
         "date_bird": "Fecha de nacimiento",
-        "send": "Te hemos enviado un correo para confirmar tu cuenta",
-        "complete": "Complete correctamente el formulario"
+        "send": "Te hemos enviado un correo para confirmar tu cuenta, Recuerda revisar tu correo no deseado.",
+        "complete": "Complete correctamente el formulario",
+        "already": "Este email ya fue registrado, por favor inicie sesión"
     },
     "Home": {
         "home": "Inicio",

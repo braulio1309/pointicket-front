@@ -12,7 +12,10 @@
                         </div>
                     </div>
                     <div v-if="error" class="col-12">
-                        <div class="alert alert-danger" role="alert">
+                        <div v-if="message != 'Email or Username are already taken'" class="alert alert-danger" role="alert">
+                            {{ $t('Register.complete') }}
+                        </div>
+                        <div v-if="message == 'Email or Username are already taken'"class="alert alert-danger" role="alert">
                             {{ $t('Register.complete') }}
                         </div>
                     </div>
@@ -77,6 +80,7 @@ export default {
             checkbox: true,
             success: false,
             showPassword: 'password',
+            message: null
         }
     },
     methods: {
@@ -93,8 +97,11 @@ export default {
                 this.error = false;
                 this.success = true;                
             } catch (error) {
-                console.log(error)
-                this.error = true
+                if (error.response.data.error.message == 'Email or Username are already taken'){
+                    this.message = error.response.data.error.message;
+                }else {
+                    this.error = true
+                }
                 this.password = ''
             }
         },

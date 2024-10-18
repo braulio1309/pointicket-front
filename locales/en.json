@@ -21,8 +21,9 @@
         "create_account": "Create account",
         "name": "Name",
         "date_bird": "Fecha de nacimiento",
-        "send": "We've sent you an email to confirm your account",
-        "complete": "Fill out the form correctly"
+        "send": "We've sent you an email to confirm your account. Remember to check your spam.",
+        "complete": "Fill out the form correctly",
+        "already": "This email has already been registered, please log in."
     },
     "Home": {
         "home": "Home",

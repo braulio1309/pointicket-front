@@ -65,8 +65,8 @@
                                                                                                     event.attributes.seat }}
                                                                                                 {{ $t('Buy.tickets') }}
                                                                                                 - {{
-                                                                                                    event.attributes.Category.slice(0,
-                                                                                                5) }}
+                                                                                                    (event.attributes.Category.slice(0,5) == 'Secto'?  event.attributes.Category:event.attributes.Category.slice(0,5) )
+                                                                                                    }}
                                                                                                 <span
                                                                                                     v-if="event.attributes.Category.includes('Premium')">
                                                                                                     Premium</span>

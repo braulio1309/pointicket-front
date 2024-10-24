@@ -5,8 +5,8 @@
   </template>
   <script>
   definePageMeta({
-    title: 'Compra entradas del Real Madrid en el Bernabéu | Pointickets',
-    description: 'Compra y vende tus entradas para los mejores partidos de fútbol en el Bernabéu con Pointickets, la plataforma líder en venta de entradas deportivas. '                
+    title: 'Ven y disfruta del Tour por el Bernabéu',
+    description: 'Reserva el Tour por el Bernabéu y recorre la sala de museos, los vestuarios y los banquillos. Siéntete como un jugador del Real Madrid.'                
   })
   import LandingHomeVue from "~~/components/Home/LandingHome.vue";
   

@@ -249,6 +249,7 @@ export default {
                 .get(`${query}`)
                 .then((response) => {
                     this.events = response.data.data;
+                    this.events = this.events.filter(event => event.attributes.type === null)
                 })
                 .catch((error) => {
                     console.error('Error al buscar al evento', error);

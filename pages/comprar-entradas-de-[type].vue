@@ -200,7 +200,7 @@ export default {
                 encodeValuesOnly: true, // prettify URL
             });
 
-            let query = `${config.public.apiBase}events?populate=*&${querySort}&filters[type][$eq]=${this.$route.params.type}`;
+            let query = `${config.public.apiBase}events?populate=*&${querySort}&filters[type][$isnull]=true`;
 
             if (window.localStorage.getItem('search') != '') {
                 let search = qs.stringify({

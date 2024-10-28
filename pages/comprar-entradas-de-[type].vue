@@ -236,6 +236,11 @@ export default {
                 .get(`${query}`)
                 .then((response) => {
                     this.events = response.data.data;
+                    if(this.$route.params.type != 'futbol'){
+                        this.events = this.events.filter(event => event.attributes.type === this.$route.params.type)
+                    }else{
+                        this.events = this.events.filter(event => event.attributes.type === null)
+                    }
                 })
                 .catch((error) => {
                     console.error('Error al buscar al evento', error);

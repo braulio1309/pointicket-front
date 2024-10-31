@@ -2,27 +2,11 @@ export default {
     data() {
         return {
             blogItems: [
-                /*{
-                    id: 1,
-                    title: "Partidos Seleccion española",
-                    category: "DEPORTES",
-                    imgSrc: "campeones.png",
-                    thumbSrc: "small-post-01.jpg",
-                    alt: "blog image",
-                    date: "Oct 10, 2022",
-                    dateOnly: "10",
-                    monthOnly: "Oct",
-                    comment: "Com 09",
-                    author: "Edward",
-                    excerpt: "Lorem ipsum dolor sit amet cons tetur adipisicing sed.",
-                    excerpt2: "Lorem ipsum dolor sit amet consec tetur adipisicing sed eiusmod tempor incid idunt labore.",
-                    excerpt3: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip.",
-                    excerpt4: "Lorem ipsum dolor sit amet cons tetur adip isicing sed eiusmod."
-                },*/
+                
                 {
                     id: 2,
-                    title: "Tour por el Santiago Bernabeu",
-                    category: "DEPORTES",
+                    title: "Tour Santiago Bernabeu",
+                    category: this.$t('sports'),
                     imgSrc: "Bernabeu.jpg",
                     thumbSrc: "small-post-02.jpg",
                     url: '/tour-santiago-bernabeu',
@@ -44,8 +28,8 @@ export default {
                 },
                 {
                     id: 3,
-                    title: "Partidos de baloncesto",
-                    category: "DEPORTES",
+                    title: this.$t('Home.basket_game'),
+                    category: this.$t('sports'),
                     imgSrc: "Tabares.jpg",
                     url: '/comprar-entradas-de-baloncesto',
                     thumbSrc: "small-post-03.jpg",

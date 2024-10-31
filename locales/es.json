@@ -4,6 +4,9 @@
     "english": "Ingles",
     "provider": "Pointickets es un proveedor secundario de entradas.",
     "login_now": "Debes iniciar sesión para poder comprar o vender una entrada",
+    "more": "Ver más",
+    "events_of_soccer": "Eventos de Futbol",
+    "events_of_basket": "Eventos de Baloncesto",
     "Login": {
         "login": "Iniciar sesión",
         "password": "Contraseña",
@@ -81,7 +84,11 @@
         "login": "Iniciar sesión",
         "register": "Registrarse",
         "policy_title": "Políticas",
-        "tickets": "Entradas"
+        "tickets": "Entradas",
+        "futbol": "Futbol",
+        "baloncesto": "Baloncesto",
+        "conciertos": "Conciertos",
+        "tickets_alert": "entradas vendidas en las ultimas 24 horas"
     },
     "Events": {
         "title": "Compra entradas de fútbol y disfruta en vivo",

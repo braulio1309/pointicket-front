@@ -10,7 +10,7 @@
                 <p>{{ $t('Home.pointickets_tickets_finish') }}</p>
             </div>
             <div class="row g-5">
-                <h4 class="text-center title">Eventos de futbol</h4>
+                <h4 class="text-center title">{{ $t('events_of_soccer') }}</h4>
                 <div class="col-md-6 col-xl-3" data-aos-delay="10" data-aos="fade-up" data-aos-duration="100"
                     v-for="event in events.filter(event => event.attributes.type === null).slice(0, 8)" :key="event.id">
                     <LastEvents :event="event" :type="'compra'" />
@@ -21,7 +21,7 @@
             </div>
             <br><br>
             <div class="row g-5">
-                <h4 class="text-center title">Eventos de baloncesto</h4>
+                <h4 class="text-center title">{{ $t('events_of_basket') }}</h4>
                 <div class="col-md-6 col-xl-3" data-aos-delay="10" data-aos="fade-up" data-aos-duration="100"
                     v-for="event in events.filter(event => event.attributes.type === 'baloncesto').slice(0, 8)" :key="event.id">
                     <LastEvents :event="event" :type="'compra'" />

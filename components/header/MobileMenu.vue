@@ -34,7 +34,7 @@ export default {
                 },
                 {
                     url: '/compra-entradas-de-futbol',
-                    title: 'Futbol',
+                    title: this.$t('Menu.futbol'),
                 },
                 {
                     url: '/tour-santiago-bernabeu',
@@ -43,12 +43,12 @@ export default {
                 },
                 {
                     url: '/comprar-entradas-de-baloncesto',
-                    title: 'Baloncesto',
+                    title: this.$t('Menu.baloncesto'),
 
                 },
                 {
                     url: '/comprar-entradas-de-conciertos',
-                    title: 'Conciertos',
+                    title: this.$t('Menu.conciertos'),
 
                 },
                 {
@@ -82,20 +82,69 @@ export default {
                 },
                 {
                     url: '/compra-entradas-de-futbol',
-                    title: this.$t('Menu.buy_tickets'),
-                },
-                {
-                    url: '/vende-entradas-de-futbol',
-                    title: this.$t('Menu.sell_tickets'),
-                },
-                {
-                    url: '/preguntas-frecuentes',
-                    title: 'FAQs',
-
+                    title: this.$t('Menu.futbol'),
                 },
                 {
                     url: '/tour-santiago-bernabeu',
-                    title: 'Tour Santiago Bernabeu',
+                    title: 'Tour Bernabeu',
+
+                },
+                {
+                    url: '/comprar-entradas-de-baloncesto',
+                    title: this.$t('Menu.baloncesto'),
+
+                },
+                {
+                    url: '/comprar-entradas-de-conciertos',
+                    title: this.$t('Menu.conciertos'),
+
+                },
+                {
+                    url: '/contacto',
+                    title: this.$t('Menu.contact_us'),
+
+                },
+                {
+                    url: '/profile',
+                    title: this.$t('Menu.profile'),
+
+                },
+
+            ]
+        }
+    },
+    watch: {
+        '$i18n.locale'(newLocale, oldLocale) {
+            this.handleLanguageChange(newLocale, oldLocale);
+        }
+    },
+    mounted() {
+        mobileMenuResponsive();
+    },
+    methods: {
+        handleLanguageChange(newLocale, oldLocale) {
+            this.menus = [
+                {
+                    url: '/',
+                    title: this.$t('Home.home'),
+                },
+                {
+                    url: '/compra-entradas-de-futbol',
+                    title: this.$t('Menu.futbol'),
+                },
+                {
+                    url: '/tour-santiago-bernabeu',
+                    title: 'Tour Bernabeu',
+
+                },
+                {
+                    url: '/comprar-entradas-de-baloncesto',
+                    title: this.$t('Menu.baloncesto'),
+
+                },
+                {
+                    url: '/comprar-entradas-de-conciertos',
+                    title: this.$t('Menu.conciertos'),
 
                 },
                 {

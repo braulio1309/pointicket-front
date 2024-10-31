@@ -4,6 +4,9 @@
     "spanish": "Spanish",
     "provider": "Pointickets is a secondary ticket provider.",
     "login_now": "You must be logged in to be able to buy or sell a ticket",
+    "more": "More",
+    "events_of_soccer": "Events of Soccer",
+    "events_of_basket": "Events of Basketball",
     "Login": {
         "login": "Login",
         "password": "Password",
@@ -81,7 +84,11 @@
         "login": "Login",
         "register": "Register",
         "policy_title": "Policies",
-        "tickets": "Tickets"
+        "tickets": "Tickets",
+        "futbol": "Soccer",
+        "baloncesto": "Basketball",
+        "conciertos": "Concerts",
+        "tickets_alert": "tickets sold in the last 24 hours"
     },
     "Events": {
         "title": "Buy football tickets to your favourite events",

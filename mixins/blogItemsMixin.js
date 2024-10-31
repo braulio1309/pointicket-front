@@ -47,7 +47,7 @@ export default {
                     title: "Partidos de baloncesto",
                     category: "DEPORTES",
                     imgSrc: "Tabares.jpg",
-                    url: '#',
+                    url: '/comprar-entradas-de-baloncesto',
                     thumbSrc: "small-post-03.jpg",
                     alt: "blog image",
                     date: "Nov 11, 2022",

@@ -53,29 +53,28 @@
                     <div class="col-lg-12 order-lg-1 col-pr--35" v-if="this.events.length == 0">
                         <div class="col-12 mt--50">
                             <div class="alert alert-info" role="alert">
-                                No se ha encontrado su evento buscado, puede escribirnos para sugerir agregarlo en los
-                                proximos días
+                                {{ $t('thereisno') }}
                             </div>
                             <div class="offset-xl-2 col-lg-6">
                                 <div class="contact-form form-style-2">
                                     <div class="section-title">
-                                        <h4 class="title">Escríbenos</h4>
+                                        <h4 class="title">{{ $t('ContactUs.textus') }}</h4>
                                     </div>
                                     <div v-if="showResult" class="col-12">
                                         <div class="alert alert-success" role="alert">
-                                            ¡Gracias por contactarnos! Estaremos agregando proximamente este evento
+                                            {{ $t('thankscontact') }}
                                         </div>
                                     </div>
                                     <form class="rnt-contact-form rwt-dynamic-form">
                                         <div class="row row--10">
                                             <div class="form-group col-12">
-                                                <input type="text" v-model="name" placeholder="Nombre">
+                                                <input type="text" v-model="name" :placeholder="$t('Register.name')">
                                             </div>
                                             <div class="form-group col-12">
                                                 <input type="email" v-model="email" placeholder="Email">
                                             </div>
                                             <div class="form-group col-12">
-                                                <input type="tel" v-model="phone" placeholder="Telefono">
+                                                <input type="tel" v-model="phone" :placeholder="$t('Register.phone')">
                                             </div>
                                             <div class="form-group col-12">
                                                 <textarea v-model="message" cols="30" rows="4"
@@ -85,10 +84,10 @@
                                                 <button class="rn-btn edu-btn btn-medium submit-btn" name="submit"
                                                     type="submit" :disabled="isLoading" @click="handleSubmit">
                                                     <span v-if="isLoading">
-                                                        Cargando... <i class="fas fa-spinner fa-spin"></i>
+                                                        {{$t('ContactUs.loading')}}... <i class="fas fa-spinner fa-spin"></i>
                                                     </span>
                                                     <span v-else>
-                                                        Enviar<i class="icon-4"></i>
+                                                        {{$t('Home.send')}}<i class="icon-4"></i>
                                                     </span>
                                                 </button>
 

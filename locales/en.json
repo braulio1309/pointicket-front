@@ -8,6 +8,8 @@
     "events_of_soccer": "Events of Soccer",
     "events_of_basket": "Events of Basketball",
     "sports": "SPORTS",
+    "thereisno": "The event you searched for was not found. You can write to us to suggest adding it in the coming days.",
+    "thankscontact": "Thank you for contacting us! We will be adding this event soon.",
     "Login": {
         "login": "Login",
         "password": "Password",

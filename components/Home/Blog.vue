@@ -377,7 +377,7 @@ export default {
                 {
                     id: 2,
                     title: "Tour Santiago Bernabeu",
-                    category: this.$t('Home.sports'),
+                    category: this.$t('sports'),
                     imgSrc: "Bernabeu.jpg",
                     thumbSrc: "small-post-02.jpg",
                     url: '/tour-santiago-bernabeu',
@@ -400,7 +400,7 @@ export default {
                 {
                     id: 3,
                     title: this.$t('Home.basket_game'),
-                    category: this.$t('Home.sports'),
+                    category: this.$t('sports'),
                     imgSrc: "Tabares.jpg",
                     url: '/comprar-entradas-de-baloncesto',
                     thumbSrc: "small-post-03.jpg",

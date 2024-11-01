@@ -26,132 +26,19 @@
                                 slidesPerView: 2,
                             },
                         }">
-                        <swiper-slide>
+                        <swiper-slide v-for="(testimonial, index) in reviews">
                             <div class="testimonial-grid">
                                 <div class="content">
-                                    <p>“Soy mexicano aficionado al Real Madrid.. en mi última experiencia Madrileña
-                                        compramos los boletos para el clásico y para la Semifinal de la champions….
-                                        La experiencia fue excelente, Pointickets es una plataforma muy confiable y
-                                        siempre estuvo al pendiente de que no hubiera problemas… Además de que me
-                                        entregó los boletos puntualmente…
-                                        Definitivamente mi próxima compra la haré por esta web..”</p>
+                                    <p>“{{testimonial.text}}”</p>
                                     <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
+                                        <i v-for="n in testimonial.rating" :key="n" class="icon-23"></i>
+                                    
                                     </div>
-                                    <h5 class="title">Alberto</h5>
+                                    <h5 class="title">{{testimonial.author_name}}</h5>
                                 </div>
                             </div>
                         </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-
-                                <div class="content">
-                                    <p>“Gracias a Pointickets por haberme permitido disfrutar de un partido de
-                                        Champions.
-                                        Era la primera vez que compraba en la web y estaba nervioso al ver que no
-                                        recibia las entradas, pero cumplieron con lo prometido y las recibi la semana
-                                        anterior al partido.
-                                        Destacar la disponibilidad de su servicio de atencion al cliente a traves de
-                                        whatsapp.”
-                                    </p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Ali</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="content">
-                                    <p>“Asistir a un partido del Real Madrid en la Champions League fue una experiencia
-                                        inolvidable! :ojos_de_corazón: Desde el momento en que llegué al estadio, pude
-                                        sentir la emoción en el aire. La multitud vestida con los colores del equipo,
-                                        los cánticos que resonaban por todo el lugar y la majestuosidad del Santiago
-                                        Bernabéu hicieron que mi corazón latiera más rápido. Cada jugada, cada gol y
-                                        cada celebración eran pura magia. Ver a los jugadores en acción y ser parte de
-                                        esa energía única fue algo que recordaré para siempre.”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Pedro Gómez</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="content">
-                                    <p>“Increíble experiencia para mi nieto y para mi!!! El contacto personal del equipo
-                                        de ventas fue excepcional.
-                                        Todo se facilitó en un 100%.
-                                        Los asientos excelentes, trato profesional y amistoso, Los recomiendo y volvería
-                                        a utilizarlo.
-                                        Gracias PT!!!!”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Ana</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-
-                                <div class="content">
-                                    <p>“I bought two tickets through Pointickets for the highly anticipated Real Madrid
-                                        vs. Seville for the 2023-2024 season at the iconic Santiago Bernabéu stadium.
-                                        Not only was the delivery fast, but my interactions with Pointickets were
-                                        incredibly smooth and hassle-free. The pointickets team's willingness to help
-                                        and their ability to suggest premium seating options at exceptionally
-                                        competitive prices really enhanced my overall experience...”.</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Abdullah</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="testimonial-grid">
-                                <div class="content">
-                                    <p>“Para nosotros encontrar una empresa que nos de confianza y garantía, es lo
-                                        primordial.
-                                        En POINTICKETS, encontramos eso y más
-                                        Atención profesional, comunicación clara y fluída.
-                                        Conseguimos todo lo que busca un cliente
-                                        Precio justo para un producto y servicio.
-                                        Súper recomendados.”</p>
-                                    <div class="rating-icon">
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                        <i class="icon-23"></i>
-                                    </div>
-                                    <h5 class="title">Maria Ortiz</h5>
-                                </div>
-                            </div>
-                        </swiper-slide>
+                        
                     </swiper>
                 </div>
             </div>
@@ -179,18 +66,12 @@ export default {
         };
     },
     async mounted() {
+        const config = useRuntimeConfig();
         try {
-            const response = await axios.get(
-                `https://maps.googleapis.com/maps/api/place/details/json`, {
-                params: {
-                    place_id: 'ChIJGc9M-0Ub5S8RzqtpA51YOII',
-                    fields: 'reviews',
-                    key: 'AIzaSyBy7SEbMmQ3952e5NMLokxBy-bgDz3nIsc',
-                }
-            }
+            const response = await axios.post(
+                `${config.public.apiBase}categories/calificaciones`
             );
-            this.reviews = response.data.result.reviews;
-            console.log('holaaa',this.reviews)
+            this.reviews = response.data;
         } catch (error) {
             console.error('Error fetching reviews:', error);
         }

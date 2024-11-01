@@ -78,7 +78,7 @@
                                             </div>
                                             <div class="form-group col-12">
                                                 <textarea v-model="message" cols="30" rows="4"
-                                                    placeholder="Escribe tu mensaje"></textarea>
+                                                    :placeholder="$t('ContactUs.message')"></textarea>
                                             </div>
                                             <div class="form-group col-12">
                                                 <button class="rn-btn edu-btn btn-medium submit-btn" name="submit"

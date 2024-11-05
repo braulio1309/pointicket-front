@@ -20,7 +20,7 @@
                                 </li>
                                 <li>
                                     <h5 class="title">WhatsApp</h5>
-                                    <p><a href="https://wa.link/5sd3xh" target="_blank"><img src="../assets/images/compra-entradas/whatsapp.png" style="width: 5%; margin-right: 5px;">Mándanos un WhatsApp</a></p>
+                                    <p><a href="https://wa.link/5sd3xh" target="_blank"><img src="../assets/images/compra-entradas/whatsapp.png" style="width: 5%; margin-right: 5px;">{{ $t('send_whatsapp') }}</a></p>
                                 </li>
                             </ul>
                             <ul class="social-share">

@@ -6,14 +6,14 @@
                     <div class="home-four-cta edu-cta-box cta-style-3 bg-image bg-image--16">
                         <div class="inner">
                             <div class="content text-end">
-                                <span class="subtitle">Escribenos:</span>
+                                <span class="subtitle">{{ $t('Text us') }}:</span>
                                 <h3 class="title"><a href="mailto:hello@pointickets.com">info@pointickets.com</a></h3>
                             </div>
                             <div class="sparator">
                                 <span>or</span>
                             </div>
                             <div class="content">
-                                <span class="subtitle">Llamanos:</span>
+                                <span class="subtitle">{{ $t('Text us') }}:</span>
                                 <h3 class="title"><a href="tel:+34689898936">(+34) 689 89 89 36</a></h3>
                             </div>
                         </div>

@@ -4,7 +4,7 @@
         <HeaderOne />
 
         <BreadCrumbTwo v-if="this.$route.params.type === 'compra'" :pageTitle="$t('Events.title')" :title="$t('Events.events')" />
-        <BreadCrumbTwo v-else :pageTitle="$t('Events.title_sell')" :title="$t('Events.events')" />
+        <BreadCrumbTwo v-else :pageTitle="$t('Events.title')" :title="$t('Events.events')" />
 
        
         <div class="edu-event-area event-area-1 section-gap-equal">
